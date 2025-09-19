@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://weboctals.com/</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Services Pages -->
+    <url>
+        <loc>https://weboctals.com/#services</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://weboctals.com/#about</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://weboctals.com/#team</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://weboctals.com/#contact</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Blog Main Page -->
+    <url>
+        <loc>https://weboctals.com/blog/</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Blog Articles -->
+    <url>
+        <loc>https://weboctals.com/blog/ai-agents-future-business-automation.html</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <news:news>
+            <news:publication>
+                <news:name>WebOctals</news:name>
+                <news:language>en</news:language>
+            </news:publication>
+            <news:publication_date>2024-12-15</news:publication_date>
+            <news:title>The Future of Business Automation: How AI Agents Are Transforming Industries</news:title>
+            <news:keywords>AI agents, business automation, artificial intelligence, digital transformation</news:keywords>
+        </news:news>
+    </url>
+    
+    <url>
+        <loc>https://weboctals.com/blog/building-intelligent-digital-products.html</loc>
+        <lastmod>2024-11-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <news:news>
+            <news:publication>
+                <news:name>WebOctals</news:name>
+                <news:language>en</news:language>
+            </news:publication>
+            <news:publication_date>2024-11-20</news:publication_date>
+            <news:title>Building Intelligent Digital Products: A Complete Guide</news:title>
+            <news:keywords>digital products, AI development, product management, user experience</news:keywords>
+        </news:news>
+    </url>
+    
+    <url>
+        <loc>https://weboctals.com/blog/nlp-conversational-ai-development.html</loc>
+        <lastmod>2024-10-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <news:news>
+            <news:publication>
+                <news:name>WebOctals</news:name>
+                <news:language>en</news:language>
+            </news:publication>
+            <news:publication_date>2024-10-25</news:publication_date>
+            <news:title>Mastering Conversational AI: NLP Techniques for Better User Interactions</news:title>
+            <news:keywords>NLP, conversational AI, chatbots, natural language processing</news:keywords>
+        </news:news>
+    </url>
+    
+    <url>
+        <loc>https://weboctals.com/blog/intelligent-automation-workflows.html</loc>
+        <lastmod>2024-09-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <news:news>
+            <news:publication>
+                <news:name>WebOctals</news:name>
+                <news:language>en</news:language>
+            </news:publication>
+            <news:publication_date>2024-09-30</news:publication_date>
+            <news:title>Designing Intelligent Automation Workflows That Actually Work</news:title>
+            <news:keywords>automation, workflow design, business processes, optimization</news:keywords>
+        </news:news>
+    </url>
+    
+    <url>
+        <loc>https://weboctals.com/blog/ai-implementation-roadmap.html</loc>
+        <lastmod>2024-09-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <news:news>
+            <news:publication>
+                <news:name>WebOctals</news:name>
+                <news:language>en</news:language>
+            </news:publication>
+            <news:publication_date>2024-09-15</news:publication_date>
+            <news:title>AI Implementation Roadmap: From Concept to Production</news:title>
+            <news:keywords>AI implementation, project management, strategy, deployment</news:keywords>
+        </news:news>
+    </url>
+    
+    <url>
+        <loc>https://weboctals.com/blog/data-quality-ai-success.html</loc>
+        <lastmod>2024-08-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <news:news>
+            <news:publication>
+                <news:name>WebOctals</news:name>
+                <news:language>en</news:language>
+            </news:publication>
+            <news:publication_date>2024-08-28</news:publication_date>
+            <news:title>Data Quality: The Foundation of Successful AI Projects</news:title>
+            <news:keywords>data quality, machine learning, data engineering, AI success</news:keywords>
+        </news:news>
+    </url>
+    
+    <url>
+        <loc>https://weboctals.com/blog/responsible-ai-development.html</loc>
+        <lastmod>2024-08-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <news:news>
+            <news:publication>
+                <news:name>WebOctals</news:name>
+                <news:language>en</news:language>
+            </news:publication>
+            <news:publication_date>2024-08-10</news:publication_date>
+            <news:title>Responsible AI Development: Ethics and Best Practices</news:title>
+            <news:keywords>AI ethics, responsible AI, best practices, ethical development</news:keywords>
+        </news:news>
+    </url>
+    
+    <!-- Additional Service Pages -->
+    <url>
+        <loc>https://weboctals.com/services/ai-agent-development</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://weboctals.com/services/digital-product-development</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://weboctals.com/services/intelligent-automation</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://weboctals.com/services/machine-learning-solutions</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Resource Pages -->
+    <url>
+        <loc>https://weboctals.com/case-studies</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://weboctals.com/whitepapers</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://weboctals.com/webinars</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Legal Pages -->
+    <url>
+        <loc>https://weboctals.com/privacy</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <url>
+        <loc>https://weboctals.com/terms</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <url>
+        <loc>https://weboctals.com/careers</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+</urlset>
