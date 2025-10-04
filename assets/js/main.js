@@ -1,17 +1,64 @@
-// WebOctals - AI-Powered Website JavaScript
+// WebOctals - Simple Navigation with Horizontal View Transitions
 
-// Initialize everything when DOM is loaded
+// Initialize only essential features
 document.addEventListener('DOMContentLoaded', function() {
-    initializeParticles();
-    initializeNavigation();
-    initializeAnimations();
-    initializeChatbot();
-    initializeScrollEffects();
-    initializeFormHandling();
-    initializeTypingEffects();
+    initializeSimpleNavigation();
+    initializeBasicFeatures();
 });
 
-// Particle System Configuration
+// Simple horizontal view transitions
+function initializeSimpleNavigation() {
+    const navLinks = document.querySelectorAll('.nav-link, .footer-links a, .btn[href], .nav-logo a');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            
+            // Handle internal .html navigation with horizontal transition
+            if (href && (href.endsWith('.html') || href.includes('blog/')) && !href.startsWith('http')) {
+                
+                // Simple check: compare current page filename with target href
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const targetPage = href.split('/').pop();
+                
+                // Skip transition if already on target page
+                if (currentPage === targetPage) {
+                    e.preventDefault(); // Prevent the click but don't navigate
+                    return;
+                }
+                
+                e.preventDefault();
+                
+                // Use View Transition API if supported
+                if ('startViewTransition' in document) {
+                    document.startViewTransition(() => {
+                        window.location.href = href;
+                    });
+                } else {
+                    // Simple fallback without transition
+                    window.location.href = href;
+                }
+            }
+        });
+    });
+}
+
+// Only essential features - no heavy animations
+function initializeBasicFeatures() {
+    // Mobile menu toggle only
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    }
+}
+
+// Particle System Configuration - DISABLED for faster navigation
+/* 
 function initializeParticles() {
     if (typeof particlesJS !== 'undefined') {
         particlesJS('particles-js', {
@@ -104,8 +151,10 @@ function initializeParticles() {
         });
     }
 }
+*/
 
-// Navigation System
+// Navigation System - DISABLED, using simple navigation instead
+/*
 function initializeNavigation() {
     const navbar = document.getElementById('navbar');
     const hamburger = document.getElementById('hamburger');
@@ -128,21 +177,27 @@ function initializeNavigation() {
         document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
     });
 
-    // Smooth scrolling for navigation links
+    // Handle navigation links (both file-based and anchor-based)
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+            const targetHref = link.getAttribute('href');
             
-            if (targetElement) {
-                const offsetTop = targetElement.offsetTop - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+            // Check if it's an anchor link (starts with #) for same-page navigation
+            if (targetHref.startsWith('#')) {
+                e.preventDefault();
+                const targetElement = document.querySelector(targetHref);
+                
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
             }
-
+            // For file-based navigation (.html files), let the browser handle it naturally
+            // No preventDefault() needed - just close mobile menu if open
+            
             // Close mobile menu if open
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
@@ -819,8 +874,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     });
 });
+*/
 
-// Export functions for potential module usage
+// Export functions for potential module usage - DISABLED
+/*
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         initializeParticles,
@@ -831,3 +888,4 @@ if (typeof module !== 'undefined' && module.exports) {
         throttle
     };
 }
+*/

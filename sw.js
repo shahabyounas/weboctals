@@ -25,109 +25,109 @@ const DYNAMIC_CACHE_URLS = [
 ];
 
 // Install event - cache static files
-self.addEventListener('install', (event) => {
-    console.log('Service Worker: Installing...');
+// self.addEventListener('install', (event) => {
+//     console.log('Service Worker: Installing...');
     
-    event.waitUntil(
-        caches.open(STATIC_CACHE_NAME)
-            .then((cache) => {
-                console.log('Service Worker: Caching static files');
-                return cache.addAll(STATIC_FILES);
-            })
-            .then(() => {
-                console.log('Service Worker: Static files cached successfully');
-                return self.skipWaiting();
-            })
-            .catch((error) => {
-                console.error('Service Worker: Error caching static files', error);
-            })
-    );
-});
+//     event.waitUntil(
+//         caches.open(STATIC_CACHE_NAME)
+//             .then((cache) => {
+//                 console.log('Service Worker: Caching static files');
+//                 return cache.addAll(STATIC_FILES);
+//             })
+//             .then(() => {
+//                 console.log('Service Worker: Static files cached successfully');
+//                 return self.skipWaiting();
+//             })
+//             .catch((error) => {
+//                 console.error('Service Worker: Error caching static files', error);
+//             })
+//     );
+// });
 
-// Activate event - clean up old caches
-self.addEventListener('activate', (event) => {
-    console.log('Service Worker: Activating...');
+// // Activate event - clean up old caches
+// self.addEventListener('activate', (event) => {
+//     console.log('Service Worker: Activating...');
     
-    event.waitUntil(
-        caches.keys()
-            .then((cacheNames) => {
-                return Promise.all(
-                    cacheNames.map((cacheName) => {
-                        if (cacheName !== STATIC_CACHE_NAME && 
-                            cacheName !== DYNAMIC_CACHE_NAME) {
-                            console.log('Service Worker: Deleting old cache', cacheName);
-                            return caches.delete(cacheName);
-                        }
-                    })
-                );
-            })
-            .then(() => {
-                console.log('Service Worker: Activated successfully');
-                return self.clients.claim();
-            })
-    );
-});
+//     event.waitUntil(
+//         caches.keys()
+//             .then((cacheNames) => {
+//                 return Promise.all(
+//                     cacheNames.map((cacheName) => {
+//                         if (cacheName !== STATIC_CACHE_NAME && 
+//                             cacheName !== DYNAMIC_CACHE_NAME) {
+//                             console.log('Service Worker: Deleting old cache', cacheName);
+//                             return caches.delete(cacheName);
+//                         }
+//                     })
+//                 );
+//             })
+//             .then(() => {
+//                 console.log('Service Worker: Activated successfully');
+//                 return self.clients.claim();
+//             })
+//     );
+// });
 
 // Fetch event - serve files from cache or network
-self.addEventListener('fetch', (event) => {
-    const { request } = event;
-    const url = new URL(request.url);
+// self.addEventListener('fetch', (event) => {
+//     const { request } = event;
+//     const url = new URL(request.url);
     
-    // Skip non-GET requests
-    if (request.method !== 'GET') {
-        return;
-    }
+//     // Skip non-GET requests
+//     if (request.method !== 'GET') {
+//         return;
+//     }
     
-    // Skip cross-origin requests that aren't in our dynamic cache list
-    if (url.origin !== location.origin && 
-        !DYNAMIC_CACHE_URLS.some(dynamicUrl => request.url.includes(dynamicUrl))) {
-        return;
-    }
+//     // Skip cross-origin requests that aren't in our dynamic cache list
+//     if (url.origin !== location.origin && 
+//         !DYNAMIC_CACHE_URLS.some(dynamicUrl => request.url.includes(dynamicUrl))) {
+//         return;
+//     }
     
-    event.respondWith(
-        caches.match(request)
-            .then((cachedResponse) => {
-                // Return cached version if available
-                if (cachedResponse) {
-                    console.log('Service Worker: Serving from cache', request.url);
-                    return cachedResponse;
-                }
+//     event.respondWith(
+//         caches.match(request)
+//             .then((cachedResponse) => {
+//                 // Return cached version if available
+//                 if (cachedResponse) {
+//                     console.log('Service Worker: Serving from cache', request.url);
+//                     return cachedResponse;
+//                 }
                 
-                // Fetch from network and cache the response
-                return fetch(request)
-                    .then((networkResponse) => {
-                        // Only cache successful responses
-                        if (networkResponse.status === 200) {
-                            const responseClone = networkResponse.clone();
+//                 // Fetch from network and cache the response
+//                 return fetch(request)
+//                     .then((networkResponse) => {
+//                         // Only cache successful responses
+//                         if (networkResponse.status === 200) {
+//                             const responseClone = networkResponse.clone();
                             
-                            // Determine which cache to use
-                            const cacheName = STATIC_FILES.includes(url.pathname) || 
-                                            url.pathname === '/' ? 
-                                            STATIC_CACHE_NAME : DYNAMIC_CACHE_NAME;
+//                             // Determine which cache to use
+//                             const cacheName = STATIC_FILES.includes(url.pathname) || 
+//                                             url.pathname === '/' ? 
+//                                             STATIC_CACHE_NAME : DYNAMIC_CACHE_NAME;
                             
-                            caches.open(cacheName)
-                                .then((cache) => {
-                                    console.log('Service Worker: Caching new resource', request.url);
-                                    cache.put(request, responseClone);
-                                });
-                        }
+//                             caches.open(cacheName)
+//                                 .then((cache) => {
+//                                     console.log('Service Worker: Caching new resource', request.url);
+//                                     cache.put(request, responseClone);
+//                                 });
+//                         }
                         
-                        return networkResponse;
-                    })
-                    .catch((error) => {
-                        console.error('Service Worker: Fetch failed', error);
+//                         return networkResponse;
+//                     })
+//                     .catch((error) => {
+//                         console.error('Service Worker: Fetch failed', error);
                         
-                        // Return offline page for navigation requests
-                        if (request.destination === 'document') {
-                            return caches.match('/offline.html');
-                        }
+//                         // Return offline page for navigation requests
+//                         if (request.destination === 'document') {
+//                             return caches.match('/offline.html');
+//                         }
                         
-                        // Return cached version if available (stale-while-revalidate)
-                        return caches.match(request);
-                    });
-            })
-    );
-});
+//                         // Return cached version if available (stale-while-revalidate)
+//                         return caches.match(request);
+//                     });
+//             })
+//     );
+// });
 
 // Background sync for form submissions
 self.addEventListener('sync', (event) => {

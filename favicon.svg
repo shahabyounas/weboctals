@@ -1,0 +1,49 @@
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- AI Gradient -->
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00f5ff"/>
+      <stop offset="100%" style="stop-color:#7c4dff"/>
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Central AI core -->
+  <circle cx="30" cy="30" r="8" fill="url(#aiGradient)" filter="url(#glow)"/>
+  <circle cx="30" cy="30" r="5" fill="white" opacity="0.2"/>
+  
+  <!-- Main neural nodes -->
+  <circle cx="15" cy="15" r="4" fill="#00f5ff" opacity="0.9"/>
+  <circle cx="45" cy="15" r="4" fill="#00f5ff" opacity="0.9"/>
+  <circle cx="15" cy="45" r="4" fill="#7c4dff" opacity="0.9"/>
+  <circle cx="45" cy="45" r="4" fill="#7c4dff" opacity="0.9"/>
+  
+  <!-- Secondary nodes -->
+  <circle cx="8" cy="30" r="2.5" fill="#00f5ff" opacity="0.7"/>
+  <circle cx="52" cy="30" r="2.5" fill="#7c4dff" opacity="0.7"/>
+  <circle cx="30" cy="8" r="2.5" fill="#00f5ff" opacity="0.7"/>
+  <circle cx="30" cy="52" r="2.5" fill="#7c4dff" opacity="0.7"/>
+  
+  <!-- Neural connections -->
+  <line x1="30" y1="30" x2="15" y2="15" stroke="#00f5ff" stroke-width="2" opacity="0.6"/>
+  <line x1="30" y1="30" x2="45" y2="15" stroke="#00f5ff" stroke-width="2" opacity="0.6"/>
+  <line x1="30" y1="30" x2="15" y2="45" stroke="#7c4dff" stroke-width="2" opacity="0.6"/>
+  <line x1="30" y1="30" x2="45" y2="45" stroke="#7c4dff" stroke-width="2" opacity="0.6"/>
+  
+  <!-- Edge connections -->
+  <line x1="30" y1="30" x2="8" y2="30" stroke="#00f5ff" stroke-width="1.5" opacity="0.5"/>
+  <line x1="30" y1="30" x2="52" y2="30" stroke="#7c4dff" stroke-width="1.5" opacity="0.5"/>
+  <line x1="30" y1="30" x2="30" y2="8" stroke="#00f5ff" stroke-width="1.5" opacity="0.5"/>
+  <line x1="30" y1="30" x2="30" y2="52" stroke="#7c4dff" stroke-width="1.5" opacity="0.5"/>
+  
+  <!-- Outer ring for depth -->
+  <circle cx="30" cy="30" r="20" fill="none" stroke="url(#aiGradient)" stroke-width="0.5" opacity="0.3"/>
+</svg>
