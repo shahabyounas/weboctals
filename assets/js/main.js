@@ -71,7 +71,7 @@ function initializeParticles() {
                     }
                 },
                 color: {
-                    value: ['#00f5ff', '#7c4dff', '#ff4081']
+                    value: ['#2563eb', '#7c3aed', '#ec4899']
                 },
                 shape: {
                     type: 'circle',
