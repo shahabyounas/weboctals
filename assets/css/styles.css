@@ -1665,3 +1665,351 @@ body {
         page-break-inside: avoid;
     }
 }
+
+/* Services Two Column Layout */
+.services-two-col {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
+    margin-top: 60px;
+    min-height: 600px;
+}
+
+/* Services Tabs Layout */
+.services-tabs-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 60px;
+    min-height: 600px;
+}
+
+.services-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.services-content {
+    background: var(--card-bg);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-md);
+}
+
+.services-tab-nav {
+    flex: 0 0 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    background: var(--card-bg);
+    border: 2px solid var(--border-light);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+}
+
+.tab-btn:hover {
+    border-color: var(--primary-color);
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+}
+
+.tab-btn.active {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-on-primary);
+    transform: translateX(5px);
+    box-shadow: var(--shadow-glow);
+}
+
+.tab-button {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    background: var(--card-bg);
+    border: 2px solid var(--border-light);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+}
+
+.tab-button:hover {
+    border-color: var(--primary-color);
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+}
+
+.tab-button.active {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-on-primary);
+    transform: translateX(5px);
+    box-shadow: var(--shadow-glow);
+}
+
+.tab-icon {
+    flex: 0 0 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-button.active .tab-icon {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.tab-content h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: inherit;
+}
+
+.tab-content p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.8;
+    color: inherit;
+}
+
+.services-tab-content {
+    flex: 1;
+    position: relative;
+}
+
+.tab-panel {
+    display: none;
+    animation: slideInRight 0.3s ease-out;
+}
+
+.tab-panel.active {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.service-detail {
+    background: var(--card-bg);
+    border-radius: var(--border-radius-lg);
+    padding: 30px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid var(--border-light);
+}
+
+.service-icon-large {
+    flex: 0 0 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    border-radius: 20px;
+    box-shadow: var(--shadow-glow);
+}
+
+.service-title h2 {
+    margin: 0 0 8px 0;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.service-tagline {
+    margin: 0;
+    font-size: 18px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.service-description {
+    margin-bottom: 40px;
+}
+
+.service-description p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.service-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.feature-item {
+    padding: 20px;
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+}
+
+.feature-item h4 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.feature-item p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.service-benefits {
+    margin-bottom: 40px;
+    padding: 25px;
+    background: var(--hover-bg);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-light);
+}
+
+.service-benefits h3 {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    color: var(--text-primary);
+}
+
+.service-benefits ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-benefits li {
+    padding: 8px 0;
+    font-size: 15px;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 25px;
+}
+
+.service-benefits li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+.service-cta {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.service-cta .btn {
+    flex: 0 0 auto;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .services-two-col {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .services-tabs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .services-tabs-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .services-tab-nav {
+        flex: none;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .tab-button {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
+    .tab-icon {
+        flex: 0 0 50px;
+        height: 50px;
+    }
+
+    .tab-content h3 {
+        font-size: 16px;
+    }
+
+    .tab-content p {
+        font-size: 13px;
+    }
+
+    .service-detail {
+        padding: 25px;
+    }
+
+    .service-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .service-title h2 {
+        font-size: 26px;
+    }
+
+    .service-features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-cta {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .service-cta .btn {
+        width: 100%;
+        text-align: center;
+    }
+}

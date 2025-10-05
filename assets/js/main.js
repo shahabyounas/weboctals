@@ -55,6 +55,72 @@ function initializeBasicFeatures() {
             navMenu.classList.toggle('active');
         });
     }
+    
+    // Initialize services tabs with delay to ensure DOM is ready
+    setTimeout(() => {
+        initializeServicesTabs();
+    }, 100);
+}
+
+// Services Tabs Functionality
+function initializeServicesTabs() {
+    // Wait for DOM to be fully loaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeServicesTabs);
+        return;
+    }
+    
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+    
+    console.log('Initializing tabs...');
+    console.log('Tab buttons found:', tabButtons.length);
+    console.log('Tab panels found:', tabPanels.length);
+    
+    if (tabButtons.length === 0) {
+        console.log('No tab buttons found, exiting...');
+        return;
+    }
+    
+    // Add click event to each tab button
+    tabButtons.forEach((button, index) => {
+        console.log('Adding listener to button', index, button.getAttribute('data-tab'));
+        
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const targetTab = this.getAttribute('data-tab');
+            console.log('Tab clicked:', targetTab);
+            
+            // Remove active class from all buttons and panels
+            tabButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            tabPanels.forEach(panel => {
+                panel.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            console.log('Button activated:', targetTab);
+            
+            // Add active class to corresponding panel
+            const targetPanel = document.getElementById(targetTab);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+                console.log('Panel activated:', targetTab, targetPanel);
+                console.log('Panel classes:', targetPanel.className);
+                console.log('Panel computed style display:', window.getComputedStyle(targetPanel).display);
+            } else {
+                console.log('Panel not found:', targetTab);
+                console.log('Available panels:', Array.from(tabPanels).map(p => p.id));
+            }
+        });
+    });
+    
+    console.log('Tab initialization complete');
 }
 
 // Particle System Configuration - DISABLED for faster navigation

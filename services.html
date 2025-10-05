@@ -121,66 +121,505 @@
                 <h1 class="section-title">Our AI-Powered Services</h1>
                 <p class="section-subtitle">Transforming businesses through intelligent automation and cutting-edge AI solutions</p>
             </div>
-            <div class="services-grid">
-                <article class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-icon">
-                        <div class="icon-ai-agent"></div>
+            
+            <!-- Services Tabs Layout -->
+                        <div class="services-two-col">
+                <!-- Left Column: Service Tabs -->
+                <div class="services-tabs">
+                    <button type="button" class="tab-btn active" data-tab="seo-services">
+                        <div class="tab-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                            </svg>
+                        </div>
+                        <div class="tab-text">
+                            <h3>SEO Services</h3>
+                            <p>Dominate Search Results</p>
+                        </div>
+                    </button>
+                    
+                    <button type="button" class="tab-btn" data-tab="product-development">
+                        <div class="tab-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                            </svg>
+                        </div>
+                        <div class="tab-text">
+                            <h3>Product Development</h3>
+                            <p>Custom Solutions</p>
+                        </div>
+                    </button>
+                    
+                    <button type="button" class="tab-btn" data-tab="web-development">
+                        <div class="tab-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20,18C20.5,18 21,17.5 21,17V7C21,6.5 20.5,6 20,6H4C3.5,6 3,6.5 3,7V17C3,17.5 3.5,18 4,18H20M5,8V16H19V8H5M7,9H9V10H7V9M16,15H8V14H16V15M8,13H12V12H8V13M13,11H16V10H13V11Z"/>
+                            </svg>
+                        </div>
+                        <div class="tab-text">
+                            <h3>Web Development</h3>
+                            <p>WordPress, Shopify & eCommerce</p>
+                        </div>
+                    </button>
+                    
+                    <button type="button" class="tab-btn" data-tab="ai-agents">
+                        <div class="tab-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                            </svg>
+                        </div>
+                        <div class="tab-text">
+                            <h3>AI Agents</h3>
+                            <p>Intelligent Virtual Assistants</p>
+                        </div>
+                    </button>
+                    
+                    <button type="button" class="tab-btn" data-tab="digital-products">
+                        <div class="tab-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17,3H7A2,2 0 0,0 5,5V19L12,16.5L19,19V5A2,2 0 0,0 17,3M17,15L12,13.25L7,15V5H17V15Z"/>
+                            </svg>
+                        </div>
+                        <div class="tab-text">
+                            <h3>Digital Products</h3>
+                            <p>AI-Enhanced Applications</p>
+                        </div>
+                    </button>
+                    
+                    <button type="button" class="tab-btn" data-tab="automation">
+                        <div class="tab-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/>
+                            </svg>
+                        </div>
+                        <div class="tab-text">
+                            <h3>Automation</h3>
+                            <p>Intelligent Process Automation</p>
+                        </div>
+                    </button>
+                    
+                    <button type="button" class="tab-btn" data-tab="machine-learning">
+                        <div class="tab-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22,14A2,2 0 0,1 20,16H16L14.5,15L13,16H4A2,2 0 0,1 2,14V10A2,2 0 0,1 4,8H13L14.5,9L16,8H20A2,2 0 0,1 22,10V14M21,10H16L14.5,11L13,10H3V14H13L14.5,13L16,14H21V10Z"/>
+                            </svg>
+                        </div>
+                        <div class="tab-text">
+                            <h3>Machine Learning</h3>
+                            <p>Data-Driven Intelligence</p>
+                        </div>
+                    </button>
+                </div>
+                
+                <!-- Right Column: Service Content -->
+                <div class="services-content">
+                    <!-- SEO Services Tab -->
+                    <div class="tab-panel active" id="seo-services">
+                        <div class="service-detail">
+                            <div class="service-header">
+                                <div class="service-icon-large">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                                    </svg>
+                                </div>
+                                <div class="service-title">
+                                    <h2>SEO Services</h2>
+                                    <p class="service-tagline">Dominate Search Results & Drive Organic Traffic</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-description">
+                                <p>Boost your online visibility and drive qualified traffic with our comprehensive SEO services. We use data-driven strategies and proven techniques to improve your search rankings, increase organic traffic, and convert visitors into customers.</p>
+                            </div>
+                            
+                            <div class="service-features-grid">
+                                <div class="feature-item">
+                                    <h4>Keyword Research & Strategy</h4>
+                                    <p>In-depth keyword analysis to target high-value search terms that drive conversions</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>On-Page Optimization</h4>
+                                    <p>Technical SEO, content optimization, and site structure improvements</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Link Building & Authority</h4>
+                                    <p>Quality backlink acquisition and domain authority building strategies</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Performance Tracking</h4>
+                                    <p>Detailed analytics, ranking reports, and ROI measurement</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-benefits">
+                                <h3>Key Benefits</h3>
+                                <ul>
+                                    <li>Increase organic traffic by up to 300%</li>
+                                    <li>Improve search rankings for target keywords</li>
+                                    <li>Higher quality leads with better conversion rates</li>
+                                    <li>Long-term sustainable growth</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="service-cta">
+                                <a href="contact.html" class="btn btn-primary">
+                                    <span>Get SEO Audit</span>
+                                    <div class="btn-glow"></div>
+                                </a>
+                                <a href="contact.html" class="btn btn-outline">Free Consultation</a>
+                            </div>
+                        </div>
                     </div>
-                    <h2>AI Agent Development</h2>
-                    <p>Custom AI agents that automate complex tasks, make intelligent decisions, and integrate seamlessly with your existing systems.</p>
-                    <ul class="service-features">
-                        <li>Natural Language Processing</li>
-                        <li>Autonomous Decision Making</li>
-                        <li>Multi-platform Integration</li>
-                        <li>Continuous Learning</li>
-                    </ul>
-                    <a href="contact.html" class="service-link">Learn More</a>
-                </article>
-
-                <article class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-icon">
-                        <div class="icon-digital-product"></div>
+                    
+                    
+                    <!-- Product Development Tab -->
+                    <div class="tab-panel" id="product-development">
+                        <div class="service-detail">
+                            <div class="service-header">
+                                <div class="service-icon-large">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M22,9 L22,7 C22,5.9 21.1,5 20,5 L4,5 C2.9,5 2,5.9 2,7 L2,9 C3.1,9 4,9.9 4,11 C4,12.1 3.1,13 2,13 L2,15 C2,16.1 2.9,17 4,17 L20,17 C21.1,17 22,16.1 22,15 L22,13 C20.9,13 20,12.1 20,11 C20,9.9 20.9,9 22,9 Z M13,12.08 L13,16 L11,16 L11,12.08 C10.16,11.85 9.5,11.1 9.5,10.2 C9.5,9.18 10.32,8.36 11.34,8.36 C12.36,8.36 13.18,9.18 13.18,10.2 C13.18,11.1 12.52,11.85 11.68,12.08 L13,12.08 Z"/>
+                                    </svg>
+                                </div>
+                                <div class="service-title">
+                                    <h2>Custom Product Development</h2>
+                                    <p class="service-tagline">Tailored Solutions for Your Unique Business Needs</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-description">
+                                <p>Transform your ideas into powerful digital products with our custom development services. We create scalable, secure, and user-friendly applications tailored to your specific business requirements and market demands.</p>
+                            </div>
+                            
+                            <div class="service-features-grid">
+                                <div class="feature-item">
+                                    <h4>Custom Software Development</h4>
+                                    <p>Bespoke applications built from scratch to match your exact specifications</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>API Development & Integration</h4>
+                                    <p>Seamless third-party integrations and custom API development</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Database Design & Optimization</h4>
+                                    <p>Efficient database architecture for optimal performance and scalability</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Quality Assurance & Testing</h4>
+                                    <p>Comprehensive testing to ensure reliability and performance</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-benefits">
+                                <h3>Key Benefits</h3>
+                                <ul>
+                                    <li>100% customized to your business needs</li>
+                                    <li>Scalable architecture for future growth</li>
+                                    <li>Faster time-to-market with agile development</li>
+                                    <li>Complete ownership and control of your product</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="service-cta">
+                                <a href="contact.html" class="btn btn-primary">
+                                    <span>Start Your Project</span>
+                                    <div class="btn-glow"></div>
+                                </a>
+                                <a href="contact.html" class="btn btn-outline">View Portfolio</a>
+                            </div>
+                        </div>
                     </div>
-                    <h2>Digital Product Development</h2>
-                    <p>End-to-end development of intelligent digital products that leverage AI to deliver exceptional user experiences.</p>
-                    <ul class="service-features">
-                        <li>AI-Enhanced UX/UI</li>
-                        <li>Predictive Analytics</li>
-                        <li>Smart Recommendations</li>
-                        <li>Adaptive Interfaces</li>
-                    </ul>
-                    <a href="contact.html" class="service-link">Learn More</a>
-                </article>
-
-                <article class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-icon">
-                        <div class="icon-automation"></div>
+                    
+                    <!-- Web Development Tab -->
+                    <div class="tab-panel" id="web-development">
+                        <div class="service-detail">
+                            <div class="service-header">
+                                <div class="service-icon-large">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20,18C20.5,18 21,17.5 21,17V7C21,6.5 20.5,6 20,6H4C3.5,6 3,6.5 3,7V17C3,17.5 3.5,18 4,18H20M5,8V16H19V8H5M7,9H9V10H7V9M16,15H8V14H16V15M8,13H12V12H8V13M13,11H16V10H13V11Z"/>
+                                    </svg>
+                                </div>
+                                <div class="service-title">
+                                    <h2>Web Development</h2>
+                                    <p class="service-tagline">WordPress, Shopify & eCommerce Solutions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-description">
+                                <p>Create powerful, responsive websites and eCommerce stores that drive results. We specialize in WordPress development, Shopify stores, and custom eCommerce solutions that convert visitors into customers and grow your business online.</p>
+                            </div>
+                            
+                            <div class="service-features-grid">
+                                <div class="feature-item">
+                                    <h4>WordPress Development</h4>
+                                    <p>Custom themes, plugins, and full-scale WordPress website development</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Shopify Store Setup</h4>
+                                    <p>Complete Shopify store design, configuration, and optimization</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>eCommerce Solutions</h4>
+                                    <p>Custom online stores with payment gateways and inventory management</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Responsive Design</h4>
+                                    <p>Mobile-first design that works perfectly on all devices and screen sizes</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-benefits">
+                                <h3>Key Benefits</h3>
+                                <ul>
+                                    <li>Mobile-responsive design for all devices</li>
+                                    <li>SEO-optimized structure for better rankings</li>
+                                    <li>Fast loading speeds and optimal performance</li>
+                                    <li>Secure, scalable, and easy to maintain</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="service-cta">
+                                <a href="contact.html" class="btn btn-primary">
+                                    <span>Build Your Website</span>
+                                    <div class="btn-glow"></div>
+                                </a>
+                                <a href="contact.html" class="btn btn-outline">See Examples</a>
+                            </div>
+                        </div>
                     </div>
-                    <h2>Intelligent Automation</h2>
-                    <p>Streamline your operations with AI-driven automation solutions that adapt and improve over time.</p>
-                    <ul class="service-features">
-                        <li>Process Optimization</li>
-                        <li>Workflow Automation</li>
-                        <li>Intelligent Monitoring</li>
-                        <li>Performance Analytics</li>
-                    </ul>
-                    <a href="contact.html" class="service-link">Learn More</a>
-                </article>
-
-                <article class="service-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-icon">
-                        <div class="icon-ml"></div>
+                    
+                    <!-- AI Agents Tab -->
+                    <div class="tab-panel" id="ai-agents">
+                        <div class="service-detail">
+                            <div class="service-header">
+                                <div class="service-icon-large">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                                    </svg>
+                                </div>
+                                <div class="service-title">
+                                    <h2>AI Agent Development</h2>
+                                    <p class="service-tagline">Intelligent Virtual Assistants That Work Around The Clock</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-description">
+                                <p>Create powerful AI agents that understand context, make decisions, and take actions autonomously. Our AI agents integrate seamlessly with your existing systems to provide 24/7 intelligent assistance and automation.</p>
+                            </div>
+                            
+                            <div class="service-features-grid">
+                                <div class="feature-item">
+                                    <h4>Natural Language Processing</h4>
+                                    <p>Advanced NLP capabilities for human-like conversation and understanding</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Autonomous Decision Making</h4>
+                                    <p>Smart agents that can analyze situations and make appropriate decisions</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Multi-Platform Integration</h4>
+                                    <p>Seamless integration with existing tools, databases, and workflows</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Continuous Learning</h4>
+                                    <p>Agents that improve over time through machine learning and feedback</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-benefits">
+                                <h3>Key Benefits</h3>
+                                <ul>
+                                    <li>Reduce response time by up to 90%</li>
+                                    <li>Handle unlimited concurrent conversations</li>
+                                    <li>Improve customer satisfaction and engagement</li>
+                                    <li>Scale your business without increasing headcount</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="service-cta">
+                                <a href="contact.html" class="btn btn-primary">
+                                    <span>Build Your AI Agent</span>
+                                    <div class="btn-glow"></div>
+                                </a>
+                                <a href="contact.html" class="btn btn-outline">See Demo</a>
+                            </div>
+                        </div>
                     </div>
-                    <h2>Machine Learning Solutions</h2>
-                    <p>Deploy powerful ML models that extract insights from your data and drive intelligent business decisions.</p>
-                    <ul class="service-features">
-                        <li>Predictive Modeling</li>
-                        <li>Data Analysis</li>
-                        <li>Pattern Recognition</li>
-                        <li>Real-time Insights</li>
-                    </ul>
-                    <a href="contact.html" class="service-link">Learn More</a>
-                </article>
+                    
+                    <!-- Digital Products Tab -->
+                    <div class="tab-panel" id="digital-products">
+                        <div class="service-detail">
+                            <div class="service-header">
+                                <div class="service-icon-large">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M17,3H7A2,2 0 0,0 5,5V19L12,16.5L19,19V5A2,2 0 0,0 17,3M17,15L12,13.25L7,15V5H17V15Z"/>
+                                    </svg>
+                                </div>
+                                <div class="service-title">
+                                    <h2>AI-Enhanced Digital Products</h2>
+                                    <p class="service-tagline">Smart Applications That Adapt To Your Users</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-description">
+                                <p>Build intelligent digital products that leverage AI to provide personalized experiences, predictive insights, and adaptive interfaces. Our solutions combine cutting-edge AI with beautiful design to create products users love.</p>
+                            </div>
+                            
+                            <div class="service-features-grid">
+                                <div class="feature-item">
+                                    <h4>AI-Enhanced UX/UI</h4>
+                                    <p>Intelligent interfaces that adapt to user behavior and preferences</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Predictive Analytics</h4>
+                                    <p>Built-in analytics that predict user needs and business trends</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Smart Recommendations</h4>
+                                    <p>AI-powered recommendation engines for personalized experiences</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Adaptive Learning</h4>
+                                    <p>Products that learn from user interactions and continuously improve</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-benefits">
+                                <h3>Key Benefits</h3>
+                                <ul>
+                                    <li>Increase user engagement by up to 250%</li>
+                                    <li>Improve conversion rates through personalization</li>
+                                    <li>Reduce development time with AI-assisted features</li>
+                                    <li>Future-proof your product with evolving AI capabilities</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="service-cta">
+                                <a href="contact.html" class="btn btn-primary">
+                                    <span>Create Smart Product</span>
+                                    <div class="btn-glow"></div>
+                                </a>
+                                <a href="contact.html" class="btn btn-outline">View Portfolio</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Automation Tab -->
+                    <div class="tab-panel" id="automation">
+                        <div class="service-detail">
+                            <div class="service-header">
+                                <div class="service-icon-large">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/>
+                                    </svg>
+                                </div>
+                                <div class="service-title">
+                                    <h2>Intelligent Automation</h2>
+                                    <p class="service-tagline">Smart Workflows That Evolve With Your Business</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-description">
+                                <p>Transform your business operations with intelligent automation that goes beyond simple rule-based systems. Our solutions adapt to changing conditions, handle exceptions, and continuously optimize processes for maximum efficiency.</p>
+                            </div>
+                            
+                            <div class="service-features-grid">
+                                <div class="feature-item">
+                                    <h4>Process Optimization</h4>
+                                    <p>AI-driven analysis to identify and eliminate inefficiencies</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Workflow Automation</h4>
+                                    <p>End-to-end automation of complex business processes</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Intelligent Monitoring</h4>
+                                    <p>Real-time monitoring with predictive alerts and anomaly detection</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Performance Analytics</h4>
+                                    <p>Comprehensive dashboards and reports for data-driven decisions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-benefits">
+                                <h3>Key Benefits</h3>
+                                <ul>
+                                    <li>Reduce manual work by up to 80%</li>
+                                    <li>Minimize errors with intelligent validation</li>
+                                    <li>Improve process speed and consistency</li>
+                                    <li>Scale operations without proportional cost increase</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="service-cta">
+                                <a href="contact.html" class="btn btn-primary">
+                                    <span>Automate Your Processes</span>
+                                    <div class="btn-glow"></div>
+                                </a>
+                                <a href="contact.html" class="btn btn-outline">Free Assessment</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Machine Learning Tab -->
+                    <div class="tab-panel" id="machine-learning">
+                        <div class="service-detail">
+                            <div class="service-header">
+                                <div class="service-icon-large">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M22,14A2,2 0 0,1 20,16H16L14.5,15L13,16H4A2,2 0 0,1 2,14V10A2,2 0 0,1 4,8H13L14.5,9L16,8H20A2,2 0 0,1 22,10V14M21,10H16L14.5,11L13,10H3V14H13L14.5,13L16,14H21V10Z"/>
+                                    </svg>
+                                </div>
+                                <div class="service-title">
+                                    <h2>Machine Learning Solutions</h2>
+                                    <p class="service-tagline">Turn Your Data Into Competitive Advantage</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-description">
+                                <p>Unlock the hidden value in your data with custom machine learning models. From predictive analytics to computer vision, we build ML solutions that provide actionable insights and drive intelligent business decisions.</p>
+                            </div>
+                            
+                            <div class="service-features-grid">
+                                <div class="feature-item">
+                                    <h4>Predictive Modeling</h4>
+                                    <p>Forecast trends, customer behavior, and business outcomes</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Data Analysis</h4>
+                                    <p>Deep statistical analysis to uncover patterns and insights</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Pattern Recognition</h4>
+                                    <p>Advanced algorithms for image, text, and behavioral pattern detection</p>
+                                </div>
+                                <div class="feature-item">
+                                    <h4>Real-time Insights</h4>
+                                    <p>Live dashboards and alerts for immediate decision-making</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-benefits">
+                                <h3>Key Benefits</h3>
+                                <ul>
+                                    <li>Improve decision accuracy by up to 35%</li>
+                                    <li>Identify new revenue opportunities</li>
+                                    <li>Reduce risks through predictive modeling</li>
+                                    <li>Optimize resource allocation and planning</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="service-cta">
+                                <a href="contact.html" class="btn btn-primary">
+                                    <span>Unlock Your Data</span>
+                                    <div class="btn-glow"></div>
+                                </a>
+                                <a href="contact.html" class="btn btn-outline">Data Consultation</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <!-- Call to Action -->
