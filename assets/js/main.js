@@ -4,6 +4,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     initializeSimpleNavigation();
     initializeBasicFeatures();
+    initializeGTMTracking();
 });
 
 // Simple horizontal view transitions
@@ -941,6 +942,105 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 */
+
+// GTM Tracking Integration
+function initializeGTMTracking() {
+    // Wait for GTM to be available
+    if (typeof window.WebOctalsGTM === 'undefined') {
+        console.log('GTM not yet loaded, retrying...');
+        setTimeout(initializeGTMTracking, 100);
+        return;
+    }
+
+    const gtm = window.WebOctalsGTM;
+
+    // Track form submissions
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+            const formType = form.classList.contains('newsletter-form') ? 'newsletter' : 'contact';
+            gtm.trackFormSubmission(formType);
+        });
+    });
+
+    // Track outbound links
+    const outboundLinks = document.querySelectorAll('a[href^="http"]:not([href*="weboctals.com"])');
+    outboundLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            gtm.trackOutboundClick(link.href, link.textContent.trim());
+        });
+    });
+
+    // Track scroll depth
+    let scrollDepthTracked = [];
+    const trackScrollDepth = throttle(() => {
+        const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        
+        [25, 50, 75, 90].forEach(threshold => {
+            if (scrollPercent >= threshold && !scrollDepthTracked.includes(threshold)) {
+                scrollDepthTracked.push(threshold);
+                gtm.trackScrollDepth(threshold);
+            }
+        });
+    }, 500);
+
+    window.addEventListener('scroll', trackScrollDepth);
+
+    // Track blog article views (if on blog page)
+    if (window.location.pathname.includes('/blog/') && !window.location.pathname.endsWith('/blog/')) {
+        const articleTitle = document.querySelector('h1')?.textContent || document.title;
+        const category = document.querySelector('.category')?.textContent || 'Blog';
+        const readTimeElement = document.querySelector('.read-time');
+        const readTime = readTimeElement ? parseInt(readTimeElement.textContent) : 5;
+        
+        gtm.trackArticleView(articleTitle, category, readTime);
+    }
+
+    // Track CTA button clicks
+    const ctaButtons = document.querySelectorAll('.btn-primary, .cta-button, .read-more-btn');
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            gtm.trackEvent('cta_click', {
+                button_text: button.textContent.trim(),
+                button_location: window.location.pathname
+            });
+        });
+    });
+
+    // Track service tab interactions (if on services page)
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const tabName = button.textContent.trim();
+            gtm.trackEvent('service_tab_click', {
+                tab_name: tabName,
+                page: 'services'
+            });
+        });
+    });
+
+    console.log('GTM tracking initialized successfully');
+}
+
+// Utility function for throttling (if not already defined)
+function throttle(func, delay) {
+    let timeoutId;
+    let lastExecTime = 0;
+    return function (...args) {
+        const currentTime = Date.now();
+        
+        if (currentTime - lastExecTime > delay) {
+            func.apply(this, args);
+            lastExecTime = currentTime;
+        } else {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                func.apply(this, args);
+                lastExecTime = Date.now();
+            }, delay - (currentTime - lastExecTime));
+        }
+    };
+}
 
 // Export functions for potential module usage - DISABLED
 /*

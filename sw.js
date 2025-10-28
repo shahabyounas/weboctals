@@ -11,8 +11,11 @@ const STATIC_FILES = [
     '/assets/css/styles.css',
     '/assets/css/blog.css',
     '/assets/js/main.js',
+    '/assets/js/gtm.js',
     '/blog/index.html',
     '/blog/ai-agents-future-business-automation.html',
+    '/blog/we-live-in-an-ai-first-world.html',
+    '/blog/harnessing-ai-in-seo-game-changer-for-digital-agencies.html',
     // Add more critical files as needed
 ];
 
@@ -20,6 +23,7 @@ const STATIC_FILES = [
 const DYNAMIC_CACHE_URLS = [
     'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js',
     'https://unpkg.com/aos@2.3.1/dist/aos.js',
+    'https://www.googletagmanager.com/gtm.js',
     'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap',
     'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap'
 ];
