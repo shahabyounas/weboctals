@@ -3386,6 +3386,305 @@ body {
     animation: shimmer 3s infinite;
 }
 
+/* Clients Showcase Section */
+.clients-showcase {
+    padding: 100px 0;
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+.clients-showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+.clients-showcase .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.clients-showcase .section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.clients-showcase .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.clients-scroll-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    margin: 0 -20px;
+}
+
+.clients-scroll-container::before,
+.clients-scroll-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.clients-scroll-container::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--bg-primary), transparent);
+}
+
+.clients-scroll-container::after {
+    right: 0;
+    background: linear-gradient(270deg, var(--bg-primary), transparent);
+}
+
+.clients-track {
+    display: flex;
+    gap: 30px;
+    animation: scroll-clients 40s linear infinite;
+    width: fit-content;
+}
+
+.clients-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-clients {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.client-card {
+    min-width: 420px;
+    height: 360px;
+    perspective: 1000px;
+}
+
+.client-card-inner {
+    width: 100%;
+    height: 100%;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+.client-card-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.client-card:hover .client-card-inner {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--primary-color);
+    box-shadow: 0 25px 50px rgba(37, 99, 235, 0.25);
+}
+
+.client-card:hover .client-card-inner::before {
+    opacity: 0.08;
+}
+
+.client-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.client-logo-large {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.client-industry {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.client-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    margin: 0;
+}
+
+.client-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+    padding: 16px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.metric-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.client-project {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    padding: 8px 0 0 16px;
+    border-left: 3px solid var(--primary-color);
+    margin-top: auto;
+    line-height: 1.4;
+}
+
+.client-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.client-stat {
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.client-stat::before {
+    content: '→';
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.clients-footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+.clients-footer p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Responsive styles for clients showcase */
+@media (max-width: 768px) {
+    .clients-showcase {
+        padding: 60px 0;
+    }
+
+    .clients-showcase .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .client-card {
+        min-width: 340px;
+        height: 340px;
+    }
+
+    .client-card-inner {
+        padding: 22px;
+        gap: 12px;
+        overflow: visible;
+    }
+
+    .client-logo-large {
+        font-size: 1.3rem;
+    }
+
+    .client-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .metric-value {
+        font-size: 1.3rem;
+    }
+
+    .metric-label {
+        font-size: 0.7rem;
+    }
+
+    .client-project {
+        font-size: 0.85rem;
+        padding: 6px 0 0 12px;
+    }
+
+    .clients-track {
+        animation-duration: 35s;
+    }
+}
+
 /* Final CTA Section */
 .final-cta {
     padding: 80px 0;
