@@ -494,8 +494,8 @@
 }
 
 .article-header {
-    padding: 60px 0;
-    background: var(--gradient-background);
+    padding: 40px 0 0;
+    background: transparent;
 }
 
 .article-header .article-meta {
@@ -520,7 +520,11 @@
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 25px;
-    color: var(--text-primary);
+    color: #1e293b !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: #1e293b !important;
+    background-clip: unset !important;
 }
 
 .article-subtitle {
@@ -535,10 +539,11 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+    margin-bottom: 20px;
 }
 
 .article-content {
-    padding: 80px 0;
+    padding: 30px 0 80px;
 }
 
 .content-wrapper {
