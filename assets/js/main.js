@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSimpleNavigation();
     initializeBasicFeatures();
     initializeGTMTracking();
+    initializeFAQAccordion();
 });
 
 // Simple horizontal view transitions
@@ -18,14 +19,25 @@ function initializeSimpleNavigation() {
             // Handle internal .html navigation with horizontal transition
             if (href && (href.endsWith('.html') || href.includes('blog/')) && !href.startsWith('http')) {
                 
-                // Simple check: compare current page filename with target href
-                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-                const targetPage = href.split('/').pop();
+                // Compare full paths, not just filenames
+                const currentPath = window.location.pathname;
+                const targetPath = href.startsWith('/') ? href : '/' + href;
+                
+                // Normalize paths for comparison
+                const normalizedCurrent = currentPath.replace(/\/$/, '') || '/index.html';
+                const normalizedTarget = targetPath.replace(/\/$/, '');
                 
                 // Skip transition if already on target page
-                if (currentPage === targetPage) {
-                    e.preventDefault(); // Prevent the click but don't navigate
-                    return;
+                if (normalizedCurrent === normalizedTarget || 
+                    normalizedCurrent.endsWith(normalizedTarget) ||
+                    normalizedTarget.endsWith(normalizedCurrent.split('/').pop())) {
+                    // Only prevent if it's truly the same page (check full path)
+                    const currentFull = currentPath.replace(/^\//, '');
+                    const targetFull = href;
+                    if (currentFull === targetFull) {
+                        e.preventDefault();
+                        return;
+                    }
                 }
                 
                 e.preventDefault();
@@ -1040,6 +1052,60 @@ function throttle(func, delay) {
             }, delay - (currentTime - lastExecTime));
         }
     };
+}
+
+// FAQ Accordion Functionality
+function initializeFAQAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    if (faqItems.length === 0) {
+        return; // No FAQ items found on this page
+    }
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all other FAQ items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    const otherButton = otherItem.querySelector('.faq-question');
+                    otherButton.setAttribute('aria-expanded', 'false');
+                }
+            });
+            
+            // Toggle current item
+            if (isActive) {
+                item.classList.remove('active');
+                question.setAttribute('aria-expanded', 'false');
+            } else {
+                item.classList.add('active');
+                question.setAttribute('aria-expanded', 'true');
+                
+                // Track FAQ interaction with GTM if available
+                if (typeof window.WebOctalsGTM !== 'undefined') {
+                    const questionText = item.querySelector('h3').textContent;
+                    window.WebOctalsGTM.trackEvent('faq_interaction', {
+                        question: questionText,
+                        page: window.location.pathname
+                    });
+                }
+            }
+        });
+        
+        // Add keyboard support for accessibility
+        question.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                question.click();
+            }
+        });
+    });
+    
+    console.log('FAQ accordion initialized with', faqItems.length, 'items');
 }
 
 // Export functions for potential module usage - DISABLED
