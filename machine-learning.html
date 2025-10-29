@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unlock data value with custom ML models for predictive analytics, pattern recognition, and intelligent decision-making. 90%+ prediction accuracy with WebOctals.">
+    <meta name="keywords" content="machine learning, predictive modeling, data analysis, pattern recognition, AI models, MLOps, data science, predictive analytics, WebOctals">
+    <meta name="author" content="WebOctals">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weboctals.com/machine-learning.html">
+    <meta property="og:title" content="Machine Learning Services - WebOctals">
+    <meta property="og:description" content="Custom ML models for predictive analytics, pattern recognition, and data-driven intelligence.">
+    <meta property="og:image" content="https://weboctals.com/assets/images/machine-learning-og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://weboctals.com/machine-learning.html">
+    <meta property="twitter:title" content="Machine Learning Services - WebOctals">
+    <meta property="twitter:description" content="Unlock data value with custom ML models and predictive analytics.">
+    <meta property="twitter:image" content="https://weboctals.com/assets/images/machine-learning-twitter.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://weboctals.com/machine-learning.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.svg">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Machine Learning & Data Science Services",
+        "provider": {
+            "@type": "Organization",
+            "name": "WebOctals",
+            "url": "https://weboctals.com"
+        },
+        "serviceType": "Machine Learning Solutions",
+        "description": "Unlock data value with custom ML models for predictive analytics, pattern recognition, and intelligent decision-making.",
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Machine Learning Service Packages",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "ML Consulting",
+                        "description": "Data analysis and ML recommendations"
+                    },
+                    "price": "5000",
+                    "priceCurrency": "USD"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Model Implementation",
+                        "description": "Custom model development and deployment"
+                    },
+                    "price": "30000",
+                    "priceCurrency": "USD"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Ongoing ML Operations",
+                        "description": "Model monitoring, retraining, and optimization"
+                    },
+                    "price": "3000",
+                    "priceCurrency": "USD",
+                    "priceSpecification": {
+                        "@type": "UnitPriceSpecification",
+                        "price": "3000",
+                        "priceCurrency": "USD",
+                        "referenceQuantity": {
+                            "@type": "QuantitativeValue",
+                            "value": "1",
+                            "unitText": "MONTH"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <title>Machine Learning Services - WebOctals | 90%+ Prediction Accuracy</title>
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <span class="logo-text">Web<span class="logo-accent">Octals</span></span>
+                    <div class="logo-ai-indicator"></div>
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item nav-item-dropdown">
+                    <a href="services.html" class="nav-link">
+                        Services
+                        <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="seo.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                                </svg>
+                            </div>
+                            <div class="dropdown-content">
+                                <span class="dropdown-title">SEO Services</span>
+                                <span class="dropdown-desc">Dominate Search Results</span>
+                            </div>
+                        </a>
+                        <a href="product-development.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M22,9 L22,7 C22,5.9 21.1,5 20,5 L4,5 C2.9,5 2,5.9 2,7 L2,9 C3.1,9 4,9.9 4,11 C4,12.1 3.1,13 2,13 L2,15 C2,16.1 2.9,17 4,17 L20,17 C21.1,17 22,16.1 22,15 L22,13 C20.9,13 20,12.1 20,11 C20,9.9 20.9,9 22,9 Z"/>
+                                </svg>
+                            </div>
+                            <div class="dropdown-content">
+                                <span class="dropdown-title">Product Development</span>
+                                <span class="dropdown-desc">Custom Solutions</span>
+                            </div>
+                        </a>
+                        <a href="web-development.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20,18C20.5,18 21,17.5 21,17V7C21,6.5 20.5,6 20,6H4C3.5,6 3,6.5 3,7V17C3,17.5 3.5,18 4,18H20M5,8V16H19V8H5Z"/>
+                                </svg>
+                            </div>
+                            <div class="dropdown-content">
+                                <span class="dropdown-title">Web Development</span>
+                                <span class="dropdown-desc">WordPress & Shopify</span>
+                            </div>
+                        </a>
+                        <a href="ai-agents.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                                </svg>
+                            </div>
+                            <div class="dropdown-content">
+                                <span class="dropdown-title">AI Agents</span>
+                                <span class="dropdown-desc">Virtual Assistants</span>
+                            </div>
+                        </a>
+                        <a href="digital-products.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17,3H7A2,2 0 0,0 5,5V19L12,16.5L19,19V5A2,2 0 0,0 17,3M17,15L12,13.25L7,15V5H17V15Z"/>
+                                </svg>
+                            </div>
+                            <div class="dropdown-content">
+                                <span class="dropdown-title">Digital Products</span>
+                                <span class="dropdown-desc">AI-Enhanced Apps</span>
+                            </div>
+                        </a>
+                        <a href="automation.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/>
+                                </svg>
+                            </div>
+                            <div class="dropdown-content">
+                                <span class="dropdown-title">Automation</span>
+                                <span class="dropdown-desc">Process Automation</span>
+                            </div>
+                        </a>
+                        <a href="machine-learning.html" class="dropdown-item">
+                            <div class="dropdown-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M22,14A2,2 0 0,1 20,16H16L14.5,15L13,16H4A2,2 0 0,1 2,14V10A2,2 0 0,1 4,8H13L14.5,9L16,8H20A2,2 0 0,1 22,10V14M21,10H16L14.5,11L13,10H3V14H13L14.5,13L16,14H21V10Z"/>
+                                </svg>
+                            </div>
+                            <div class="dropdown-content">
+                                <span class="dropdown-title">Machine Learning</span>
+                                <span class="dropdown-desc">Data Intelligence</span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="team.html" class="nav-link">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blog/index.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="service-detail-hero">
+        <div class="container">
+            <div class="service-breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="services.html">Services</a>
+                <span>/</span>
+                <span>Machine Learning</span>
+            </div>
+            
+            <div class="service-hero-content">
+                <div class="service-hero-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22,14A2,2 0 0,1 20,16H16L14.5,15L13,16H4A2,2 0 0,1 2,14V10A2,2 0 0,1 4,8H13L14.5,9L16,8H20A2,2 0 0,1 22,10V14M21,10H16L14.5,11L13,10H3V14H13L14.5,13L16,14H21V10Z"/>
+                    </svg>
+                </div>
+                
+                <h1>Transform Data Into<br/>Intelligent Decisions</h1>
+                <p class="hero-tagline">Unlock data value with custom ML models for predictive analytics, pattern recognition, and intelligent decision-making that drives business growth.</p>
+                
+                <div class="hero-cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">
+                        <span>Get ML Consultation</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                    <a href="contact.html" class="btn btn-outline">View Use Cases</a>
+                </div>
+            </div>
+            
+            <div class="service-stats">
+                <div class="stat-item">
+                    <div class="stat-number">90%+</div>
+                    <div class="stat-label">Prediction Accuracy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">75%</div>
+                    <div class="stat-label">Faster Insights</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10x</div>
+                    <div class="stat-label">Data Processing Speed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="service-features-section">
+        <div class="container">
+            <div class="section-header-center">
+                <h2>Enterprise Machine Learning Capabilities</h2>
+                <p>From data exploration to production deployment, we build custom ML solutions that solve real business problems.</p>
+            </div>
+            
+            <div class="features-grid-large">
+                <!-- Predictive Modeling -->
+                <div class="feature-card-detailed">
+                    <div class="feature-icon-large">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16,11.78L20.24,4.45L21.97,5.45L16.74,14.5L10.23,10.75L5.46,19H22V21H2V3H4V17.54L9.5,8L16,11.78Z"/>
+                        </svg>
+                    </div>
+                    <h3>Predictive Modeling</h3>
+                    <p>Build accurate forecasting models that predict future trends, customer behavior, and business outcomes.</p>
+                    <ul class="feature-list">
+                        <li>Time Series Forecasting</li>
+                        <li>Trend Analysis & Prediction</li>
+                        <li>Demand Forecasting</li>
+                        <li>Risk Assessment Models</li>
+                    </ul>
+                </div>
+                
+                <!-- Data Analysis -->
+                <div class="feature-card-detailed">
+                    <div class="feature-icon-large">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M9,17H7V10H9V17M13,17H11V7H13V17M17,17H15V13H17V17Z"/>
+                        </svg>
+                    </div>
+                    <h3>Data Analysis & Science</h3>
+                    <p>Extract actionable insights from complex datasets with advanced statistical modeling and visualization.</p>
+                    <ul class="feature-list">
+                        <li>Exploratory Data Analysis (EDA)</li>
+                        <li>Statistical Modeling</li>
+                        <li>Data Visualization Dashboards</li>
+                        <li>Insight Generation & Reporting</li>
+                    </ul>
+                </div>
+                
+                <!-- Pattern Recognition -->
+                <div class="feature-card-detailed">
+                    <div class="feature-icon-large">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/>
+                        </svg>
+                    </div>
+                    <h3>Pattern Recognition</h3>
+                    <p>Detect anomalies, classify data, and recognize patterns with advanced ML algorithms and neural networks.</p>
+                    <ul class="feature-list">
+                        <li>Anomaly Detection Systems</li>
+                        <li>Classification & Segmentation</li>
+                        <li>Clustering Analysis</li>
+                        <li>Image & Text Recognition</li>
+                    </ul>
+                </div>
+                
+                <!-- Model Deployment -->
+                <div class="feature-card-detailed">
+                    <div class="feature-icon-large">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                        </svg>
+                    </div>
+                    <h3>MLOps & Deployment</h3>
+                    <p>Production-ready ML systems with monitoring, A/B testing, and continuous model improvement.</p>
+                    <ul class="feature-list">
+                        <li>Model Deployment Pipelines</li>
+                        <li>Performance Monitoring</li>
+                        <li>A/B Testing Framework</li>
+                        <li>Continuous Training & Updates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="service-benefits-section">
+        <div class="container">
+            <div class="benefits-layout">
+                <div class="benefits-list">
+                    <h2>Why Machine Learning Matters</h2>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M9,17H7V10H9V17M13,17H11V7H13V17M17,17H15V13H17V17Z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Make Data-Driven Decisions</h3>
+                            <p>Replace gut feelings with predictive insights backed by statistical models and historical data.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M13,17H11V15H13V17M13,13H11V7H13V13Z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Predict Future Trends</h3>
+                            <p>Anticipate market changes, customer behavior, and business outcomes before they happen.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Automate Complex Insights</h3>
+                            <p>ML models work 24/7 analyzing data, identifying patterns, and generating insights automatically.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Reduce Manual Analysis by 95%</h3>
+                            <p>Eliminate hours of spreadsheet work with automated data processing and insight generation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Improve Accuracy by 90%+</h3>
+                            <p>ML models achieve prediction accuracy rates far beyond traditional statistical methods.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M13,2.03V2.05L13,4.05C17.39,4.59 20.5,8.58 19.96,12.97C19.5,16.61 16.64,19.5 13,19.93V21.93C18.5,21.38 22.5,16.5 21.95,11C21.5,6.25 17.73,2.5 13,2.03M11,2.06C9.05,2.25 7.19,3 5.67,4.26L7.1,5.74C8.22,4.84 9.57,4.26 11,4.06V2.06M4.26,5.67C3,7.19 2.25,9.04 2.05,11H4.05C4.24,9.58 4.8,8.23 5.69,7.1L4.26,5.67M2.06,13C2.26,14.96 3.03,16.81 4.27,18.33L5.69,16.9C4.81,15.77 4.24,14.42 4.06,13H2.06M7.1,18.37L5.67,19.74C7.18,21 9.04,21.79 11,22V20C9.58,19.82 8.23,19.25 7.1,18.37M16.82,15.19L12.71,11.08C12.89,10.76 13,10.39 13,10A3,3 0 0,0 10,7A3,3 0 0,0 7,10C7,11.11 7.6,12.08 8.5,12.63L11.72,15.85C12.15,15.95 12.59,16 13,16C14.36,16 15.65,15.6 16.82,15.19Z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Scale AI Capabilities</h3>
+                            <p>Build a foundation for advanced AI applications with production-ready ML infrastructure.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="benefits-visual">
+                    <div class="benefits-card">
+                        <h3>Our ML Development Process</h3>
+                        <div class="process-steps">
+                            <div class="process-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Discovery & Data Audit</h4>
+                                    <p>Assess data quality, define use cases, and identify ML opportunities</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Modeling & Training</h4>
+                                    <p>Algorithm selection, feature engineering, and model training</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Validation & Testing</h4>
+                                    <p>Rigorous testing, accuracy improvement, and performance tuning</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Deployment & Monitoring</h4>
+                                    <p>Production integration, performance tracking, and continuous retraining</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="service-pricing-section">
+        <div class="container">
+            <div class="section-header-center">
+                <h2>Machine Learning Service Packages</h2>
+                <p>Flexible engagement models from consulting to full implementation and ongoing ML operations.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Consulting -->
+                <div class="pricing-card">
+                    <h3>ML Consulting</h3>
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">5K</span>
+                        <span class="price-period">fixed</span>
+                    </div>
+                    <p class="pricing-desc">Expert guidance and strategic ML roadmap</p>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Data Audit & Assessment
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Use Case Identification
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            ML Strategy & Roadmap
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Technology Recommendations
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            ROI Analysis
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline">Get Consultation</a>
+                </div>
+                
+                <!-- Implementation -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <h3>Model Implementation</h3>
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">30K</span>
+                        <span class="price-period">fixed</span>
+                    </div>
+                    <p class="pricing-desc">End-to-end model development and deployment</p>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Custom Model Development
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Feature Engineering
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Model Training & Tuning
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Production Deployment
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            API Integration
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            2 Months Support
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">
+                        <span>Get Started</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                </div>
+                
+                <!-- Ongoing -->
+                <div class="pricing-card">
+                    <h3>Ongoing ML Operations</h3>
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">3K</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <p class="pricing-desc">Continuous monitoring and model improvement</p>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Performance Monitoring
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Model Retraining
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Data Drift Detection
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            A/B Testing & Optimization
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Monthly Reports & Insights
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Priority Support
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="service-cta-section">
+        <div class="container">
+            <div class="cta-box-service">
+                <h2>Ready to Unlock Your Data's Potential?</h2>
+                <p>Let's explore how machine learning can transform your business with predictive insights, automated analysis, and intelligent decision-making. Schedule a free ML consultation today.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">
+                        <span>Get ML Consultation</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                    <a href="contact.html" class="btn btn-outline">View Case Studies</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-text">Web<span class="logo-accent">Octals</span></span>
+                        <div class="logo-ai-indicator"></div>
+                    </div>
+                    <p>Transforming businesses through intelligent AI solutions and cutting-edge digital products.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/company/weboctals/" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/shahabyounas/" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="seo.html">SEO Services</a></li>
+                            <li><a href="product-development.html">Product Development</a></li>
+                            <li><a href="web-development.html">Web Development</a></li>
+                            <li><a href="ai-agents.html">AI Agents</a></li>
+                            <li><a href="digital-products.html">Digital Products</a></li>
+                            <li><a href="automation.html">Automation</a></li>
+                            <li><a href="machine-learning.html">Machine Learning</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="team.html">Our Team</a></li>
+                            <li><a href="blog/index.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="blog/index.html">AI Insights</a></li>
+                            <li><a href="/case-studies">Case Studies</a></li>
+                            <li><a href="/whitepapers">Whitepapers</a></li>
+                            <li><a href="/privacy">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 WebOctals. All rights reserved. | Pioneering the future of AI-powered digital solutions.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

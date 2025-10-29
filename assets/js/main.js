@@ -68,6 +68,27 @@ function initializeBasicFeatures() {
             navMenu.classList.toggle('active');
         });
     }
+
+    // Mobile dropdown menu toggle
+    const dropdownItems = document.querySelectorAll('.nav-item-dropdown');
+    dropdownItems.forEach(item => {
+        const link = item.querySelector('.nav-link');
+        if (link && window.innerWidth <= 768) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                item.classList.toggle('mobile-active');
+            });
+        }
+    });
+
+    // Reinitialize dropdown on window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            dropdownItems.forEach(item => {
+                item.classList.remove('mobile-active');
+            });
+        }
+    });
     
     // Initialize services tabs with delay to ensure DOM is ready
     setTimeout(() => {
