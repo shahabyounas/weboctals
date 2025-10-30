@@ -534,9 +534,80 @@ body {
 /* Hero Visual */
 .hero-visual {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
+    gap: 40px;
+}
+
+/* Hero Visual CTAs */
+.hero-visual-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    z-index: 10;
+    width: 100%;
+    max-width: 400px;
+}
+
+.hero-cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.hero-cta-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.hero-cta-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.hero-cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(37, 99, 235, 0.5);
+}
+
+.hero-cta-primary:hover svg {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.hero-cta-secondary {
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    backdrop-filter: blur(10px);
+}
+
+.hero-cta-secondary:hover {
+    background: rgba(37, 99, 235, 0.15);
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.hero-cta-secondary:hover svg {
+    transform: scale(1.1);
 }
 
 .ai-brain {
@@ -2150,6 +2221,36 @@ body {
     transform: translateX(5px);
 }
 
+.contact-phone-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-top: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.contact-phone-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.contact-phone-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(37, 99, 235, 0.5);
+}
+
+.contact-phone-btn:hover svg {
+    transform: scale(1.1) rotate(5deg);
+}
+
 .quick-contact-card p {
     color: var(--text-secondary);
     font-size: 0.9rem;
@@ -2922,6 +3023,19 @@ body {
         grid-template-columns: 1fr;
         gap: 40px;
         text-align: center;
+    }
+
+    .hero-visual-ctas {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .hero-cta-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 16px 24px;
+        font-size: 0.9rem;
     }
 
     .ai-brain {
@@ -4879,6 +4993,38 @@ body {
     transition: opacity 0.4s ease;
 }
 
+/* Background logos for each brand */
+.client-card-inner::after {
+    content: attr(data-brand);
+    position: absolute;
+    font-size: 4.5rem;
+    font-weight: 900;
+    opacity: 0.06;
+    z-index: 0;
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-8deg);
+    white-space: nowrap;
+    transition: all 0.4s ease;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    text-transform: uppercase;
+    font-style: italic;
+    text-shadow: 0 2px 20px rgba(37, 99, 235, 0.3);
+}
+
+.client-card:hover .client-card-inner::after {
+    opacity: 0.1;
+    transform: translate(-50%, -50%) rotate(-8deg) scale(1.03);
+    text-shadow: 0 4px 30px rgba(37, 99, 235, 0.4);
+}
+
 .client-card:hover .client-card-inner {
     transform: translateY(-10px) scale(1.02);
     border-color: var(--primary-color);
@@ -5737,6 +5883,230 @@ body {
     line-height: 1.7;
 }
 
+/* Floating Specialist CTA Button */
+.floating-specialist-cta {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+}
+
+.specialist-cta-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 20px 16px;
+    cursor: pointer;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 12px 0 0 12px;
+    box-shadow: -4px 0 20px rgba(37, 99, 235, 0.4);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: inherit;
+}
+
+.specialist-cta-btn svg {
+    width: 24px;
+    height: 24px;
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+}
+
+.specialist-cta-btn:hover {
+    padding-right: 20px;
+    box-shadow: -6px 0 30px rgba(37, 99, 235, 0.6);
+}
+
+.specialist-cta-btn:hover svg {
+    transform: rotate(-90deg) scale(1.1);
+}
+
+/* Specialist Popup Overlay */
+.specialist-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.specialist-popup-overlay.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.specialist-popup {
+    background: linear-gradient(135deg, rgba(13, 13, 43, 0.95), rgba(25, 25, 60, 0.95));
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: 20px;
+    padding: 30px 35px;
+    max-width: 550px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.popup-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+.popup-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.popup-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-icon svg {
+    width: 30px;
+    height: 30px;
+    stroke: white;
+}
+
+.popup-header h2 {
+    font-size: 1.6rem;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.popup-header p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.specialist-form .form-group {
+    margin-bottom: 16px;
+}
+
+.specialist-form label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+.specialist-form label svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--primary-color);
+}
+
+.specialist-form input,
+.specialist-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.specialist-form input:focus,
+.specialist-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.specialist-form input::placeholder,
+.specialist-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.specialist-form textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.specialist-submit {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.specialist-form .form-privacy {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
 /* Responsive Design for Service Pages */
 @media (max-width: 1200px) {
     .service-detail-hero h1 {
@@ -5749,6 +6119,24 @@ body {
 }
 
 @media (max-width: 768px) {
+    .specialist-popup {
+        padding: 30px 20px;
+    }
+
+    .popup-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .specialist-cta-btn {
+        font-size: 0.85rem;
+        padding: 16px 12px;
+    }
+
+    .specialist-cta-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
     .service-detail-hero {
         min-height: auto;
         padding: 120px 0 60px;

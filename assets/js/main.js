@@ -1129,6 +1129,231 @@ function initializeFAQAccordion() {
     console.log('FAQ accordion initialized with', faqItems.length, 'items');
 }
 
+// Add background brand logos to client cards
+function initializeClientBrandLogos() {
+    const brandMap = {
+        'Auto Trader': 'AUTO TRADER',
+        'Stream': 'STREAM',
+        'Order Fresh': 'ORDER FRESH',
+        'Vapor Heaven': 'VAPOR HEAVEN',
+        'Vape Masters': 'VAPE MASTERS'
+    };
+    
+    const clientCards = document.querySelectorAll('.client-card-inner');
+    clientCards.forEach(card => {
+        const logoElement = card.querySelector('.client-logo-large');
+        if (logoElement) {
+            const brandName = logoElement.textContent.trim();
+            if (brandMap[brandName]) {
+                card.setAttribute('data-brand', brandMap[brandName]);
+            }
+        }
+    });
+}
+
+// Initialize client brand logos on page load
+document.addEventListener('DOMContentLoaded', initializeClientBrandLogos);
+
+// Inject Specialist CTA Button and Popup into all pages
+function injectSpecialistCTA() {
+    const specialistCTAHTML = `
+    <!-- Floating Specialist CTA -->
+    <div class="floating-specialist-cta">
+        <button class="specialist-cta-btn" id="specialist-cta-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>Speak with Specialist Consultant</span>
+        </button>
+    </div>
+
+    <!-- Specialist Consultation Popup -->
+    <div class="specialist-popup-overlay" id="specialist-popup-overlay">
+        <div class="specialist-popup">
+            <button class="popup-close" id="popup-close">×</button>
+            <div class="popup-header">
+                <div class="popup-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <h2>Speak with a Specialist Consultant</h2>
+                <p>Fill out the form below and our expert will reach out to you shortly</p>
+            </div>
+            
+            <form class="specialist-form" id="specialist-form">
+                <div class="form-group">
+                    <label for="specialist-name">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        Full Name *
+                    </label>
+                    <input type="text" id="specialist-name" name="name" required placeholder="John Doe">
+                </div>
+                
+                <div class="form-group">
+                    <label for="specialist-email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        Email *
+                    </label>
+                    <input type="email" id="specialist-email" name="email" required placeholder="john@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="specialist-phone">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        Phone Number
+                    </label>
+                    <input type="tel" id="specialist-phone" name="phone" placeholder="+1 (555) 123-4567">
+                </div>
+                
+                <div class="form-group">
+                    <label for="specialist-message">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        Message *
+                    </label>
+                    <textarea id="specialist-message" name="message" rows="3" required placeholder="Tell us about your needs..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-large specialist-submit">
+                    <span>Submit Request</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                    <div class="btn-glow"></div>
+                </button>
+                
+                <p class="form-privacy">
+                    🔒 Your information is secure and confidential
+                </p>
+            </form>
+        </div>
+    </div>
+    `;
+    
+    // Check if specialist CTA already exists (e.g., hardcoded in index.html)
+    if (!document.getElementById('specialist-cta-btn')) {
+        // Insert the HTML at the end of the body
+        document.body.insertAdjacentHTML('beforeend', specialistCTAHTML);
+    }
+}
+
+// Initialize specialist CTA injection on page load
+document.addEventListener('DOMContentLoaded', injectSpecialistCTA);
+
+// Specialist Consultation Popup Functionality
+function initializeSpecialistPopup() {
+    const specialistBtn = document.getElementById('specialist-cta-btn');
+    const popupOverlay = document.getElementById('specialist-popup-overlay');
+    const popupClose = document.getElementById('popup-close');
+    const specialistForm = document.getElementById('specialist-form');
+    const specialistPopup = document.querySelector('.specialist-popup');
+
+    if (!specialistBtn || !popupOverlay) return;
+
+    // Store scroll position
+    let scrollPosition = 0;
+
+    // Open popup
+    specialistBtn.addEventListener('click', () => {
+        // Store current scroll position
+        scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Add active class to show popup
+        popupOverlay.classList.add('active');
+        
+        // Prevent background scrolling
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollPosition}px`;
+        document.body.style.width = '100%';
+    });
+
+    // Close popup
+    const closePopup = () => {
+        popupOverlay.classList.remove('active');
+        
+        // Restore background scrolling
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        
+        // Restore scroll position
+        window.scrollTo(0, scrollPosition);
+    };
+
+    if (popupClose) {
+        popupClose.addEventListener('click', closePopup);
+    }
+
+    // Prevent scroll propagation from popup to overlay
+    if (specialistPopup) {
+        specialistPopup.addEventListener('wheel', (e) => {
+            e.stopPropagation();
+        });
+    }
+
+    // Close on overlay click (outside popup)
+    popupOverlay.addEventListener('click', (e) => {
+        if (e.target === popupOverlay) {
+            closePopup();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popupOverlay.classList.contains('active')) {
+            closePopup();
+        }
+    });
+
+    // Handle form submission
+    if (specialistForm) {
+        specialistForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('specialist-name').value,
+                email: document.getElementById('specialist-email').value,
+                phone: document.getElementById('specialist-phone').value,
+                message: document.getElementById('specialist-message').value
+            };
+
+            console.log('Specialist consultation request:', formData);
+            
+            // Show success message
+            alert('Thank you! Our specialist consultant will contact you shortly.');
+            
+            // Reset form and close popup
+            specialistForm.reset();
+            closePopup();
+            
+            // Here you would typically send the data to your backend
+            // Example: fetch('/api/specialist-request', { method: 'POST', body: JSON.stringify(formData) })
+        });
+    }
+}
+
+// Initialize specialist popup on page load
+document.addEventListener('DOMContentLoaded', initializeSpecialistPopup);
+
 // Export functions for potential module usage - DISABLED
 /*
 if (typeof module !== 'undefined' && module.exports) {
