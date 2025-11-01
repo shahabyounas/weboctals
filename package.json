@@ -1,0 +1,45 @@
+{
+  "name": "weboctals",
+  "version": "1.0.0",
+  "description": "AI-Powered Digital Product Development - WebOctals",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html contact.html services.html about.html team.html seo.html on-page-seo.html technical-seo.html product-development.html web-development.html ai-agents.html digital-products.html automation.html machine-learning.html --public-url ./",
+    "build:all": "parcel build *.html blog/*.html --public-url ./",
+    "build:main": "parcel build index.html contact.html services.html about.html team.html --public-url ./",
+    "build:services": "parcel build seo.html on-page-seo.html technical-seo.html product-development.html web-development.html ai-agents.html digital-products.html automation.html machine-learning.html --public-url ./",
+    "build:blog": "parcel build blog/*.html --public-url ../",
+    "serve": "serve dist -p 3000",
+    "clean": "rm -rf dist .parcel-cache",
+    "prebuild": "npm run clean",
+    "postbuild": "echo '✅ Build complete! Files in dist/ folder ready for deployment'",
+    "test:build": "npm run build:all && npm run serve",
+    "analyze": "parcel build index.html --reporter @parcel/reporter-bundle-analyzer"
+  },
+  "keywords": [
+    "AI",
+    "WebOctals",
+    "Digital Products",
+    "Machine Learning",
+    "Automation",
+    "SEO"
+  ],
+  "author": "WebOctals",
+  "license": "MIT",
+  "devDependencies": {
+    "@parcel/optimizer-cssnano": "^2.10.0",
+    "@parcel/optimizer-htmlnano": "^2.10.0",
+    "@parcel/optimizer-terser": "^2.10.0",
+    "@parcel/packager-raw-url": "^2.16.0",
+    "@parcel/transformer-jsonld": "^2.16.0",
+    "@parcel/transformer-webmanifest": "^2.16.0",
+    "parcel": "^2.10.0",
+    "serve": "^14.2.1"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead",
+    "not IE 11"
+  ]
+}
