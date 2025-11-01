@@ -23,13 +23,32 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
     </noscript>
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SM3W8072KB"></script>
+    <!-- Google Analytics - Lazy Loaded for Performance -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-SM3W8072KB');
+      // Load Google Analytics after page interaction or 3 seconds
+      function loadAnalytics() {
+        if (window.analyticsLoaded) return;
+        window.analyticsLoaded = true;
+        
+        // Load gtag.js
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-SM3W8072KB';
+        document.head.appendChild(script);
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-SM3W8072KB');
+      }
+      
+      // Load on user interaction
+      ['mousedown', 'touchstart', 'scroll', 'keydown'].forEach(function(event) {
+        window.addEventListener(event, loadAnalytics, { once: true, passive: true });
+      });
+      
+      // Fallback: load after 3 seconds
+      setTimeout(loadAnalytics, 3000);
     </script>
     
     <!-- Open Graph / Facebook -->
@@ -91,22 +110,10 @@
     }
     </script>
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-N8MKVN7N');</script>
-    <!-- End Google Tag Manager -->
-
     <title>WebOctals - AI-Powered Digital Product Development | Intelligent Solutions</title>
 </head>
 <body>
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8MKVN7N"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <!-- Particle Background -->
     <div id="particles-js"></div>
     
