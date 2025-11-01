@@ -1,7 +1,10 @@
 /* WebOctals - AI-Powered Website Styles */
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+/* 
+ * Google Fonts are now loaded via HTML <link> tags for better performance
+ * See HTML <head> section for async font loading with preconnect optimization
+ * Fonts: Inter (300, 400, 500, 600, 700) and JetBrains Mono (400, 500, 600)
+ */
 
 /* Horizontal View Transitions */
 @view-transition {
