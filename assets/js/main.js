@@ -4,7 +4,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     initializeSimpleNavigation();
     initializeBasicFeatures();
-    initializeGTMTracking();
+    // initializeGTMTracking(); // Disabled - using lazy-loaded Google Analytics instead
     initializeFAQAccordion();
 });
 
