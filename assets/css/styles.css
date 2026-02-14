@@ -1022,10 +1022,10 @@ body {
 
 /* Services Landing Page */
 .services-hero {
-    min-height: 70vh;
+    min-height: 45vh;
     display: flex;
     align-items: center;
-    padding: 140px 0 100px;
+    padding: 110px 0 60px;
     position: relative;
 }
 
@@ -1055,10 +1055,10 @@ body {
 }
 
 .services-hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(2.1rem, 4vw, 3.4rem);
     font-weight: 800;
     line-height: 1.1;
-    margin-bottom: 30px;
+    margin-bottom: 22px;
     color: var(--text-primary);
 }
 
@@ -1070,10 +1070,10 @@ body {
 }
 
 .services-hero p {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
     line-height: 1.7;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .hero-stats {
@@ -1105,7 +1105,7 @@ body {
 
 /* Services Grid Section */
 .services-grid-section {
-    padding: 80px 0 100px;
+    padding: 50px 0 90px;
 }
 
 .services-grid {
@@ -2130,7 +2130,7 @@ body {
 .contact-hero-stats {
     display: flex;
     justify-content: center;
-    gap: 60px;
+    gap: 32px;
     flex-wrap: wrap;
 }
 
@@ -2140,11 +2140,15 @@ body {
     align-items: center;
     gap: 8px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 16px;
-    border: 1px solid rgba(37, 99, 235, 0.15);
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 18px;
+    border: 1px solid rgba(37, 99, 235, 0.25);
+    min-width: 160px;
+    backdrop-filter: blur(14px);
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(255, 255, 255, 0.6) inset;
 }
 
 .hero-stat:hover {
@@ -2168,9 +2172,36 @@ body {
 
 .stat-label {
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: #0f172a;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.contact-hero .hero-stat {
+    background: #ffffff;
+    border-color: rgba(15, 23, 42, 0.12);
+    box-shadow:
+        0 14px 40px rgba(15, 23, 42, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+    backdrop-filter: none;
+}
+
+.contact-hero .hero-stat:hover {
+    border-color: rgba(37, 99, 235, 0.4);
+    box-shadow:
+        0 18px 48px rgba(37, 99, 235, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.95) inset;
+}
+
+.contact-hero .stat-number {
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: #1d4ed8;
+    text-shadow: 0 2px 8px rgba(29, 78, 216, 0.2);
+}
+
+.contact-hero .stat-label {
+    color: #334155;
 }
 
 /* Contact Main Layout */
@@ -2296,7 +2327,7 @@ body {
 
 .contact-form-modern input::placeholder,
 .contact-form-modern textarea::placeholder {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(71, 85, 105, 0.6);
 }
 
 /* Checkbox Styling */
