@@ -47,21 +47,25 @@ Component classes: add Organic's `.btn`/`.btn-primary`/`.btn-secondary`/`.btn-gh
 
 **Chatbot widget**: existing logic in `assets/js/main.js` (rule-based response chatbot) keeps its current behavior; only its UI (bubble, panel, input) gets restyled to the Organic look (rounded, `--color-accent` accents, `--font-heading` for its title).
 
-**Contact form**: existing submit handler (`assets/js/contact-form-handler.js`) and analytics wiring (`assets/js/contact-analytics.js`) keep their current behavior; fields/button restyled to `.field`/`.input`/`.btn-primary`, pill-shaped text inputs matching the mockup.
+**Contact forms**: two instances, both bound by the same unchanged `contact-form-modern` class/handler (`assets/js/contact-form-handler.js`) and analytics wiring (`assets/js/contact-analytics.js`) — no JS changes, fields/button restyled to `.field`/`.input`/`.btn-primary`, pill-shaped text inputs matching the mockup.
+
+- **Homepage quick contact form** (new, in the Quick Contact section below): 4 fields only — Name, Email, Phone, Message — professional B2B tone, no company/service/budget/newsletter fields. `collectFormData` in the handler already defaults absent fields to empty strings, so the shorter field set submits cleanly to the existing Google Sheets endpoint.
+- **`contact.html` form**: unchanged, full 7-field version (name, email, company, phone, service, budget, message, newsletter) for visitors who land there directly wanting to give full project detail.
 
 ## Homepage (`index.html`)
 
 Rebuilt section-by-section to match `WebOctals Landing.dc.html`'s structure, translated to plain HTML/CSS/vanilla JS:
 
 1. **Hero** — eyebrow tag ("Senior engineers · UK based · shipping since 2019" or the real current equivalent), large Caprasimo headline, subhead, two CTA buttons, a row of checkmark trust bullets, and decorative art on the right (concentric dashed/solid rotating rings via CSS `@keyframes`, a floating accent-colored "8" mark, 2-3 floating stat/status chips) — hidden below 860px per the mockup's own responsive rule.
-2. **Stats bar** — dark sage (`--color-accent-2-800`) rounded panel, 4 stats with count-up-on-scroll animation (`IntersectionObserver` + `requestAnimationFrame`, matching the mockup's counter logic) — using WebOctals' real numbers (sourced from current site copy/analytics, not the mockup's placeholder figures).
-3. **"What does WebOctals do?"** — two-column intro pulled from the current site's `llms.txt`/about copy.
-4. **Services grid** — 6 cards (one per service page), icon + title + description + "Explore →" link, alternating accent/accent-2 icon tinting per the mockup.
-5. **Work / case studies** — card grid using the site's real projects (sourced from current site content) in the mockup's card style (washed image slot, tag, title, description, 2 metric callouts) — real metrics where available, otherwise omitted rather than inventing numbers.
-6. **Testimonials + trusted-by** — real quotes/client info from the current site, mockup's card layout; real client logos in the trusted-by grid.
-7. **FAQ** — reuse the current site's FAQ content (already schema-marked per `llms.txt`) in the accordion.
-8. **Contact CTA** — dark sage panel, headline + copy + email link on the left, the restyled contact form on the right.
-9. **Footer** — as specified above.
+2. **Quick Contact** (new) — placed immediately after the hero. Two columns on desktop (short pitch copy + trust bullets on the left, the 4-field quick contact form on the right in a `.card`/`.elev-md`), stacking to one column below 860px. This is the primary top-of-funnel conversion point for the page; see the quick contact form spec under Shared components above.
+3. **Stats bar** — dark sage (`--color-accent-2-800`) rounded panel, 4 stats with count-up-on-scroll animation (`IntersectionObserver` + `requestAnimationFrame`, matching the mockup's counter logic) — using WebOctals' real numbers (sourced from current site copy/analytics, not the mockup's placeholder figures).
+4. **"What does WebOctals do?"** — two-column intro pulled from the current site's `llms.txt`/about copy.
+5. **Services grid** — 6 cards (one per service page), icon + title + description + "Explore →" link, alternating accent/accent-2 icon tinting per the mockup.
+6. **Work / case studies** — card grid using the site's real projects (sourced from current site content) in the mockup's card style (washed image slot, tag, title, description, 2 metric callouts) — real metrics where available, otherwise omitted rather than inventing numbers.
+7. **Testimonials + trusted-by** — real quotes/client info from the current site, mockup's card layout; real client logos in the trusted-by grid.
+8. **FAQ** — reuse the current site's FAQ content (already schema-marked per `llms.txt`) in the accordion.
+9. **Final CTA** — dark sage panel, headline + copy + two buttons (primary → `contact.html` for visitors wanting the full detailed form, secondary → services). No form here — the homepage's only form is the Quick Contact section near the top, avoiding duplication.
+10. **Footer** — as specified above.
 
 ## Interior pages
 
