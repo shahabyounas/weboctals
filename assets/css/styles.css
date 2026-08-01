@@ -7730,6 +7730,134 @@ textarea.input {
     }
 }
 
+/* Generic page hero + section (used by pages with no bespoke hero, e.g. Projects) */
+.page-hero {
+    padding: 140px 0 40px;
+    text-align: left;
+}
+
+.page-hero h1 {
+    margin-bottom: 8px;
+}
+
+.page-section {
+    padding: 140px 0 80px;
+}
+
+.projects-grid-section {
+    padding: 50px 0 90px;
+}
+
+/* Projects grid + cards */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.project-card-art {
+    aspect-ratio: 1;
+    width: 100%;
+    border-radius: var(--radius-md);
+    background: var(--color-neutral-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: var(--space-md);
+}
+
+.project-card-art svg {
+    width: 68%;
+    height: 68%;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: var(--space-sm) 0;
+}
+
+.project-card-type {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-accent-700);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+}
+
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Project detail page */
+.project-detail-hero {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+    padding: var(--space-2xl) 0;
+}
+
+.project-detail-art {
+    aspect-ratio: 1;
+    width: 100%;
+    border-radius: var(--radius-lg);
+    background: var(--color-neutral-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.project-detail-art svg {
+    width: 72%;
+    height: 72%;
+}
+
+.project-detail-body {
+    padding: 0 0 var(--space-3xl);
+    max-width: 68ch;
+}
+
+.project-detail-body p {
+    color: var(--color-neutral-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+}
+
+.project-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: var(--color-accent-700);
+    margin-bottom: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+    .project-detail-hero {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .project-detail-art {
+        max-width: 220px;
+    }
+}
+
 /* Trusted by */
 .trusted-by {
     padding: var(--space-xl) 0;
