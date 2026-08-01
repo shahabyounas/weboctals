@@ -94,3 +94,16 @@ Per phase: `npm run dev` (Parcel dev server), manually check each touched page �
 - No redesign of `services-old.html`, `performance-template.html`, `analytics-template.html`.
 - No new placeholder content — every number/quote/case-study either comes from the current live site or is omitted.
 - No change to chatbot logic, contact-form submit logic, or analytics wiring — styling only.
+
+## Execution checklist
+
+> Driven by /shahab-plan-executioner — do not hand-edit task IDs.
+
+- [x] **T1** — Foundation: tokens, fonts, icons, shared component classes *(ai · effort l)*
+- [x] **T2** — Draft shared header/footer/mega-menu markup *(ai · effort m · depends: T1)*
+- [x] **T3** — Homepage: Hero + new Quick Contact section *(ai · effort l · depends: T2)*
+- [x] **T4** — Homepage: stats/intro/services/work/testimonials/FAQ/final CTA/footer *(ai · effort l · depends: T3)*
+- [x] **T5** — Interior pages re-skin: About / Contact / Services / Team *(ai · effort l · depends: T2)*
+- [x] **T6** — Service pages + SEO subpages + machine-learning.html re-skin *(ai · effort l · depends: T2, T4)*
+- [x] **T7** — Blog re-skin *(ai · effort m · depends: T2)*
+- [x] **T8** — Final production build check *(ai · script: `npm run build:all` · effort s · depends: T3, T4, T5, T6, T7)*
