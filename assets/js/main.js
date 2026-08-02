@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeBasicFeatures();
     // initializeGTMTracking(); // Disabled - using lazy-loaded Google Analytics instead
     initializeFAQAccordion();
+    initializeClientSlider();
 });
 
 // Simple horizontal view transitions
@@ -1127,6 +1128,120 @@ function initializeFAQAccordion() {
     });
     
     console.log('FAQ accordion initialized with', faqItems.length, 'items');
+}
+
+// Client case-study hero slider (clients/index.html only — no-op on every other page)
+function initializeClientSlider() {
+    const slider = document.querySelector('.clients-hero-slider');
+
+    if (!slider) {
+        return; // Not on the Clients index page
+    }
+
+    const track = slider.querySelector('.clients-slider-track');
+    const slides = Array.from(slider.querySelectorAll('.client-slide'));
+    const prevBtn = slider.querySelector('.client-slider-arrow--prev');
+    const nextBtn = slider.querySelector('.client-slider-arrow--next');
+    const dotsContainer = slider.querySelector('.client-slider-dots');
+
+    if (!track || slides.length === 0 || !dotsContainer) {
+        return;
+    }
+
+    const AUTOPLAY_MS = 6000;
+    const SWIPE_THRESHOLD = 40;
+
+    let currentIndex = 0;
+    let autoplayTimer = null;
+    let touchStartX = 0;
+
+    const dots = slides.map((_, index) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'client-slider-dot';
+        dot.setAttribute('aria-label', `Go to client ${index + 1} of ${slides.length}`);
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+            startAutoplay();
+        });
+        dotsContainer.appendChild(dot);
+        return dot;
+    });
+
+    function updateSlider() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('is-active', index === currentIndex);
+        });
+        slides.forEach((slide, index) => {
+            slide.setAttribute('aria-hidden', index === currentIndex ? 'false' : 'true');
+        });
+    }
+
+    function goToSlide(index) {
+        currentIndex = (index + slides.length) % slides.length;
+        updateSlider();
+    }
+
+    function nextSlide() {
+        goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+        goToSlide(currentIndex - 1);
+    }
+
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = setInterval(nextSlide, AUTOPLAY_MS);
+    }
+
+    function stopAutoplay() {
+        if (autoplayTimer) {
+            clearInterval(autoplayTimer);
+            autoplayTimer = null;
+        }
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            startAutoplay();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            startAutoplay();
+        });
+    }
+
+    slider.addEventListener('mouseenter', stopAutoplay);
+    slider.addEventListener('mouseleave', startAutoplay);
+    slider.addEventListener('focusin', stopAutoplay);
+    slider.addEventListener('focusout', startAutoplay);
+
+    slider.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoplay();
+    }, { passive: true });
+
+    slider.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].screenX;
+        const delta = touchEndX - touchStartX;
+
+        if (delta > SWIPE_THRESHOLD) {
+            prevSlide();
+        } else if (delta < -SWIPE_THRESHOLD) {
+            nextSlide();
+        }
+
+        startAutoplay();
+    }, { passive: true });
+
+    updateSlider();
+    startAutoplay();
 }
 
 // Add background brand logos to client cards
