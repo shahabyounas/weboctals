@@ -531,9 +531,13 @@
                     <h2>Stay Ahead in AI</h2>
                     <p>Get the latest AI insights, trends, and exclusive content delivered weekly.</p>
                 </div>
-                <form class="newsletter-form" action="#" method="POST">
+                <form class="newsletter-form" action="#" method="POST"
+                      toolname="subscribe_to_newsletter"
+                      tooldescription="Subscribe an email address to the WebOctals AI newsletter for weekly AI insights, trends, and exclusive content."
+                      toolautosubmit>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Enter your email address" required>
+                        <input type="email" name="email" placeholder="Enter your email address" required
+                               toolparamdescription="Email address to subscribe to the WebOctals newsletter">
                         <button type="submit" class="btn btn-primary">Subscribe</button>
                     </div>
                 </form>
@@ -615,6 +619,7 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="../assets/js/gtm.js"></script>
+    <script src="../assets/js/contact-form-handler.js"></script>
     <script src="../assets/js/main.js"></script>
 </body>
 </html>

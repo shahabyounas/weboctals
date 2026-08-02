@@ -480,7 +480,7 @@ git commit -m "Add Clients nav and footer link across existing pages"
 
 **Interfaces:**
 - Consumes: existing design tokens only (`--color-accent`, `--color-accent-2`, `--color-accent-100/300/700`, `--color-neutral-100/300/700`, `--space-xs/sm/md/lg/xl/2xl/3xl`, `--radius-md/lg/pill`, `--transition-fast`), all already defined at the top of `styles.css`.
-- Produces these class names, consumed by Task 4 (index page) and Tasks 5–11 (landing pages): `.clients-slider-section`, `.clients-hero-slider`, `.clients-slider-track`, `.client-slide`, `.client-slide-photo`, `.client-slide-content`, `.client-slide-hook`, `.client-slider-controls`, `.client-slider-arrow`, `.client-slider-dots`, `.client-slider-dot`, `.client-slider-dot.is-active`, `.clients-grid-section`, `.clients-grid`, `.client-card`, `.client-card-photo`, `.client-card-problem`, `.client-landing-hero`, `.client-landing-photo`, `.client-back-link`, `.client-par-grid`, `.client-par-card`, `.client-par-label`, `.client-landing-cta`. Also produces the transform contract Task 3's JS relies on: sliding is done by setting `transform: translateX(-N * 100%)` on `.clients-slider-track`, where each `.client-slide` is `flex: 0 0 100%`. Note: `.client-slider-arrow--prev` and `.client-slider-arrow--next` (used in Task 4's markup and queried by Task 3's JS) are intentionally **not** styled here — Task 4's HTML applies them together with the base `.client-slider-arrow` class (e.g. `class="client-slider-arrow client-slider-arrow--prev"`), which supplies all the styling; the modifiers are pure selector hooks with no visual difference of their own (the prev/next icons differ only in inline SVG markup, not CSS), so no dedicated rule is needed or should be added.
+- Produces these class names, consumed by Task 4 (index page) and Tasks 5–11 (landing pages): `.clients-slider-section`, `.clients-hero-slider`, `.clients-slider-track`, `.client-slide`, `.client-slide-photo`, `.client-slide-content`, `.client-slide-hook`, `.client-slider-controls`, `.client-slider-arrow`, `.client-slider-dots`, `.client-slider-dot`, `.client-slider-dot.is-active`, `.clients-grid-section`, `.client-cases-grid`, `.client-case-card`, `.client-case-card-photo`, `.client-case-card-problem`, `.client-landing-hero`, `.client-landing-photo`, `.client-back-link`, `.client-par-grid`, `.client-par-card`, `.client-par-label`, `.client-landing-cta`. Also produces the transform contract Task 3's JS relies on: sliding is done by setting `transform: translateX(-N * 100%)` on `.clients-slider-track`, where each `.client-slide` is `flex: 0 0 100%`. Note: `.client-slider-arrow--prev` and `.client-slider-arrow--next` (used in Task 4's markup and queried by Task 3's JS) are intentionally **not** styled here — Task 4's HTML applies them together with the base `.client-slider-arrow` class (e.g. `class="client-slider-arrow client-slider-arrow--prev"`), which supplies all the styling; the modifiers are pure selector hooks with no visual difference of their own (the prev/next icons differ only in inline SVG markup, not CSS), so no dedicated rule is needed or should be added.
 
 - [ ] **Step 1: Append the CSS**
 
@@ -605,20 +605,20 @@ Append this block to the end of `assets/css/styles.css`:
     padding: 50px 0 90px;
 }
 
-.clients-grid {
+.client-cases-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-lg);
     margin-top: var(--space-xl);
 }
 
-.client-card {
+.client-case-card {
     text-decoration: none;
     color: inherit;
     display: block;
 }
 
-.client-card-photo {
+.client-case-card-photo {
     aspect-ratio: 5 / 4;
     width: 100%;
     border-radius: var(--radius-md);
@@ -626,27 +626,27 @@ Append this block to the end of `assets/css/styles.css`:
     margin-bottom: var(--space-md);
 }
 
-.client-card-photo img {
+.client-case-card-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.client-card-problem {
+.client-case-card-problem {
     color: var(--color-neutral-700);
     line-height: 1.6;
     margin: var(--space-sm) 0;
 }
 
 @media (max-width: 1024px) {
-    .clients-grid {
+    .client-cases-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    .clients-grid {
+    .client-cases-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -1056,68 +1056,68 @@ git commit -m "Add client case-study hero slider JS"
     <!-- Client List -->
     <section class="clients-grid-section">
         <div class="container">
-            <div class="clients-grid">
-                <a href="colindale-driving-school.html" class="card elev-sm client-card">
-                    <div class="client-card-photo">
+            <div class="client-cases-grid">
+                <a href="colindale-driving-school.html" class="card elev-sm client-case-card">
+                    <div class="client-case-card-photo">
                         <img src="../assets/images/client_colindale_driving.jpeg" alt="Colindale Driving School website" loading="lazy" width="1402" height="1122">
                     </div>
                     <span class="project-card-type">Driving School &mdash; Colindale, London</span>
                     <h3 class="card-title">Colindale Driving School</h3>
-                    <p class="client-card-problem"><strong>Problem:</strong> a generic site was losing local bookings to competitors.</p>
+                    <p class="client-case-card-problem"><strong>Problem:</strong> a generic site was losing local bookings to competitors.</p>
                     <span class="service-grid-link">Read case study &rarr;</span>
                 </a>
-                <a href="the-driving-spot.html" class="card elev-sm client-card">
-                    <div class="client-card-photo">
+                <a href="the-driving-spot.html" class="card elev-sm client-case-card">
+                    <div class="client-case-card-photo">
                         <img src="../assets/images/client_driving_spot.jpeg" alt="The Driving Spot website" loading="lazy" width="1402" height="1122">
                     </div>
                     <span class="project-card-type">Driving School &mdash; Bedford &amp; Peterborough</span>
                     <h3 class="card-title">The Driving Spot</h3>
-                    <p class="client-card-problem"><strong>Problem:</strong> one homepage couldn&rsquo;t rank across every town the school teaches in.</p>
+                    <p class="client-case-card-problem"><strong>Problem:</strong> one homepage couldn&rsquo;t rank across every town the school teaches in.</p>
                     <span class="service-grid-link">Read case study &rarr;</span>
                 </a>
-                <a href="fishermans-chips.html" class="card elev-sm client-card">
-                    <div class="client-card-photo">
+                <a href="fishermans-chips.html" class="card elev-sm client-case-card">
+                    <div class="client-case-card-photo">
                         <img src="../assets/images/client_fisher_chips.jpeg" alt="Fisherman&rsquo;s Chips website" loading="lazy" width="1402" height="1122">
                     </div>
                     <span class="project-card-type">Food &amp; Beverage &mdash; Bedford</span>
                     <h3 class="card-title">Fisherman&rsquo;s Chips</h3>
-                    <p class="client-card-problem"><strong>Problem:</strong> phone orders were pulling staff off the fryer during rushes.</p>
+                    <p class="client-case-card-problem"><strong>Problem:</strong> phone orders were pulling staff off the fryer during rushes.</p>
                     <span class="service-grid-link">Read case study &rarr;</span>
                 </a>
-                <a href="wazer-taxis.html" class="card elev-sm client-card">
-                    <div class="client-card-photo">
+                <a href="wazer-taxis.html" class="card elev-sm client-case-card">
+                    <div class="client-case-card-photo">
                         <img src="../assets/images/client_go_wazer.jpeg" alt="Wazer Taxis website" loading="lazy" width="1402" height="1122">
                     </div>
                     <span class="project-card-type">Taxi &amp; Transportation &mdash; Southampton</span>
                     <h3 class="card-title">Wazer Taxis</h3>
-                    <p class="client-card-problem"><strong>Problem:</strong> national booking apps were winning searches this local firm should own.</p>
+                    <p class="client-case-card-problem"><strong>Problem:</strong> national booking apps were winning searches this local firm should own.</p>
                     <span class="service-grid-link">Read case study &rarr;</span>
                 </a>
-                <a href="hair-we-cut.html" class="card elev-sm client-card">
-                    <div class="client-card-photo">
+                <a href="hair-we-cut.html" class="card elev-sm client-case-card">
+                    <div class="client-case-card-photo">
                         <img src="../assets/images/client_hair_we_cut.jpeg" alt="Hair We Cut website" loading="lazy" width="1402" height="1122">
                     </div>
                     <span class="project-card-type">Barber &amp; Salon</span>
                     <h3 class="card-title">Hair We Cut</h3>
-                    <p class="client-card-problem"><strong>Problem:</strong> a slow, generic site was losing in-the-moment searches.</p>
+                    <p class="client-case-card-problem"><strong>Problem:</strong> a slow, generic site was losing in-the-moment searches.</p>
                     <span class="service-grid-link">Read case study &rarr;</span>
                 </a>
-                <a href="ar-worldwide.html" class="card elev-sm client-card">
-                    <div class="client-card-photo">
+                <a href="ar-worldwide.html" class="card elev-sm client-case-card">
+                    <div class="client-case-card-photo">
                         <img src="../assets/images/client_worldwide_exchange.jpeg" alt="A.R Worldwide website" loading="lazy" width="1402" height="1122">
                     </div>
                     <span class="project-card-type">Financial Services &mdash; Harrow</span>
                     <h3 class="card-title">A.R Worldwide</h3>
-                    <p class="client-card-problem"><strong>Problem:</strong> a cluttered site was undermining trust in a currency exchange.</p>
+                    <p class="client-case-card-problem"><strong>Problem:</strong> a cluttered site was undermining trust in a currency exchange.</p>
                     <span class="service-grid-link">Read case study &rarr;</span>
                 </a>
-                <a href="quick-fit-shelving.html" class="card elev-sm client-card">
-                    <div class="client-card-photo">
+                <a href="quick-fit-shelving.html" class="card elev-sm client-case-card">
+                    <div class="client-case-card-photo">
                         <img src="../assets/images/quick_fit_move.jpeg" alt="Quick Fit Shelving Ltd website" loading="lazy" width="1402" height="1122">
                     </div>
                     <span class="project-card-type">Trade Services &mdash; Wednesbury</span>
                     <h3 class="card-title">Quick Fit Shelving Ltd</h3>
-                    <p class="client-card-problem"><strong>Problem:</strong> a hobby-site look was costing fast-moving trade enquiries.</p>
+                    <p class="client-case-card-problem"><strong>Problem:</strong> a hobby-site look was costing fast-moving trade enquiries.</p>
                     <span class="service-grid-link">Read case study &rarr;</span>
                 </a>
             </div>
@@ -1142,7 +1142,7 @@ Expected: 7 `OK:` lines, no `MISSING:`.
 grep -c '<h1>Our Clients</h1>' clients/index.html
 grep -c 'class="nav-link active">Clients</a>' clients/index.html
 grep -c 'class="client-slide"' clients/index.html
-grep -c 'class="card elev-sm client-card"' clients/index.html
+grep -c 'class="card elev-sm client-case-card"' clients/index.html
 python3 -c "
 import re
 text = open('clients/index.html').read()

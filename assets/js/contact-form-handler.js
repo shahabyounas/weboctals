@@ -126,7 +126,8 @@ async function getLocationData() {
 
 function collectFormData(formElement) {
   const formData = new FormData(formElement);
-  
+  const isNewsletterForm = formElement.classList.contains('newsletter-form');
+
   return {
     // Form fields
     name: formData.get('name') || '',
@@ -135,9 +136,9 @@ function collectFormData(formElement) {
     phone: formData.get('phone') || '',
     service: formData.get('service') || '',
     budget: formData.get('budget') || '',
-    message: formData.get('message') || '',
-    newsletter: formData.get('newsletter') === 'on',
-    
+    message: formData.get('message') || (isNewsletterForm ? 'Newsletter signup' : ''),
+    newsletter: isNewsletterForm ? true : formData.get('newsletter') === 'on',
+
     // Device information
     deviceType: detectDevice(),
     browser: detectBrowser(),
@@ -265,45 +266,64 @@ function showNotification(message, type = 'success') {
 
 async function handleFormSubmit(event) {
   event.preventDefault();
-  
+
   const form = event.target;
+  const isNewsletterForm = form.classList.contains('newsletter-form');
   const submitButton = form.querySelector('button[type="submit"]');
   const originalButtonContent = submitButton.innerHTML;
-  
+
+  // If a WebMCP agent invoked this form's toolautosubmit, give it a
+  // structured result instead of relying on the visual notification.
+  let resolveAgentResult = null;
+  if (event.agentInvoked && typeof event.respondWith === 'function') {
+    event.respondWith(new Promise((resolve) => {
+      resolveAgentResult = resolve;
+    }));
+  }
+
   // Validate Google Script URL is configured
   if (CONFIG.GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
     showNotification('Form is not yet configured. Please set up Google Sheets integration.', 'error');
     console.error('Google Apps Script URL not configured!');
+    if (resolveAgentResult) {
+      resolveAgentResult({ success: false, error: 'Form is not yet configured.' });
+    }
     return;
   }
-  
+
   try {
     // Show loading state
     showLoadingState(submitButton);
-    
+
     // Collect form data
     const formData = collectFormData(form);
-    
+
     // Track form submission start
     if (typeof trackFormSubmissionStart === 'function') {
       trackFormSubmissionStart(formData);
     }
-    
+
     // Get location data (async)
     const locationData = await getLocationData();
-    
+
     // Submit to Google Sheets
     await submitToGoogleSheets(formData, locationData);
-    
+
     // Show success state
     showSuccessState(submitButton);
-    showNotification('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.', 'success');
-    
+    const successMessage = isNewsletterForm
+      ? `Subscribed ${formData.email} to the WebOctals newsletter.`
+      : 'Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.';
+    showNotification(successMessage, 'success');
+    if (resolveAgentResult) {
+      resolveAgentResult({ success: true, message: successMessage });
+    }
+
     // Track successful submission
     if (typeof trackFormSubmissionSuccess === 'function') {
       trackFormSubmissionSuccess(formData);
     }
-    
+
     // Reset form after 2 seconds
     setTimeout(() => {
       form.reset();
@@ -311,14 +331,17 @@ async function handleFormSubmit(event) {
       submitButton.classList.remove('success');
       submitButton.disabled = false;
     }, 2000);
-    
+
   } catch (error) {
     console.error('Form submission error:', error);
-    
+
     // Show error state
     showErrorState(submitButton, originalButtonContent);
     showNotification('Oops! Something went wrong. Please try again or email us directly at contact@weboctals.uk.co', 'error');
-    
+    if (resolveAgentResult) {
+      resolveAgentResult({ success: false, error: error.message });
+    }
+
     // Track failed submission
     if (typeof trackFormSubmissionError === 'function') {
       trackFormSubmissionError(error.message);
@@ -331,16 +354,16 @@ async function handleFormSubmit(event) {
 // ===========================================
 
 function initContactForm() {
-  const contactForm = document.querySelector('.contact-form-modern');
-  
-  if (contactForm) {
-    contactForm.addEventListener('submit', handleFormSubmit);
-    console.log('✅ Contact form handler initialized');
-    
+  const forms = document.querySelectorAll('.contact-form-modern, .newsletter-form');
+
+  if (forms.length) {
+    forms.forEach((form) => form.addEventListener('submit', handleFormSubmit));
+    console.log(`✅ Form handler initialized for ${forms.length} form(s)`);
+
     // Add custom CSS for notifications and animations
     addFormStyles();
   } else {
-    console.warn('Contact form not found on this page');
+    console.warn('No contact or newsletter form found on this page');
   }
 }
 
