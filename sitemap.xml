@@ -190,6 +190,63 @@
         <priority>0.8</priority>
     </url>
     
+    <!-- Client Case Studies -->
+    <url>
+        <loc>https://weboctals.com/clients/index.html</loc>
+        <lastmod>2026-08-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://weboctals.com/clients/colindale-driving-school.html</loc>
+        <lastmod>2026-08-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://weboctals.com/clients/the-driving-spot.html</loc>
+        <lastmod>2026-08-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://weboctals.com/clients/fishermans-chips.html</loc>
+        <lastmod>2026-08-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://weboctals.com/clients/wazer-taxis.html</loc>
+        <lastmod>2026-08-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://weboctals.com/clients/hair-we-cut.html</loc>
+        <lastmod>2026-08-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://weboctals.com/clients/ar-worldwide.html</loc>
+        <lastmod>2026-08-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://weboctals.com/clients/quick-fit-shelving.html</loc>
+        <lastmod>2026-08-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
     <!-- Resource Pages -->
     <url>
         <loc>https://weboctals.com/case-studies</loc>
