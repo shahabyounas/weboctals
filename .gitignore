@@ -66,3 +66,6 @@ coverage/
 .yarn/unplugged
 .yarn/build-state.yml
 .yarn/install-state.gz
+
+# Subagent-driven-development workspace (scratch, not shipped code)
+.superpowers/
