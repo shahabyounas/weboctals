@@ -7,6 +7,10 @@ Allow: /
 # Sitemap location
 Sitemap: https://weboctals.com/sitemap.xml
 
+# LLM-facing summary of site purpose and key links
+# https://llmstxt.org/
+LLMs: https://weboctals.com/llms.txt
+
 # Allow all crawlers to access main content
 Allow: /
 Allow: /blog/

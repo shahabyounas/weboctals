@@ -285,22 +285,29 @@
                 </ul>
             </div>
             <div class="quick-contact-form-wrap card elev-md">
-                <form class="contact-form-modern quick-contact-form" action="#" method="POST">
+                <form class="contact-form-modern quick-contact-form" action="#" method="POST"
+                      toolname="submit_contact_request"
+                      tooldescription="Send a project inquiry to WebOctals. Submits the visitor's contact details and project description so the WebOctals team can follow up, typically within 24 hours."
+                      toolautosubmit>
                     <div class="field">
                         <label for="qc-name">Full name</label>
-                        <input class="input" type="text" id="qc-name" name="name" placeholder="Jane Smith" required>
+                        <input class="input" type="text" id="qc-name" name="name" placeholder="Jane Smith" required
+                               toolparamdescription="Visitor's full name">
                     </div>
                     <div class="field">
                         <label for="qc-email">Work email</label>
-                        <input class="input" type="email" id="qc-email" name="email" placeholder="jane@company.com" required>
+                        <input class="input" type="email" id="qc-email" name="email" placeholder="jane@company.com" required
+                               toolparamdescription="Visitor's work email address, used by WebOctals to reply">
                     </div>
                     <div class="field">
                         <label for="qc-phone">Phone number</label>
-                        <input class="input" type="tel" id="qc-phone" name="phone" placeholder="+1 (555) 123-4567">
+                        <input class="input" type="tel" id="qc-phone" name="phone" placeholder="+1 (555) 123-4567"
+                               toolparamdescription="Visitor's phone number (optional)">
                     </div>
                     <div class="field">
                         <label for="qc-message">Tell us about your project</label>
-                        <textarea class="input" id="qc-message" name="message" placeholder="What are you looking to build?" required></textarea>
+                        <textarea class="input" id="qc-message" name="message" placeholder="What are you looking to build?" required
+                                  toolparamdescription="Description of the project or problem the visitor wants help with"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary quick-contact-submit">
                         <span>Send message</span>

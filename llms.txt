@@ -1,0 +1,26 @@
+# WebOctals
+
+> WebOctals is a UK-based AI-powered digital product studio. We design and build AI agents, custom digital products, intelligent automation, and machine learning solutions for businesses, backed by full-stack web development and SEO expertise.
+
+WebOctals helps businesses adopt AI practically: automating operational workflows, building AI agents that handle real tasks, developing production digital products, and optimizing web presence for both traditional search and AI answer engines. Typical engagements start with a free, no-obligation consultation via the contact form or a direct call.
+
+## Services
+
+- [Services overview](https://weboctals.com/services.html): Full list of AI and digital product services offered.
+- [AI Agents](https://weboctals.com/ai-agents.html): Custom AI agents that automate business tasks and workflows.
+- [Digital Product Development](https://weboctals.com/digital-products.html): End-to-end design and build of digital products.
+- [Automation](https://weboctals.com/automation.html): Intelligent process automation for operations and customer workflows.
+- [Machine Learning](https://weboctals.com/machine-learning.html): ML models and data-driven features for existing products.
+- [Web Development](https://weboctals.com/web-development.html): Custom websites and web applications.
+- [Product Development](https://weboctals.com/product-development.html): Product strategy and build from idea to launch.
+- [SEO](https://weboctals.com/seo.html): Search and AI-visibility optimization, including [on-page SEO](https://weboctals.com/on-page-seo.html) and [technical SEO](https://weboctals.com/technical-seo.html).
+
+## Company
+
+- [About WebOctals](https://weboctals.com/about.html): Who we are and how we work.
+- [Contact](https://weboctals.com/contact.html): Reach the team by email, phone, or the contact form.
+- [Blog](https://weboctals.com/blog/): Articles on AI, automation, SEO, and digital product strategy.
+
+## Tools for agents
+
+- The homepage contact form (`submit_contact_request`) and blog newsletter forms (`subscribe_to_newsletter`) are exposed as WebMCP tools via declarative `toolname`/`tooldescription` annotations, so a supporting agent can fill and submit them directly on behalf of a visitor.
