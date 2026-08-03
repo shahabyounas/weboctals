@@ -256,37 +256,42 @@
         </div>
     </nav>
 
-    <!-- Breadcrumb -->
-    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-        <div class="container">
-            <ol class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li aria-current="page">Contact</li>
-            </ol>
-        </div>
-    </nav>
-
     <!-- Contact Hero Section -->
-    <section class="contact-hero">
-        <div class="contact-hero-background"></div>
+    <section class="page-hero page-hero-feature">
+        <div class="hero-aurora" aria-hidden="true">
+            <span class="hero-aurora-blob hero-aurora-blob-1"></span>
+            <span class="hero-aurora-blob hero-aurora-blob-2"></span>
+            <span class="hero-aurora-blob hero-aurora-blob-3"></span>
+            <span class="hero-aurora-blob hero-aurora-blob-4"></span>
+        </div>
+        <canvas class="hero-canvas" aria-hidden="true"></canvas>
         <div class="container">
-            <div class="contact-hero-content">
-                <h1>Let's Build Something <span class="text-accent">Amazing</span> Together</h1>
-                <p>Tell us what you're trying to build. We'll give you a straight answer about scope, timeline, and cost.</p>
-                <p class="contact-quick-answer">You can reach WebOctals by email at <a href="mailto:info@weboctals.com">info@weboctals.com</a> or by phone at <a href="tel:+447442410345">+44 7442 410345</a>. We're UK-based and typically respond within 24 hours.</p>
-                <div class="contact-hero-stats">
-                    <div class="hero-stat">
-                        <span class="stat-number">24h</span>
-                        <span class="stat-label">Response Time</span>
-                    </div>
-                    <div class="hero-stat">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Built In-House</span>
-                    </div>
-                    <div class="hero-stat">
-                        <span class="stat-number">Free</span>
-                        <span class="stat-label">Initial Consultation</span>
-                    </div>
+            <div class="page-hero-content">
+                <span class="hero-eyebrow">Get In Touch</span>
+                <h1>Let&rsquo;s build something<br><span class="text-accent">amazing</span> together</h1>
+                <p class="page-hero-lede">Tell us what you&rsquo;re trying to build. We&rsquo;ll give you a straight answer about scope, timeline, and cost.</p>
+                <ul class="page-hero-stats">
+                    <li>
+                        <span class="page-hero-stat-num">24h</span>
+                        <span class="page-hero-stat-label">Response time</span>
+                    </li>
+                    <li>
+                        <span class="page-hero-stat-num">100%</span>
+                        <span class="page-hero-stat-label">Built in-house</span>
+                    </li>
+                    <li>
+                        <span class="page-hero-stat-num">Free</span>
+                        <span class="page-hero-stat-label">Initial consultation</span>
+                    </li>
+                </ul>
+                <div class="page-hero-cta">
+                    <a href="#contact-form" class="btn btn-primary">
+                        <span>Start your project</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                    <a href="tel:+447442410345" class="btn btn-secondary">
+                        <span>Call +44 7442 410345</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -372,7 +377,7 @@
 
                 <!-- Project enquiry form -->
                 <div class="contact-form-column">
-                    <div class="card elev-md contact-form-card">
+                    <div class="card elev-md contact-form-card" id="contact-form">
                         <span class="card-kicker">Start a project</span>
                         <h2 class="contact-form-heading">Tell us what you&rsquo;re building</h2>
                         <p class="contact-form-lede">Send a few details and one of our engineers replies within 24 hours &mdash; no obligation, just a straight conversation about the work.</p>
