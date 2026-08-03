@@ -7709,6 +7709,16 @@ textarea.input {
 .hero-chip-2 svg { color: var(--color-accent-2-700); }
 .hero-chip-3 { bottom: 14%; right: 5%; animation-delay: 3s; }
 
+/* Below ~768px the trust-bullet list wraps onto multiple lines and grows tall
+   enough that the fixed bottom% chip positions collide with its text. The
+   chips are purely decorative, so hide them rather than fight for space with
+   the centered text column on narrow viewports. */
+@media (max-width: 768px) {
+    #home .hero-chip {
+        display: none;
+    }
+}
+
 @keyframes hero-chip-float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
