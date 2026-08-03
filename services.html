@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WebOctals AI-powered services - AI Agents, Web Development, Digital Products, Automation & Machine Learning. Transform your business with cutting-edge AI technology.">
-    <meta name="keywords" content="AI services, AI agent development, web development, WordPress, Shopify, digital product development, intelligent automation, machine learning solutions, WebOctals">
+    <meta name="description" content="Six specialised services from one in-house team: AI agents, automation, product development, web development, digital products, and machine learning. Scoped against an outcome, not a buzzword.">
+    <meta name="keywords" content="AI agent development, web development services, WordPress, Shopify, digital product development, process automation, machine learning solutions, WebOctals">
     <meta name="author" content="WebOctals">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://weboctals.com/services.html">
-    <meta property="og:title" content="AI-Powered Services - WebOctals">
-    <meta property="og:description" content="Discover our comprehensive services: AI agents, web development, digital products, automation, and ML solutions.">
+    <meta property="og:title" content="Services — WebOctals">
+    <meta property="og:description" content="Six specialised services, one in-house team: AI agents, automation, product development, web development, digital products, and machine learning.">
     <meta property="og:image" content="https://weboctals.com/assets/images/services-og.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://weboctals.com/services.html">
-    <meta property="twitter:title" content="AI-Powered Services - WebOctals">
-    <meta property="twitter:description" content="Discover our comprehensive AI services.">
+    <meta property="twitter:title" content="Services — WebOctals">
+    <meta property="twitter:description" content="Six specialised services, one in-house team, from first prototype to production scale.">
     <meta property="twitter:image" content="https://weboctals.com/assets/images/services-twitter.jpg">
 
     <!-- Canonical URL -->
@@ -97,7 +97,7 @@
     }
     </script>
 
-    <title>Our Services - WebOctals | AI Agents, Web Development & More</title>
+    <title>Services — WebOctals | AI Agents, Automation &amp; Web Development</title>
 </head>
 <body>
     <!-- Particle Background -->
@@ -193,6 +193,13 @@
 
     <!-- Hero Section -->
     <section class="services-hero">
+        <div class="hero-aurora" aria-hidden="true">
+            <span class="hero-aurora-blob hero-aurora-blob-1"></span>
+            <span class="hero-aurora-blob hero-aurora-blob-2"></span>
+            <span class="hero-aurora-blob hero-aurora-blob-3"></span>
+            <span class="hero-aurora-blob hero-aurora-blob-4"></span>
+        </div>
+        <canvas class="hero-canvas" aria-hidden="true"></canvas>
         <div class="container">
             <div class="services-hero-content">
                 <div class="hero-badge">
@@ -202,18 +209,34 @@
                     </svg>
                     <span>6 Core Services</span>
                 </div>
-                <h1>Transform Your Business<br/>With Our <span class="gradient-text">AI-Powered Services</span></h1>
-                <p>From SEO domination to intelligent automation, we deliver cutting-edge solutions that drive measurable results for your business.</p>
+                <h1>Everything you need to<br/>ship <span class="gradient-text">AI that works</span></h1>
+                <p>Six specialised practices, one in-house team. From first prototype to production scale &mdash; strategy, build, launch, and the support that keeps it running.</p>
+                <div class="services-hero-cta">
+                    <a href="index.html#quick-contact" class="btn btn-primary">
+                        <span>Start a project</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                    <a href="#services-list" class="btn btn-secondary">
+                        <span>See all services</span>
+                    </a>
+                </div>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
         </div>
     </section>
 
     <!-- Services Grid -->
-    <section class="services-grid-section">
+    <section class="services-grid-section" id="services-list">
         <div class="container">
+            <div class="section-header reveal">
+                <h2>What We Build</h2>
+                <p class="section-subtitle">Pick the practice that fits &mdash; or bring us the problem and we&rsquo;ll scope it with you.</p>
+            </div>
             <div class="services-grid">
                 <!-- Product Development -->
-                <a href="product-development.html" class="service-card-large">
+                <a href="product-development.html" class="service-card-large reveal">
                     <div class="service-card-header">
                         <div class="service-icon-wrapper">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -222,7 +245,7 @@
                         </div>
                     </div>
                     <h3>Product Development</h3>
-                    <p>Build custom software solutions tailored to your exact specifications. Scalable, secure, and user-friendly applications.</p>
+                    <p>Custom software scoped around how your team actually works, not a template's assumptions &mdash; built to be scaled, secured, and maintained past launch.</p>
                     <ul class="service-features">
                         <li>Custom Software Development</li>
                         <li>API Development & Integration</li>
@@ -238,7 +261,7 @@
                 </a>
 
                 <!-- Web Development -->
-                <a href="web-development.html" class="service-card-large">
+                <a href="web-development.html" class="service-card-large reveal">
                     <div class="service-card-header">
                         <div class="service-icon-wrapper">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -247,7 +270,7 @@
                         </div>
                     </div>
                     <h3>Web Development</h3>
-                    <p>Create powerful WordPress sites, Shopify stores, and eCommerce solutions that convert visitors into customers.</p>
+                    <p>WordPress builds, Shopify stores, and custom eCommerce &mdash; engineered around the one action you need visitors to take.</p>
                     <ul class="service-features">
                         <li>WordPress Development</li>
                         <li>Shopify Store Setup</li>
@@ -263,7 +286,7 @@
                 </a>
 
                 <!-- AI Agents -->
-                <a href="ai-agents.html" class="service-card-large">
+                <a href="ai-agents.html" class="service-card-large reveal">
                     <div class="service-card-header">
                         <div class="service-icon-wrapper">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -272,7 +295,7 @@
                         </div>
                     </div>
                     <h3>AI Agents</h3>
-                    <p>Deploy intelligent virtual assistants that work 24/7, understand context, and automate complex tasks autonomously.</p>
+                    <p>Virtual assistants that hold context across a conversation, answer around the clock, and hand off to a person when a query genuinely needs one.</p>
                     <ul class="service-features">
                         <li>Natural Language Processing</li>
                         <li>Autonomous Decision Making</li>
@@ -288,7 +311,7 @@
                 </a>
 
                 <!-- Digital Products -->
-                <a href="digital-products.html" class="service-card-large">
+                <a href="digital-products.html" class="service-card-large reveal">
                     <div class="service-card-header">
                         <div class="service-icon-wrapper">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -297,7 +320,7 @@
                         </div>
                     </div>
                     <h3>Digital Products</h3>
-                    <p>Create AI-enhanced applications with adaptive interfaces, predictive insights, and personalized user experiences.</p>
+                    <p>Applications where AI does real work in the interface &mdash; adaptive layouts, predictive insights, recommendations grounded in your actual data.</p>
                     <ul class="service-features">
                         <li>AI-Enhanced UX/UI</li>
                         <li>Predictive Analytics</li>
@@ -313,17 +336,16 @@
                 </a>
 
                 <!-- Automation -->
-                <a href="automation.html" class="service-card-large">
+                <a href="automation.html" class="service-card-large reveal">
                     <div class="service-card-header">
                         <div class="service-icon-wrapper">
                             <svg viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/>
                             </svg>
                         </div>
-                        <div class="service-badge">High ROI</div>
                     </div>
                     <h3>Automation</h3>
-                    <p>Transform operations with intelligent automation that adapts to changing conditions and continuously optimizes processes.</p>
+                    <p>Connect the systems you already run on &mdash; booking, invoicing, CRM, fulfilment &mdash; so information moves between them without a person retyping it.</p>
                     <ul class="service-features">
                         <li>Process Optimization</li>
                         <li>Workflow Automation</li>
@@ -339,7 +361,7 @@
                 </a>
 
                 <!-- Machine Learning -->
-                <a href="machine-learning.html" class="service-card-large">
+                <a href="machine-learning.html" class="service-card-large reveal">
                     <div class="service-card-header">
                         <div class="service-icon-wrapper">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -348,7 +370,7 @@
                         </div>
                     </div>
                     <h3>Machine Learning</h3>
-                    <p>Unlock data value with custom ML models for predictive analytics, pattern recognition, and intelligent decision-making.</p>
+                    <p>Custom models trained on your own data to surface the pattern a person would&rsquo;ve missed &mdash; not an off-the-shelf classifier repackaged with your logo.</p>
                     <ul class="service-features">
                         <li>Predictive Modeling</li>
                         <li>Data Analysis</li>
@@ -366,18 +388,40 @@
         </div>
     </section>
 
+    <!-- Stats Bar -->
+    <section class="stats-bar" id="services-stats-bar">
+        <div class="container stats-bar-grid">
+            <div class="stat-block">
+                <span class="stat-block-number" data-count-to="9" data-suffix="">0</span>
+                <span class="stat-block-label">Projects Shipped</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-block-number" data-count-to="6" data-suffix="">0</span>
+                <span class="stat-block-label">Core AI Services</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-block-number" data-count-to="8" data-suffix="">0</span>
+                <span class="stat-block-label">Industries Served</span>
+            </div>
+            <div class="stat-block">
+                <span class="stat-block-number" data-count-to="24" data-suffix="/7">0</span>
+                <span class="stat-block-label">Support &amp; Monitoring</span>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
-    <section class="services-cta-section">
+    <section class="services-cta-section final-cta">
         <div class="container">
-            <div class="cta-box">
-                <h2>Ready to Transform Your Business?</h2>
-                <p>Let's discuss how our services can drive innovation and growth for your organization. Get a free consultation today.</p>
+            <div class="cta-box cta-content">
+                <h2>Ready to Start a Project?</h2>
+                <p>Tell us what you're trying to build. One of our engineers replies within 24 hours &mdash; no obligation, just a straight conversation about scope and cost.</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary">
+                    <a href="index.html#quick-contact" class="btn btn-primary">
                         <span>Get Started Today</span>
                         <div class="btn-glow"></div>
                     </a>
-                    <a href="contact.html" class="btn btn-outline">Schedule a Call</a>
+                    <a href="index.html#quick-contact" class="btn btn-outline">Schedule a Call</a>
                 </div>
             </div>
         </div>
@@ -400,7 +444,7 @@
                     </svg>
                         <span class="logo-text">Web<span class="logo-accent">Octals</span></span>
                     </div>
-                    <p>Transforming businesses through intelligent AI solutions and cutting-edge digital products.</p>
+                    <p>AI-native websites, agents and automation for businesses that need the thing to actually work.</p>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/company/weboctals/" aria-label="LinkedIn">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -449,7 +493,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 WebOctals. All rights reserved. | Pioneering the future of AI-powered digital solutions.</p>
+                <p>&copy; 2026 WebOctals. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -457,5 +501,8 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/hero-animation.js"></script>
+    <script defer src="assets/js/reveal.js"></script>
 </body>
 </html>

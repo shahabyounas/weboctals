@@ -69,3 +69,6 @@ coverage/
 
 # Subagent-driven-development workspace (scratch, not shipped code)
 .superpowers/
+
+# Local git worktrees (scratch, not shipped code)
+.worktrees/

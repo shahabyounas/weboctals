@@ -139,10 +139,43 @@
     </nav>
 
     <!-- Projects Hero -->
-    <section class="page-hero">
+    <section class="page-hero page-hero-feature">
+        <div class="hero-aurora" aria-hidden="true">
+            <span class="hero-aurora-blob hero-aurora-blob-1"></span>
+            <span class="hero-aurora-blob hero-aurora-blob-2"></span>
+            <span class="hero-aurora-blob hero-aurora-blob-3"></span>
+            <span class="hero-aurora-blob hero-aurora-blob-4"></span>
+        </div>
+        <canvas class="hero-canvas" aria-hidden="true"></canvas>
         <div class="container">
-            <h1>Our Projects</h1>
-            <p class="section-subtitle">Real websites we&rsquo;ve designed and built for real local businesses.</p>
+            <div class="page-hero-content">
+                <span class="hero-eyebrow">Selected Work</span>
+                <h1>Real sites, real<br>local businesses</h1>
+                <p class="page-hero-lede">Every project here is live and earning its keep &mdash; booking systems, online ordering, and lead capture built for the way people actually search and buy.</p>
+                <ul class="page-hero-stats">
+                    <li>
+                        <span class="page-hero-stat-num">9</span>
+                        <span class="page-hero-stat-label">Projects shipped</span>
+                    </li>
+                    <li>
+                        <span class="page-hero-stat-num">8</span>
+                        <span class="page-hero-stat-label">Industries served</span>
+                    </li>
+                    <li>
+                        <span class="page-hero-stat-num">100%</span>
+                        <span class="page-hero-stat-label">Built in-house</span>
+                    </li>
+                </ul>
+                <div class="page-hero-cta">
+                    <a href="../index.html#quick-contact" class="btn btn-primary">
+                        <span>Start a project</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                    <a href="../clients/index.html" class="btn btn-secondary">
+                        <span>Read the case studies</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -150,7 +183,7 @@
     <section class="projects-grid-section">
         <div class="container">
             <div class="projects-grid">
-                <a href="ariana-kitchens-bedrooms.html" class="card elev-sm service-grid-card project-card">
+                <a href="ariana-kitchens-bedrooms.html" class="card elev-sm service-grid-card project-card reveal">
                     <div class="project-card-art">
                         <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
 <circle cx="50" cy="50" r="34" fill="var(--color-accent-100)"/>
@@ -173,7 +206,7 @@
                     <span class="service-grid-link">View project &rarr;</span>
                 </a>
 
-                <a href="lumenlux.html" class="card elev-sm service-grid-card project-card">
+                <a href="lumenlux.html" class="card elev-sm service-grid-card project-card reveal">
                     <div class="project-card-art">
                         <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
 <circle cx="50" cy="50" r="34" fill="var(--color-accent-2-100)"/>
@@ -196,7 +229,7 @@
                     <span class="service-grid-link">View project &rarr;</span>
                 </a>
 
-                <a href="fishermans-chips.html" class="card elev-sm service-grid-card project-card">
+                <a href="fishermans-chips.html" class="card elev-sm service-grid-card project-card reveal">
                     <div class="project-card-art">
                         <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
 <circle cx="50" cy="50" r="34" fill="var(--color-accent-100)"/>
@@ -218,7 +251,7 @@
                     <span class="service-grid-link">View project &rarr;</span>
                 </a>
 
-                <a href="the-driving-spot.html" class="card elev-sm service-grid-card project-card">
+                <a href="the-driving-spot.html" class="card elev-sm service-grid-card project-card reveal">
                     <div class="project-card-art">
                         <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
 <circle cx="50" cy="50" r="34" fill="var(--color-accent-100)"/>
@@ -240,7 +273,7 @@
                     <span class="service-grid-link">View project &rarr;</span>
                 </a>
 
-                <a href="colindale-driving-school.html" class="card elev-sm service-grid-card project-card">
+                <a href="colindale-driving-school.html" class="card elev-sm service-grid-card project-card reveal">
                     <div class="project-card-art">
                         <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
 <circle cx="50" cy="50" r="34" fill="var(--color-accent-2-100)"/>
@@ -262,7 +295,7 @@
                     <span class="service-grid-link">View project &rarr;</span>
                 </a>
 
-                <a href="hair-we-cut.html" class="card elev-sm service-grid-card project-card">
+                <a href="hair-we-cut.html" class="card elev-sm service-grid-card project-card reveal">
                     <div class="project-card-art">
                         <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
 <circle cx="50" cy="50" r="34" fill="var(--color-accent-100)"/>
@@ -284,7 +317,7 @@
                     <span class="service-grid-link">View project &rarr;</span>
                 </a>
 
-                <a href="wazer-taxis.html" class="card elev-sm service-grid-card project-card">
+                <a href="wazer-taxis.html" class="card elev-sm service-grid-card project-card reveal">
                     <div class="project-card-art">
                         <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
 <circle cx="50" cy="50" r="34" fill="var(--color-accent-2-100)"/>
@@ -306,7 +339,7 @@
                     <span class="service-grid-link">View project &rarr;</span>
                 </a>
 
-                <a href="quick-fit-shelving.html" class="card elev-sm service-grid-card project-card">
+                <a href="quick-fit-shelving.html" class="card elev-sm service-grid-card project-card reveal">
                     <div class="project-card-art">
                         <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
 <circle cx="50" cy="50" r="34" fill="var(--color-accent-100)"/>
@@ -328,7 +361,7 @@
                     <span class="service-grid-link">View project &rarr;</span>
                 </a>
 
-                <a href="ar-worldwide.html" class="card elev-sm service-grid-card project-card">
+                <a href="ar-worldwide.html" class="card elev-sm service-grid-card project-card reveal">
                     <div class="project-card-art">
                         <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
 <circle cx="50" cy="50" r="34" fill="var(--color-accent-2-100)"/>
@@ -370,7 +403,7 @@
                     </svg>
                         <span class="logo-text">Web<span class="logo-accent">Octals</span></span>
                     </div>
-                    <p>Transforming businesses through intelligent AI solutions and cutting-edge digital products.</p>
+                    <p>AI-native websites, agents and automation for businesses that need the thing to actually work.</p>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/company/weboctals/" aria-label="LinkedIn">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -419,7 +452,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 WebOctals. All rights reserved. | Pioneering the future of AI-powered digital solutions.</p>
+                <p>&copy; 2026 WebOctals. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -455,5 +488,7 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script defer src="../assets/js/hero-animation.js"></script>
+    <script defer src="../assets/js/reveal.js"></script>
 </body>
 </html>
