@@ -16,11 +16,19 @@ function initializeHeroAnimation() {
     const markColor = styles.getPropertyValue('--color-cta-500').trim();
 
     const MAX_DIST = 150;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const pointerFine = window.matchMedia('(pointer: fine)').matches;
+
     let width = 0;
     let height = 0;
     let nodes = [];
     let markNode = null;
     let rafId = null;
+    let running = false;
+    let pointerX = 0;
+    let pointerY = 0;
+    let pointerTargetX = 0;
+    let pointerTargetY = 0;
 
     function nodeCountForWidth() {
         return window.innerWidth <= 768 ? 20 : 50;
@@ -32,6 +40,7 @@ function initializeHeroAnimation() {
         canvas.width = width;
         canvas.height = height;
         buildNodes();
+        drawFrame();
     }
 
     function buildNodes() {
@@ -46,15 +55,11 @@ function initializeHeroAnimation() {
         markNode = { x: width / 2, y: height / 2, radius: 14 };
     }
 
-    function step() {
-        nodes.forEach((node) => {
-            node.x += node.vx;
-            node.y += node.vy;
-            if (node.x < 0 || node.x > width) node.vx *= -1;
-            if (node.y < 0 || node.y > height) node.vy *= -1;
-        });
-
+    function drawFrame() {
         ctx.clearRect(0, 0, width, height);
+
+        const offsetX = pointerX * 12;
+        const offsetY = pointerY * 12;
 
         const allNodes = nodes.concat([markNode]);
         for (let i = 0; i < allNodes.length; i++) {
@@ -67,8 +72,8 @@ function initializeHeroAnimation() {
                     ctx.globalAlpha = (1 - dist / MAX_DIST) * 0.35;
                     ctx.lineWidth = 1;
                     ctx.beginPath();
-                    ctx.moveTo(a.x, a.y);
-                    ctx.lineTo(b.x, b.y);
+                    ctx.moveTo(a.x + offsetX, a.y + offsetY);
+                    ctx.lineTo(b.x + offsetX, b.y + offsetY);
                     ctx.stroke();
                 }
             }
@@ -78,7 +83,7 @@ function initializeHeroAnimation() {
         ctx.fillStyle = nodeColor;
         nodes.forEach((node) => {
             ctx.beginPath();
-            ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+            ctx.arc(node.x + offsetX, node.y + offsetY, node.radius, 0, Math.PI * 2);
             ctx.fill();
         });
 
@@ -87,14 +92,63 @@ function initializeHeroAnimation() {
         ctx.shadowColor = markColor;
         ctx.shadowBlur = 24;
         ctx.beginPath();
-        ctx.arc(markNode.x, markNode.y, markNode.radius, 0, Math.PI * 2);
+        ctx.arc(markNode.x + offsetX, markNode.y + offsetY, markNode.radius, 0, Math.PI * 2);
         ctx.fill();
         ctx.shadowBlur = 0;
+    }
 
+    function step() {
+        if (!running) return;
+
+        nodes.forEach((node) => {
+            node.x += node.vx;
+            node.y += node.vy;
+            if (node.x < 0 || node.x > width) node.vx *= -1;
+            if (node.y < 0 || node.y > height) node.vy *= -1;
+        });
+
+        pointerX += (pointerTargetX - pointerX) * 0.05;
+        pointerY += (pointerTargetY - pointerY) * 0.05;
+
+        drawFrame();
         rafId = requestAnimationFrame(step);
     }
 
+    function startLoop() {
+        if (running || reducedMotion) return;
+        running = true;
+        rafId = requestAnimationFrame(step);
+    }
+
+    function stopLoop() {
+        running = false;
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = null;
+    }
+
+    if (pointerFine) {
+        hero.addEventListener('mousemove', (event) => {
+            const rect = hero.getBoundingClientRect();
+            pointerTargetX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+            pointerTargetY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+        });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                startLoop();
+            } else {
+                stopLoop();
+            }
+        });
+    }, { threshold: 0 });
+
     window.addEventListener('resize', resize);
     resize();
-    rafId = requestAnimationFrame(step);
+    observer.observe(hero);
+
+    if (reducedMotion) {
+        drawFrame();
+    }
 }
