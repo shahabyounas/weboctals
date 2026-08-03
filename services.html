@@ -193,6 +193,13 @@
 
     <!-- Hero Section -->
     <section class="services-hero">
+        <div class="hero-aurora" aria-hidden="true">
+            <span class="hero-aurora-blob hero-aurora-blob-1"></span>
+            <span class="hero-aurora-blob hero-aurora-blob-2"></span>
+            <span class="hero-aurora-blob hero-aurora-blob-3"></span>
+            <span class="hero-aurora-blob hero-aurora-blob-4"></span>
+        </div>
+        <canvas class="hero-canvas" aria-hidden="true"></canvas>
         <div class="container">
             <div class="services-hero-content">
                 <div class="hero-badge">
@@ -202,18 +209,34 @@
                     </svg>
                     <span>6 Core Services</span>
                 </div>
-                <h1>Transform Your Business<br/>With Our <span class="gradient-text">AI-Powered Services</span></h1>
-                <p>From SEO domination to intelligent automation, we deliver cutting-edge solutions that drive measurable results for your business.</p>
+                <h1>Everything you need to<br/>ship <span class="gradient-text">AI that works</span></h1>
+                <p>Six specialised practices, one in-house team. From first prototype to production scale &mdash; strategy, build, launch, and the support that keeps it running.</p>
+                <div class="services-hero-cta">
+                    <a href="index.html#quick-contact" class="btn btn-primary">
+                        <span>Start a project</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                    <a href="#services-list" class="btn btn-secondary">
+                        <span>See all services</span>
+                    </a>
+                </div>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
         </div>
     </section>
 
     <!-- Services Grid -->
-    <section class="services-grid-section">
+    <section class="services-grid-section" id="services-list">
         <div class="container">
+            <div class="section-header reveal">
+                <h2>What We Build</h2>
+                <p class="section-subtitle">Pick the practice that fits &mdash; or bring us the problem and we&rsquo;ll scope it with you.</p>
+            </div>
             <div class="services-grid">
                 <!-- Product Development -->
-                <a href="product-development.html" class="service-card-large">
+                <a href="product-development.html" class="service-card-large reveal">
                     <div class="service-card-header">
                         <div class="service-icon-wrapper">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -238,7 +261,7 @@
                 </a>
 
                 <!-- Web Development -->
-                <a href="web-development.html" class="service-card-large">
+                <a href="web-development.html" class="service-card-large reveal">
                     <div class="service-card-header">
                         <div class="service-icon-wrapper">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -263,7 +286,7 @@
                 </a>
 
                 <!-- AI Agents -->
-                <a href="ai-agents.html" class="service-card-large">
+                <a href="ai-agents.html" class="service-card-large reveal">
                     <div class="service-card-header">
                         <div class="service-icon-wrapper">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -288,7 +311,7 @@
                 </a>
 
                 <!-- Digital Products -->
-                <a href="digital-products.html" class="service-card-large">
+                <a href="digital-products.html" class="service-card-large reveal">
                     <div class="service-card-header">
                         <div class="service-icon-wrapper">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -313,7 +336,7 @@
                 </a>
 
                 <!-- Automation -->
-                <a href="automation.html" class="service-card-large">
+                <a href="automation.html" class="service-card-large reveal">
                     <div class="service-card-header">
                         <div class="service-icon-wrapper">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -339,7 +362,7 @@
                 </a>
 
                 <!-- Machine Learning -->
-                <a href="machine-learning.html" class="service-card-large">
+                <a href="machine-learning.html" class="service-card-large reveal">
                     <div class="service-card-header">
                         <div class="service-icon-wrapper">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -389,9 +412,9 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="services-cta-section">
+    <section class="services-cta-section final-cta">
         <div class="container">
-            <div class="cta-box">
+            <div class="cta-box cta-content">
                 <h2>Ready to Transform Your Business?</h2>
                 <p>Let's discuss how our services can drive innovation and growth for your organization. Get a free consultation today.</p>
                 <div class="cta-buttons">
@@ -479,5 +502,8 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/hero-animation.js"></script>
+    <script defer src="assets/js/reveal.js"></script>
 </body>
 </html>

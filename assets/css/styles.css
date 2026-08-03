@@ -8794,3 +8794,285 @@ textarea.input {
         padding-right: 20px;
     }
 }
+
+/* ============================================================
+   Services page redesign — animated hero, motion, dark CTA.
+   Declared last so it wins the cascade over the legacy rules.
+   ============================================================ */
+
+/* --- Reveal-on-scroll primitive (used by reveal.js) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* --- Services hero: full-bleed animated band --- */
+.services-hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 86vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 140px 0 90px;
+    text-align: center;
+}
+
+.services-hero .hero-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.services-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.services-hero-content {
+    max-width: 820px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+.services-hero-content::before {
+    content: '';
+    position: absolute;
+    inset: -48px -64px;
+    z-index: -1;
+    background: radial-gradient(circle, oklch(97% 0.012 65 / 0.62) 0%, oklch(97% 0.012 65 / 0) 72%);
+    border-radius: var(--radius-lg);
+    pointer-events: none;
+}
+
+.services-hero .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: var(--space-lg);
+    padding: 7px 18px;
+    border: 1px solid var(--color-accent-2-300);
+    border-radius: var(--radius-pill);
+    background: oklch(97% 0.012 65 / 0.6);
+    color: var(--color-accent-2-700);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.services-hero .hero-badge svg {
+    width: 15px;
+    height: 15px;
+}
+
+.services-hero h1 {
+    font-size: clamp(2.6rem, 6vw, 4.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: var(--space-lg);
+}
+
+.services-hero p {
+    font-size: clamp(1.02rem, 1.5vw, 1.2rem);
+    line-height: 1.65;
+    color: var(--color-neutral-700);
+    max-width: 62ch;
+    margin: 0 auto var(--space-xl);
+}
+
+.services-hero-cta {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* The legacy pulse/scale treatment fights the new layout — reset it here. */
+.services-hero .services-hero-cta .btn-primary {
+    animation: none;
+    border: none;
+    padding: 16px 32px;
+    font-size: 1rem;
+}
+
+.services-hero .scroll-indicator {
+    z-index: 2;
+}
+
+/* --- Service cards: lift, edge accent, icon motion --- */
+.services-grid-section .services-grid {
+    gap: var(--space-lg);
+}
+
+.service-card-large {
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--hairline);
+    background: var(--color-bg);
+    padding: var(--space-xl);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s ease;
+}
+
+.service-card-large::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+}
+
+.service-card-large:hover::before {
+    transform: scaleX(1);
+}
+
+.service-card-large:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-accent-300);
+    box-shadow: 0 10px 20px oklch(22% 0.005 65 / 0.06), 0 28px 56px oklch(22% 0.005 65 / 0.13);
+}
+
+.service-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-md);
+    background: var(--color-accent-100);
+    color: var(--color-accent-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease;
+}
+
+.service-icon-wrapper svg {
+    width: 28px;
+    height: 28px;
+}
+
+.service-card-large:hover .service-icon-wrapper {
+    transform: translateY(-2px) scale(1.09) rotate(-5deg);
+    background: var(--color-accent-200);
+}
+
+.service-card-large h3 {
+    font-size: 1.4rem;
+    margin-top: var(--space-md);
+}
+
+.service-cta {
+    color: var(--color-accent-700);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.25s ease;
+}
+
+.service-card-large:hover .service-cta {
+    gap: 14px;
+}
+
+/* --- Services CTA: reuse the homepage dark closing band --- */
+.services-cta-section {
+    padding: var(--space-3xl) 0;
+}
+
+.services-cta-section .cta-box {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.services-cta-section .cta-box h2 {
+    color: var(--color-bg);
+    font-size: clamp(2.1rem, 4vw, 3.2rem);
+    line-height: 1.1;
+    margin-bottom: var(--space-md);
+}
+
+.services-cta-section .cta-box p {
+    color: oklch(93% 0.016 65 / 0.82);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    margin-bottom: var(--space-xl);
+}
+
+.services-cta-section .cta-buttons .btn-primary {
+    animation: none;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .services-hero {
+        min-height: auto;
+        padding: 120px 0 70px;
+    }
+
+    .services-hero-content::before {
+        inset: -24px -20px;
+    }
+
+    .services-hero-cta {
+        width: 100%;
+    }
+
+    .services-hero-cta .btn {
+        width: 100%;
+    }
+
+    .service-card-large {
+        padding: var(--space-lg);
+    }
+}
+
+/* --- Footer contrast fix: column headings inherited dark ink on the
+   dark footer, rendering them effectively invisible sitewide. --- */
+.footer .link-group h4 {
+    color: var(--color-bg);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.65;
+}
+
+.footer .link-group a {
+    color: var(--color-neutral-300);
+    transition: color 0.2s ease;
+}
+
+.footer .link-group a:hover {
+    color: var(--color-accent-300);
+}

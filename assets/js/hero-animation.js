@@ -2,11 +2,14 @@
 // Decorative animated background for the homepage hero (#hero-canvas).
 // No-ops entirely if the canvas element isn't present on the page.
 
-document.addEventListener('DOMContentLoaded', initializeHeroAnimation);
+document.addEventListener('DOMContentLoaded', function () {
+    // Any section can host a constellation by containing a .hero-canvas.
+    document.querySelectorAll('canvas.hero-canvas').forEach(function (canvas) {
+        initializeHeroAnimation(canvas, canvas.closest('section'));
+    });
+});
 
-function initializeHeroAnimation() {
-    const canvas = document.getElementById('hero-canvas');
-    const hero = document.getElementById('home');
+function initializeHeroAnimation(canvas, hero) {
     if (!canvas || !hero) return;
 
     const ctx = canvas.getContext('2d');
