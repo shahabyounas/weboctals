@@ -7614,8 +7614,8 @@ textarea.input {
 .hero-aurora-blob {
     position: absolute;
     border-radius: 50%;
-    filter: blur(70px);
-    opacity: 0.55;
+    filter: blur(110px);
+    opacity: 0.3;
     will-change: transform;
 }
 
@@ -8352,5 +8352,445 @@ textarea.input {
 
     .client-par-grid {
         grid-template-columns: 1fr;
+    }
+}
+/* ============================================================
+   Landing page depth pass — section rhythm, card elevation,
+   dark closing band. Declared last so it wins the cascade.
+   ============================================================ */
+
+:root {
+    --surface-raised: oklch(99% 0.006 65);
+    --surface-sunken: oklch(94.5% 0.014 65);
+    --ink: oklch(24% 0.014 60);
+    --hairline: oklch(88% 0.016 65);
+}
+
+/* --- Section rhythm: alternating bands so the page has a pulse --- */
+.quick-contact,
+.services-grid-section,
+.faq-section-organic {
+    background: var(--surface-sunken);
+}
+
+.results-snapshot,
+.projects-grid-section {
+    background: var(--surface-raised);
+}
+
+.proof-strip,
+.services-overview {
+    background: var(--color-bg);
+}
+
+/* Soft seam between bands instead of a hard edge */
+.quick-contact,
+.results-snapshot,
+.services-grid-section,
+.projects-grid-section,
+.faq-section-organic {
+    position: relative;
+}
+
+.quick-contact::before,
+.results-snapshot::before,
+.services-grid-section::before,
+.projects-grid-section::before,
+.faq-section-organic::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--hairline) 20%, var(--hairline) 80%, transparent);
+}
+
+/* --- Cards: real elevation + a warm accent edge on hover --- */
+.card {
+    background: var(--color-bg);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.25s ease;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+.elev-sm {
+    box-shadow: 0 1px 2px oklch(22% 0.005 65 / 0.04), 0 4px 12px oklch(22% 0.005 65 / 0.05);
+}
+
+.elev-md {
+    box-shadow: 0 2px 4px oklch(22% 0.005 65 / 0.05), 0 12px 28px oklch(22% 0.005 65 / 0.08);
+}
+
+.service-grid-card:hover,
+.results-snapshot-card:hover,
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-accent-300);
+    box-shadow: 0 8px 16px oklch(22% 0.005 65 / 0.06), 0 24px 48px oklch(22% 0.005 65 / 0.12);
+}
+
+/* --- Section headers: eyebrow rule + tighter measure --- */
+.section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto var(--space-2xl);
+}
+
+.section-header h2 {
+    font-size: clamp(2rem, 3.6vw, 3rem);
+    line-height: 1.12;
+    margin-bottom: var(--space-md);
+}
+
+.section-header h2::after {
+    content: '';
+    display: block;
+    width: 56px;
+    height: 3px;
+    margin: var(--space-md) auto 0;
+    border-radius: var(--radius-pill);
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
+}
+
+.section-header .section-subtitle {
+    font-size: 1.0625rem;
+    color: var(--color-neutral-700);
+    line-height: 1.65;
+}
+
+/* --- Quick contact: fill the dead left column --- */
+.quick-contact-container {
+    align-items: start;
+    gap: var(--space-3xl);
+}
+
+.quick-contact-copy {
+    position: sticky;
+    top: 120px;
+}
+
+.quick-contact-copy .hero-trust-bullets {
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--hairline);
+}
+
+.quick-contact-form-wrap {
+    border-top: none;
+    padding: var(--space-2xl);
+}
+
+.quick-contact-form-wrap::after {
+    opacity: 1;
+    height: 4px;
+}
+
+/* --- Service card icons: more presence --- */
+.service-grid-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-grid-card:hover .service-grid-icon {
+    transform: scale(1.08) rotate(-4deg);
+}
+
+.service-grid-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.service-grid-link {
+    margin-top: var(--space-md);
+    transition: gap 0.2s ease;
+}
+
+/* --- Stats bar: depth + subtle inner glow --- */
+.stats-bar-grid {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 15% 0%, oklch(46% 0.057 124.6 / 0.9), transparent 60%),
+        var(--color-accent-2-800);
+    box-shadow: 0 18px 48px oklch(22% 0.005 65 / 0.18);
+}
+
+.stat-block-number {
+    letter-spacing: -0.02em;
+}
+
+/* --- Proof strip: quieter, wider tracking --- */
+.trusted-by-label {
+    font-size: 0.8125rem;
+    letter-spacing: 0.14em;
+    color: var(--color-neutral-600);
+}
+
+.trusted-by-strip span {
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    color: var(--color-neutral-600);
+    opacity: 0.75;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.trusted-by-strip span:hover {
+    opacity: 1;
+    color: var(--color-accent-700);
+}
+
+/* --- FAQ: card-like rows --- */
+.faq-accordion-organic {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.faq-organic-item {
+    background: var(--color-bg);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-md);
+    padding: 0 var(--space-lg);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-organic-item[open],
+.faq-organic-item:hover {
+    border-color: var(--color-accent-300);
+    box-shadow: var(--shadow-organic-sm);
+}
+
+.faq-organic-item summary {
+    padding: var(--space-lg) 0;
+    font-size: 1.0625rem;
+}
+
+/* --- Final CTA: dark closing band with an aurora echo --- */
+.final-cta {
+    position: relative;
+    overflow: hidden;
+    background: var(--ink);
+    padding: var(--space-3xl) 0;
+}
+
+.final-cta::before,
+.final-cta::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+}
+
+.final-cta::before {
+    width: 520px;
+    height: 520px;
+    top: -40%;
+    left: -8%;
+    background: var(--color-accent-600);
+    opacity: 0.4;
+}
+
+.final-cta::after {
+    width: 440px;
+    height: 440px;
+    bottom: -45%;
+    right: -6%;
+    background: var(--color-accent-2-600);
+    opacity: 0.35;
+}
+
+.final-cta .cta-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.final-cta h2 {
+    color: var(--color-bg);
+    font-size: clamp(2.1rem, 4vw, 3.2rem);
+    line-height: 1.1;
+    margin-bottom: var(--space-md);
+}
+
+.final-cta p {
+    color: oklch(93% 0.016 65 / 0.82);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    margin-bottom: var(--space-xl);
+}
+
+.final-cta .cta-buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.final-cta .btn-outline {
+    color: var(--color-bg);
+    border-color: oklch(93% 0.016 65 / 0.35);
+}
+
+.final-cta .btn-outline:hover {
+    background: oklch(93% 0.016 65 / 0.12);
+    border-color: var(--color-bg);
+    color: var(--color-bg);
+}
+
+/* --- Services overview: readable measure --- */
+.services-overview .services-intro {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.services-overview .services-intro h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--color-accent-700);
+    margin: var(--space-md) 0 var(--space-lg);
+}
+
+.services-overview .services-intro p {
+    color: var(--color-neutral-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+}
+
+.services-overview .btn {
+    margin-top: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+    .quick-contact-copy {
+        position: static;
+    }
+
+    .quick-contact-form-wrap {
+        padding: var(--space-lg);
+    }
+
+    .card {
+        padding: var(--space-lg);
+    }
+
+    .section-header {
+        margin-bottom: var(--space-xl);
+    }
+}
+
+/* --- Approach grid (replaces the services-overview text wall) --- */
+.approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2xl);
+    max-width: 1080px;
+    margin: var(--space-2xl) auto 0;
+}
+
+.approach-item {
+    text-align: left;
+    padding-top: var(--space-lg);
+    border-top: 2px solid var(--color-accent-200);
+}
+
+.approach-num {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
+    color: var(--color-accent);
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-sm);
+}
+
+.approach-item h4 {
+    font-family: var(--font-heading);
+    font-size: 1.3125rem;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+}
+
+.approach-item p {
+    color: var(--color-neutral-700);
+    line-height: 1.7;
+    font-size: 0.9688rem;
+}
+
+.services-intro-cta {
+    text-align: center;
+    margin-top: var(--space-2xl);
+}
+
+@media (max-width: 768px) {
+    .approach-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+}
+
+/* --- Mobile hero typography: headline must out-weigh the subtitle --- */
+@media (max-width: 600px) {
+    #home .hero-title {
+        font-size: clamp(2.2rem, 9.5vw, 2.9rem);
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+    }
+
+    #home .hero-subtitle {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 34ch;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #home .hero-buttons {
+        width: 100%;
+        gap: var(--space-sm);
+    }
+
+    #home .hero-buttons .btn {
+        width: 100%;
+    }
+
+    #home .hero-trust-bullets {
+        gap: var(--space-sm);
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile hero gutter — content column had no horizontal padding, so
+   full-width buttons ran to the viewport edge. */
+@media (max-width: 600px) {
+    #home .hero-content {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }

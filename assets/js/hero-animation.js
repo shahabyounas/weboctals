@@ -13,7 +13,7 @@ function initializeHeroAnimation() {
     const styles = getComputedStyle(document.documentElement);
     const nodeColor = styles.getPropertyValue('--color-accent-600').trim();
     const lineColor = styles.getPropertyValue('--color-accent-2-500').trim();
-    const markColor = styles.getPropertyValue('--color-cta-500').trim();
+    const markColor = styles.getPropertyValue('--color-accent').trim();
 
     const MAX_DIST = 150;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -56,7 +56,8 @@ function initializeHeroAnimation() {
             vy: (Math.random() - 0.5) * 0.25,
             radius: 1.5 + Math.random() * 1.5
         }));
-        markNode = { x: width / 2, y: height / 2, radius: 14 };
+        // Offset from centre — dead centre puts the mark on top of the headline copy.
+        markNode = { x: width * 0.78, y: height * 0.28, radius: 11 };
     }
 
     function drawFrame() {
@@ -91,14 +92,25 @@ function initializeHeroAnimation() {
             ctx.fill();
         });
 
-        ctx.globalAlpha = 1;
-        ctx.fillStyle = markColor;
-        ctx.shadowColor = markColor;
-        ctx.shadowBlur = 24;
+        // Brand hub: a soft halo with a small solid core, so it reads as a
+        // luminous node in the constellation rather than a hard UI dot.
+        const mx = markNode.x + offsetX;
+        const my = markNode.y + offsetY;
+        const halo = ctx.createRadialGradient(mx, my, 0, mx, my, markNode.radius * 3.2);
+        halo.addColorStop(0, markColor);
+        halo.addColorStop(1, 'transparent');
+        ctx.globalAlpha = 0.28;
+        ctx.fillStyle = halo;
         ctx.beginPath();
-        ctx.arc(markNode.x + offsetX, markNode.y + offsetY, markNode.radius, 0, Math.PI * 2);
+        ctx.arc(mx, my, markNode.radius * 3.2, 0, Math.PI * 2);
         ctx.fill();
-        ctx.shadowBlur = 0;
+
+        ctx.globalAlpha = 0.85;
+        ctx.fillStyle = markColor;
+        ctx.beginPath();
+        ctx.arc(mx, my, markNode.radius * 0.42, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
     }
 
     function step() {
