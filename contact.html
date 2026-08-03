@@ -369,6 +369,45 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Project enquiry form -->
+                <div class="contact-form-column">
+                    <div class="card elev-md contact-form-card">
+                        <span class="card-kicker">Start a project</span>
+                        <h2 class="contact-form-heading">Tell us what you&rsquo;re building</h2>
+                        <p class="contact-form-lede">Send a few details and one of our engineers replies within 24 hours &mdash; no obligation, just a straight conversation about the work.</p>
+                        <form class="contact-form-modern" action="#" method="POST"
+                              toolname="submit_contact_request"
+                              tooldescription="Send a project inquiry to WebOctals. Submits the visitor's contact details and project description so the WebOctals team can follow up, typically within 24 hours."
+                              toolautosubmit>
+                            <div class="field">
+                                <label for="ct-name">Full name</label>
+                                <input class="input" type="text" id="ct-name" name="name" placeholder="Jane Smith" required
+                                       toolparamdescription="Visitor's full name">
+                            </div>
+                            <div class="field">
+                                <label for="ct-email">Work email</label>
+                                <input class="input" type="email" id="ct-email" name="email" placeholder="jane@company.com" required
+                                       toolparamdescription="Visitor's work email address, used by WebOctals to reply">
+                            </div>
+                            <div class="field">
+                                <label for="ct-phone">Phone number <span class="field-optional">(optional)</span></label>
+                                <input class="input" type="tel" id="ct-phone" name="phone" placeholder="+44 7700 900000"
+                                       toolparamdescription="Visitor's phone number (optional)">
+                            </div>
+                            <div class="field">
+                                <label for="ct-message">Tell us about your project</label>
+                                <textarea class="input" id="ct-message" name="message" rows="5" placeholder="What are you looking to build?" required
+                                          toolparamdescription="Description of the project or problem the visitor wants help with"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary contact-form-submit">
+                                <span>Send message</span>
+                                <div class="btn-glow"></div>
+                            </button>
+                            <p class="form-privacy">&#128274; Your information is secure and will never be shared</p>
+                        </form>
+                    </div>
+                </div>
             </div>
 
             <!-- FAQ Section with Schema.org FAQPage markup -->
@@ -595,5 +634,7 @@
     <script defer src="assets/js/contact-analytics.js"></script>
     <script defer src="assets/js/contact-form-handler.js"></script>
     <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/hero-animation.js"></script>
+    <script defer src="assets/js/reveal.js"></script>
 </body>
 </html>

@@ -9076,3 +9076,351 @@ textarea.input {
 .footer .link-group a:hover {
     color: var(--color-accent-300);
 }
+
+/* ============================================================
+   Inner pages pass — projects, clients, about, blog, contact.
+   Declared last so it wins the cascade.
+   ============================================================ */
+
+/* --- Shared page hero: give the bare h1 pages real presence --- */
+.page-hero,
+.blog-header,
+.about.page-section {
+    position: relative;
+    padding: 170px 0 var(--space-2xl);
+}
+
+.page-hero h1,
+.blog-header h1 {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin-bottom: var(--space-md);
+}
+
+.page-hero p {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--color-neutral-700);
+    max-width: 62ch;
+}
+
+/* --- Contact page --- */
+.contact-hero {
+    background: none;
+    position: relative;
+    overflow: hidden;
+    padding: 160px 0 var(--space-3xl);
+}
+
+.contact-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 12% 20%, oklch(72% 0.118 51.6 / 0.34), transparent 55%),
+        radial-gradient(circle at 88% 70%, oklch(72% 0.061 124.6 / 0.32), transparent 55%);
+    filter: blur(30px);
+    pointer-events: none;
+}
+
+.contact-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-hero h1,
+.contact-hero p,
+.contact-hero .stat-number,
+.contact-hero .stat-label {
+    color: var(--color-text);
+}
+
+.contact-hero h1 {
+    font-size: clamp(2.4rem, 5.2vw, 3.8rem);
+    line-height: 1.08;
+}
+
+.contact-hero p {
+    color: var(--color-neutral-700);
+}
+
+.contact-hero .hero-stat {
+    background: oklch(97% 0.012 65 / 0.72);
+    border: 1px solid var(--hairline);
+    backdrop-filter: blur(10px);
+}
+
+/* Two-column: enquiry form beside the contact methods */
+.contact-layout {
+    display: grid;
+    /* Overrides the legacy single-column rule that capped this at 560px. */
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: var(--space-2xl);
+    align-items: start;
+}
+
+.contact-form-card {
+    padding: var(--space-2xl);
+}
+
+.contact-form-card::after {
+    opacity: 1;
+    height: 4px;
+}
+
+.contact-form-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+    line-height: 1.15;
+    margin: var(--space-xs) 0 var(--space-sm);
+}
+
+.contact-form-lede {
+    color: var(--color-neutral-700);
+    line-height: 1.65;
+    margin-bottom: var(--space-xl);
+}
+
+.field-optional {
+    color: var(--color-neutral-500);
+    font-weight: 400;
+}
+
+.contact-form-submit {
+    width: 100%;
+    margin-top: var(--space-sm);
+}
+
+.contact-sidebar-heading {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: var(--space-lg);
+}
+
+/* --- About page --- */
+.about.page-section .about-text h1,
+.about.page-section h1 {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.08;
+    margin-bottom: var(--space-lg);
+    /* The legacy rule clipped a 3-stop olive/tan gradient to the text,
+       which read as washed-out low-contrast type on the cream page.
+       Solid ink, with the accent reserved for the emphasised word. */
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    color: var(--color-text);
+}
+
+.about.page-section h1 .text-accent {
+    color: var(--color-accent-700);
+}
+
+.about h2,
+.core-values h2,
+.why-choose h2 {
+    color: var(--color-text);
+}
+
+.value-card {
+    background: var(--color-bg);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-accent-300);
+    box-shadow: 0 8px 16px oklch(22% 0.005 65 / 0.06), 0 22px 44px oklch(22% 0.005 65 / 0.11);
+}
+
+/* Emoji glyphs read as clip-art at large sizes — scale them down and
+   seat them in a tinted well so they behave like icons. */
+.value-card .value-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto var(--space-md);
+    border-radius: var(--radius-md);
+    background: var(--color-accent-100);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* --- Blog --- */
+.blog-grid,
+.articles-grid {
+    align-items: stretch;
+}
+
+.blog-post-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.blog-post-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-accent-300);
+    box-shadow: 0 8px 16px oklch(22% 0.005 65 / 0.06), 0 24px 48px oklch(22% 0.005 65 / 0.12);
+}
+
+.newsletter-signup {
+    background: var(--ink);
+    position: relative;
+    overflow: hidden;
+}
+
+.newsletter-signup::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 15% 0%, oklch(55% 0.123 51.6 / 0.5), transparent 55%),
+        radial-gradient(circle at 85% 100%, oklch(55% 0.063 124.6 / 0.45), transparent 55%);
+    pointer-events: none;
+}
+
+.newsletter-signup > * {
+    position: relative;
+    z-index: 1;
+}
+
+.newsletter-signup h2 {
+    color: var(--color-bg);
+}
+
+.newsletter-signup p {
+    color: oklch(93% 0.016 65 / 0.8);
+}
+
+/* --- Projects & clients grids --- */
+.projects-grid,
+.clients-grid {
+    align-items: stretch;
+}
+
+.project-card,
+.client-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+@media (max-width: 900px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-column {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-hero,
+    .blog-header,
+    .about.page-section,
+    .contact-hero {
+        padding-top: 130px;
+    }
+
+    .contact-form-card {
+        padding: var(--space-lg);
+    }
+}
+
+/* --- Blog header: the image band carried no heading at all --- */
+.blog-header {
+    padding: 0;
+    min-height: 62vh;
+    display: flex;
+    align-items: flex-end;
+}
+
+.blog-header .blog-header-image {
+    position: absolute;
+    inset: 0;
+}
+
+.blog-header .blog-header-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-header .blog-header-overlay,
+.blog-header .blog-header-gradient {
+    position: absolute;
+    inset: 0;
+}
+
+.blog-header .blog-header-overlay {
+    background: linear-gradient(180deg, oklch(24% 0.014 60 / 0.42) 0%, oklch(24% 0.014 60 / 0.9) 100%);
+}
+
+.blog-header .blog-header-gradient {
+    background: linear-gradient(90deg, oklch(24% 0.014 60 / 0.82) 0%, oklch(24% 0.014 60 / 0.35) 65%, transparent 100%);
+}
+
+.blog-header-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 160px;
+    padding-bottom: var(--space-2xl);
+    max-width: 1200px;
+}
+
+.blog-header-content .hero-eyebrow {
+    border-color: oklch(93% 0.016 65 / 0.35);
+    background: oklch(24% 0.014 60 / 0.35);
+    color: var(--color-bg);
+    backdrop-filter: blur(8px);
+}
+
+.blog-header-content h1 {
+    color: var(--color-bg);
+    max-width: 18ch;
+}
+
+.blog-header .blog-header-content p {
+    color: oklch(93% 0.016 65 / 0.88);
+    text-shadow: 0 1px 12px oklch(24% 0.014 60 / 0.5);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    max-width: 58ch;
+}
+
+/* "Latest Articles" and peers used clipped gradient text — washed out
+   against the cream page. Solid ink reads properly. */
+.recent-articles .section-header h2,
+.blog-grid-section .section-header h2 {
+    /* A clipped gradient elsewhere in the sheet leaves these headings with a
+       transparent text fill, washing them out on the cream page. */
+    background-image: none !important;
+    -webkit-text-fill-color: var(--color-text) !important;
+    color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+    .blog-header {
+        min-height: auto;
+    }
+
+    .blog-header-content {
+        padding-top: 130px;
+    }
+}
