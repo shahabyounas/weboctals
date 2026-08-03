@@ -565,7 +565,6 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
     position: relative;
     overflow: hidden;
     padding: 120px 0 80px;
@@ -7540,6 +7539,10 @@ textarea.input {
     background-clip: text;
     position: relative;
     animation: glow 3s ease-in-out infinite alternate;
+}
+
+#home.hero {
+    justify-content: center;
 }
 
 #home .hero-content {
