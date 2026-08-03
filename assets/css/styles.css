@@ -7515,10 +7515,68 @@ textarea.input {
     color: var(--color-bg);
 }
 
-/* Hero — eyebrow, trust bullets, decorative rings/mark/chips */
+/* Hero — AI-native full-bleed redesign: aurora background, neural
+   constellation canvas, eyebrow, centered content, edge chips */
 .hero-eyebrow {
     display: inline-flex;
+    align-items: center;
     margin-bottom: var(--space-lg);
+    padding: 6px 18px;
+    border: 1px solid var(--color-accent-2-300);
+    border-radius: var(--radius-pill);
+    background: oklch(97% 0.012 65 / 0.6);
+    color: var(--color-accent-2-700);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.hero-title-highlight {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+#home.hero {
+    justify-content: center;
+}
+
+#home .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#home .hero-content::before {
+    content: '';
+    position: absolute;
+    inset: -40px -60px;
+    z-index: -1;
+    background: radial-gradient(circle, oklch(97% 0.012 65 / 0.65) 0%, oklch(97% 0.012 65 / 0) 72%);
+    border-radius: var(--radius-lg);
+    pointer-events: none;
+}
+
+#home .hero-buttons {
+    justify-content: center;
+}
+
+#home .hero-trust-bullets {
+    justify-content: center;
+}
+
+#home .scroll-indicator {
+    z-index: 2;
 }
 
 .hero-trust-bullets {
@@ -7545,64 +7603,93 @@ textarea.input {
     flex-shrink: 0;
 }
 
-.hero-rings {
-    position: relative;
-    width: 340px;
-    height: 340px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.hero-aurora {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
 }
 
-.hero-ring {
+.hero-aurora-blob {
     position: absolute;
     border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.55;
+    will-change: transform;
 }
 
-.hero-ring-dashed {
+.hero-aurora-blob-1 {
+    width: 480px;
+    height: 480px;
+    top: -10%;
+    left: -8%;
+    background: var(--color-accent-400);
+    animation: hero-aurora-drift-1 22s ease-in-out infinite;
+}
+
+.hero-aurora-blob-2 {
+    width: 420px;
+    height: 420px;
+    top: 20%;
+    right: -12%;
+    background: var(--color-accent-2-400);
+    animation: hero-aurora-drift-2 26s ease-in-out infinite;
+}
+
+.hero-aurora-blob-3 {
+    width: 360px;
+    height: 360px;
+    bottom: -12%;
+    left: 15%;
+    background: var(--color-accent-600);
+    animation: hero-aurora-drift-3 30s ease-in-out infinite;
+}
+
+.hero-aurora-blob-4 {
+    width: 260px;
+    height: 260px;
+    bottom: 5%;
+    right: 10%;
+    background: var(--color-cta-400);
+    opacity: 0.22;
+    animation: hero-aurora-drift-1 34s ease-in-out infinite reverse;
+}
+
+@keyframes hero-aurora-drift-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(6%, 8%) scale(1.12); }
+}
+
+@keyframes hero-aurora-drift-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-8%, 6%) scale(0.94); }
+}
+
+@keyframes hero-aurora-drift-3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(5%, -10%) scale(1.08); }
+}
+
+.hero-canvas {
+    position: absolute;
     inset: 0;
-    border: 2px dashed var(--color-accent-300);
-    animation: hero-ring-spin 40s linear infinite;
-}
-
-.hero-ring-solid {
-    inset: 15%;
-    border: 2px solid var(--color-accent-2-300);
-    animation: hero-ring-spin 60s linear infinite reverse;
-}
-
-@keyframes hero-ring-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.hero-mark-8 {
-    width: 88px;
-    height: 88px;
-    border-radius: 50%;
-    background: var(--gradient-primary);
-    color: var(--text-on-primary);
-    font-family: var(--font-heading);
-    font-size: 2.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--shadow-organic-lg);
-    animation: hero-mark-float 5s ease-in-out infinite;
-}
-
-@keyframes hero-mark-float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
 }
 
 .hero-chip {
     position: absolute;
+    z-index: 3;
     display: flex;
     align-items: center;
     gap: 8px;
     padding: 10px 16px;
-    background: var(--color-bg);
+    background: oklch(97% 0.012 65 / 0.55);
+    backdrop-filter: blur(12px);
+    border: 1px solid oklch(100% 0 0 / 0.4);
     border-radius: var(--radius-pill);
     box-shadow: var(--shadow-organic-md);
     font-size: 0.8125rem;
@@ -7617,10 +7704,20 @@ textarea.input {
     color: var(--color-accent);
 }
 
-.hero-chip-1 { top: 0; right: -10px; animation-delay: 0s; }
-.hero-chip-2 { bottom: 20%; left: -20px; animation-delay: 1.5s; }
+.hero-chip-1 { top: 12%; left: 4%; animation-delay: 0s; }
+.hero-chip-2 { bottom: 16%; left: 6%; animation-delay: 1.5s; }
 .hero-chip-2 svg { color: var(--color-accent-2-700); }
-.hero-chip-3 { bottom: -10px; right: 10%; animation-delay: 3s; }
+.hero-chip-3 { bottom: 14%; right: 5%; animation-delay: 3s; }
+
+/* Below ~768px the trust-bullet list wraps onto multiple lines and grows tall
+   enough that the fixed bottom% chip positions collide with its text. The
+   chips are purely decorative, so hide them rather than fight for space with
+   the centered text column on narrow viewports. */
+@media (max-width: 768px) {
+    #home .hero-chip {
+        display: none;
+    }
+}
 
 @keyframes hero-chip-float {
     0%, 100% { transform: translateY(0); }

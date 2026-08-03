@@ -202,59 +202,54 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="title-line">Unleash the Power of</span>
-                    <span class="title-ai">Artificial Intelligence</span>
-                    <span class="title-line">for Your Digital Future</span>
-                </h1>
-                <p class="hero-subtitle">
-                    At WebOctals, we craft intelligent digital products and AI agents that revolutionize how businesses operate. Experience the future of automation and smart solutions.
-                </p>
-                <div class="hero-buttons">
-                    <a href="contact.html" class="btn btn-primary">
-                        <span>Start Your AI Journey</span>
-                        <div class="btn-glow"></div>
-                    </a>
-                    <a href="services.html" class="btn btn-secondary">
-                        <span>Explore Services</span>
-                    </a>
-                </div>
-                <ul class="hero-trust-bullets">
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        Certified AI development agency
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        Award-winning solutions
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        24/7 support &amp; monitoring
-                    </li>
-                </ul>
+        <div class="hero-aurora" aria-hidden="true">
+            <span class="hero-aurora-blob hero-aurora-blob-1"></span>
+            <span class="hero-aurora-blob hero-aurora-blob-2"></span>
+            <span class="hero-aurora-blob hero-aurora-blob-3"></span>
+            <span class="hero-aurora-blob hero-aurora-blob-4"></span>
+        </div>
+        <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+        <div class="hero-content">
+            <span class="hero-eyebrow">AI-Native Digital Studio</span>
+            <h1 class="hero-title">We don&rsquo;t add AI.<br>We build <span class="hero-title-highlight">with it.</span></h1>
+            <p class="hero-subtitle">
+                WebOctals designs and ships digital products, agents, and automation that are AI-native from the first line of code &mdash; not legacy systems with a chatbot bolted on.
+            </p>
+            <div class="hero-buttons">
+                <a href="contact.html" class="btn btn-primary">
+                    <span>Start Your AI Journey</span>
+                    <div class="btn-glow"></div>
+                </a>
+                <a href="services.html" class="btn btn-secondary">
+                    <span>Explore Services</span>
+                </a>
             </div>
-            <div class="hero-visual">
-                <div class="hero-rings" aria-hidden="true">
-                    <div class="hero-ring hero-ring-dashed"></div>
-                    <div class="hero-ring hero-ring-solid"></div>
-                    <div class="hero-mark-8">8</div>
-                </div>
-                <div class="hero-chip hero-chip-1">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg>
-                    <span>AI-Powered</span>
-                </div>
-                <div class="hero-chip hero-chip-2">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11Z"/></svg>
-                    <span>Enterprise-grade</span>
-                </div>
-                <div class="hero-chip hero-chip-3">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span>Always-on support</span>
-                </div>
-            </div>
+            <ul class="hero-trust-bullets">
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Certified AI development agency
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Award-winning solutions
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    24/7 support &amp; monitoring
+                </li>
+            </ul>
+        </div>
+        <div class="hero-chip hero-chip-1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg>
+            <span>AI-Powered</span>
+        </div>
+        <div class="hero-chip hero-chip-2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11Z"/></svg>
+            <span>Enterprise-grade</span>
+        </div>
+        <div class="hero-chip hero-chip-3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Always-on support</span>
         </div>
         <div class="scroll-indicator">
             <div class="scroll-arrow"></div>
@@ -832,5 +827,6 @@
     <script defer src="assets/js/contact-analytics.js"></script>
     <script defer src="assets/js/contact-form-handler.js"></script>
     <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/hero-animation.js"></script>
 </body>
 </html>
