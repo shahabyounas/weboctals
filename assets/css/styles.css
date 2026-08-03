@@ -2849,7 +2849,7 @@ body {
 }
 
 .faq-header h2 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 800;
     color: var(--text-primary);
     margin-bottom: 12px;
@@ -8373,6 +8373,10 @@ textarea.input {
     background: var(--surface-sunken);
 }
 
+.faq-section-organic {
+    padding: var(--space-2xl) 0;
+}
+
 .results-snapshot,
 .projects-grid-section {
     background: var(--surface-raised);
@@ -8455,8 +8459,8 @@ textarea.input {
 }
 
 .section-header h2 {
-    font-size: clamp(2rem, 3.6vw, 3rem);
-    line-height: 1.12;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    line-height: 1.16;
     margin-bottom: var(--space-md);
 }
 
@@ -8574,6 +8578,10 @@ textarea.input {
     margin-bottom: var(--space-md);
     padding: 0 var(--space-lg);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-organic-item[open] {
+    padding-bottom: var(--space-lg);
 }
 
 .faq-organic-item[open],
@@ -9137,8 +9145,8 @@ textarea.input {
 }
 
 .contact-hero h1 {
-    font-size: clamp(2.4rem, 5.2vw, 3.8rem);
-    line-height: 1.08;
+    font-size: clamp(2.1rem, 4.3vw, 3.2rem);
+    line-height: 1.1;
 }
 
 .contact-hero p {
