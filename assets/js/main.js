@@ -7,7 +7,50 @@ document.addEventListener('DOMContentLoaded', function() {
     // initializeGTMTracking(); // Disabled - using lazy-loaded Google Analytics instead
     initializeFAQAccordion();
     initializeClientSlider();
+    initializeContactPopup();
 });
+
+// Contact Popup
+function initializeContactPopup() {
+    const widget = document.getElementById('contact-widget');
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatPopup = document.getElementById('chat-popup');
+    const chatClose = document.getElementById('chat-close');
+
+    if (!widget || !chatToggle || !chatPopup || !chatClose) return;
+
+    function openPopup() {
+        chatPopup.classList.add('active');
+        chatToggle.setAttribute('aria-expanded', 'true');
+    }
+
+    function closePopup() {
+        chatPopup.classList.remove('active');
+        chatToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    chatToggle.addEventListener('click', () => {
+        if (chatPopup.classList.contains('active')) {
+            closePopup();
+        } else {
+            openPopup();
+        }
+    });
+
+    chatClose.addEventListener('click', closePopup);
+
+    document.addEventListener('click', (e) => {
+        if (chatPopup.classList.contains('active') && !widget.contains(e.target)) {
+            closePopup();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && chatPopup.classList.contains('active')) {
+            closePopup();
+        }
+    });
+}
 
 // Simple horizontal view transitions
 function initializeSimpleNavigation() {
@@ -413,226 +456,6 @@ function startBrainAnimation() {
     }, 1500);
 }
 
-// Advanced Chatbot System
-function initializeChatbot() {
-    const chatToggle = document.getElementById('chat-toggle');
-    const chatWindow = document.getElementById('chat-window');
-    const chatClose = document.getElementById('chat-close');
-    const chatInput = document.getElementById('chat-input');
-    const chatSend = document.getElementById('chat-send');
-    const chatMessages = document.getElementById('chat-messages');
-
-    let isTyping = false;
-
-    // Toggle chat window
-    chatToggle.addEventListener('click', () => {
-        chatWindow.classList.toggle('active');
-        if (chatWindow.classList.contains('active')) {
-            chatInput.focus();
-        }
-    });
-
-    chatClose.addEventListener('click', () => {
-        chatWindow.classList.remove('active');
-    });
-
-    // Send message functionality
-    function sendMessage() {
-        const message = chatInput.value.trim();
-        if (message && !isTyping) {
-            addMessage(message, 'user');
-            chatInput.value = '';
-            
-            // Simulate AI processing
-            showTypingIndicator();
-            setTimeout(() => {
-                const response = generateAIResponse(message);
-                hideTypingIndicator();
-                addMessage(response, 'bot');
-            }, 1500 + Math.random() * 1000);
-        }
-    }
-
-    chatSend.addEventListener('click', sendMessage);
-    chatInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            sendMessage();
-        }
-    });
-
-    // Add message to chat
-    function addMessage(text, sender) {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${sender}-message`;
-        
-        const contentDiv = document.createElement('div');
-        contentDiv.className = 'message-content';
-        contentDiv.textContent = text;
-        
-        messageDiv.appendChild(contentDiv);
-        chatMessages.appendChild(messageDiv);
-        
-        // Scroll to bottom
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-        
-        // Add animation
-        messageDiv.style.opacity = '0';
-        messageDiv.style.transform = 'translateY(10px)';
-        
-        requestAnimationFrame(() => {
-            messageDiv.style.transition = 'all 0.3s ease';
-            messageDiv.style.opacity = '1';
-            messageDiv.style.transform = 'translateY(0)';
-        });
-    }
-
-    // Typing indicator
-    function showTypingIndicator() {
-        if (document.querySelector('.typing-indicator')) return;
-        
-        isTyping = true;
-        const typingDiv = document.createElement('div');
-        typingDiv.className = 'message bot-message typing-indicator';
-        typingDiv.innerHTML = `
-            <div class="message-content">
-                <div class="typing-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        `;
-        
-        chatMessages.appendChild(typingDiv);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-        
-        // Add CSS for typing dots animation
-        const style = document.createElement('style');
-        style.textContent = `
-            .typing-dots {
-                display: flex;
-                gap: 4px;
-                align-items: center;
-            }
-            .typing-dots span {
-                width: 6px;
-                height: 6px;
-                background: var(--primary-color);
-                border-radius: 50%;
-                animation: typing 1.4s infinite ease-in-out;
-            }
-            .typing-dots span:nth-child(1) { animation-delay: -0.32s; }
-            .typing-dots span:nth-child(2) { animation-delay: -0.16s; }
-            @keyframes typing {
-                0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
-                40% { transform: scale(1); opacity: 1; }
-            }
-        `;
-        if (!document.querySelector('#typing-animation-style')) {
-            style.id = 'typing-animation-style';
-            document.head.appendChild(style);
-        }
-    }
-
-    function hideTypingIndicator() {
-        const typingIndicator = document.querySelector('.typing-indicator');
-        if (typingIndicator) {
-            typingIndicator.remove();
-        }
-        isTyping = false;
-    }
-
-    // AI Response Generation
-    function generateAIResponse(message) {
-        const responses = {
-            greeting: [
-                "Hello! I'm WebOctals' AI assistant. How can I help you explore our AI solutions today?",
-                "Hi there! Welcome to WebOctals. I'm here to assist you with questions about our AI services.",
-                "Greetings! I'm your AI guide to WebOctals' innovative solutions. What would you like to know?"
-            ],
-            services: [
-                "WebOctals offers cutting-edge AI agent development, digital product creation, intelligent automation, and machine learning solutions. Which service interests you most?",
-                "We specialize in four main areas: AI Agent Development, Digital Product Development, Intelligent Automation, and Machine Learning Solutions. Each service is designed to transform your business through AI.",
-                "Our services include developing custom AI agents, creating intelligent digital products, implementing smart automation, and deploying ML solutions. Would you like details about any specific service?"
-            ],
-            aiAgents: [
-                "Our AI agents are intelligent systems that can automate complex tasks, make decisions, and integrate with your existing workflows. They feature natural language processing, autonomous decision-making, and continuous learning capabilities.",
-                "AI agents from WebOctals are custom-built to handle your specific business needs. They can process natural language, make intelligent decisions, integrate across platforms, and continuously improve their performance.",
-                "We develop AI agents that act as intelligent assistants for your business, capable of understanding context, making decisions, and performing complex tasks autonomously."
-            ],
-            digitalProducts: [
-                "We create intelligent digital products that leverage AI for enhanced user experiences. This includes AI-enhanced UX/UI, predictive analytics, smart recommendations, and adaptive interfaces.",
-                "Our digital products incorporate AI to provide personalized experiences, predictive insights, and intelligent automation that adapts to user behavior and preferences.",
-                "We build digital products that think and learn, featuring AI-driven interfaces, predictive capabilities, and intelligent automation to deliver exceptional user experiences."
-            ],
-            automation: [
-                "Our intelligent automation solutions streamline operations through AI-driven process optimization, workflow automation, intelligent monitoring, and performance analytics.",
-                "We implement automation that not only executes tasks but learns and improves over time, optimizing your workflows and reducing manual intervention.",
-                "Our automation solutions use AI to optimize processes, monitor performance, and continuously improve operational efficiency."
-            ],
-            machinelearning: [
-                "Our ML solutions include predictive modeling, data analysis, pattern recognition, and real-time insights to help you make data-driven decisions.",
-                "We deploy machine learning models that extract valuable insights from your data, enabling predictive analytics and intelligent decision-making.",
-                "Our machine learning services transform your data into actionable insights through advanced modeling, analysis, and real-time processing."
-            ],
-            team: [
-                "Our team consists of AI specialists, data scientists, developers, and product managers who are passionate about creating innovative AI solutions.",
-                "WebOctals is powered by experts in artificial intelligence, machine learning, and product development who work together to deliver cutting-edge solutions.",
-                "We have a diverse team of AI researchers, developers, and strategists dedicated to pushing the boundaries of what's possible with artificial intelligence."
-            ],
-            contact: [
-                "You can reach us at hello@weboctals.com or use our contact form. We'd love to discuss your AI project and explore how we can help transform your business.",
-                "Ready to get started? Contact us at hello@weboctals.com or schedule a free consultation. We're excited to discuss your AI needs!",
-                "Let's connect! Reach out to hello@weboctals.com or fill out our contact form to begin your AI transformation journey with WebOctals."
-            ],
-            pricing: [
-                "Our pricing varies based on project scope and requirements. Contact us for a personalized quote tailored to your specific AI needs and goals.",
-                "We offer flexible pricing models based on your project requirements. Get in touch for a detailed discussion about your needs and a custom proposal.",
-                "Pricing depends on the complexity and scale of your AI project. We'd be happy to provide a detailed quote after understanding your specific requirements."
-            ],
-            technology: [
-                "We use cutting-edge AI technologies including natural language processing, machine learning frameworks, computer vision, and advanced neural networks.",
-                "Our technology stack includes the latest in AI and ML, featuring frameworks like TensorFlow, PyTorch, and cloud-based AI services for scalable solutions.",
-                "We leverage state-of-the-art AI technologies and frameworks to build robust, scalable, and intelligent solutions tailored to your business needs."
-            ],
-            default: [
-                "That's an interesting question! I'd be happy to connect you with our team for a detailed discussion. You can reach us at hello@weboctals.com.",
-                "I'd love to help you with that! For specific technical questions, our experts at hello@weboctals.com can provide detailed insights.",
-                "Great question! Our team of AI specialists can provide you with comprehensive information. Feel free to contact us at hello@weboctals.com."
-            ]
-        };
-
-        const messageLower = message.toLowerCase();
-        
-        // Determine response category
-        let category = 'default';
-        
-        if (messageLower.includes('hello') || messageLower.includes('hi') || messageLower.includes('hey')) {
-            category = 'greeting';
-        } else if (messageLower.includes('service') || messageLower.includes('what do you do')) {
-            category = 'services';
-        } else if (messageLower.includes('ai agent') || messageLower.includes('agent')) {
-            category = 'aiAgents';
-        } else if (messageLower.includes('digital product') || messageLower.includes('product')) {
-            category = 'digitalProducts';
-        } else if (messageLower.includes('automation') || messageLower.includes('automate')) {
-            category = 'automation';
-        } else if (messageLower.includes('machine learning') || messageLower.includes('ml') || messageLower.includes('model')) {
-            category = 'machinelearning';
-        } else if (messageLower.includes('team') || messageLower.includes('who are you')) {
-            category = 'team';
-        } else if (messageLower.includes('contact') || messageLower.includes('reach') || messageLower.includes('email')) {
-            category = 'contact';
-        } else if (messageLower.includes('price') || messageLower.includes('cost') || messageLower.includes('pricing')) {
-            category = 'pricing';
-        } else if (messageLower.includes('technology') || messageLower.includes('tech') || messageLower.includes('framework')) {
-            category = 'technology';
-        }
-        
-        const categoryResponses = responses[category];
-        return categoryResponses[Math.floor(Math.random() * categoryResponses.length)];
-    }
-}
 
 // Scroll Effects and Parallax
 function initializeScrollEffects() {
@@ -1419,7 +1242,6 @@ if (typeof module !== 'undefined' && module.exports) {
         initializeParticles,
         initializeNavigation,
         initializeAnimations,
-        initializeChatbot,
         debounce,
         throttle
     };

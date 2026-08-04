@@ -28,6 +28,9 @@
   ],
   "author": "WebOctals",
   "license": "MIT",
+  "htmlnano": {
+    "minifySvg": false
+  },
   "devDependencies": {
     "@parcel/optimizer-cssnano": "^2.10.0",
     "@parcel/optimizer-htmlnano": "^2.10.0",

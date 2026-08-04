@@ -771,29 +771,39 @@
         </div>
     </footer>
 
-    <!-- AI Chat Widget -->
-    <div id="ai-chat-widget" class="chat-widget">
-        <div class="chat-toggle" id="chat-toggle">
-            <div class="chat-icon">
-                <div class="ai-pulse"></div>
-                🤖
+    <!-- Contact Popup -->
+    <div id="contact-widget" class="chat-widget">
+        <button class="chat-toggle" id="chat-toggle" aria-label="Contact us" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+        <div class="chat-popup" id="chat-popup">
+            <div class="chat-popup-header">
+                <h4>Get in touch</h4>
+                <button class="chat-close" id="chat-close" aria-label="Close">×</button>
             </div>
-        </div>
-        <div class="chat-window" id="chat-window">
-            <div class="chat-header">
-                <h4>WebOctals AI Assistant</h4>
-                <button class="chat-close" id="chat-close">×</button>
-            </div>
-            <div class="chat-messages" id="chat-messages">
-                <div class="message bot-message">
-                    <div class="message-content">
-                        Hello! I can help you learn more about our AI services. Which service interests you most? AI agents, digital products, automation, or ML solutions?
-                    </div>
-                </div>
-            </div>
-            <div class="chat-input">
-                <input type="text" id="chat-input" placeholder="Ask about our AI services...">
-                <button id="chat-send">Send</button>
+            <p class="chat-popup-subtitle">Choose how you'd like to reach us</p>
+            <div class="chat-popup-actions">
+                <a class="chat-popup-btn" href="mailto:info@weboctals.com?subject=Website%20Enquiry">
+                    <span class="chat-popup-btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </span>
+                    <span>Email us</span>
+                </a>
+                <a class="chat-popup-btn chat-popup-btn-whatsapp"
+                   href="https://web.whatsapp.com/send?phone=447442410345&text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20WebOctals"
+                   target="_blank" rel="noopener">
+                    <span class="chat-popup-btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </span>
+                    <span>WhatsApp</span>
+                </a>
             </div>
         </div>
     </div>
