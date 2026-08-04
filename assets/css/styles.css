@@ -3165,7 +3165,7 @@ body {
     color: var(--text-muted);
 }
 
-/* AI Chat Widget */
+/* Contact Popup */
 .chat-widget {
     position: fixed;
     bottom: 20px;
@@ -3177,6 +3177,7 @@ body {
     width: 60px;
     height: 60px;
     background: var(--gradient-primary);
+    border: none;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -3185,34 +3186,24 @@ body {
     box-shadow: var(--shadow-lg);
     transition: all var(--transition-normal);
     position: relative;
+    color: var(--text-primary);
 }
 
 .chat-toggle:hover {
     transform: scale(1.1);
 }
 
-.chat-icon {
-    font-size: 1.5rem;
-    position: relative;
+.chat-toggle svg {
+    width: 26px;
+    height: 26px;
 }
 
-.ai-pulse {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    width: 12px;
-    height: 12px;
-    background: var(--accent-color);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-.chat-window {
+.chat-popup {
     position: absolute;
     bottom: 80px;
     right: 0;
-    width: 350px;
-    height: 500px;
+    width: 320px;
+    height: auto;
     background: var(--bg-secondary);
     border: 1px solid rgba(122, 138, 94, 0.2);
     border-radius: var(--border-radius-lg);
@@ -3222,11 +3213,11 @@ body {
     backdrop-filter: blur(20px);
 }
 
-.chat-window.active {
+.chat-popup.active {
     display: flex;
 }
 
-.chat-header {
+.chat-popup-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -3236,7 +3227,7 @@ body {
     border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
 }
 
-.chat-header h4 {
+.chat-popup-header h4 {
     color: var(--text-primary);
     font-weight: 600;
     margin: 0;
@@ -3261,82 +3252,57 @@ body {
     background: rgba(255, 255, 255, 0.1);
 }
 
-.chat-messages {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.message {
-    max-width: 80%;
-    animation: fadeIn 0.3s ease-in;
-}
-
-.bot-message {
-    align-self: flex-start;
-}
-
-.user-message {
-    align-self: flex-end;
-}
-
-.message-content {
-    padding: 12px 16px;
-    border-radius: var(--border-radius);
-    line-height: 1.4;
+.chat-popup-subtitle {
+    margin: 20px 20px 0;
+    color: var(--text-secondary);
     font-size: 0.9rem;
 }
 
-.bot-message .message-content {
-    background: var(--gradient-card);
-    color: var(--text-primary);
-    border: 1px solid rgba(122, 138, 94, 0.1);
-}
-
-.user-message .message-content {
-    background: var(--primary-color);
-    color: var(--bg-primary);
-}
-
-.chat-input {
+.chat-popup-actions {
     display: flex;
-    padding: 20px;
-    border-top: 1px solid rgba(122, 138, 94, 0.1);
-    gap: 10px;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 20px 20px;
 }
 
-.chat-input input {
-    flex: 1;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.05);
+.chat-popup-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: var(--gradient-card);
     border: 1px solid rgba(122, 138, 94, 0.2);
     border-radius: var(--border-radius);
     color: var(--text-primary);
-    font-family: var(--font-primary);
-}
-
-.chat-input input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-}
-
-.chat-input button {
-    padding: 12px 20px;
-    background: var(--gradient-primary);
-    border: none;
-    border-radius: var(--border-radius);
-    color: var(--text-primary);
     font-weight: 600;
+    text-decoration: none;
     cursor: pointer;
     transition: all var(--transition-normal);
 }
 
-.chat-input button:hover {
+.chat-popup-btn:hover {
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
+}
+
+.chat-popup-btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.chat-popup-btn-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.chat-popup-btn-whatsapp {
+    background: #25D366;
+    border-color: #25D366;
+    color: #ffffff;
 }
 
 /* Animations */
@@ -3575,10 +3541,9 @@ body {
         padding: 35px 24px;
     }
 
-    .chat-window {
+    .chat-popup {
         width: calc(100vw - 40px);
-        right: 20px;
-        left: 20px;
+        right: 0;
     }
 }
 
