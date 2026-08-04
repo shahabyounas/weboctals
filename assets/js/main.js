@@ -50,6 +50,30 @@ function initializeContactPopup() {
             closePopup();
         }
     });
+
+    const emailBtn = chatPopup.querySelector('a[href^="mailto:"]');
+    if (emailBtn) {
+        const contactLink = document.querySelector('a[href$="contact.html"]:not([href^="mailto:"])');
+        const contactUrl = (contactLink ? contactLink.getAttribute('href') : 'contact.html') + '#contact-form';
+
+        emailBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const mailtoUrl = emailBtn.href;
+            let mailClientOpened = false;
+
+            const onBlur = () => { mailClientOpened = true; };
+            window.addEventListener('blur', onBlur, { once: true });
+
+            window.location.href = mailtoUrl;
+
+            setTimeout(() => {
+                window.removeEventListener('blur', onBlur);
+                if (!mailClientOpened && !document.hidden) {
+                    window.location.href = contactUrl;
+                }
+            }, 500);
+        });
+    }
 }
 
 // Simple horizontal view transitions

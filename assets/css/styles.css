@@ -3543,8 +3543,7 @@ body {
 
     .chat-popup {
         width: calc(100vw - 40px);
-        right: 20px;
-        left: 20px;
+        right: 0;
     }
 }
 
