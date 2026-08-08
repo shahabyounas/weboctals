@@ -337,7 +337,7 @@ async function handleFormSubmit(event) {
 
     // Show error state
     showErrorState(submitButton, originalButtonContent);
-    showNotification('Oops! Something went wrong. Please try again or email us directly at contact@weboctals.uk.co', 'error');
+    showNotification('Oops! Something went wrong. Please try again or email us directly at contact@weboctals.co.uk', 'error');
     if (resolveAgentResult) {
       resolveAgentResult({ success: false, error: error.message });
     }
