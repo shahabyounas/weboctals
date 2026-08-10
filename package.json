@@ -4,9 +4,9 @@
   "description": "AI-Powered Digital Product Development - WebOctals",
   "scripts": {
     "dev": "parcel index.html",
-    "build": "parcel build index.html contact.html services.html about.html seo.html on-page-seo.html technical-seo.html product-development.html web-development.html ai-agents.html digital-products.html automation.html machine-learning.html projects/*.html clients/*.html --public-url / && node scripts/inline-critical-css.js",
-    "build:all": "parcel build index.html contact.html services.html about.html seo.html on-page-seo.html technical-seo.html product-development.html web-development.html ai-agents.html digital-products.html automation.html machine-learning.html blog/*.html projects/*.html clients/*.html --public-url / && node scripts/inline-critical-css.js",
-    "build:main": "parcel build index.html contact.html services.html about.html --public-url / && node scripts/inline-critical-css.js",
+    "build": "parcel build index.html contact.html services.html about.html terms.html privacy.html seo.html on-page-seo.html technical-seo.html product-development.html web-development.html ai-agents.html digital-products.html automation.html machine-learning.html projects/*.html clients/*.html --public-url / && node scripts/inline-critical-css.js",
+    "build:all": "parcel build index.html contact.html services.html about.html terms.html privacy.html seo.html on-page-seo.html technical-seo.html product-development.html web-development.html ai-agents.html digital-products.html automation.html machine-learning.html blog/*.html projects/*.html clients/*.html --public-url / && node scripts/inline-critical-css.js",
+    "build:main": "parcel build index.html contact.html services.html about.html terms.html privacy.html --public-url / && node scripts/inline-critical-css.js",
     "build:services": "parcel build seo.html on-page-seo.html technical-seo.html product-development.html web-development.html ai-agents.html digital-products.html automation.html machine-learning.html --public-url / && node scripts/inline-critical-css.js",
     "build:blog": "parcel build blog/*.html --public-url / && node scripts/inline-critical-css.js",
     "build:projects": "parcel build projects/*.html --public-url / && node scripts/inline-critical-css.js",

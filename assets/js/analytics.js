@@ -3,13 +3,44 @@
  * Track all user interactions, form submissions, navigation, and engagement
  */
 
-// Initialize Google Analytics
+// dataLayer + gtag stub are safe to define unconditionally - they only
+// queue events locally. The privacy-sensitive step is loading Google's
+// gtag.js script and calling gtag('config', ...), which actually starts
+// sending data - that only happens once cookie consent is accepted.
 window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 gtag('js', new Date());
-gtag('config', 'G-SM3W8072KB', {
-    'send_page_view': true,
-    'cookie_flags': 'SameSite=None;Secure'
+
+function woHasAnalyticsConsent() {
+    try {
+        return localStorage.getItem('wo_cookie_consent') === 'accepted';
+    } catch (e) {
+        return false;
+    }
+}
+
+function woInitGoogleAnalytics() {
+    if (window.__woGAInitialized) return;
+    window.__woGAInitialized = true;
+
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-SM3W8072KB';
+    document.head.appendChild(gaScript);
+
+    gtag('config', 'G-SM3W8072KB', {
+        'send_page_view': true,
+        'cookie_flags': 'SameSite=None;Secure'
+    });
+}
+
+if (woHasAnalyticsConsent()) {
+    woInitGoogleAnalytics();
+}
+document.addEventListener('wo:cookie-consent', function (e) {
+    if (e.detail && e.detail.consent === 'accepted') {
+        woInitGoogleAnalytics();
+    }
 });
 
 // Analytics Helper Functions

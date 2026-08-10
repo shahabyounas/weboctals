@@ -23,15 +23,9 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@300;400;500;600;700;800&display=swap">
     </noscript>
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SM3W8072KB"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-SM3W8072KB');
-    </script>
-    
+    <!-- Google Analytics is loaded by assets/js/analytics.js, gated behind
+         cookie consent (assets/js/cookie-consent.js) - see Privacy Policy. -->
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://weboctals.com/">
@@ -92,22 +86,13 @@
     }
     </script>
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-N8MKVN7N');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager is loaded by assets/js/gtm.js, gated behind
+         cookie consent (assets/js/cookie-consent.js) - see Privacy Policy. -->
 
     <title>WebOctals | UK AI &amp; Product Studio — Websites, Agents &amp; Automation</title>
 </head>
 <body>
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8MKVN7N"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <!-- Particle Background -->
     <div id="particles-js"></div>
     
@@ -801,7 +786,13 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 WebOctals. All rights reserved.</p>
+                <p>&copy; 2026 WebOctals. All rights reserved.
+                    <span class="footer-legal">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <span aria-hidden="true">&middot;</span>
+                        <a href="terms.html">Terms &amp; Conditions</a>
+                    </span>
+                </p>
             </div>
         </div>
     </footer>
@@ -849,6 +840,7 @@
     <script defer src="assets/js/gtm.js"></script>
     <script defer src="assets/js/analytics.js"></script>
     <script defer src="assets/js/contact-analytics.js"></script>
+    <script defer src="assets/js/cookie-consent.js"></script>
     <script defer src="assets/js/contact-form-handler.js"></script>
     <script defer src="assets/js/main.js"></script>
     <script defer src="assets/js/hero-animation.js"></script>
