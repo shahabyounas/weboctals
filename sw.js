@@ -7,15 +7,14 @@ const DYNAMIC_CACHE_NAME = 'weboctals-dynamic-v1.0.0';
 // Files to cache immediately
 const STATIC_FILES = [
     '/',
-    '/index.html',
     '/assets/css/styles.css',
     '/assets/css/blog.css',
     '/assets/js/main.js',
     '/assets/js/gtm.js',
-    '/blog/index.html',
-    '/blog/ai-agents-future-business-automation.html',
-    '/blog/we-live-in-an-ai-first-world.html',
-    '/blog/harnessing-ai-in-seo-game-changer-for-digital-agencies.html',
+    '/blog/',
+    '/blog/ai-agents-future-business-automation/',
+    '/blog/we-live-in-an-ai-first-world/',
+    '/blog/harnessing-ai-in-seo-game-changer-for-digital-agencies/',
     // Add more critical files as needed
 ];
 
@@ -253,7 +252,7 @@ async function updateBlogCache() {
         const cache = await caches.open(DYNAMIC_CACHE_NAME);
         const blogUrls = [
             '/blog/',
-            '/blog/ai-agents-future-business-automation.html'
+            '/blog/ai-agents-future-business-automation/'
             // Add more blog URLs as needed
         ];
         
