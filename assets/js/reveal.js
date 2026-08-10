@@ -1,13 +1,14 @@
 // WebOctals - Reveal on scroll
-// Fades/lifts .reveal elements into place as they enter the viewport,
-// staggered by their position within their parent grid.
-// No-ops when the page has no .reveal elements or the visitor prefers
-// reduced motion (in which case everything is shown immediately).
+// Fades/lifts/slides .reveal, .reveal-left and .reveal-right elements into
+// place as they enter the viewport, staggered by their position within
+// their parent grid. No-ops when the page has no reveal elements or the
+// visitor prefers reduced motion (in which case everything is shown
+// immediately).
 
 document.addEventListener('DOMContentLoaded', initializeReveal);
 
 function initializeReveal() {
-    const items = document.querySelectorAll('.reveal');
+    const items = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
     if (!items.length) return;
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

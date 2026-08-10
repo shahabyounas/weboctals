@@ -7580,7 +7580,7 @@ textarea.input {
     position: absolute;
     border-radius: 50%;
     filter: blur(110px);
-    opacity: 0.3;
+    opacity: 0.36;
     will-change: transform;
 }
 
@@ -7590,7 +7590,7 @@ textarea.input {
     top: -10%;
     left: -8%;
     background: var(--color-accent-400);
-    animation: hero-aurora-drift-1 22s ease-in-out infinite;
+    animation: hero-aurora-drift-1 14s ease-in-out infinite;
 }
 
 .hero-aurora-blob-2 {
@@ -7599,7 +7599,7 @@ textarea.input {
     top: 20%;
     right: -12%;
     background: var(--color-accent-2-400);
-    animation: hero-aurora-drift-2 26s ease-in-out infinite;
+    animation: hero-aurora-drift-2 17s ease-in-out infinite;
 }
 
 .hero-aurora-blob-3 {
@@ -7608,7 +7608,7 @@ textarea.input {
     bottom: -12%;
     left: 15%;
     background: var(--color-accent-600);
-    animation: hero-aurora-drift-3 30s ease-in-out infinite;
+    animation: hero-aurora-drift-3 20s ease-in-out infinite;
 }
 
 .hero-aurora-blob-4 {
@@ -7617,23 +7617,23 @@ textarea.input {
     bottom: 5%;
     right: 10%;
     background: var(--color-cta-400);
-    opacity: 0.22;
-    animation: hero-aurora-drift-1 34s ease-in-out infinite reverse;
+    opacity: 0.28;
+    animation: hero-aurora-drift-1 22s ease-in-out infinite reverse;
 }
 
 @keyframes hero-aurora-drift-1 {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(6%, 8%) scale(1.12); }
+    50% { transform: translate(9%, 11%) scale(1.16); }
 }
 
 @keyframes hero-aurora-drift-2 {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(-8%, 6%) scale(0.94); }
+    50% { transform: translate(-11%, 9%) scale(0.9); }
 }
 
 @keyframes hero-aurora-drift-3 {
     0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(5%, -10%) scale(1.08); }
+    50% { transform: translate(8%, -13%) scale(1.12); }
 }
 
 .hero-canvas {
@@ -8788,8 +8788,34 @@ textarea.input {
     transform: none;
 }
 
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.reveal-left.is-visible,
+.reveal-right.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
-    .reveal {
+    .reveal,
+    .reveal-left,
+    .reveal-right {
         opacity: 1;
         transform: none;
         transition: none;
