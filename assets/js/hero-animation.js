@@ -34,7 +34,7 @@ function initializeHeroAnimation(canvas, hero) {
     let pointerTargetY = 0;
 
     function nodeCountForWidth() {
-        return window.innerWidth <= 768 ? 20 : 50;
+        return window.innerWidth <= 768 ? 24 : 60;
     }
 
     function resize() {
@@ -55,8 +55,8 @@ function initializeHeroAnimation(canvas, hero) {
         nodes = Array.from({ length: count }, () => ({
             x: Math.random() * width,
             y: Math.random() * height,
-            vx: (Math.random() - 0.5) * 0.25,
-            vy: (Math.random() - 0.5) * 0.25,
+            vx: (Math.random() - 0.5) * 0.4,
+            vy: (Math.random() - 0.5) * 0.4,
             radius: 1.5 + Math.random() * 1.5
         }));
         // Offset from centre — dead centre puts the mark on top of the headline copy.
@@ -66,8 +66,8 @@ function initializeHeroAnimation(canvas, hero) {
     function drawFrame() {
         ctx.clearRect(0, 0, width, height);
 
-        const offsetX = pointerX * 12;
-        const offsetY = pointerY * 12;
+        const offsetX = pointerX * 18;
+        const offsetY = pointerY * 18;
 
         const allNodes = nodes.concat([markNode]);
         for (let i = 0; i < allNodes.length; i++) {
@@ -77,7 +77,7 @@ function initializeHeroAnimation(canvas, hero) {
                 const dist = Math.hypot(a.x - b.x, a.y - b.y);
                 if (dist < MAX_DIST) {
                     ctx.strokeStyle = lineColor;
-                    ctx.globalAlpha = (1 - dist / MAX_DIST) * 0.35;
+                    ctx.globalAlpha = (1 - dist / MAX_DIST) * 0.45;
                     ctx.lineWidth = 1;
                     ctx.beginPath();
                     ctx.moveTo(a.x + offsetX, a.y + offsetY);
@@ -126,8 +126,8 @@ function initializeHeroAnimation(canvas, hero) {
             if (node.y < 0 || node.y > height) node.vy *= -1;
         });
 
-        pointerX += (pointerTargetX - pointerX) * 0.05;
-        pointerY += (pointerTargetY - pointerY) * 0.05;
+        pointerX += (pointerTargetX - pointerX) * 0.08;
+        pointerY += (pointerTargetY - pointerY) * 0.08;
 
         drawFrame();
         rafId = requestAnimationFrame(step);
