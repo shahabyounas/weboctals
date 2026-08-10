@@ -7505,6 +7505,7 @@ textarea.input {
     width: 30px;
     height: 30px;
     flex-shrink: 0;
+    object-fit: contain;
 }
 
 .logo-text {
