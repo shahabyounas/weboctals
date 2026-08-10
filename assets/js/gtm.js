@@ -170,23 +170,39 @@ class GoogleTagManager {
 // Initialize GTM with WebOctals ID
 const gtm = new GoogleTagManager('GTM-N8MKVN7N');
 
-// Auto-initialize when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        gtm.init();
-    });
-} else {
-    gtm.init();
+// GTM only initializes (and only then does it inject Google's script) once
+// cookie consent has been accepted - see assets/js/cookie-consent.js.
+function woHasAnalyticsConsent() {
+    try {
+        return localStorage.getItem('wo_cookie_consent') === 'accepted';
+    } catch (e) {
+        return false;
+    }
 }
+
+function woInitGTM() {
+    gtm.init();
+    if (document.readyState === 'complete') {
+        gtm.trackPageView(window.location.pathname, document.title);
+    } else {
+        window.addEventListener('load', () => {
+            gtm.trackPageView(window.location.pathname, document.title);
+        });
+    }
+}
+
+if (woHasAnalyticsConsent()) {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', woInitGTM);
+    } else {
+        woInitGTM();
+    }
+}
+document.addEventListener('wo:cookie-consent', (e) => {
+    if (e.detail && e.detail.consent === 'accepted') {
+        woInitGTM();
+    }
+});
 
 // Export for global use
 window.WebOctalsGTM = gtm;
-
-// Track initial page view
-if (document.readyState === 'complete') {
-    gtm.trackPageView(window.location.pathname, document.title);
-} else {
-    window.addEventListener('load', () => {
-        gtm.trackPageView(window.location.pathname, document.title);
-    });
-}

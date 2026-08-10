@@ -137,6 +137,18 @@ New `assets/js/cookie-consent.js` (+ a few CSS rules in `styles.css`):
 - Incorporating these documents into `sitemap.xml`/SEO metadata beyond the
   standard meta tags already used on other pages (can be a fast follow).
 
+## Execution checklist
+
+> Driven by /shahab-plan-executioner — do not hand-edit task IDs.
+
+- [x] **T1** — Write privacy.html *(ai · effort l)*
+- [x] **T2** — Write terms.html *(ai · effort l)*
+- [x] **T3** — Add both pages to package.json build scripts *(ai · effort s)*
+- [x] **T4** — Footer legal links across all live pages *(ai · script: scripts/plan-exec/2026-08-10-legal-pages-design/add-footer-legal-links.js · effort m)*
+- [x] **T5** — Build cookie-consent.js + banner CSS *(ai · effort m)*
+- [x] **T6** — Wire consent gate into analytics.js/gtm.js/inline snippets *(ai · effort m)*
+- [x] **T7** — Include cookie-consent.js + banner markup on all live pages *(ai · script: scripts/plan-exec/2026-08-10-legal-pages-design/add-cookie-consent-include.js · effort m)*
+
 ## Risks / open questions carried into implementation
 
 - Exact retention wording for GA (14-month default) should be phrased so it
