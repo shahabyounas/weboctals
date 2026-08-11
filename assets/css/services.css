@@ -14,211 +14,9 @@
    driving-schools.css so the site reads as one system.
    ========================================================================== */
 
-.sv-page {
-    --sv-ground: #0d2724;
-    --sv-recess: #08201d;
-    --sv-raise: #11302c;
-    --sv-mint: #8afc96;
-    --sv-marker: #e9ff60;
-    --sv-ink: #c9f9d7;
-    --sv-dim: rgb(201 249 215 / 0.66);
-    --sv-faint: rgb(201 249 215 / 0.40);
-    --sv-line: rgb(201 249 215 / 0.14);
-    --sv-line-strong: rgb(201 249 215 / 0.28);
-
-    --sv-display: var(--font-heading);
-    --sv-body: var(--font-body);
-    --sv-data: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
-
-    --sv-measure: 68ch;
-    --sv-gutter: clamp(20px, 5vw, 40px);
-}
-
 /* --------------------------------------------------------------------------
    Primitives
    -------------------------------------------------------------------------- */
-
-.sv-shell {
-    width: min(1180px, 100% - (var(--sv-gutter) * 2));
-    margin-inline: auto;
-}
-
-.sv-shell--narrow {
-    width: min(880px, 100% - (var(--sv-gutter) * 2));
-}
-
-.sv-page .sv-section {
-    padding: clamp(56px, 8vw, 104px) 0;
-}
-
-.sv-page .sv-section--recessed {
-    background: var(--sv-recess);
-}
-
-.sv-lane {
-    border: 0;
-    height: 2px;
-    margin: 0;
-    background-image: linear-gradient(
-        to right,
-        var(--sv-line-strong) 0 28px,
-        transparent 28px 52px
-    );
-    background-size: 52px 2px;
-}
-
-.sv-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--sv-data);
-    font-size: 0.74rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--sv-marker);
-    margin: 0 0 var(--space-lg);
-}
-
-.sv-eyebrow::before {
-    content: '';
-    width: 26px;
-    height: 2px;
-    background: var(--sv-marker);
-}
-
-.sv-crumb {
-    font-family: var(--sv-data);
-    font-size: 0.78rem;
-    letter-spacing: 0.06em;
-    color: var(--sv-faint);
-    margin-bottom: var(--space-xl);
-}
-
-.sv-page .sv-crumb a {
-    color: var(--sv-faint);
-    text-decoration: none;
-}
-
-.sv-page .sv-crumb a:hover {
-    color: var(--sv-mint);
-}
-
-.sv-crumb span {
-    margin: 0 8px;
-}
-
-.sv-page h1.sv-h1 {
-    font-family: var(--sv-display);
-    font-size: clamp(2.3rem, 5.2vw, 4.1rem);
-    line-height: 1.01;
-    letter-spacing: -0.02em;
-    color: var(--sv-ink);
-    margin: 0 0 var(--space-lg);
-    max-width: 18ch;
-}
-
-.sv-h1-tail {
-    display: block;
-    color: var(--sv-mint);
-}
-
-.sv-page h2.sv-h2 {
-    font-family: var(--sv-display);
-    font-size: clamp(1.8rem, 3.6vw, 2.7rem);
-    line-height: 1.06;
-    letter-spacing: -0.01em;
-    color: var(--sv-ink);
-    margin: 0 0 var(--space-md);
-    max-width: 22ch;
-}
-
-.sv-page h3.sv-h3 {
-    font-family: var(--sv-body);
-    font-size: 1.14rem;
-    font-weight: 700;
-    line-height: 1.28;
-    color: var(--sv-ink);
-    margin: 0 0 10px;
-}
-
-.sv-deck {
-    font-size: clamp(1.02rem, 1.6vw, 1.2rem);
-    line-height: 1.68;
-    color: var(--sv-dim);
-    max-width: 64ch;
-    margin: 0 0 var(--space-xl);
-}
-
-.sv-page .sv-deck strong {
-    color: var(--sv-ink);
-    font-weight: 600;
-}
-
-.sv-page .sv-deck a,
-.sv-page .sv-prose a {
-    color: var(--sv-mint);
-    text-underline-offset: 3px;
-}
-
-.sv-prose p {
-    font-size: 1.01rem;
-    line-height: 1.78;
-    color: var(--sv-dim);
-    max-width: var(--sv-measure);
-    margin: 0 0 var(--space-md);
-}
-
-.sv-prose p:last-child {
-    margin-bottom: 0;
-}
-
-.sv-page .sv-prose strong {
-    color: var(--sv-ink);
-    font-weight: 600;
-}
-
-.sv-hero {
-    padding: clamp(112px, 14vw, 165px) 0 clamp(40px, 5vw, 64px);
-}
-
-.sv-hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-md);
-    align-items: center;
-}
-
-.sv-page .sv-ghost {
-    font-family: var(--sv-data);
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--sv-ink);
-    text-decoration: none;
-    padding: 15px 24px;
-    border: 1px solid var(--sv-line-strong);
-    border-radius: var(--radius-pill);
-    transition: border-color var(--transition-fast), color var(--transition-fast);
-}
-
-.sv-page .sv-ghost:hover {
-    border-color: var(--sv-mint);
-    color: var(--sv-mint);
-}
-
-.sv-chip {
-    display: inline-flex;
-    align-items: center;
-    font-family: var(--sv-data);
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 6px 12px;
-    border-radius: var(--radius-pill);
-    border: 1px solid rgb(233 255 96 / 0.35);
-    color: var(--sv-marker);
-    margin-bottom: var(--space-lg);
-}
 
 /* --------------------------------------------------------------------------
    Router — the three questions on the hub
@@ -228,15 +26,15 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1px;
-    background: var(--sv-line);
-    border: 1px solid var(--sv-line);
+    background: var(--wo-line);
+    border: 1px solid var(--wo-line);
     border-radius: var(--radius-md);
     overflow: hidden;
     margin-top: var(--space-lg);
 }
 
 .sv-page .sv-route {
-    background: var(--sv-ground);
+    background: var(--wo-ground);
     padding: clamp(24px, 3vw, 36px);
     text-decoration: none;
     display: block;
@@ -244,40 +42,40 @@
 }
 
 .sv-page .sv-route:hover {
-    background: var(--sv-raise);
+    background: var(--wo-raise);
 }
 
 .sv-route-q {
-    font-family: var(--sv-data);
+    font-family: var(--wo-data);
     font-size: 0.68rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--sv-marker);
+    color: var(--wo-marker);
     display: block;
     margin-bottom: var(--space-md);
 }
 
 .sv-page .sv-route h3 {
-    font-family: var(--sv-display);
+    font-family: var(--wo-display);
     font-size: clamp(1.25rem, 2.2vw, 1.6rem);
     line-height: 1.12;
-    color: var(--sv-ink);
+    color: var(--wo-ink);
     margin: 0 0 10px;
 }
 
 .sv-route p {
     font-size: 0.95rem;
     line-height: 1.65;
-    color: var(--sv-dim);
+    color: var(--wo-dim);
     margin: 0 0 var(--space-md);
 }
 
 .sv-route-go {
-    font-family: var(--sv-data);
+    font-family: var(--wo-data);
     font-size: 0.7rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--sv-mint);
+    color: var(--wo-mint);
 }
 
 /* --------------------------------------------------------------------------
@@ -294,30 +92,30 @@
     align-items: baseline;
     gap: var(--space-md);
     padding-bottom: var(--space-md);
-    border-bottom: 2px solid var(--sv-line-strong);
+    border-bottom: 2px solid var(--wo-line-strong);
     margin-bottom: var(--space-xl);
 }
 
 .sv-page .sv-tier-head h2 {
-    font-family: var(--sv-display);
+    font-family: var(--wo-display);
     font-size: clamp(1.5rem, 3vw, 2.1rem);
     line-height: 1.1;
-    color: var(--sv-ink);
+    color: var(--wo-ink);
     margin: 0;
 }
 
 .sv-tier-n {
-    font-family: var(--sv-data);
+    font-family: var(--wo-data);
     font-size: 0.7rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--sv-marker);
+    color: var(--wo-marker);
 }
 
 .sv-tier-note {
     font-size: 0.97rem;
     line-height: 1.7;
-    color: var(--sv-dim);
+    color: var(--wo-dim);
     max-width: 62ch;
     margin: 0 0 var(--space-xl);
 }
@@ -331,8 +129,8 @@
 .sv-page .sv-card {
     display: flex;
     flex-direction: column;
-    background: var(--sv-raise);
-    border: 1px solid var(--sv-line);
+    background: var(--wo-raise);
+    border: 1px solid var(--wo-line);
     border-radius: var(--radius-md);
     padding: clamp(22px, 2.8vw, 30px);
     text-decoration: none;
@@ -340,14 +138,14 @@
 }
 
 .sv-page .sv-card:hover {
-    border-color: var(--sv-mint);
+    border-color: var(--wo-mint);
     transform: translateY(-3px);
 }
 
 .sv-card-icon {
     width: 32px;
     height: 32px;
-    color: var(--sv-mint);
+    color: var(--wo-mint);
     margin-bottom: var(--space-md);
 }
 
@@ -357,27 +155,27 @@
 }
 
 .sv-page .sv-card h3 {
-    font-family: var(--sv-display);
+    font-family: var(--wo-display);
     font-size: 1.3rem;
     line-height: 1.14;
-    color: var(--sv-ink);
+    color: var(--wo-ink);
     margin: 0 0 10px;
 }
 
 .sv-card p {
     font-size: 0.94rem;
     line-height: 1.65;
-    color: var(--sv-dim);
+    color: var(--wo-dim);
     margin: 0 0 var(--space-md);
     flex: 1;
 }
 
 .sv-card-go {
-    font-family: var(--sv-data);
+    font-family: var(--wo-data);
     font-size: 0.7rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--sv-mint);
+    color: var(--wo-mint);
 }
 
 /* --------------------------------------------------------------------------
@@ -392,8 +190,8 @@
 }
 
 .sv-fit-col {
-    background: var(--sv-raise);
-    border: 1px solid var(--sv-line);
+    background: var(--wo-raise);
+    border: 1px solid var(--wo-line);
     border-radius: var(--radius-md);
     padding: clamp(24px, 3vw, 32px);
 }
@@ -404,7 +202,7 @@
 }
 
 .sv-fit-label {
-    font-family: var(--sv-data);
+    font-family: var(--wo-data);
     font-size: 0.7rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -413,11 +211,11 @@
 }
 
 .sv-fit-col--yes .sv-fit-label {
-    color: var(--sv-mint);
+    color: var(--wo-mint);
 }
 
 .sv-fit-col--no .sv-fit-label {
-    color: var(--sv-marker);
+    color: var(--wo-marker);
 }
 
 .sv-fit-list {
@@ -434,7 +232,7 @@
     gap: 12px;
     font-size: 0.96rem;
     line-height: 1.62;
-    color: var(--sv-dim);
+    color: var(--wo-dim);
 }
 
 .sv-fit-col--yes .sv-fit-list li::before {
@@ -443,7 +241,7 @@
     height: 8px;
     border-radius: 2px;
     margin-top: 0.52em;
-    background: var(--sv-mint);
+    background: var(--wo-mint);
 }
 
 .sv-fit-col--no .sv-fit-list li::before {
@@ -451,7 +249,7 @@
     width: 10px;
     height: 2px;
     margin-top: 0.72em;
-    background: var(--sv-marker);
+    background: var(--wo-marker);
 }
 
 /* --------------------------------------------------------------------------
@@ -467,14 +265,14 @@
 
 .sv-inc-item {
     padding-top: var(--space-md);
-    border-top: 2px solid var(--sv-line-strong);
+    border-top: 2px solid var(--wo-line-strong);
 }
 
 .sv-inc-n {
-    font-family: var(--sv-data);
+    font-family: var(--wo-data);
     font-size: 0.7rem;
     letter-spacing: 0.14em;
-    color: var(--sv-marker);
+    color: var(--wo-marker);
     display: block;
     margin-bottom: var(--space-sm);
 }
@@ -482,7 +280,7 @@
 .sv-inc-item p {
     font-size: 0.95rem;
     line-height: 1.68;
-    color: var(--sv-dim);
+    color: var(--wo-dim);
     margin: 0;
 }
 
@@ -494,23 +292,23 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1px;
-    background: var(--sv-line);
-    border: 1px solid var(--sv-line);
+    background: var(--wo-line);
+    border: 1px solid var(--wo-line);
     border-radius: var(--radius-md);
     overflow: hidden;
     margin-top: var(--space-2xl);
 }
 
 .sv-step {
-    background: var(--sv-ground);
+    background: var(--wo-ground);
     padding: clamp(22px, 2.8vw, 30px);
 }
 
 .sv-step-n {
-    font-family: var(--sv-data);
+    font-family: var(--wo-data);
     font-size: 0.7rem;
     letter-spacing: 0.16em;
-    color: var(--sv-marker);
+    color: var(--wo-marker);
     display: block;
     margin-bottom: var(--space-md);
 }
@@ -518,7 +316,7 @@
 .sv-step p {
     font-size: 0.94rem;
     line-height: 1.66;
-    color: var(--sv-dim);
+    color: var(--wo-dim);
     margin: 0;
 }
 
@@ -536,15 +334,15 @@
 .sv-page .sv-work-card {
     display: block;
     text-decoration: none;
-    background: var(--sv-raise);
-    border: 1px solid var(--sv-line);
+    background: var(--wo-raise);
+    border: 1px solid var(--wo-line);
     border-radius: var(--radius-md);
     overflow: hidden;
     transition: border-color var(--transition-normal), transform var(--transition-normal);
 }
 
 .sv-page .sv-work-card:hover {
-    border-color: var(--sv-mint);
+    border-color: var(--wo-mint);
     transform: translateY(-3px);
 }
 
@@ -554,7 +352,7 @@
     height: auto;
     aspect-ratio: 5 / 4;
     object-fit: cover;
-    border-bottom: 1px solid var(--sv-line);
+    border-bottom: 1px solid var(--wo-line);
 }
 
 .sv-work-body {
@@ -562,27 +360,27 @@
 }
 
 .sv-work-meta {
-    font-family: var(--sv-data);
+    font-family: var(--wo-data);
     font-size: 0.66rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--sv-marker);
+    color: var(--wo-marker);
     display: block;
     margin-bottom: 8px;
 }
 
 .sv-page .sv-work-body h3 {
-    font-family: var(--sv-display);
+    font-family: var(--wo-display);
     font-size: 1.2rem;
     line-height: 1.14;
-    color: var(--sv-ink);
+    color: var(--wo-ink);
     margin: 0 0 8px;
 }
 
 .sv-work-body p {
     font-size: 0.9rem;
     line-height: 1.6;
-    color: var(--sv-dim);
+    color: var(--wo-dim);
     margin: 0;
 }
 
@@ -590,148 +388,13 @@
    FAQ
    -------------------------------------------------------------------------- */
 
-.sv-faq {
-    max-width: 860px;
-    margin-top: var(--space-2xl);
-    border-top: 1px solid var(--sv-line);
-}
-
-.sv-page .sv-q {
-    border-bottom: 1px solid var(--sv-line);
-}
-
-.sv-page .sv-q > summary {
-    list-style: none;
-    cursor: pointer;
-    padding: var(--space-lg) 44px var(--space-lg) 0;
-    position: relative;
-    font-family: var(--sv-body);
-    font-size: clamp(1rem, 1.7vw, 1.15rem);
-    font-weight: 600;
-    line-height: 1.4;
-    color: var(--sv-ink);
-}
-
-.sv-page .sv-q > summary::-webkit-details-marker {
-    display: none;
-}
-
-.sv-page .sv-q > summary::after {
-    content: '';
-    position: absolute;
-    right: 6px;
-    top: 50%;
-    width: 13px;
-    height: 2px;
-    background: var(--sv-mint);
-    transform: translateY(-50%);
-}
-
-.sv-page .sv-q > summary::before {
-    content: '';
-    position: absolute;
-    right: 11.5px;
-    top: 50%;
-    width: 2px;
-    height: 13px;
-    background: var(--sv-mint);
-    transform: translateY(-50%);
-    transition: opacity var(--transition-fast);
-}
-
-.sv-page .sv-q[open] > summary::before {
-    opacity: 0;
-}
-
-.sv-a {
-    padding: 0 0 var(--space-lg);
-}
-
-.sv-a p {
-    font-size: 0.97rem;
-    line-height: 1.75;
-    color: var(--sv-dim);
-    max-width: var(--sv-measure);
-    margin: 0 0 var(--space-md);
-}
-
-.sv-a p:last-child {
-    margin-bottom: 0;
-}
-
 /* --------------------------------------------------------------------------
    Prev / next
    -------------------------------------------------------------------------- */
 
-.sv-pager {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1px;
-    background: var(--sv-line);
-    border-block: 1px solid var(--sv-line);
-}
-
-.sv-page .sv-pager a {
-    background: var(--sv-ground);
-    padding: clamp(24px, 3.4vw, 34px);
-    text-decoration: none;
-    display: block;
-    transition: background var(--transition-fast);
-}
-
-.sv-page .sv-pager a:hover {
-    background: var(--sv-raise);
-}
-
-.sv-pager-dir {
-    font-family: var(--sv-data);
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--sv-faint);
-    display: block;
-    margin-bottom: 10px;
-}
-
-.sv-page .sv-pager strong {
-    font-family: var(--sv-display);
-    font-size: 1.22rem;
-    font-weight: 400;
-    line-height: 1.15;
-    color: var(--sv-ink);
-    display: block;
-}
-
-.sv-pager a:last-child {
-    text-align: right;
-}
-
 /* --------------------------------------------------------------------------
    Close
    -------------------------------------------------------------------------- */
-
-.sv-close {
-    padding: clamp(56px, 8vw, 104px) 0;
-    background: var(--sv-recess);
-    border-top: 1px solid var(--sv-line);
-}
-
-.sv-page .sv-close h2 {
-    font-family: var(--sv-display);
-    font-size: clamp(1.9rem, 4.4vw, 3.1rem);
-    line-height: 1.05;
-    color: var(--sv-ink);
-    margin: 0 0 var(--space-lg);
-    max-width: 18ch;
-}
-
-.sv-close-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-md);
-    align-items: center;
-    margin-top: var(--space-xl);
-}
 
 /* --------------------------------------------------------------------------
    Responsive
@@ -740,10 +403,6 @@
 @media (max-width: 860px) {
     .sv-router {
         grid-template-columns: 1fr;
-    }
-
-    .sv-pager a:last-child {
-        text-align: left;
     }
 }
 

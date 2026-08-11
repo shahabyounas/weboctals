@@ -1,0 +1,443 @@
+/* ==========================================================================
+   System — the shared design layer
+   --------------------------------------------------------------------------
+   Loaded after styles.css and before any page sheet. Owns one token set and
+   the primitives every page needs, so a page sheet only carries what is
+   genuinely unique to that page.
+
+   Every page's <body> gets `wo-page` plus its own page class, e.g.
+   <body class="wo-page hm-page">. Tokens hang off `.wo-page`; page sheets
+   read them as var(--wo-*) and never redeclare a colour.
+
+   Type roles: Caprasimo displays, Figtree reads, a system mono stack carries
+   data (times, figures, labels) with tabular figures.
+   ========================================================================== */
+
+.wo-page {
+    /* Surfaces */
+    --wo-ground: #0d2724;
+    --wo-recess: #08201d;
+    --wo-raise: #11302c;
+
+    /* Accents. Mint is the primary; marker yellow is reserved for small
+       labels, rules and the one "look here" state per page. */
+    --wo-mint: #8afc96;
+    --wo-marker: #e9ff60;
+
+    /* Text */
+    --wo-ink: #c9f9d7;
+    --wo-dim: rgb(201 249 215 / 0.66);
+    --wo-faint: rgb(201 249 215 / 0.40);
+
+    /* Rules */
+    --wo-line: rgb(201 249 215 / 0.14);
+    --wo-line-strong: rgb(201 249 215 / 0.28);
+
+    /* Type roles */
+    --wo-display: var(--font-heading);
+    --wo-body: var(--font-body);
+    --wo-data: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+    /* Measure & rhythm */
+    --wo-measure: 68ch;
+    --wo-gutter: clamp(20px, 5vw, 40px);
+}
+
+/* --------------------------------------------------------------------------
+   Layout
+   -------------------------------------------------------------------------- */
+
+.wo-shell {
+    width: min(1180px, 100% - (var(--wo-gutter) * 2));
+    margin-inline: auto;
+}
+
+.wo-page .wo-section {
+    padding: clamp(56px, 8vw, 104px) 0;
+}
+
+.wo-page .wo-section--recessed {
+    background: var(--wo-recess);
+}
+
+.wo-page .wo-section--flush {
+    padding-top: 0;
+}
+
+.wo-hero {
+    padding: clamp(112px, 14vw, 165px) 0 clamp(40px, 5vw, 64px);
+}
+
+/* The lane line — this site's divider. Dashed, like a road marking. */
+.wo-lane {
+    border: 0;
+    height: 2px;
+    margin: 0;
+    background-image: linear-gradient(
+        to right,
+        var(--wo-line-strong) 0 28px,
+        transparent 28px 52px
+    );
+    background-size: 52px 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Labels
+   -------------------------------------------------------------------------- */
+
+.wo-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--wo-data);
+    font-size: 0.74rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--wo-marker);
+    margin: 0 0 var(--space-lg);
+}
+
+.wo-eyebrow::before {
+    content: '';
+    width: 26px;
+    height: 2px;
+    background: var(--wo-marker);
+}
+
+.wo-crumb {
+    font-family: var(--wo-data);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    color: var(--wo-faint);
+    margin-bottom: var(--space-xl);
+}
+
+.wo-page .wo-crumb a {
+    color: var(--wo-faint);
+    text-decoration: none;
+}
+
+.wo-page .wo-crumb a:hover {
+    color: var(--wo-mint);
+}
+
+.wo-crumb span {
+    margin: 0 8px;
+}
+
+.wo-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--wo-data);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--wo-line-strong);
+    color: var(--wo-dim);
+    white-space: nowrap;
+}
+
+.wo-chip--accent {
+    color: var(--wo-marker);
+    border-color: rgb(233 255 96 / 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   Headings & prose
+   -------------------------------------------------------------------------- */
+
+.wo-page h1.wo-h1 {
+    font-family: var(--wo-display);
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    line-height: 1.01;
+    letter-spacing: -0.02em;
+    color: var(--wo-ink);
+    margin: 0 0 var(--space-lg);
+    max-width: 19ch;
+}
+
+.wo-h1-tail {
+    display: block;
+    color: var(--wo-mint);
+}
+
+.wo-page h2.wo-h2 {
+    font-family: var(--wo-display);
+    font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+    line-height: 1.06;
+    letter-spacing: -0.01em;
+    color: var(--wo-ink);
+    margin: 0 0 var(--space-md);
+    max-width: 22ch;
+}
+
+.wo-page h3.wo-h3 {
+    font-family: var(--wo-body);
+    font-size: 1.14rem;
+    font-weight: 700;
+    line-height: 1.28;
+    color: var(--wo-ink);
+    margin: 0 0 10px;
+}
+
+.wo-deck {
+    font-size: clamp(1.02rem, 1.6vw, 1.2rem);
+    line-height: 1.68;
+    color: var(--wo-dim);
+    max-width: 64ch;
+    margin: 0 0 var(--space-xl);
+}
+
+.wo-page .wo-deck strong {
+    color: var(--wo-ink);
+    font-weight: 600;
+}
+
+.wo-prose p {
+    font-size: 1.01rem;
+    line-height: 1.78;
+    color: var(--wo-dim);
+    max-width: var(--wo-measure);
+    margin: 0 0 var(--space-md);
+}
+
+.wo-prose p:last-child {
+    margin-bottom: 0;
+}
+
+.wo-page .wo-prose strong {
+    color: var(--wo-ink);
+    font-weight: 600;
+}
+
+.wo-page .wo-deck a,
+.wo-page .wo-prose a {
+    color: var(--wo-mint);
+    text-underline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   Actions
+   -------------------------------------------------------------------------- */
+
+.wo-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    align-items: center;
+}
+
+.wo-page .wo-ghost {
+    font-family: var(--wo-data);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--wo-ink);
+    text-decoration: none;
+    padding: 15px 24px;
+    border: 1px solid var(--wo-line-strong);
+    border-radius: var(--radius-pill);
+    transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.wo-page .wo-ghost:hover {
+    border-color: var(--wo-mint);
+    color: var(--wo-mint);
+}
+
+/* --------------------------------------------------------------------------
+   FAQ — native details/summary, no JS
+   -------------------------------------------------------------------------- */
+
+.wo-faq {
+    max-width: 860px;
+    margin-top: var(--space-2xl);
+    border-top: 1px solid var(--wo-line);
+}
+
+.wo-page .wo-q {
+    border-bottom: 1px solid var(--wo-line);
+}
+
+.wo-page .wo-q > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: var(--space-lg) 44px var(--space-lg) 0;
+    position: relative;
+    font-family: var(--wo-body);
+    font-size: clamp(1rem, 1.7vw, 1.15rem);
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--wo-ink);
+}
+
+.wo-page .wo-q > summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Plus sign that loses its vertical stroke when open */
+.wo-page .wo-q > summary::after {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    width: 13px;
+    height: 2px;
+    background: var(--wo-mint);
+    transform: translateY(-50%);
+}
+
+.wo-page .wo-q > summary::before {
+    content: '';
+    position: absolute;
+    right: 11.5px;
+    top: 50%;
+    width: 2px;
+    height: 13px;
+    background: var(--wo-mint);
+    transform: translateY(-50%);
+    transition: opacity var(--transition-fast);
+}
+
+.wo-page .wo-q[open] > summary::before {
+    opacity: 0;
+}
+
+.wo-a {
+    padding: 0 0 var(--space-lg);
+}
+
+.wo-a p {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: var(--wo-dim);
+    max-width: var(--wo-measure);
+    margin: 0 0 var(--space-md);
+}
+
+.wo-a p:last-child {
+    margin-bottom: 0;
+}
+
+.wo-page .wo-a a {
+    color: var(--wo-mint);
+    text-underline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   Prev / next pager
+   -------------------------------------------------------------------------- */
+
+.wo-pager {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--wo-line);
+    border-block: 1px solid var(--wo-line);
+}
+
+.wo-page .wo-pager a {
+    background: var(--wo-ground);
+    padding: clamp(24px, 3.4vw, 34px);
+    text-decoration: none;
+    display: block;
+    transition: background var(--transition-fast);
+}
+
+.wo-page .wo-pager a:hover {
+    background: var(--wo-raise);
+}
+
+.wo-pager-dir {
+    font-family: var(--wo-data);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--wo-faint);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.wo-page .wo-pager strong {
+    font-family: var(--wo-display);
+    font-size: 1.22rem;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--wo-ink);
+    display: block;
+}
+
+.wo-pager a:last-child {
+    text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   Closing call to action
+   -------------------------------------------------------------------------- */
+
+.wo-close {
+    padding: clamp(56px, 8vw, 104px) 0;
+    background: var(--wo-recess);
+    border-top: 1px solid var(--wo-line);
+}
+
+.wo-page .wo-close h2 {
+    font-family: var(--wo-display);
+    font-size: clamp(1.9rem, 4.4vw, 3.1rem);
+    line-height: 1.05;
+    color: var(--wo-ink);
+    margin: 0 0 var(--space-lg);
+    max-width: 18ch;
+}
+
+.wo-close-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    align-items: center;
+    margin-top: var(--space-xl);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 780px) {
+    .wo-pager a:last-child {
+        text-align: left;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility — applies to every page on the system
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .wo-page .wo-pager a,
+    .wo-page .wo-ghost {
+        transition: none;
+    }
+}
+
+.wo-page a:focus-visible,
+.wo-page button:focus-visible,
+.wo-page summary:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+    border-radius: var(--radius-sm);
+}
+
+.wo-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
