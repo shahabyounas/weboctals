@@ -1,221 +1,18 @@
 /* ==========================================================================
-   Work — /projects/, /clients/ and the case studies
+   Work — /clients/ and the case studies
    --------------------------------------------------------------------------
    Namespaced `wk-`, scoped under `.wk-page`, loaded after styles.css.
 
-   Design note: a portfolio is a catalogue, so it's set like one — numbered
-   entries, mono metadata, dashed lane-line rules. The organising label is
-   "the job" (booking / ordering / credibility / showcase) rather than
-   industry, because that's the axis a visitor recognises themselves in.
+   Design note: a portfolio is a catalogue, so it's set like one — mono
+   metadata, dashed lane-line rules, entries grouped under a sector heading.
+
+   /projects/ used to be a second index over the same case studies, sorted by
+   job-to-be-done rather than sector. It was duplicate content, so it now
+   redirects to /clients/ and its tile/filter styles have been removed.
+
    Shares its type and colour vocabulary with driving-schools.css so the two
    sections read as one site.
    ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   Primitives
-   -------------------------------------------------------------------------- */
-
-/* Chips — the job taxonomy and industry labels */
-
-/* --------------------------------------------------------------------------
-   Filter bar (projects gallery)
-   -------------------------------------------------------------------------- */
-
-.wk-filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: var(--space-lg) 0;
-    border-block: 1px solid var(--wo-line);
-    margin-bottom: var(--space-2xl);
-}
-
-.wk-page .wk-filter {
-    font-family: var(--wo-data);
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--wo-dim);
-    background: transparent;
-    border: 1px solid var(--wo-line-strong);
-    border-radius: var(--radius-pill);
-    padding: 10px 16px;
-    cursor: pointer;
-    transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
-}
-
-.wk-page .wk-filter:hover {
-    color: var(--wo-ink);
-    border-color: var(--wo-line-strong);
-}
-
-.wk-page .wk-filter[aria-pressed='true'] {
-    background: var(--wo-mint);
-    border-color: var(--wo-mint);
-    color: #06201c;
-    font-weight: 700;
-}
-
-.wk-filter-n {
-    opacity: 0.6;
-    margin-left: 6px;
-}
-
-.wk-count {
-    font-family: var(--wo-data);
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    color: var(--wo-faint);
-    margin: 0 0 var(--space-lg);
-}
-
-/* --------------------------------------------------------------------------
-   Gallery grid (projects)
-   -------------------------------------------------------------------------- */
-
-.wk-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-    gap: clamp(20px, 3vw, 32px);
-}
-
-.wk-page .wk-tile {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    background: var(--wo-raise);
-    border: 1px solid var(--wo-line);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    transition: border-color var(--transition-normal), transform var(--transition-normal);
-}
-
-.wk-page .wk-tile:hover {
-    border-color: var(--wo-mint);
-    transform: translateY(-3px);
-}
-
-.wk-tile[hidden] {
-    display: none;
-}
-
-.wk-tile-shot {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 5 / 4;
-    object-fit: cover;
-    border-bottom: 1px solid var(--wo-line);
-}
-
-/* Two projects have no screenshot on file — they get their existing mark on a
-   tinted panel rather than a fake placeholder or a stock photo. */
-.wk-art {
-    display: grid;
-    place-items: center;
-    background:
-        radial-gradient(70% 70% at 50% 40%, rgb(138 252 150 / 0.08), transparent 70%),
-        var(--wo-recess);
-    border-bottom: 1px solid var(--wo-line);
-}
-
-.wk-tile-art {
-    aspect-ratio: 5 / 4;
-}
-
-.wk-tile-art svg {
-    width: 44%;
-    max-width: 148px;
-    height: auto;
-}
-
-.wk-case-art {
-    aspect-ratio: 21 / 9;
-    max-height: 340px;
-    max-width: 880px;
-    margin-inline: auto;
-    border: 1px solid var(--wo-line);
-    border-radius: var(--radius-md);
-}
-
-.wk-case-art svg {
-    width: 18%;
-    max-width: 150px;
-    height: auto;
-}
-
-.wk-row-art {
-    width: 96px;
-    height: 72px;
-    border-radius: 8px;
-    border: 1px solid var(--wo-line);
-    flex-shrink: 0;
-}
-
-.wk-row-art svg {
-    width: 52%;
-    height: auto;
-}
-
-.wk-tile-body {
-    padding: clamp(18px, 2.6vw, 26px);
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.wk-tile-top {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: var(--space-md);
-    font-family: var(--wo-data);
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-}
-
-.wk-tile-idx {
-    color: var(--wo-faint);
-    font-variant-numeric: tabular-nums;
-}
-
-.wk-tile-job {
-    color: var(--wo-marker);
-}
-
-.wk-page .wk-tile-body h3 {
-    font-family: var(--wo-display);
-    font-size: 1.32rem;
-    line-height: 1.12;
-    color: var(--wo-ink);
-    margin: 0 0 10px;
-}
-
-.wk-tile-body p {
-    font-size: 0.93rem;
-    line-height: 1.6;
-    color: var(--wo-dim);
-    margin: 0 0 var(--space-md);
-    flex: 1;
-}
-
-.wk-tile-more {
-    font-family: var(--wo-data);
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--wo-mint);
-}
-
-.wk-empty {
-    color: var(--wo-faint);
-    font-family: var(--wo-data);
-    font-size: 0.85rem;
-    padding: var(--space-2xl) 0;
-    text-align: center;
-}
 
 /* --------------------------------------------------------------------------
    Ledger (clients index) — grouped by sector
@@ -245,13 +42,6 @@
     text-transform: uppercase;
     color: var(--wo-ink);
     margin: 0;
-}
-
-.wk-sector-n {
-    font-family: var(--wo-data);
-    font-size: 0.72rem;
-    color: var(--wo-faint);
-    font-variant-numeric: tabular-nums;
 }
 
 .wk-page .wk-row {
@@ -482,7 +272,6 @@
    -------------------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
-    .wk-page .wk-tile,
     .wk-page .wk-row,
     .wk-page .wk-pager a {
         transition: none;
