@@ -1,113 +1,86 @@
-# 🚀 CI/CD Configuration - GitHub Pages
+# Deployment
 
-## Overview
+Two GitHub Actions workflows run on every push to `main`. Both build from
+source with `npm run build:all` — `dist/` is gitignored and never committed.
 
-Your site automatically builds and deploys to GitHub Pages whenever you push to the `main` branch.
+| Workflow | File | Target |
+|---|---|---|
+| Deploy to Namecheap | `.github/workflows/deploy-namecheap.yml` | `weboctals.com` (cPanel shared hosting, over FTPS) |
+| Build and Deploy to Pages | `.github/workflows/static.yml` | GitHub Pages |
 
----
+Namecheap is the live site. The Pages workflow is a secondary/preview target;
+delete `static.yml` if you don't want it running.
 
-## How It Works
-
-1. **Push code to `main` branch**
-   ```bash
-   git add .
-   git commit -m "Update site"
-   git push origin main
-   ```
-
-2. **GitHub Actions runs automatically:**
-   - ✅ Checks out code
-   - ✅ Installs Node.js 18
-   - ✅ Installs dependencies (`npm install` — `npm ci` needs a lockfile, and `package-lock.json` is gitignored here)
-   - ✅ Builds with Parcel (`npm run build:all`)
-   - ✅ Deploys `dist/` folder to GitHub Pages
-
-3. **Site goes live!**
-   - Your site is available at: `https://yourusername.github.io/weboctals`
-   - Or your custom domain if configured
+`amplify.yml` and `customHttp.yml` configure AWS Amplify, which builds from its
+own console-side trigger rather than from Actions.
 
 ---
 
-## Workflow File
+## Namecheap: one-time setup
 
-**Location:** `.github/workflows/static.yml`
+The server has no usable Node toolchain, so CI builds the site and uploads the
+finished `dist/` over FTPS.
 
-**Triggers:**
-- Push to `main` branch
-- Manual trigger from Actions tab
+### 1. Create the FTP credentials in cPanel
 
-**What it does:**
-```yaml
-1. Build job:
-   - Setup Node.js 18
-   - Install dependencies
-   - Run: npm run build:all
-   - Upload dist/ folder
+cPanel → **Files → FTP Accounts**. Either use the main account or add a
+dedicated one. Note the **username** exactly as cPanel shows it — on shared
+hosting it is usually `user@weboctals.com`, not just `user`.
 
-2. Deploy job:
-   - Deploy to GitHub Pages
-```
+### 2. Add the secrets in GitHub
 
----
+Repo → **Settings → Secrets and variables → Actions → New repository secret**:
 
-## Deployment URL
+| Secret | Value |
+|---|---|
+| `FTP_SERVER` | `ftp.weboctals.com` — host only, no `ftp://` |
+| `FTP_USERNAME` | the FTP account username from step 1 |
+| `FTP_PASSWORD` | that account's password |
 
-After first deployment, enable GitHub Pages:
+### 3. Set the web root, if it isn't the default
 
-1. Go to: **Settings → Pages**
-2. Source: **GitHub Actions**
-3. Your site will be at: `https://yourusername.github.io/weboctals`
+The workflow uploads to `public_html/` by default, which is right for the main
+cPanel account. A dedicated FTP account scoped to `public_html` is already
+rooted there, so it would need `public_html/public_html/` — avoid that by
+adding a repository **variable** (not a secret) named `FTP_SERVER_DIR` with the
+value `./`.
 
----
+### 4. Deploy
 
-## Manual Deployment
-
-Run workflow manually:
-1. Go to **Actions** tab
-2. Click **Build and Deploy to Pages**
-3. Click **Run workflow**
-4. Select `main` branch
-5. Click **Run workflow**
+Push to `main`, or run **Actions → Deploy to Namecheap → Run workflow**.
 
 ---
 
-## Monitoring Deployments
+## How the sync behaves
 
-- **Actions tab:** See all deployment runs
-- **Environments:** Check deployment history
-- **GitHub Pages settings:** View live URL
+The upload action keeps a manifest on the server of what it has published, and
+removes only files listed there. Two consequences:
 
----
+- Parcel's stale fingerprinted bundles (`weboctals.a1b2c3d4.js`) are cleaned up
+  between deploys.
+- Files cPanel owns — `.htaccess`, `.well-known/` (ACME/SSL renewal),
+  `cgi-bin/` — are never touched, because CI never uploaded them.
 
-## Build Time
-
-Typical deployment: **~3-4 minutes**
-- Install dependencies: ~30s
-- Build with Parcel: ~4s
-- Upload & deploy: ~30s
-
----
-
-## What Gets Deployed
-
-Only the **`dist/` folder** (minified production build):
-- ✅ Minified HTML (20 pages)
-- ✅ Minified CSS (91KB)
-- ✅ Minified JavaScript (12KB)
-- ✅ Optimized images
-- ✅ Blog posts (5 posts)
-- ❌ Source files (not deployed)
-- ❌ node_modules (not deployed)
+The build runs with `--public-url /`, and every page is emitted both as
+`/about.html` and `/about/index.html`, so the site needs no rewrite rules — but
+it must be served from the domain root.
 
 ---
 
-## Status Badge
+## Troubleshooting
 
-Add to README.md:
-```markdown
-![Deploy Status](https://github.com/yourusername/weboctals/actions/workflows/static.yml/badge.svg)
-```
+**`ECONNREFUSED` or a TLS error on connect** — Namecheap requires explicit
+FTPS on port 21. If the host has plain FTP only, change `protocol: ftps` to
+`ftp` in the workflow; prefer fixing the host's TLS instead, since plain FTP
+sends the password in the clear.
 
----
+**Files land in the wrong directory** — see step 3; the FTP account's home is
+not always `/home/user`.
 
-That's it! Simple and automatic. 🎉
+**Deploy succeeds but the site is unchanged** — the manifest and the server may
+have drifted apart (e.g. files deleted by hand). Delete
+`.ftp-deploy-sync-state.json` from the web root and re-run the workflow to force
+a full re-upload.
+
+**`npm ci` errors** — the workflows use `npm install` deliberately;
+`package-lock.json` is gitignored in this repo.
