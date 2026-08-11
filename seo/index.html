@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SEO services from WebOctals: keyword research, on-page optimization, and technical fixes that give search engines a clear, accurate picture of what your site actually offers.">
-    <meta name="keywords" content="SEO services, search engine optimization, keyword research, on-page SEO, link building, SEO strategy, organic traffic, WebOctals">
+    <meta name="description" content="On-page and technical SEO for UK businesses: content and metadata built around the places you serve, plus crawlability, indexing and Core Web Vitals. No ranking guarantees.">
     <meta name="author" content="WebOctals">
     <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph -->
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://weboctals.com/seo/">
-    <meta property="og:title" content="SEO Services | WebOctals">
-    <meta property="og:description" content="Keyword research, on-page optimization, and technical SEO built around how Google actually evaluates a site.">
-    <meta property="og:image" content="https://weboctals.com/assets/images/seo-og.jpg">
+    <meta property="og:title" content="SEO Services — On-Page & Technical | WebOctals">
+    <meta property="og:description" content="On-page and technical SEO for UK businesses: content and metadata built around the places you serve, plus crawlability, indexing and Core Web Vitals. No ranking guarantees.">
+    <meta property="og:image" content="https://weboctals.com/assets/images/client_driving_spot.jpeg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://weboctals.com/seo/">
-    <meta property="twitter:title" content="SEO Services | WebOctals">
-    <meta property="twitter:description" content="SEO built into how a site is structured and written, not bolted on afterward.">
+    <meta property="twitter:title" content="SEO Services — On-Page & Technical | WebOctals">
+    <meta property="twitter:description" content="On-page and technical SEO for UK businesses: content and metadata built around the places you serve, plus crawlability, indexing and Core Web Vitals. No ranking guarantees.">
+    <meta property="twitter:image" content="https://weboctals.com/assets/images/client_driving_spot.jpeg">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://weboctals.com/seo/">
-    
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8afc96">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
-    
-    <!-- Stylesheets -->
+
     <!-- Performance Optimization: Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,63 +44,28 @@
     </noscript>
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    
-    <!-- Schema.org -->
+    <link rel="stylesheet" href="/assets/css/services.css">
+
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "SEO Services",
-        "provider": {
-            "@type": "Organization",
-            "name": "WebOctals"
-        },
-        "description": "SEO services including keyword research, on-page optimization, link building, and performance tracking, built around Google's published Search guidance.",
-        "serviceType": "Search Engine Optimization",
-        "areaServed": "Worldwide",
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "SEO Services",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Keyword Research & Strategy"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "On-Page Optimization"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Link Building & Authority"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Performance Tracking"
-                    }
-                }
-            ]
-        }
-    }
+    {"@context":"https://schema.org","@graph":[
+        {"@type":"BreadcrumbList","itemListElement":[
+            {"@type":"ListItem","position":1,"name":"Home","item":"https://weboctals.com/"},
+            {"@type":"ListItem","position":2,"name":"Services","item":"https://weboctals.com/services/"},
+            {"@type":"ListItem","position":3,"name":"SEO","item":"https://weboctals.com/seo/"}
+        ]},
+        {"@type":"Service","serviceType":"SEO","name":"SEO","provider":{"@type":"Organization","name":"WebOctals","url":"https://weboctals.com/"},"areaServed":{"@type":"Country","name":"United Kingdom"},"description":"On-page and technical SEO for UK businesses: content and metadata built around the places you serve, plus crawlability, indexing and Core Web Vitals. No ranking guarantees."},
+        {"@type":"FAQPage","mainEntity":[
+            {"@type":"Question","name":"Can you guarantee we’ll rank first?","acceptedAnswer":{"@type":"Answer","text":"No, and you should treat anyone who says otherwise as a warning sign — that’s Google’s own advice, not just ours. We can build the structure that makes ranking possible and be straight with you about what we changed and why. The ranking itself isn’t anyone’s to sell."}},
+            {"@type":"Question","name":"How long until it works?","acceptedAnswer":{"@type":"Answer","text":"We won’t give you a date. New and changed pages have to be crawled and indexed before they can rank, and Google publishes no timeline for that. Anyone quoting you a week or a month is guessing at a number that isn’t theirs."}},
+            {"@type":"Question","name":"Do you build backlinks?","acceptedAnswer":{"@type":"Answer","text":"No. Link schemes are a link spam policy violation and can get a site penalised. What we do instead is make the site worth linking to and make sure nothing technical is stopping it from being found."}},
+            {"@type":"Question","name":"What’s the difference between on-page and technical SEO?","acceptedAnswer":{"@type":"Answer","text":"On-page is what a search engine reads once it reaches a page: content, headings, metadata, internal linking. Technical is whether it can reach and understand the page in the first place: crawling, indexing, redirects, structured data, speed and mobile rendering. They fail independently, which is why we do both rather than selling them separately."}}
+        ]}
+    ]}
     </script>
 
-    <title>SEO Services | WebOctals</title>
+    <title>SEO Services — On-Page & Technical | WebOctals</title>
 </head>
-<body>
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
-    
+<body class="sv-page">
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -108,9 +76,7 @@
                 </a>
             </div>
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="/" class="nav-link">Home</a>
-                </li>
+                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                 <li class="nav-item nav-item-dropdown">
                     <a href="/services/" class="nav-link active">
                         Services
@@ -151,21 +117,11 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a href="/projects/" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/clients/" class="nav-link">Clients</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/about/" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/blog/" class="nav-link">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/contact/" class="nav-link">Contact</a>
-                </li>
+                <li class="nav-item"><a href="/projects/" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="/clients/" class="nav-link">Clients</a></li>
+                <li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="/contact/" class="nav-link">Contact</a></li>
             </ul>
             <a href="/contact/" class="btn btn-primary nav-cta">
                 <span>Start a project</span>
@@ -177,244 +133,193 @@
             </div>
         </div>
     </nav>
+    <main>
+    <article>
+    <header class="sv-hero">
+        <div class="sv-shell">
+            <nav class="sv-crumb" aria-label="Breadcrumb">
+                <a href="/">Home</a><span>/</span><a href="/services/">Services</a><span>/</span>SEO
+            </nav>
+            <span class="sv-chip">The front door</span>
+            <h1 class="sv-h1">SEO</h1>
+            <p class="sv-deck">Two genuinely different jobs that get sold under one word. Both matter, they fail in different ways, and neither of them can be guaranteed by anyone.</p>
+            <div class="sv-hero-actions">
+                <a href="/contact/" class="btn btn-primary">
+                    <span>Talk to us about this</span>
+                    <div class="btn-glow"></div>
+                </a>
+                <a href="#fit" class="sv-ghost">Is it right for you?</a>
+            </div>
+        </div>
+    </header>
 
-    <!-- Service Hero -->
-    <section class="service-detail-hero">
-        <div class="container">
-            <div class="service-hero-content">
-                <div class="service-breadcrumb">
-                    <a href="/">Home</a>
-                    <span>/</span>
-                    <a href="/services/">Services</a>
-                    <span>/</span>
-                    <span>SEO Services</span>
-                </div>
-                
-                <div class="service-hero-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-                    </svg>
-                </div>
-                
-                <h1>SEO Services</h1>
-                <p class="service-hero-tagline">Search Visibility Built on What Google Actually Rewards</p>
-                <p class="service-hero-description">We build SEO around Google's own published guidance: helpful content, clear technical structure, and honest signals &mdash; not shortcuts that put your site at risk. No one can guarantee a #1 ranking, and we won't tell you otherwise.</p>
-
-                <div class="service-hero-cta">
-                    <a href="/contact/" class="btn btn-primary">
-                        <span>Get a Free SEO Review</span>
-                        <div class="btn-glow"></div>
-                    </a>
-                    <a href="/contact/" class="btn btn-outline">Schedule Consultation</a>
-                </div>
-
-                <div class="service-stats">
-                    <div class="stat">
-                        <div class="stat-number">9</div>
-                        <div class="stat-label">Projects Shipped</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Built In-House</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">6-12</div>
-                        <div class="stat-label">Months to See Results</div>
-                    </div>
-                </div>
+    <section class="sv-section" style="padding-top:0;">
+        <div class="sv-shell">
+            <div class="sv-prose">
+                <p>Before anything else, the thing most SEO pages won&rsquo;t say: <strong>nobody can guarantee you a ranking.</strong> Google&rsquo;s own guidance on hiring an SEO lists a guaranteed number-one position as a reason to walk away, alongside link schemes and anyone claiming a special relationship with Google. We don&rsquo;t do any of that, and we&rsquo;d rather lose the enquiry than pretend otherwise.</p>
+                <p>What can be done is structural, and it splits cleanly in two. <strong>On-page</strong> is what a search engine reads: your content, headings, metadata, internal links, and whether your pages actually match the places and terms you serve. <strong>Technical</strong> is whether it can read them at all: crawlability, indexing, redirects, structured data, mobile rendering and Core Web Vitals. A perfect page nobody can crawl ranks nowhere; a fast, flawlessly crawlable page about nothing ranks nowhere either.</p>
             </div>
         </div>
     </section>
 
-    <!-- Service Features -->
-    <section class="service-features-section">
-        <div class="container">
-            <div class="section-header-center">
-                <h2>What's Included in Our SEO Services</h2>
-                <p>Comprehensive SEO solutions designed to deliver measurable results</p>
-            </div>
-            
-            <div class="features-grid-large">
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/>
-                        </svg>
-                    </div>
-                    <h3>Keyword Research & Strategy</h3>
-                    <p>In-depth analysis to identify high-value keywords that your target audience is searching for. We analyze search volume, competition, and user intent to create a winning keyword strategy.</p>
-                    <ul class="feature-list">
-                        <li>Competitive keyword analysis</li>
-                        <li>Long-tail keyword opportunities</li>
-                        <li>Search intent mapping</li>
-                        <li>Keyword difficulty assessment</li>
+    <hr class="sv-lane">
+
+    <section class="sv-section" id="fit">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Fit</p>
+            <h2 class="sv-h2">When this is the right job &mdash; and when it isn&rsquo;t</h2>
+            <p class="sv-deck">We&rsquo;d rather lose a project at this stage than sell you one you don&rsquo;t need. The right-hand column is the honest half.</p>
+
+            <div class="sv-fit">
+                <div class="sv-fit-col sv-fit-col--yes">
+                    <span class="sv-fit-label">Worth doing if</span>
+                    <ul class="sv-fit-list">
+                        <li>You serve several areas but only appear in searches for one of them</li>
+                        <li>Your pages are being crawled but not indexed, or indexed and not shown</li>
+                        <li>The site is slow on mobile and failing Core Web Vitals</li>
+                        <li>A site migration lost you visibility and nobody redirected the old URLs</li>
+                        <li>Your Google Business Profile and your website disagree about basic facts</li>
                     </ul>
                 </div>
-
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/>
-                        </svg>
-                    </div>
-                    <h3>On-Page Optimization</h3>
-                    <p>Technical SEO improvements and content optimization to ensure your website is search engine friendly. We optimize meta tags, headers, content structure, and site speed.</p>
-                    <ul class="feature-list">
-                        <li>Meta title & description optimization</li>
-                        <li>Header tag structure (H1-H6)</li>
-                        <li>Image optimization & alt text</li>
-                        <li>Internal linking strategy</li>
-                        <li>Schema markup implementation</li>
-                        <li>Site speed optimization</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/>
-                        </svg>
-                    </div>
-                    <h3>Link Building & Authority</h3>
-                    <p>Build high-quality backlinks from authoritative websites to increase your domain authority and improve search rankings. We use white-hat techniques for sustainable growth.</p>
-                    <ul class="feature-list">
-                        <li>Quality backlink acquisition</li>
-                        <li>Guest posting opportunities</li>
-                        <li>Broken link building</li>
-                        <li>Competitor backlink analysis</li>
-                        <li>Link profile audits</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-                        </svg>
-                    </div>
-                    <h3>Performance Tracking & Reporting</h3>
-                    <p>Transparent reporting with detailed analytics on rankings, traffic, conversions, and ROI. Get monthly reports showing the progress and impact of our SEO efforts.</p>
-                    <ul class="feature-list">
-                        <li>Keyword ranking tracking</li>
-                        <li>Google Analytics integration</li>
-                        <li>Traffic & conversion analysis</li>
-                        <li>Monthly performance reports</li>
-                        <li>ROI measurement</li>
+                <div class="sv-fit-col sv-fit-col--no">
+                    <span class="sv-fit-label">Probably not if</span>
+                    <ul class="sv-fit-list">
+                        <li>You want a guaranteed position, a guaranteed timeline, or a set number of backlinks a month. We don&rsquo;t sell any of those and you should be wary of anyone who does</li>
+                        <li>Your business has more enquiries than it can serve. More visibility isn&rsquo;t the constraint</li>
+                        <li>You&rsquo;ve been told you need to publish forty articles a month. That&rsquo;s the kind of scaled content Google&rsquo;s spam policies exist to catch</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="service-benefits-section">
-        <div class="container">
-            <div class="benefits-layout">
-                <div class="benefits-content">
-                    <h2>Why Choose Our SEO Services?</h2>
-                    <p class="benefits-intro">Partnering with WebOctals for SEO means working with a team that's committed to your long-term success.</p>
-                    
-                    <div class="benefits-list-detailed">
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✓</div>
-                            <div class="benefit-text">
-                                <h4>Grow Organic Traffic</h4>
-                                <p>Content and structure built around the words people actually search for &mdash; not stuffed keywords</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✓</div>
-                            <div class="benefit-text">
-                                <h4>Improve Rankings for Keywords That Matter</h4>
-                                <p>We target the searches your real customers use, not vanity keywords with no buying intent</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✓</div>
-                            <div class="benefit-text">
-                                <h4>Higher Quality Leads with Better Conversion Rates</h4>
-                                <p>Attract visitors who are actively searching for your products or services</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✓</div>
-                            <div class="benefit-text">
-                                <h4>Long-Term Sustainable Growth</h4>
-                                <p>Build a strong foundation that continues to deliver results for years</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✓</div>
-                            <div class="benefit-text">
-                                <h4>Transparent Reporting & Communication</h4>
-                                <p>Stay informed with detailed monthly reports and regular strategy updates</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✓</div>
-                            <div class="benefit-text">
-                                <h4>White-Hat Ethical Techniques</h4>
-                                <p>We only use Google-approved methods for sustainable, penalty-free results</p>
-                            </div>
-                        </div>
-                    </div>
+    <section class="sv-section sv-section--recessed">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Scope</p>
+            <h2 class="sv-h2">What&rsquo;s included</h2>
+            <div class="sv-included">
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">01</span>
+                    <h3 class="sv-h3">On-page: content &amp; structure</h3>
+                    <p>Pages organised around the places and services you genuinely offer, with headings, metadata and internal links that describe them accurately rather than stuffing terms.</p>
                 </div>
-                
-                <div class="benefits-visual">
-                    <div class="benefits-card">
-                        <h3>Our SEO Process</h3>
-                        <div class="process-steps">
-                            <div class="process-step">
-                                <div class="step-number">1</div>
-                                <div class="step-content">
-                                    <h4>Audit & Analysis</h4>
-                                    <p>Comprehensive site audit and competitor research</p>
-                                </div>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">2</div>
-                                <div class="step-content">
-                                    <h4>Strategy Development</h4>
-                                    <p>Custom SEO roadmap tailored to your goals</p>
-                                </div>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">3</div>
-                                <div class="step-content">
-                                    <h4>Implementation</h4>
-                                    <p>Execute on-page, off-page, and technical SEO</p>
-                                </div>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">4</div>
-                                <div class="step-content">
-                                    <h4>Monitor & Optimize</h4>
-                                    <p>Track results and continuously improve</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">02</span>
+                    <h3 class="sv-h3">Technical: crawl &amp; index</h3>
+                    <p>Robots and sitemap correctness, canonical tags where near-duplicates exist, proper 301s on anything that moves, and no page accidentally blocked from the index.</p>
+                </div>
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">03</span>
+                    <h3 class="sv-h3">Structured data</h3>
+                    <p>Valid schema for the things you actually are &mdash; a local business, a service, an article &mdash; rather than markup piled on in the hope it does something.</p>
+                </div>
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">04</span>
+                    <h3 class="sv-h3">Core Web Vitals</h3>
+                    <p>Real measurement on throttled mobile, then fixing what the numbers point at, rather than chasing a score for its own sake.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="service-cta-section">
-        <div class="container">
-            <div class="cta-box-service">
-                <h2>Ready to Improve Your Search Visibility?</h2>
-                <p>Get a free SEO review with a realistic assessment of what's working, what isn't, and what it'll take to improve it.</p>
-                <div class="cta-buttons">
-                    <a href="/contact/" class="btn btn-primary">
-                        <span>Get a Free SEO Review</span>
-                        <div class="btn-glow"></div>
-                    </a>
-                    <a href="/contact/" class="btn btn-outline-white">Schedule Consultation</a>
-                </div>
+    <section class="sv-section">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Related work</p>
+            <h2 class="sv-h2">Where this shows up in the portfolio</h2>
+            <div class="sv-work">
+                <a class="sv-work-card" href="/clients/the-driving-spot/">
+                    <img src="/assets/images/client_driving_spot.jpeg" alt="The The Driving Spot website, built by WebOctals" loading="lazy" width="1402" height="1122">
+                    <div class="sv-work-body">
+                        <span class="sv-work-meta">Driving school &middot; Bedford</span>
+                        <h3>The Driving Spot</h3>
+                        <p>Dedicated local structure for every town the school teaches in, rather than one catch-all homepage.</p>
+                    </div>
+                </a>
+                <a class="sv-work-card" href="/clients/quick-fit-shelving/">
+                    <img src="/assets/images/quick_fit_move.jpeg" alt="The Quick Fit Shelving website, built by WebOctals" loading="lazy" width="1402" height="1122">
+                    <div class="sv-work-body">
+                        <span class="sv-work-meta">Trade services &middot; West Midlands</span>
+                        <h3>Quick Fit Shelving</h3>
+                        <p>Services, coverage and contact front and centre for buyers who decide fast.</p>
+                    </div>
+                </a>
+                <a class="sv-work-card" href="/clients/fishermans-chips/">
+                    <img src="/assets/images/client_fisher_chips.jpeg" alt="The Fisherman’s Chips website, built by WebOctals" loading="lazy" width="1402" height="1122">
+                    <div class="sv-work-body">
+                        <span class="sv-work-meta">Fish &amp; chip shop &middot; Bedford</span>
+                        <h3>Fisherman&rsquo;s Chips</h3>
+                        <p>A menu-first site with online ordering, built for speed during service.</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
+
+    <hr class="sv-lane">
+
+    <section class="sv-section">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Questions</p>
+            <h2 class="sv-h2">Straight answers</h2>
+            <div class="sv-faq">
+                <details class="sv-q">
+                    <summary>Can you guarantee we&rsquo;ll rank first?</summary>
+                    <div class="sv-a">
+                        <p>No, and you should treat anyone who says otherwise as a warning sign &mdash; that&rsquo;s Google&rsquo;s own advice, not just ours.</p>
+                        <p>We can build the structure that makes ranking possible and be straight with you about what we changed and why. The ranking itself isn&rsquo;t anyone&rsquo;s to sell.</p>
+                    </div>
+                </details>
+                <details class="sv-q">
+                    <summary>How long until it works?</summary>
+                    <div class="sv-a">
+                        <p>We won&rsquo;t give you a date. New and changed pages have to be crawled and indexed before they can rank, and Google publishes no timeline for that. Anyone quoting you a week or a month is guessing at a number that isn&rsquo;t theirs.</p>
+                    </div>
+                </details>
+                <details class="sv-q">
+                    <summary>Do you build backlinks?</summary>
+                    <div class="sv-a">
+                        <p>No. Link schemes are a link spam policy violation and can get a site penalised. What we do instead is make the site worth linking to and make sure nothing technical is stopping it from being found.</p>
+                    </div>
+                </details>
+                <details class="sv-q">
+                    <summary>What&rsquo;s the difference between on-page and technical SEO?</summary>
+                    <div class="sv-a">
+                        <p>On-page is what a search engine reads once it reaches a page: content, headings, metadata, internal linking. Technical is whether it can reach and understand the page in the first place: crawling, indexing, redirects, structured data, speed and mobile rendering.</p>
+                        <p>They fail independently, which is why we do both rather than selling them separately.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+    </article>
+
+    <nav class="sv-pager" aria-label="More services">
+        <a href="/web-development/">
+            <span class="sv-pager-dir">&larr; Previous</span>
+            <strong>Web development</strong>
+        </a>
+        <a href="/digital-products/">
+            <span class="sv-pager-dir">Next &rarr;</span>
+            <strong>Digital products</strong>
+        </a>
+    </nav>
+
+    <section class="sv-close">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Next</p>
+            <h2>Not sure this is the one you need?</h2>
+            <p class="sv-deck">Describe the problem rather than the solution and we&rsquo;ll tell you which one fits, or that none of them do. That answer is free and it&rsquo;s often the useful one.</p>
+            <div class="sv-close-actions">
+                <a href="/contact/" class="btn btn-primary">
+                    <span>Start a conversation</span>
+                    <div class="btn-glow"></div>
+                </a>
+                <a href="/services/" class="sv-ghost">All services</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -444,10 +349,11 @@
                     <div class="link-group">
                         <h4>Services</h4>
                         <ul>
-                            <li><a href="/ai-agents/">AI Agent Development</a></li>
-                            <li><a href="/digital-products/">Digital Products</a></li>
+                            <li><a href="/web-development/">Web Development</a></li>
+                            <li><a href="/seo/">SEO</a></li>
+                            <li><a href="/ai-agents/">AI Agents</a></li>
                             <li><a href="/automation/">Automation</a></li>
-                            <li><a href="/machine-learning/">ML Solutions</a></li>
+                            <li><a href="/services/">All services</a></li>
                         </ul>
                     </div>
 
@@ -459,6 +365,13 @@
                             <li><a href="/clients/">Clients</a></li>
                             <li><a href="/blog/">Blog</a></li>
                             <li><a href="/contact/">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="link-group">
+                        <h4>Businesses</h4>
+                        <ul>
+                            <li><a href="/driving-schools/">Driving Schools</a></li>
                         </ul>
                     </div>
 
@@ -485,8 +398,44 @@
         </div>
     </footer>
 
+    <!-- Contact Popup -->
+    <div id="contact-widget" class="chat-widget">
+        <button class="chat-toggle" id="chat-toggle" aria-label="Contact us" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+        <div class="chat-popup" id="chat-popup">
+            <div class="chat-popup-header">
+                <h4>Get in touch</h4>
+                <button class="chat-close" id="chat-close" aria-label="Close">&times;</button>
+            </div>
+            <p class="chat-popup-subtitle">Choose how you'd like to reach us</p>
+            <div class="chat-popup-actions">
+                <a class="chat-popup-btn" href="mailto:contact@weboctals.co.uk?subject=Project%20Enquiry">
+                    <span class="chat-popup-btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </span>
+                    <span>Email us</span>
+                </a>
+                <a class="chat-popup-btn chat-popup-btn-whatsapp"
+                   href="https://wa.me/447442410345?text=Hi%2C%20I%27d%20like%20to%20talk%20about%20a%20project"
+                   target="_blank" rel="noopener">
+                    <span class="chat-popup-btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </span>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="/assets/js/main.js"></script>
     <script defer src="/assets/js/cookie-consent.js"></script>
 </body>

@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="How WebOctals built a booking-first driving school website for The Driving Spot, ranking across Bedford, Peterborough and every area the school covers.">
+    <meta name="description" content="A driving school across two counties, where one homepage could only ever name one town convincingly.">
     <meta name="author" content="WebOctals">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://weboctals.com/clients/the-driving-spot/">
-    <meta property="og:title" content="The Driving Spot — Driving School Website Case Study | WebOctals Clients">
-    <meta property="og:description" content="How WebOctals built a booking-first driving school website for The Driving Spot, ranking across Bedford, Peterborough and every area the school covers.">
+    <meta property="og:title" content="The Driving Spot &mdash; Driving School Website | WebOctals">
+    <meta property="og:description" content="A driving school across two counties, where one homepage could only ever name one town convincingly.">
+    <meta property="og:image" content="https://weboctals.com/assets/images/client_driving_spot.jpeg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://weboctals.com/clients/the-driving-spot/">
-    <meta property="twitter:title" content="The Driving Spot — Driving School Website Case Study | WebOctals Clients">
-    <meta property="twitter:description" content="How WebOctals built a booking-first driving school website for The Driving Spot, ranking across Bedford, Peterborough and every area the school covers.">
+    <meta property="twitter:title" content="The Driving Spot &mdash; Driving School Website | WebOctals">
+    <meta property="twitter:description" content="A driving school across two counties, where one homepage could only ever name one town convincingly.">
+    <meta property="twitter:image" content="https://weboctals.com/assets/images/client_driving_spot.jpeg">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://weboctals.com/clients/the-driving-spot/">
@@ -42,6 +44,8 @@
     </noscript>
 
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/work.css">
+
     <script type="application/ld+json">
     {"@context":"https://schema.org","@graph":[
         {"@type":"BreadcrumbList","itemListElement":[
@@ -49,16 +53,13 @@
             {"@type":"ListItem","position":2,"name":"Clients","item":"https://weboctals.com/clients/"},
             {"@type":"ListItem","position":3,"name":"The Driving Spot","item":"https://weboctals.com/clients/the-driving-spot/"}
         ]},
-        {"@type":"Article","headline":"The Driving Spot — Driving School Website Case Study","description":"How WebOctals built a booking-first driving school website for The Driving Spot, ranking across Bedford, Peterborough and every area the school covers.","about":{"@type":"LocalBusiness","name":"The Driving Spot","address":{"@type":"PostalAddress","addressLocality":"Bedford"}},"author":{"@type":"Organization","name":"WebOctals","url":"https://weboctals.com/"},"publisher":{"@type":"Organization","name":"WebOctals","url":"https://weboctals.com/"},"image":"https://weboctals.com/assets/images/client_driving_spot.jpeg"}
+        {"@type":"Article","headline":"The Driving Spot — Driving school website","description":"A driving school across two counties, where one homepage could only ever name one town convincingly.","about":{"@type":"LocalBusiness","name":"The Driving Spot","address":{"@type":"PostalAddress","addressLocality":"Bedford, Peterborough & surrounding towns"}},"author":{"@type":"Organization","name":"WebOctals","url":"https://weboctals.com/"},"publisher":{"@type":"Organization","name":"WebOctals","url":"https://weboctals.com/"},"image":"https://weboctals.com/assets/images/client_driving_spot.jpeg"}
     ]}
     </script>
 
-    <title>The Driving Spot — Driving School Website Case Study | WebOctals Clients</title>
+    <title>The Driving Spot &mdash; Driving School Website | WebOctals</title>
 </head>
-<body>
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
-
+<body class="wk-page">
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -69,9 +70,7 @@
                 </a>
             </div>
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="/" class="nav-link">Home</a>
-                </li>
+                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                 <li class="nav-item nav-item-dropdown">
                     <a href="/services/" class="nav-link">
                         Services
@@ -112,21 +111,11 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a href="/projects/" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/clients/" class="nav-link active">Clients</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/about/" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/blog/" class="nav-link">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/contact/" class="nav-link">Contact</a>
-                </li>
+                <li class="nav-item"><a href="/projects/" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="/clients/" class="nav-link active">Clients</a></li>
+                <li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="/contact/" class="nav-link">Contact</a></li>
             </ul>
             <a href="/contact/" class="btn btn-primary nav-cta">
                 <span>Start a project</span>
@@ -138,49 +127,110 @@
             </div>
         </div>
     </nav>
-    <!-- Client Case Study -->
-    <section class="page-section">
-        <div class="container">
-            <a href="/clients/" class="client-back-link">&larr; All clients</a>
+    <main>
+    <article>
+    <header class="wk-case-hero">
+        <div class="wk-shell">
+            <nav class="wk-crumb" aria-label="Breadcrumb">
+                <a href="/">Home</a><span>/</span><a href="/clients/">Clients</a><span>/</span>The Driving Spot
+            </nav>
 
-            <div class="client-landing-hero">
-                <div class="client-landing-photo">
-                    <img src="/assets/images/client_driving_spot.jpeg" alt="The Driving Spot website built by WebOctals" loading="eager" width="1402" height="1122">
-                </div>
-                <div>
-                    <span class="project-card-type">Driving School &mdash; Bedford &amp; Peterborough</span>
-                    <h1>The Driving Spot</h1>
-                    <div class="project-tags">
-                        <span class="tag tag-accent">Driving School</span>
-                        <span class="tag tag-accent-2">Booking</span>
-                        <span class="tag tag-neutral">Local Business</span>
-                    </div>
-                </div>
+            <div class="wk-case-tags">
+                <span class="wk-chip wk-chip--job">Booking</span>
+                <span class="wk-chip">Driving instruction</span>
+                <span class="wk-chip">Bedford, Peterborough &amp; surrounding towns</span>
             </div>
 
-            <div class="client-par-grid">
-                <div class="card elev-sm client-par-card">
-                    <span class="client-par-label">Problem</span>
-                    <p>The Driving Spot runs driving lessons across Bedford, Peterborough and several surrounding towns &mdash; a wider coverage area than most local driving schools, which created a specific problem: a single generic homepage couldn&rsquo;t rank for, or even clearly communicate, every area the school actually served. Prospective learners searching for lessons in one specific town had no way to quickly confirm the school covered their area, and often bounced to a competitor whose site named their town explicitly. Instructor and pricing information wasn&rsquo;t easy to find, and there was no consistent, clear path from &ldquo;interested visitor&rdquo; to &ldquo;booked lesson&rdquo; &mdash; enquiries relied on visitors working out how to get in touch themselves rather than being guided toward it. For a driving school competing across multiple towns simultaneously, being invisible in local search for even one of those areas meant losing bookings to schools with narrower but better-optimised sites.</p>
-                </div>
-                <div class="card elev-sm client-par-card">
-                    <span class="client-par-label">Action</span>
-                    <p>We built The Driving Spot a site structured specifically to earn visibility across every town it serves, not just its home base. Content, headings and metadata are built around each area &mdash; Bedford, Peterborough and the surrounding towns &mdash; so the site can compete in local search results area by area rather than relying on one generic set of keywords to do all the work. Instructor information and transparent pricing sit prominently on the page, removing the guesswork that sends hesitant learners elsewhere, and a clear, consistent call to action runs through the site so every page gives visitors an obvious next step towards booking a lesson. We kept the design clean and fast-loading, prioritising the practical information &mdash; coverage area, pricing, how to book &mdash; that a learner actually needs to make a decision, rather than filling the page with generic stock imagery and vague copy.</p>
-                </div>
-                <div class="card elev-sm client-par-card">
-                    <span class="client-par-label">Results</span>
-                    <p>The Driving Spot now has a website built to be found by name in every area it covers, with dedicated local search structure across Bedford, Peterborough and the surrounding towns instead of a single catch-all homepage. Instructor and pricing information is upfront and easy to find, and every page carries a clear path toward booking a lesson, so interested visitors are guided toward getting in touch rather than left to figure it out themselves. The result is a site that matches the real shape of the business &mdash; a driving school genuinely operating across a wide catchment area &mdash; and gives it a fair shot at ranking in local search everywhere it teaches, not just its home town.</p>
-                </div>
-            </div>
+            <h1 class="wk-case-title">The Driving Spot</h1>
+            <p class="wk-case-lede">A driving school teaching across Bedford, Peterborough and several surrounding towns &mdash; a wider catchment than most, and the fact that shaped the entire build.</p>
 
-            <div class="client-landing-cta">
+            <img class="wk-case-shot" src="/assets/images/client_driving_spot.jpeg" alt="The The Driving Spot website, built by WebOctals" loading="eager" width="1402" height="1122">
+
+            <dl class="wk-facts">
+                <div class="wk-fact">
+                    <dt>Trade</dt>
+                    <dd>Driving school</dd>
+                </div>
+                <div class="wk-fact">
+                    <dt>Area served</dt>
+                    <dd>Bedford, Peterborough &amp; surrounding towns</dd>
+                </div>
+                <div class="wk-fact">
+                    <dt>What the site had to do</dt>
+                    <dd>Booking</dd>
+                </div>
+                <div class="wk-fact">
+                    <dt>What we built</dt>
+                    <dd>Dedicated structure per area, transparent pricing, instructor detail, consistent booking path</dd>
+                </div>
+            </dl>
+        </div>
+    </header>
+
+    <div class="wk-shell">
+        <section class="wk-par">
+            <div class="wk-par-mark">
+                <span class="wk-par-step">STEP 01</span>
+                <h2>The brief</h2>
+            </div>
+            <div class="wk-par-body">
+                    <p>The Driving Spot runs driving lessons across Bedford, Peterborough and several surrounding towns &mdash; a wider catchment than most local driving schools, and the thing that shaped the entire job. A learner searching for lessons in one specific town wants to confirm in seconds that the school covers their area, and a single homepage can only ever name one place convincingly.</p>
+                    <p>So the brief was a site that matches the real shape of the business: visible in every town the school teaches in, not just its home base, with instructor detail and pricing easy to find wherever a visitor lands and an obvious next step toward booking on every page.</p>
+            </div>
+        </section>
+
+        <section class="wk-par">
+            <div class="wk-par-mark">
+                <span class="wk-par-step">STEP 02</span>
+                <h2>The build</h2>
+            </div>
+            <div class="wk-par-body">
+                    <p>We built the site to earn visibility across every town it serves. Content, headings and metadata are structured around each area &mdash; Bedford, Peterborough and the surrounding towns &mdash; so the site competes in local search area by area rather than asking one generic set of keywords to do all the work.</p>
+                    <p>Instructor information and transparent pricing sit prominently on the page, and a consistent call to action runs throughout so every page offers a clear next step. We kept the design clean and fast-loading, prioritising the practical information a learner needs to decide &mdash; coverage area, pricing, how to book &mdash; over stock imagery and filler copy.</p>
+            </div>
+        </section>
+
+        <section class="wk-par">
+            <div class="wk-par-mark">
+                <span class="wk-par-step">STEP 03</span>
+                <h2>The outcome</h2>
+            </div>
+            <div class="wk-par-body">
+                    <p>The Driving Spot has a site built to be found by name in every area it covers, with dedicated local structure across Bedford, Peterborough and the surrounding towns rather than a single catch-all homepage. Instructor and pricing information is upfront and easy to find, and every page carries a clear path toward booking a lesson.</p>
+                    <p>The result matches the real shape of the business &mdash; a driving school operating across a wide catchment &mdash; and gives it a fair shot in local search everywhere it teaches, not just its home town.</p>
+            </div>
+        </section>
+    </div>
+    </article>
+
+    <nav class="wk-pager" aria-label="More case studies">
+        <a href="/clients/colindale-driving-school/">
+            <span class="wk-pager-dir">&larr; Previous</span>
+            <strong>Colindale Driving School</strong>
+        </a>
+        <a href="/clients/fishermans-chips/">
+            <span class="wk-pager-dir">Next &rarr;</span>
+            <strong>Fisherman&rsquo;s Chips</strong>
+        </a>
+    </nav>
+
+    <section class="wk-close">
+        <div class="wk-shell">
+            <p class="wk-eyebrow">Next</p>
+            <h2>Is your business a similar shape?</h2>
+            <p class="wk-deck">Most of what we build is for small UK businesses with a specific job for the site to do &mdash; take a booking, take an order, or be credible enough that someone gets in touch. Tell us which one yours is.</p>
+            <div class="wk-close-actions">
                 <a href="/contact/" class="btn btn-primary">
-                    <span>Start your project</span>
+                    <span>Start a conversation</span>
                     <div class="btn-glow"></div>
                 </a>
+                <a href="/clients/" class="wk-ghost">All case studies</a>
             </div>
         </div>
     </section>
+
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -209,10 +259,11 @@
                     <div class="link-group">
                         <h4>Services</h4>
                         <ul>
-                            <li><a href="/ai-agents/">AI Agent Development</a></li>
-                            <li><a href="/digital-products/">Digital Products</a></li>
+                            <li><a href="/web-development/">Web Development</a></li>
+                            <li><a href="/seo/">SEO</a></li>
+                            <li><a href="/ai-agents/">AI Agents</a></li>
                             <li><a href="/automation/">Automation</a></li>
-                            <li><a href="/machine-learning/">ML Solutions</a></li>
+                            <li><a href="/services/">All services</a></li>
                         </ul>
                     </div>
 
@@ -224,6 +275,13 @@
                             <li><a href="/clients/">Clients</a></li>
                             <li><a href="/blog/">Blog</a></li>
                             <li><a href="/contact/">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="link-group">
+                        <h4>Businesses</h4>
+                        <ul>
+                            <li><a href="/driving-schools/">Driving Schools</a></li>
                         </ul>
                     </div>
 
@@ -249,6 +307,7 @@
             </div>
         </div>
     </footer>
+
     <!-- Contact Popup -->
     <div id="contact-widget" class="chat-widget">
         <button class="chat-toggle" id="chat-toggle" aria-label="Contact us" aria-expanded="false">
@@ -259,11 +318,11 @@
         <div class="chat-popup" id="chat-popup">
             <div class="chat-popup-header">
                 <h4>Get in touch</h4>
-                <button class="chat-close" id="chat-close" aria-label="Close">×</button>
+                <button class="chat-close" id="chat-close" aria-label="Close">&times;</button>
             </div>
             <p class="chat-popup-subtitle">Choose how you'd like to reach us</p>
             <div class="chat-popup-actions">
-                <a class="chat-popup-btn" href="mailto:contact@weboctals.co.uk?subject=Website%20Enquiry">
+                <a class="chat-popup-btn" href="mailto:contact@weboctals.co.uk?subject=Project%20Enquiry">
                     <span class="chat-popup-btn-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -273,7 +332,7 @@
                     <span>Email us</span>
                 </a>
                 <a class="chat-popup-btn chat-popup-btn-whatsapp"
-                   href="https://wa.me/447442410345?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20WebOctals"
+                   href="https://wa.me/447442410345?text=Hi%2C%20I%27d%20like%20to%20talk%20about%20a%20project"
                    target="_blank" rel="noopener">
                     <span class="chat-popup-btn-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
@@ -287,8 +346,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="/assets/js/main.js"></script>
     <script defer src="/assets/js/cookie-consent.js"></script>
 </body>

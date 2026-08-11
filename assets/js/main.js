@@ -933,7 +933,13 @@ function initializeFAQAccordion() {
     
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
-        
+
+        // Some pages (blog posts) reuse .faq-item for static Q&A with no
+        // button to wire up. Skip those rather than throwing on null.
+        if (!question) {
+            return;
+        }
+
         question.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
             
@@ -942,7 +948,9 @@ function initializeFAQAccordion() {
                 if (otherItem !== item) {
                     otherItem.classList.remove('active');
                     const otherButton = otherItem.querySelector('.faq-question');
-                    otherButton.setAttribute('aria-expanded', 'false');
+                    if (otherButton) {
+                        otherButton.setAttribute('aria-expanded', 'false');
+                    }
                 }
             });
             
@@ -956,7 +964,8 @@ function initializeFAQAccordion() {
                 
                 // Track FAQ interaction with GTM if available
                 if (typeof window.WebOctalsGTM !== 'undefined') {
-                    const questionText = item.querySelector('h3').textContent;
+                    const heading = item.querySelector('h3');
+                    const questionText = heading ? heading.textContent : '';
                     window.WebOctalsGTM.trackEvent('faq_interaction', {
                         question: questionText,
                         page: window.location.pathname

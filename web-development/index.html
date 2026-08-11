@@ -3,15 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Web development from an in-house UK team: WordPress, Shopify, and custom eCommerce sites engineered to turn a visit into a booking, order, or enquiry.">
-    <meta name="keywords" content="web development, WordPress development, Shopify, eCommerce, website design, WebOctals">
+    <meta name="description" content="Custom and platform-built websites for UK businesses — fast on mobile, structured around the areas you serve, with enquiries that arrive usable.">
     <meta name="author" content="WebOctals">
     <meta name="robots" content="index, follow">
-    
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weboctals.com/web-development/">
+    <meta property="og:title" content="Web Development for UK Businesses | WebOctals">
+    <meta property="og:description" content="Custom and platform-built websites for UK businesses — fast on mobile, structured around the areas you serve, with enquiries that arrive usable.">
+    <meta property="og:image" content="https://weboctals.com/assets/images/client_driving_spot.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://weboctals.com/web-development/">
+    <meta property="twitter:title" content="Web Development for UK Businesses | WebOctals">
+    <meta property="twitter:description" content="Custom and platform-built websites for UK businesses — fast on mobile, structured around the areas you serve, with enquiries that arrive usable.">
+    <meta property="twitter:image" content="https://weboctals.com/assets/images/client_driving_spot.jpeg">
+
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://weboctals.com/web-development/">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8afc96">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+
     <!-- Performance Optimization: Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,27 +44,28 @@
     </noscript>
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    
+    <link rel="stylesheet" href="/assets/css/services.css">
+
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Web Development Services",
-        "provider": {
-            "@type": "Organization",
-            "name": "WebOctals"
-        },
-        "description": "Professional web development services including WordPress, Shopify, and custom eCommerce solutions.",
-        "serviceType": "Web Development",
-        "areaServed": "Worldwide"
-    }
+    {"@context":"https://schema.org","@graph":[
+        {"@type":"BreadcrumbList","itemListElement":[
+            {"@type":"ListItem","position":1,"name":"Home","item":"https://weboctals.com/"},
+            {"@type":"ListItem","position":2,"name":"Services","item":"https://weboctals.com/services/"},
+            {"@type":"ListItem","position":3,"name":"Web development","item":"https://weboctals.com/web-development/"}
+        ]},
+        {"@type":"Service","serviceType":"Web development","name":"Web development","provider":{"@type":"Organization","name":"WebOctals","url":"https://weboctals.com/"},"areaServed":{"@type":"Country","name":"United Kingdom"},"description":"Custom and platform-built websites for UK businesses — fast on mobile, structured around the areas you serve, with enquiries that arrive usable."},
+        {"@type":"FAQPage","mainEntity":[
+            {"@type":"Question","name":"Do you work in WordPress and Shopify, or only custom builds?","acceptedAnswer":{"@type":"Answer","text":"Both. We build custom by default because for most local service businesses it’s faster, cheaper to run and has less that can break. But WordPress, Shopify and WooCommerce are all on the table where the platform genuinely fits — a real product catalogue, an existing store, a team that needs to edit content daily. We’ll tell you which we think is right for your case and why, before you commit."}},
+            {"@type":"Question","name":"How long does a site take?","acceptedAnswer":{"@type":"Answer","text":"Two to four weeks for a typical small business site, depending on how many areas and services it needs to carry. You get a timeline before anything starts."}},
+            {"@type":"Question","name":"Will it rank on Google?","acceptedAnswer":{"@type":"Answer","text":"We build the structure that makes ranking possible, and we don’t promise a position — nobody can, and Google’s own guidance on hiring an SEO lists a guaranteed number-one ranking as a reason to walk away. See our SEO page for what that work actually involves."}}
+        ]}
+    ]}
     </script>
 
-    <title>Web Development Services - WordPress & Shopify | WebOctals</title>
+    <title>Web Development for UK Businesses | WebOctals</title>
 </head>
-<body>
-    <div id="particles-js"></div>
-    
+<body class="sv-page">
+    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
@@ -53,9 +75,7 @@
                 </a>
             </div>
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="/" class="nav-link">Home</a>
-                </li>
+                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                 <li class="nav-item nav-item-dropdown">
                     <a href="/services/" class="nav-link active">
                         Services
@@ -96,21 +116,11 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a href="/projects/" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/clients/" class="nav-link">Clients</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/about/" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/blog/" class="nav-link">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/contact/" class="nav-link">Contact</a>
-                </li>
+                <li class="nav-item"><a href="/projects/" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="/clients/" class="nav-link">Clients</a></li>
+                <li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="/contact/" class="nav-link">Contact</a></li>
             </ul>
             <a href="/contact/" class="btn btn-primary nav-cta">
                 <span>Start a project</span>
@@ -122,243 +132,188 @@
             </div>
         </div>
     </nav>
+    <main>
+    <article>
+    <header class="sv-hero">
+        <div class="sv-shell">
+            <nav class="sv-crumb" aria-label="Breadcrumb">
+                <a href="/">Home</a><span>/</span><a href="/services/">Services</a><span>/</span>Web development
+            </nav>
+            <span class="sv-chip">The front door</span>
+            <h1 class="sv-h1">Web development</h1>
+            <p class="sv-deck">The service behind every project in our portfolio &mdash; live sites for UK businesses, built so that a stranger on a phone can answer their own questions and get in touch in one tap.</p>
+            <div class="sv-hero-actions">
+                <a href="/contact/" class="btn btn-primary">
+                    <span>Talk to us about this</span>
+                    <div class="btn-glow"></div>
+                </a>
+                <a href="#fit" class="sv-ghost">Is it right for you?</a>
+            </div>
+        </div>
+    </header>
 
-    <section class="service-detail-hero">
-        <div class="container">
-            <div class="service-hero-content">
-                <div class="service-breadcrumb">
-                    <a href="/">Home</a>
-                    <span>/</span>
-                    <a href="/services/">Services</a>
-                    <span>/</span>
-                    <span>Web Development</span>
-                </div>
-                
-                <div class="service-hero-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20,18C20.5,18 21,17.5 21,17V7C21,6.5 20.5,6 20,6H4C3.5,6 3,6.5 3,7V17C3,17.5 3.5,18 4,18H20M5,8V16H19V8H5Z"/>
-                    </svg>
-                </div>
-                
-                <h1>Web Development</h1>
-                <p class="service-hero-tagline">WordPress, Shopify & Custom eCommerce Solutions</p>
-                <p class="service-hero-description">From custom WordPress themes to full-featured Shopify stores, we build sites engineered around one goal: turning a visit into a booking, order, or enquiry.</p>
-                
-                <div class="service-hero-cta">
-                    <a href="/contact/" class="btn btn-primary">
-                        <span>Start Your Website</span>
-                        <div class="btn-glow"></div>
-                    </a>
-                    <a href="/contact/" class="btn btn-outline-white">View Portfolio</a>
-                </div>
-                
-                <div class="service-stats">
-                    <div class="stat">
-                        <div class="stat-number">9</div>
-                        <div class="stat-label">Projects Shipped</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Built In-House</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">2-4</div>
-                        <div class="stat-label">Weeks to Launch</div>
-                    </div>
-                </div>
+    <section class="sv-section" style="padding-top:0;">
+        <div class="sv-shell">
+            <div class="sv-prose">
+                <p>Most of the sites we build are for businesses where the website is not a brand exercise. It&rsquo;s the thing that takes the booking at 11pm on a Sunday, or loses it. That changes what matters: load time on a weak mobile signal, whether your prices are visible, whether a visitor in one town can confirm in seconds that you cover their area.</p>
+                <p>We build custom where custom is the right call &mdash; which is most of the time for a local service business, because it&rsquo;s faster and there&rsquo;s less to go wrong. Where a platform genuinely fits the job, we work in <strong>WordPress, Shopify and WooCommerce</strong> too. The decision is made on what you need to do with the site, not on what we&rsquo;d prefer to build.</p>
             </div>
         </div>
     </section>
 
-    <section class="service-features-section">
-        <div class="container">
-            <div class="section-header-center">
-                <h2>Our Web Development Services</h2>
-                <p>Platform expertise and custom solutions for every business</p>
-            </div>
-            
-            <div class="features-grid-large">
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M13.8 9.4C13.1 9.1 12.3 9 11.5 9C9 9 7 11 7 13.5S9 18 11.5 18C13.5 18 15.2 16.6 15.7 14.8H13.8C13.3 15.7 12.5 16.3 11.5 16.3C10 16.3 8.8 15.1 8.8 13.5S10 10.8 11.5 10.8C12.2 10.8 12.8 11.1 13.3 11.6L11.9 13H17V8L13.8 9.4M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4Z"/>
-                        </svg>
-                    </div>
-                    <h3>WordPress Development</h3>
-                    <p>Custom WordPress websites with premium themes, plugins, and functionality. Perfect for blogs, corporate sites, and content-driven platforms.</p>
-                    <ul class="feature-list">
-                        <li>Custom theme development</li>
-                        <li>Plugin customization</li>
-                        <li>WooCommerce integration</li>
-                        <li>Gutenberg block development</li>
-                        <li>Performance optimization</li>
-                        <li>Security hardening</li>
+    <hr class="sv-lane">
+
+    <section class="sv-section" id="fit">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Fit</p>
+            <h2 class="sv-h2">When this is the right job &mdash; and when it isn&rsquo;t</h2>
+            <p class="sv-deck">We&rsquo;d rather lose a project at this stage than sell you one you don&rsquo;t need. The right-hand column is the honest half.</p>
+
+            <div class="sv-fit">
+                <div class="sv-fit-col sv-fit-col--yes">
+                    <span class="sv-fit-label">Worth doing if</span>
+                    <ul class="sv-fit-list">
+                        <li>Your site is slow on mobile data, which is where most of your visitors are</li>
+                        <li>A visitor can&rsquo;t tell in ten seconds what you charge or whether you cover their area</li>
+                        <li>Enquiries arrive as one-line messages with no context, so every one costs you two replies</li>
+                        <li>You serve several towns but have one homepage trying to represent all of them</li>
+                        <li>You&rsquo;re selling online and the checkout is losing people</li>
                     </ul>
                 </div>
-
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M16.5 14C17.88 14 19 15.12 19 16.5C19 17.88 17.88 19 16.5 19C15.12 19 14 17.88 14 16.5C14 15.12 15.12 14 16.5 14M16.5 12C14 12 12 14 12 16.5C12 19 14 21 16.5 21C19 21 21 19 21 16.5C21 14 19 12 16.5 12M16.5 17.5C16.22 17.5 16 17.28 16 17V16C16 15.72 16.22 15.5 16.5 15.5C16.78 15.5 17 15.72 17 16V17C17 17.28 16.78 17.5 16.5 17.5M11 7H2V9H11V7M11 11H2V13H11V11M16 3H2V5H16V3Z"/>
-                        </svg>
-                    </div>
-                    <h3>Shopify Store Development</h3>
-                    <p>Build powerful eCommerce stores on Shopify with custom themes, integrations, and conversion-optimized checkout experiences.</p>
-                    <ul class="feature-list">
-                        <li>Custom Shopify themes</li>
-                        <li>App integration & development</li>
-                        <li>Payment gateway setup</li>
-                        <li>Product catalog management</li>
-                        <li>Inventory synchronization</li>
-                        <li>Marketing automation</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75C7.17,14.7 7.18,14.66 7.2,14.63L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.34 21,5.17 21,5A1,1 0 0,0 20,4H5.21L4.27,2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z"/>
-                        </svg>
-                    </div>
-                    <h3>Custom eCommerce Solutions</h3>
-                    <p>Fully customized online stores with advanced features, payment processing, inventory management, and seamless user experiences.</p>
-                    <ul class="feature-list">
-                        <li>Multi-vendor marketplaces</li>
-                        <li>Subscription billing</li>
-                        <li>Advanced product filtering</li>
-                        <li>Wishlist & comparisons</li>
-                        <li>Abandoned cart recovery</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"/>
-                        </svg>
-                    </div>
-                    <h3>Website Maintenance & Support</h3>
-                    <p>Keep your website secure, fast, and up-to-date with our ongoing maintenance packages. Regular updates, backups, and performance optimization.</p>
-                    <ul class="feature-list">
-                        <li>Security updates & patches</li>
-                        <li>Daily/weekly backups</li>
-                        <li>Performance monitoring</li>
-                        <li>Uptime monitoring</li>
-                        <li>Content updates</li>
+                <div class="sv-fit-col sv-fit-col--no">
+                    <span class="sv-fit-label">Probably not if</span>
+                    <ul class="sv-fit-list">
+                        <li>Your diary is already full &mdash; a new site would mostly save you admin, which is worth doing but is a smaller job than the one you&rsquo;re about to be quoted for</li>
+                        <li>The real problem is your pricing, availability or reviews. We&rsquo;ll say so before quoting</li>
+                        <li>You need one page with an address and a phone number. Tell us and we&rsquo;ll scope that instead</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="service-benefits-section">
-        <div class="container">
-            <div class="benefits-layout">
-                <div class="benefits-content">
-                    <h2>Why Choose Our Web Development Services?</h2>
-                    <p class="benefits-intro">We build websites structured to turn a visit into a booking, order, or enquiry &mdash; not just to look good.</p>
-                    
-                    <div class="benefits-list-detailed">
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✓</div>
-                            <div class="benefit-text">
-                                <h4>Mobile-First Responsive Design</h4>
-                                <p>Perfect experience on all devices - desktop, tablet, and mobile</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✓</div>
-                            <div class="benefit-text">
-                                <h4>SEO-Optimized Architecture</h4>
-                                <p>Built with search engines in mind for maximum organic visibility</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✓</div>
-                            <div class="benefit-text">
-                                <h4>Lightning-Fast Loading Speeds</h4>
-                                <p>Optimized for Core Web Vitals and sub-2 second load times</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✓</div>
-                            <div class="benefit-text">
-                                <h4>Conversion-Focused Design</h4>
-                                <p>Strategic placement of CTAs and forms to maximize conversions</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✓</div>
-                            <div class="benefit-text">
-                                <h4>Easy Content Management</h4>
-                                <p>Intuitive admin interfaces for effortless content updates</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✓</div>
-                            <div class="benefit-text">
-                                <h4>Strong, Modern Security</h4>
-                                <p>SSL certificates, firewalls, and regular security audits</p>
-                            </div>
-                        </div>
-                    </div>
+    <section class="sv-section sv-section--recessed">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Scope</p>
+            <h2 class="sv-h2">What&rsquo;s included</h2>
+            <div class="sv-included">
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">01</span>
+                    <h3 class="sv-h3">Build</h3>
+                    <p>Custom by default, or WordPress, Shopify or WooCommerce where the platform earns its place. Either way you own the result.</p>
                 </div>
-                
-                <div class="benefits-visual">
-                    <div class="benefits-card">
-                        <h3>Our Development Process</h3>
-                        <div class="process-steps">
-                            <div class="process-step">
-                                <div class="step-number">1</div>
-                                <div class="step-content">
-                                    <h4>Discovery & Strategy</h4>
-                                    <p>Understand your goals, audience, and competition</p>
-                                </div>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">2</div>
-                                <div class="step-content">
-                                    <h4>Design & Prototyping</h4>
-                                    <p>Create wireframes and high-fidelity mockups</p>
-                                </div>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">3</div>
-                                <div class="step-content">
-                                    <h4>Development & Testing</h4>
-                                    <p>Build, test, and refine across all devices</p>
-                                </div>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">4</div>
-                                <div class="step-content">
-                                    <h4>Launch & Optimize</h4>
-                                    <p>Deploy and continuously improve performance</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">02</span>
+                    <h3 class="sv-h3">Mobile performance</h3>
+                    <p>Measured against Core Web Vitals thresholds and tested on throttled connections, not just desktop broadband.</p>
+                </div>
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">03</span>
+                    <h3 class="sv-h3">Local structure</h3>
+                    <p>A real page for each area you genuinely serve, with valid LocalBusiness markup. We won&rsquo;t build pages for places you don&rsquo;t cover.</p>
+                </div>
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">04</span>
+                    <h3 class="sv-h3">Enquiry handling</h3>
+                    <p>Forms that ask for what you actually need and land somewhere you&rsquo;ll see them &mdash; email or WhatsApp, not a dashboard you never open.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="service-cta-section">
-        <div class="container">
-            <div class="cta-box-service">
-                <h2>Ready to Launch Your Website?</h2>
-                <p>Tell us about your project and get a free quote with a realistic timeline &mdash; no obligation.</p>
-                <div class="cta-buttons">
-                    <a href="/contact/" class="btn btn-primary">
-                        <span>Get Free Quote</span>
-                        <div class="btn-glow"></div>
-                    </a>
-                    <a href="/contact/" class="btn btn-outline-white">View Portfolio</a>
-                </div>
+    <section class="sv-section">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Related work</p>
+            <h2 class="sv-h2">Where this shows up in the portfolio</h2>
+            <div class="sv-work">
+                <a class="sv-work-card" href="/clients/the-driving-spot/">
+                    <img src="/assets/images/client_driving_spot.jpeg" alt="The The Driving Spot website, built by WebOctals" loading="lazy" width="1402" height="1122">
+                    <div class="sv-work-body">
+                        <span class="sv-work-meta">Driving school &middot; Bedford</span>
+                        <h3>The Driving Spot</h3>
+                        <p>Dedicated local structure for every town the school teaches in, rather than one catch-all homepage.</p>
+                    </div>
+                </a>
+                <a class="sv-work-card" href="/clients/hair-we-cut/">
+                    <img src="/assets/images/client_hair_we_cut.jpeg" alt="The Hair We Cut website, built by WebOctals" loading="lazy" width="1402" height="1122">
+                    <div class="sv-work-body">
+                        <span class="sv-work-meta">Barber shop</span>
+                        <h3>Hair We Cut</h3>
+                        <p>Services and pricing upfront on a lightweight build made for mobile data.</p>
+                    </div>
+                </a>
+                <a class="sv-work-card" href="/clients/ar-worldwide/">
+                    <img src="/assets/images/client_worldwide_exchange.jpeg" alt="The A.R Worldwide website, built by WebOctals" loading="lazy" width="1402" height="1122">
+                    <div class="sv-work-body">
+                        <span class="sv-work-meta">Currency exchange &middot; Harrow</span>
+                        <h3>A.R Worldwide</h3>
+                        <p>A calm, uncluttered layout where the design itself does the reassuring.</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
+    <hr class="sv-lane">
+
+    <section class="sv-section">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Questions</p>
+            <h2 class="sv-h2">Straight answers</h2>
+            <div class="sv-faq">
+                <details class="sv-q">
+                    <summary>Do you work in WordPress and Shopify, or only custom builds?</summary>
+                    <div class="sv-a">
+                        <p>Both. We build custom by default because for most local service businesses it&rsquo;s faster, cheaper to run and has less that can break. But WordPress, Shopify and WooCommerce are all on the table where the platform genuinely fits &mdash; a real product catalogue, an existing store, a team that needs to edit content daily.</p>
+                        <p>We&rsquo;ll tell you which we think is right for your case and why, before you commit.</p>
+                    </div>
+                </details>
+                <details class="sv-q">
+                    <summary>How long does a site take?</summary>
+                    <div class="sv-a">
+                        <p>Two to four weeks for a typical small business site, depending on how many areas and services it needs to carry. You get a timeline before anything starts.</p>
+                    </div>
+                </details>
+                <details class="sv-q">
+                    <summary>Will it rank on Google?</summary>
+                    <div class="sv-a">
+                        <p>We build the structure that makes ranking possible, and we don&rsquo;t promise a position &mdash; nobody can, and Google&rsquo;s own guidance on hiring an SEO lists a guaranteed number-one ranking as a reason to walk away. See <a href="/seo/">our SEO page</a> for what that work actually involves.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+    </article>
+
+    <nav class="sv-pager" aria-label="More services">
+        <a href="/machine-learning/">
+            <span class="sv-pager-dir">&larr; Previous</span>
+            <strong>Machine learning</strong>
+        </a>
+        <a href="/seo/">
+            <span class="sv-pager-dir">Next &rarr;</span>
+            <strong>SEO</strong>
+        </a>
+    </nav>
+
+    <section class="sv-close">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Next</p>
+            <h2>Not sure this is the one you need?</h2>
+            <p class="sv-deck">Describe the problem rather than the solution and we&rsquo;ll tell you which one fits, or that none of them do. That answer is free and it&rsquo;s often the useful one.</p>
+            <div class="sv-close-actions">
+                <a href="/contact/" class="btn btn-primary">
+                    <span>Start a conversation</span>
+                    <div class="btn-glow"></div>
+                </a>
+                <a href="/services/" class="sv-ghost">All services</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -386,10 +341,11 @@
                     <div class="link-group">
                         <h4>Services</h4>
                         <ul>
-                            <li><a href="/ai-agents/">AI Agent Development</a></li>
-                            <li><a href="/digital-products/">Digital Products</a></li>
+                            <li><a href="/web-development/">Web Development</a></li>
+                            <li><a href="/seo/">SEO</a></li>
+                            <li><a href="/ai-agents/">AI Agents</a></li>
                             <li><a href="/automation/">Automation</a></li>
-                            <li><a href="/machine-learning/">ML Solutions</a></li>
+                            <li><a href="/services/">All services</a></li>
                         </ul>
                     </div>
 
@@ -401,6 +357,13 @@
                             <li><a href="/clients/">Clients</a></li>
                             <li><a href="/blog/">Blog</a></li>
                             <li><a href="/contact/">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="link-group">
+                        <h4>Businesses</h4>
+                        <ul>
+                            <li><a href="/driving-schools/">Driving Schools</a></li>
                         </ul>
                     </div>
 
@@ -427,7 +390,44 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Contact Popup -->
+    <div id="contact-widget" class="chat-widget">
+        <button class="chat-toggle" id="chat-toggle" aria-label="Contact us" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+        <div class="chat-popup" id="chat-popup">
+            <div class="chat-popup-header">
+                <h4>Get in touch</h4>
+                <button class="chat-close" id="chat-close" aria-label="Close">&times;</button>
+            </div>
+            <p class="chat-popup-subtitle">Choose how you'd like to reach us</p>
+            <div class="chat-popup-actions">
+                <a class="chat-popup-btn" href="mailto:contact@weboctals.co.uk?subject=Project%20Enquiry">
+                    <span class="chat-popup-btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </span>
+                    <span>Email us</span>
+                </a>
+                <a class="chat-popup-btn chat-popup-btn-whatsapp"
+                   href="https://wa.me/447442410345?text=Hi%2C%20I%27d%20like%20to%20talk%20about%20a%20project"
+                   target="_blank" rel="noopener">
+                    <span class="chat-popup-btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </span>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="/assets/js/main.js"></script>
     <script defer src="/assets/js/cookie-consent.js"></script>
 </body>

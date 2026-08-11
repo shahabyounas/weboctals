@@ -1,0 +1,738 @@
+/* ==========================================================================
+   Work — /projects/, /clients/ and the case studies
+   --------------------------------------------------------------------------
+   Namespaced `wk-`, scoped under `.wk-page`, loaded after styles.css.
+
+   Design note: a portfolio is a catalogue, so it's set like one — numbered
+   entries, mono metadata, dashed lane-line rules. The organising label is
+   "the job" (booking / ordering / credibility / showcase) rather than
+   industry, because that's the axis a visitor recognises themselves in.
+   Shares its type and colour vocabulary with driving-schools.css so the two
+   sections read as one site.
+   ========================================================================== */
+
+.wk-page {
+    --wk-ground: #0d2724;
+    --wk-recess: #08201d;
+    --wk-raise: #11302c;
+    --wk-mint: #8afc96;
+    --wk-marker: #e9ff60;
+    --wk-ink: #c9f9d7;
+    --wk-dim: rgb(201 249 215 / 0.66);
+    --wk-faint: rgb(201 249 215 / 0.40);
+    --wk-line: rgb(201 249 215 / 0.14);
+    --wk-line-strong: rgb(201 249 215 / 0.28);
+
+    --wk-display: var(--font-heading);
+    --wk-body: var(--font-body);
+    --wk-data: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+    --wk-measure: 68ch;
+    --wk-gutter: clamp(20px, 5vw, 40px);
+}
+
+/* --------------------------------------------------------------------------
+   Primitives
+   -------------------------------------------------------------------------- */
+
+.wk-shell {
+    width: min(1180px, 100% - (var(--wk-gutter) * 2));
+    margin-inline: auto;
+}
+
+.wk-shell--narrow {
+    width: min(880px, 100% - (var(--wk-gutter) * 2));
+}
+
+.wk-page .wk-section {
+    padding: clamp(56px, 8vw, 104px) 0;
+}
+
+.wk-page .wk-section--recessed {
+    background: var(--wk-recess);
+}
+
+.wk-lane {
+    border: 0;
+    height: 2px;
+    margin: 0;
+    background-image: linear-gradient(
+        to right,
+        var(--wk-line-strong) 0 28px,
+        transparent 28px 52px
+    );
+    background-size: 52px 2px;
+}
+
+.wk-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--wk-data);
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--wk-marker);
+    margin: 0 0 var(--space-lg);
+}
+
+.wk-eyebrow::before {
+    content: '';
+    width: 26px;
+    height: 2px;
+    background: var(--wk-marker);
+}
+
+.wk-crumb {
+    font-family: var(--wk-data);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    color: var(--wk-faint);
+    margin-bottom: var(--space-xl);
+}
+
+.wk-page .wk-crumb a {
+    color: var(--wk-faint);
+    text-decoration: none;
+}
+
+.wk-page .wk-crumb a:hover {
+    color: var(--wk-mint);
+}
+
+.wk-crumb span {
+    margin: 0 8px;
+}
+
+.wk-page h1.wk-h1 {
+    font-family: var(--wk-display);
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 0.99;
+    letter-spacing: -0.02em;
+    color: var(--wk-ink);
+    margin: 0 0 var(--space-lg);
+    max-width: 16ch;
+}
+
+.wk-h1-tail {
+    display: block;
+    color: var(--wk-mint);
+}
+
+.wk-page h2.wk-h2 {
+    font-family: var(--wk-display);
+    font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+    line-height: 1.06;
+    letter-spacing: -0.01em;
+    color: var(--wk-ink);
+    margin: 0 0 var(--space-md);
+    max-width: 22ch;
+}
+
+.wk-deck {
+    font-size: clamp(1.02rem, 1.6vw, 1.22rem);
+    line-height: 1.65;
+    color: var(--wk-dim);
+    max-width: 62ch;
+    margin: 0 0 var(--space-xl);
+}
+
+.wk-page .wk-deck strong {
+    color: var(--wk-ink);
+    font-weight: 600;
+}
+
+.wk-page .wk-deck a {
+    color: var(--wk-mint);
+    text-underline-offset: 3px;
+}
+
+.wk-hero {
+    padding: clamp(120px, 15vw, 175px) 0 clamp(40px, 5vw, 64px);
+}
+
+/* Chips — the job taxonomy and industry labels */
+.wk-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--wk-data);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--wk-line-strong);
+    color: var(--wk-dim);
+    white-space: nowrap;
+}
+
+.wk-chip--job {
+    color: var(--wk-marker);
+    border-color: rgb(233 255 96 / 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   Filter bar (projects gallery)
+   -------------------------------------------------------------------------- */
+
+.wk-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: var(--space-lg) 0;
+    border-block: 1px solid var(--wk-line);
+    margin-bottom: var(--space-2xl);
+}
+
+.wk-page .wk-filter {
+    font-family: var(--wk-data);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--wk-dim);
+    background: transparent;
+    border: 1px solid var(--wk-line-strong);
+    border-radius: var(--radius-pill);
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.wk-page .wk-filter:hover {
+    color: var(--wk-ink);
+    border-color: var(--wk-line-strong);
+}
+
+.wk-page .wk-filter[aria-pressed='true'] {
+    background: var(--wk-mint);
+    border-color: var(--wk-mint);
+    color: #06201c;
+    font-weight: 700;
+}
+
+.wk-filter-n {
+    opacity: 0.6;
+    margin-left: 6px;
+}
+
+.wk-count {
+    font-family: var(--wk-data);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--wk-faint);
+    margin: 0 0 var(--space-lg);
+}
+
+/* --------------------------------------------------------------------------
+   Gallery grid (projects)
+   -------------------------------------------------------------------------- */
+
+.wk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: clamp(20px, 3vw, 32px);
+}
+
+.wk-page .wk-tile {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    background: var(--wk-raise);
+    border: 1px solid var(--wk-line);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: border-color var(--transition-normal), transform var(--transition-normal);
+}
+
+.wk-page .wk-tile:hover {
+    border-color: var(--wk-mint);
+    transform: translateY(-3px);
+}
+
+.wk-tile[hidden] {
+    display: none;
+}
+
+.wk-tile-shot {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    border-bottom: 1px solid var(--wk-line);
+}
+
+/* Two projects have no screenshot on file — they get their existing mark on a
+   tinted panel rather than a fake placeholder or a stock photo. */
+.wk-art {
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(70% 70% at 50% 40%, rgb(138 252 150 / 0.08), transparent 70%),
+        var(--wk-recess);
+    border-bottom: 1px solid var(--wk-line);
+}
+
+.wk-tile-art {
+    aspect-ratio: 5 / 4;
+}
+
+.wk-tile-art svg {
+    width: 44%;
+    max-width: 148px;
+    height: auto;
+}
+
+.wk-case-art {
+    aspect-ratio: 21 / 9;
+    max-height: 340px;
+    max-width: 880px;
+    margin-inline: auto;
+    border: 1px solid var(--wk-line);
+    border-radius: var(--radius-md);
+}
+
+.wk-case-art svg {
+    width: 18%;
+    max-width: 150px;
+    height: auto;
+}
+
+.wk-row-art {
+    width: 96px;
+    height: 72px;
+    border-radius: 8px;
+    border: 1px solid var(--wk-line);
+    flex-shrink: 0;
+}
+
+.wk-row-art svg {
+    width: 52%;
+    height: auto;
+}
+
+.wk-tile-body {
+    padding: clamp(18px, 2.6vw, 26px);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.wk-tile-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-md);
+    font-family: var(--wk-data);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.wk-tile-idx {
+    color: var(--wk-faint);
+    font-variant-numeric: tabular-nums;
+}
+
+.wk-tile-job {
+    color: var(--wk-marker);
+}
+
+.wk-page .wk-tile-body h3 {
+    font-family: var(--wk-display);
+    font-size: 1.32rem;
+    line-height: 1.12;
+    color: var(--wk-ink);
+    margin: 0 0 10px;
+}
+
+.wk-tile-body p {
+    font-size: 0.93rem;
+    line-height: 1.6;
+    color: var(--wk-dim);
+    margin: 0 0 var(--space-md);
+    flex: 1;
+}
+
+.wk-tile-more {
+    font-family: var(--wk-data);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--wk-mint);
+}
+
+.wk-empty {
+    color: var(--wk-faint);
+    font-family: var(--wk-data);
+    font-size: 0.85rem;
+    padding: var(--space-2xl) 0;
+    text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   Ledger (clients index) — grouped by sector
+   -------------------------------------------------------------------------- */
+
+.wk-sector {
+    margin-top: var(--space-2xl);
+}
+
+.wk-sector:first-child {
+    margin-top: 0;
+}
+
+.wk-sector-head {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--wk-line-strong);
+}
+
+.wk-page .wk-sector-head h2 {
+    font-family: var(--wk-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--wk-ink);
+    margin: 0;
+}
+
+.wk-sector-n {
+    font-family: var(--wk-data);
+    font-size: 0.72rem;
+    color: var(--wk-faint);
+    font-variant-numeric: tabular-nums;
+}
+
+.wk-page .wk-row {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr) auto;
+    gap: clamp(16px, 3vw, 32px);
+    align-items: center;
+    padding: var(--space-lg) 0;
+    border-bottom: 1px solid var(--wk-line);
+    text-decoration: none;
+    transition: background var(--transition-fast);
+}
+
+.wk-page .wk-row:hover {
+    background: rgb(138 252 150 / 0.04);
+}
+
+.wk-row-shot {
+    width: 96px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--wk-line);
+    display: block;
+}
+
+.wk-row-meta {
+    font-family: var(--wk-data);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--wk-marker);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.wk-page .wk-row-main h3 {
+    font-family: var(--wk-display);
+    font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+    line-height: 1.12;
+    color: var(--wk-ink);
+    margin: 0 0 8px;
+}
+
+.wk-row-main p {
+    font-size: 0.93rem;
+    line-height: 1.6;
+    color: var(--wk-dim);
+    margin: 0;
+    max-width: 60ch;
+}
+
+.wk-row-go {
+    font-family: var(--wk-data);
+    font-size: 1.1rem;
+    color: var(--wk-mint);
+}
+
+/* --------------------------------------------------------------------------
+   Case study
+   -------------------------------------------------------------------------- */
+
+.wk-case-hero {
+    padding: clamp(112px, 14vw, 160px) 0 0;
+}
+
+.wk-case-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: var(--space-lg);
+}
+
+.wk-page h1.wk-case-title {
+    font-family: var(--wk-display);
+    font-size: clamp(2.2rem, 6vw, 4.2rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--wk-ink);
+    margin: 0 0 var(--space-lg);
+    max-width: 18ch;
+}
+
+.wk-case-lede {
+    font-size: clamp(1.05rem, 1.7vw, 1.28rem);
+    line-height: 1.6;
+    color: var(--wk-dim);
+    max-width: 60ch;
+    margin: 0 0 var(--space-2xl);
+}
+
+/* Capped rather than cropped — the mockups are laptop-on-desk shots and a
+   16:9 crop clips the base of the machine. */
+.wk-case-shot {
+    width: 100%;
+    max-width: 880px;
+    height: auto;
+    display: block;
+    margin-inline: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--wk-line);
+}
+
+/* Stated on the two projects that are portfolio entries rather than
+   documented client engagements — the reader should know which they're on. */
+.wk-case-note {
+    max-width: 62ch;
+    margin: calc(var(--space-lg) * -1) 0 var(--space-2xl);
+    padding-left: var(--space-md);
+    border-left: 2px solid var(--wk-line-strong);
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--wk-faint);
+}
+
+/* At-a-glance strip */
+.wk-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: var(--space-lg);
+    margin: 0;
+    padding: var(--space-xl) 0;
+    border-bottom: 1px solid var(--wk-line);
+}
+
+.wk-fact dt {
+    font-family: var(--wk-data);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--wk-faint);
+    margin-bottom: 8px;
+}
+
+.wk-fact dd {
+    font-size: 0.98rem;
+    line-height: 1.5;
+    color: var(--wk-ink);
+    margin: 0;
+}
+
+/* Brief / build / outcome */
+.wk-par {
+    display: grid;
+    grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+    gap: clamp(20px, 5vw, 56px);
+    padding: clamp(32px, 5vw, 52px) 0;
+    border-bottom: 1px solid var(--wk-line);
+}
+
+.wk-par:last-of-type {
+    border-bottom: 0;
+}
+
+.wk-par-mark {
+    align-self: start;
+}
+
+.wk-par-step {
+    font-family: var(--wk-data);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    color: var(--wk-faint);
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+.wk-page .wk-par-mark h2 {
+    font-family: var(--wk-display);
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    line-height: 1.05;
+    color: var(--wk-mint);
+    margin: 0;
+}
+
+.wk-par-body p {
+    font-size: 1.02rem;
+    line-height: 1.78;
+    color: var(--wk-dim);
+    max-width: var(--wk-measure);
+    margin: 0 0 var(--space-md);
+}
+
+.wk-par-body p:last-child {
+    margin-bottom: 0;
+}
+
+.wk-page .wk-par-body strong {
+    color: var(--wk-ink);
+    font-weight: 600;
+}
+
+.wk-page .wk-par-body a {
+    color: var(--wk-mint);
+    text-underline-offset: 3px;
+}
+
+/* Prev / next */
+.wk-pager {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--wk-line);
+    border-block: 1px solid var(--wk-line);
+}
+
+.wk-page .wk-pager a {
+    background: var(--wk-ground);
+    padding: clamp(24px, 3.5vw, 36px);
+    text-decoration: none;
+    display: block;
+    transition: background var(--transition-fast);
+}
+
+.wk-page .wk-pager a:hover {
+    background: var(--wk-raise);
+}
+
+.wk-pager-dir {
+    font-family: var(--wk-data);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--wk-faint);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.wk-page .wk-pager strong {
+    font-family: var(--wk-display);
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--wk-ink);
+    display: block;
+}
+
+.wk-pager a:last-child {
+    text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   Closing call to action
+   -------------------------------------------------------------------------- */
+
+.wk-close {
+    padding: clamp(56px, 8vw, 104px) 0;
+    background: var(--wk-recess);
+}
+
+.wk-page .wk-close h2 {
+    font-family: var(--wk-display);
+    font-size: clamp(1.9rem, 4.6vw, 3.1rem);
+    line-height: 1.05;
+    color: var(--wk-ink);
+    margin: 0 0 var(--space-lg);
+    max-width: 18ch;
+}
+
+.wk-close-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    align-items: center;
+    margin-top: var(--space-xl);
+}
+
+.wk-page .wk-ghost {
+    font-family: var(--wk-data);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--wk-ink);
+    text-decoration: none;
+    padding: 15px 24px;
+    border: 1px solid var(--wk-line-strong);
+    border-radius: var(--radius-pill);
+    transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.wk-page .wk-ghost:hover {
+    border-color: var(--wk-mint);
+    color: var(--wk-mint);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 780px) {
+    .wk-par {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .wk-page .wk-row {
+        grid-template-columns: 64px minmax(0, 1fr) auto;
+        gap: var(--space-md);
+    }
+
+    .wk-row-shot,
+    .wk-row-art {
+        width: 64px;
+        height: 56px;
+    }
+
+    .wk-pager a:last-child {
+        text-align: left;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .wk-page .wk-tile,
+    .wk-page .wk-row,
+    .wk-page .wk-pager a {
+        transition: none;
+    }
+}
+
+.wk-page a:focus-visible,
+.wk-page button:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+    border-radius: var(--radius-sm);
+}

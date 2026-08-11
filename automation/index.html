@@ -3,34 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Process automation from an in-house UK team: connect the tools you already run on, cut repetitive manual work, and catch issues with real-time monitoring.">
-    <meta name="keywords" content="automation services, workflow automation, process optimization, intelligent monitoring, business automation, Zapier integration, workflow management, WebOctals">
+    <meta name="description" content="Automation for UK businesses — pipelines that remove repetitive manual work and connect systems that were never designed to talk to each other.">
     <meta name="author" content="WebOctals">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://weboctals.com/automation/">
-    <meta property="og:title" content="Automation Services - WebOctals">
-    <meta property="og:description" content="Connect the systems you already run on and cut the manual, repetitive work between them.">
-    <meta property="og:image" content="https://weboctals.com/assets/images/automation-og.jpg">
+    <meta property="og:title" content="Business Process Automation | WebOctals">
+    <meta property="og:description" content="Automation for UK businesses — pipelines that remove repetitive manual work and connect systems that were never designed to talk to each other.">
+    <meta property="og:image" content="https://weboctals.com/assets/images/client_driving_spot.jpeg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://weboctals.com/automation/">
-    <meta property="twitter:title" content="Automation Services - WebOctals">
-    <meta property="twitter:description" content="Process automation that adapts to your business, not the other way round.">
-    <meta property="twitter:image" content="https://weboctals.com/assets/images/automation-twitter.jpg">
+    <meta property="twitter:title" content="Business Process Automation | WebOctals">
+    <meta property="twitter:description" content="Automation for UK businesses — pipelines that remove repetitive manual work and connect systems that were never designed to talk to each other.">
+    <meta property="twitter:image" content="https://weboctals.com/assets/images/client_driving_spot.jpeg">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://weboctals.com/automation/">
-    
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8afc96">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
-    
-    <!-- Stylesheets -->
+
     <!-- Performance Optimization: Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,30 +44,26 @@
     </noscript>
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    
-    <!-- Schema.org structured data -->
+    <link rel="stylesheet" href="/assets/css/services.css">
+
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Intelligent Automation Services",
-        "provider": {
-            "@type": "Organization",
-            "name": "WebOctals",
-            "url": "https://weboctals.com"
-        },
-        "serviceType": "Business Process Automation",
-        "description": "Process automation that connects the systems a business already runs on and removes repetitive manual work.",
-        "areaServed": "United Kingdom"
-    }
+    {"@context":"https://schema.org","@graph":[
+        {"@type":"BreadcrumbList","itemListElement":[
+            {"@type":"ListItem","position":1,"name":"Home","item":"https://weboctals.com/"},
+            {"@type":"ListItem","position":2,"name":"Services","item":"https://weboctals.com/services/"},
+            {"@type":"ListItem","position":3,"name":"Automation","item":"https://weboctals.com/automation/"}
+        ]},
+        {"@type":"Service","serviceType":"Automation","name":"Automation","provider":{"@type":"Organization","name":"WebOctals","url":"https://weboctals.com/"},"areaServed":{"@type":"Country","name":"United Kingdom"},"description":"Automation for UK businesses — pipelines that remove repetitive manual work and connect systems that were never designed to talk to each other."},
+        {"@type":"FAQPage","mainEntity":[
+            {"@type":"Question","name":"How do I know if something is worth automating?","acceptedAnswer":{"@type":"Answer","text":"Rough test: how many hours a month does it take, how settled is the process, and what does it cost when it goes wrong? A settled, frequent, error-prone task is worth automating. An occasional one that changes shape every month usually isn’t."}},
+            {"@type":"Question","name":"Is this AI?","acceptedAnswer":{"@type":"Answer","text":"Often not, and that’s fine. Plenty of the most useful automation is ordinary software doing something reliably. Where a language model genuinely helps — reading messy free text, classifying enquiries — we’ll use one, and we’ll say why."}}
+        ]}
+    ]}
     </script>
 
-    <title>Automation Services - WebOctals | Process &amp; Workflow Automation</title>
+    <title>Business Process Automation | WebOctals</title>
 </head>
-<body>
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
-    
+<body class="sv-page">
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -76,9 +74,7 @@
                 </a>
             </div>
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="/" class="nav-link">Home</a>
-                </li>
+                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                 <li class="nav-item nav-item-dropdown">
                     <a href="/services/" class="nav-link active">
                         Services
@@ -119,21 +115,11 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a href="/projects/" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/clients/" class="nav-link">Clients</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/about/" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/blog/" class="nav-link">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/contact/" class="nav-link">Contact</a>
-                </li>
+                <li class="nav-item"><a href="/projects/" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="/clients/" class="nav-link">Clients</a></li>
+                <li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="/contact/" class="nav-link">Contact</a></li>
             </ul>
             <a href="/contact/" class="btn btn-primary nav-cta">
                 <span>Start a project</span>
@@ -145,269 +131,170 @@
             </div>
         </div>
     </nav>
+    <main>
+    <article>
+    <header class="sv-hero">
+        <div class="sv-shell">
+            <nav class="sv-crumb" aria-label="Breadcrumb">
+                <a href="/">Home</a><span>/</span><a href="/services/">Services</a><span>/</span>Automation
+            </nav>
+            <span class="sv-chip">The machinery</span>
+            <h1 class="sv-h1">Automation</h1>
+            <p class="sv-deck">Removing the work nobody should be doing by hand. Not a transformation programme &mdash; usually one specific afternoon-a-week task that shouldn&rsquo;t exist.</p>
+            <div class="sv-hero-actions">
+                <a href="/contact/" class="btn btn-primary">
+                    <span>Talk to us about this</span>
+                    <div class="btn-glow"></div>
+                </a>
+                <a href="#fit" class="sv-ghost">Is it right for you?</a>
+            </div>
+        </div>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="service-detail-hero">
-        <div class="container">
-            <div class="service-breadcrumb">
-                <a href="/">Home</a>
-                <span>/</span>
-                <a href="/services/">Services</a>
-                <span>/</span>
-                <span>Automation</span>
-            </div>
-            
-            <div class="service-hero-content">
-                <div class="service-hero-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/>
-                    </svg>
-                </div>
-                
-                <h1>Automate Repetitive Tasks &<br/>Focus on What Matters</h1>
-                <p class="hero-tagline">Connect the systems you already run on &mdash; booking, invoicing, CRM, fulfilment &mdash; so information moves between them without a person retyping it.</p>
-                
-                <div class="hero-cta-buttons">
-                    <a href="/contact/" class="btn btn-primary">
-                        <span>Start Automating Today</span>
-                        <div class="btn-glow"></div>
-                    </a>
-                    <a href="/contact/" class="btn btn-outline">Schedule Consultation</a>
-                </div>
-            </div>
-            
-            <div class="service-stats">
-                <div class="stat-item">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Always-On Automation</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Built In-House</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">9</div>
-                    <div class="stat-label">Projects Shipped</div>
-                </div>
+    <section class="sv-section" style="padding-top:0;">
+        <div class="sv-shell">
+            <div class="sv-prose">
+                <p>Most automation worth building is unglamorous. Someone copies figures from one system into another every Monday. Orders arrive in one format and have to be re-keyed into another. A report gets assembled by hand from four places when it could assemble itself.</p>
+                <p>We look for the task you&rsquo;d describe with a sigh, work out whether it can be removed rather than sped up, and build the smallest thing that removes it. If a spreadsheet formula or a setting in software you already own would do it, we&rsquo;ll tell you that instead &mdash; it&rsquo;s a shorter conversation but a more useful one.</p>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="service-features-section">
-        <div class="container">
-            <div class="section-header-center">
-                <h2>Comprehensive Automation Solutions</h2>
-                <p>From simple task automation to complex workflow orchestration, we deliver intelligent solutions that scale with your business.</p>
-            </div>
-            
-            <div class="features-grid-large">
-                <!-- Process Optimization -->
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M3,11H11V3H3M3,21H11V13H3M13,21H21V13H13M13,3V11H21V3"/>
-                        </svg>
-                    </div>
-                    <h3>Process Optimization</h3>
-                    <p>Identify inefficiencies and streamline operations with data-driven process mapping and optimization strategies.</p>
-                    <ul class="feature-list">
-                        <li>Workflow Mapping & Analysis</li>
-                        <li>Bottleneck Identification</li>
-                        <li>Efficiency Metrics & KPIs</li>
-                        <li>Continuous Improvement Cycles</li>
+    <hr class="sv-lane">
+
+    <section class="sv-section" id="fit">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Fit</p>
+            <h2 class="sv-h2">When this is the right job &mdash; and when it isn&rsquo;t</h2>
+            <p class="sv-deck">We&rsquo;d rather lose a project at this stage than sell you one you don&rsquo;t need. The right-hand column is the honest half.</p>
+
+            <div class="sv-fit">
+                <div class="sv-fit-col sv-fit-col--yes">
+                    <span class="sv-fit-label">Worth doing if</span>
+                    <ul class="sv-fit-list">
+                        <li>The same data gets typed into two different systems by a person, every week</li>
+                        <li>A recurring report is assembled by hand and takes half a day</li>
+                        <li>Orders, bookings or leads arrive in one place and have to be moved somewhere else manually</li>
+                        <li>Something important gets missed occasionally because it depends on someone remembering</li>
                     </ul>
                 </div>
-                
-                <!-- Workflow Automation -->
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12,2A2,2 0 0,1 14,4C14,4.74 13.6,5.39 13,5.73V7H14A7,7 0 0,1 21,14H22A1,1 0 0,1 23,15V18A1,1 0 0,1 22,19H21V20A2,2 0 0,1 19,22H5A2,2 0 0,1 3,20V19H2A1,1 0 0,1 1,18V15A1,1 0 0,1 2,14H3A7,7 0 0,1 10,7H11V5.73C10.4,5.39 10,4.74 10,4A2,2 0 0,1 12,2M7.5,13A2.5,2.5 0 0,0 5,15.5A2.5,2.5 0 0,0 7.5,18A2.5,2.5 0 0,0 10,15.5A2.5,2.5 0 0,0 7.5,13M16.5,13A2.5,2.5 0 0,0 14,15.5A2.5,2.5 0 0,0 16.5,18A2.5,2.5 0 0,0 19,15.5A2.5,2.5 0 0,0 16.5,13Z"/>
-                        </svg>
-                    </div>
-                    <h3>Workflow Automation</h3>
-                    <p>Automate repetitive tasks and complex workflows with intelligent routing, conditional logic, and multi-step processes.</p>
-                    <ul class="feature-list">
-                        <li>Task Automation & Scheduling</li>
-                        <li>Approval Workflows & Routing</li>
-                        <li>Data Synchronization</li>
-                        <li>Email & Notification Automation</li>
-                    </ul>
-                </div>
-                
-                <!-- Intelligent Monitoring -->
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M3,3H21V5H3V3M3,7H17V9H3V7M3,11H21V13H3V11M3,15H17V17H3V15M3,19H21V21H3V19Z"/>
-                        </svg>
-                    </div>
-                    <h3>Intelligent Monitoring</h3>
-                    <p>Real-time monitoring and predictive analytics to proactively identify issues before they impact your business.</p>
-                    <ul class="feature-list">
-                        <li>Real-Time Dashboards</li>
-                        <li>Anomaly Detection & Alerts</li>
-                        <li>Predictive Maintenance</li>
-                        <li>Performance Analytics</li>
-                    </ul>
-                </div>
-                
-                <!-- Integration Capabilities -->
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M2,2H11V11H2V2M17.5,2C20,2 22,4 22,6.5C22,9 20,11 17.5,11C15,11 13,9 13,6.5C13,4 15,2 17.5,2M6.5,14L11,22H2L6.5,14M19,17H22V19H19V22H17V19H14V17H17V14H19V17Z"/>
-                        </svg>
-                    </div>
-                    <h3>Integration Capabilities</h3>
-                    <p>Connect all your tools and platforms with seamless integrations and custom API development.</p>
-                    <ul class="feature-list">
-                        <li>Zapier & Make Integration</li>
-                        <li>n8n Workflow Automation</li>
-                        <li>Custom API Development</li>
-                        <li>Third-Party App Connections</li>
+                <div class="sv-fit-col sv-fit-col--no">
+                    <span class="sv-fit-label">Probably not if</span>
+                    <ul class="sv-fit-list">
+                        <li>The process changes every few weeks. Automate it once it&rsquo;s settled, or you&rsquo;ll be paying us to keep up</li>
+                        <li>It happens twice a year. The build will cost more than the hours it saves and we&rsquo;d rather say so</li>
+                        <li>The tool you already pay for does this and it isn&rsquo;t switched on. That happens more than you&rsquo;d think</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="service-benefits-section">
-        <div class="container">
-            <div class="benefits-layout">
-                <div class="benefits-list">
-                    <h2>Why Choose Our Automation Solutions?</h2>
-                    
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3>Save Hours Every Week</h3>
-                            <p>Remove manual data entry, repetitive tasks, and time-consuming processes so your team can focus on work that needs a person.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3>Reduce Manual Errors</h3>
-                            <p>Cut human error in repetitive tasks with consistent, accurate automated processes.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M13,2.03V2.05L13,4.05C17.39,4.59 20.5,8.58 19.96,12.97C19.5,16.61 16.64,19.5 13,19.93V21.93C18.5,21.38 22.5,16.5 21.95,11C21.5,6.25 17.73,2.5 13,2.03M11,2.06C9.05,2.25 7.19,3 5.67,4.26L7.1,5.74C8.22,4.84 9.57,4.26 11,4.06V2.06M4.26,5.67C3,7.19 2.25,9.04 2.05,11H4.05C4.24,9.58 4.8,8.23 5.69,7.1L4.26,5.67M2.06,13C2.26,14.96 3.03,16.81 4.27,18.33L5.69,16.9C4.81,15.77 4.24,14.42 4.06,13H2.06M7.1,18.37L5.67,19.74C7.18,21 9.04,21.79 11,22V20C9.58,19.82 8.23,19.25 7.1,18.37M16.82,15.19L12.71,11.08C12.89,10.76 13,10.39 13,10A3,3 0 0,0 10,7A3,3 0 0,0 7,10C7,11.11 7.6,12.08 8.5,12.63L11.72,15.85C12.15,15.95 12.59,16 13,16C14.36,16 15.65,15.6 16.82,15.19Z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3>Faster Response Times</h3>
-                            <p>Automate customer communications, approvals, and internal processes so routine requests get an instant response.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3>Scale Without Adding Headcount</h3>
-                            <p>Handle a lot more volume through automation before you need to hire for it.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M7,2H17A2,2 0 0,1 19,4V20A2,2 0 0,1 17,22H7A2,2 0 0,1 5,20V4A2,2 0 0,1 7,2M7,4V8H17V4H7M7,10V12H9V10H7M11,10V12H13V10H11M15,10V12H17V10H15M7,14V16H9V14H7M11,14V16H13V14H11M15,14V16H17V14H15M7,18V20H9V18H7M11,18V20H13V18H11M15,18V20H17V18H15Z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3>Measurable Returns</h3>
-                            <p>Time savings, fewer errors, and productivity gains you can point to, not just a promise.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12,1L8,5H11V14H13V5H16M18,23H6A2,2 0 0,1 4,21V9A2,2 0 0,1 6,7H9V9H6V21H18V9H15V7H18A2,2 0 0,1 20,9V21A2,2 0 0,1 18,23Z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3>24/7 Automated Workflows</h3>
-                            <p>Your business never sleeps with round-the-clock automation handling tasks and processes.</p>
-                        </div>
-                    </div>
+    <section class="sv-section sv-section--recessed">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Scope</p>
+            <h2 class="sv-h2">What&rsquo;s included</h2>
+            <div class="sv-included">
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">01</span>
+                    <h3 class="sv-h3">The audit first</h3>
+                    <p>We map what actually happens now, including the undocumented steps people do out of habit. That usually changes the scope.</p>
                 </div>
-                
-                <div class="benefits-visual">
-                    <div class="benefits-card">
-                        <h3>Our Automation Process</h3>
-                        <div class="process-steps">
-                            <div class="process-step">
-                                <div class="step-number">1</div>
-                                <div class="step-content">
-                                    <h4>Assessment</h4>
-                                    <p>Analyze current processes and identify automation opportunities</p>
-                                </div>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">2</div>
-                                <div class="step-content">
-                                    <h4>Design</h4>
-                                    <p>Map automation workflows with conditional logic and error handling</p>
-                                </div>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">3</div>
-                                <div class="step-content">
-                                    <h4>Implementation</h4>
-                                    <p>Build and test automations with staged rollout approach</p>
-                                </div>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">4</div>
-                                <div class="step-content">
-                                    <h4>Optimization</h4>
-                                    <p>Monitor performance and continuously refine for maximum efficiency</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">02</span>
+                    <h3 class="sv-h3">The smallest build that works</h3>
+                    <p>Scoped to remove one specific task properly rather than to build a platform you didn&rsquo;t ask for.</p>
+                </div>
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">03</span>
+                    <h3 class="sv-h3">Failure handling</h3>
+                    <p>What happens when the other system is down or the data arrives malformed. Automation that fails silently is worse than no automation.</p>
+                </div>
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">04</span>
+                    <h3 class="sv-h3">Handover</h3>
+                    <p>You get documentation of what it does and how to stop it, so you&rsquo;re not dependent on us to turn it off.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="service-cta-section">
-        <div class="container">
-            <div class="cta-box-service">
-                <h2>Ready to Automate Your Business?</h2>
-                <p>Tell us which manual process is costing you the most time. We'll tell you honestly whether automation is worth it before you pay for anything.</p>
-                <div class="cta-buttons">
-                    <a href="/contact/" class="btn btn-primary">
-                        <span>Get a Free Automation Review</span>
-                        <div class="btn-glow"></div>
-                    </a>
-                    <a href="/contact/" class="btn btn-outline">Schedule a Call</a>
-                </div>
+    <section class="sv-section">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Related work</p>
+            <h2 class="sv-h2">Where this shows up in the portfolio</h2>
+            <div class="sv-work">
+                <a class="sv-work-card" href="/clients/fishermans-chips/">
+                    <img src="/assets/images/client_fisher_chips.jpeg" alt="The Fisherman’s Chips website, built by WebOctals" loading="lazy" width="1402" height="1122">
+                    <div class="sv-work-body">
+                        <span class="sv-work-meta">Fish &amp; chip shop &middot; Bedford</span>
+                        <h3>Fisherman&rsquo;s Chips</h3>
+                        <p>A menu-first site with online ordering, built for speed during service.</p>
+                    </div>
+                </a>
+                <a class="sv-work-card" href="/clients/quick-fit-shelving/">
+                    <img src="/assets/images/quick_fit_move.jpeg" alt="The Quick Fit Shelving website, built by WebOctals" loading="lazy" width="1402" height="1122">
+                    <div class="sv-work-body">
+                        <span class="sv-work-meta">Trade services &middot; West Midlands</span>
+                        <h3>Quick Fit Shelving</h3>
+                        <p>Services, coverage and contact front and centre for buyers who decide fast.</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
+
+    <hr class="sv-lane">
+
+    <section class="sv-section">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Questions</p>
+            <h2 class="sv-h2">Straight answers</h2>
+            <div class="sv-faq">
+                <details class="sv-q">
+                    <summary>How do I know if something is worth automating?</summary>
+                    <div class="sv-a">
+                        <p>Rough test: how many hours a month does it take, how settled is the process, and what does it cost when it goes wrong? A settled, frequent, error-prone task is worth automating. An occasional one that changes shape every month usually isn&rsquo;t.</p>
+                    </div>
+                </details>
+                <details class="sv-q">
+                    <summary>Is this AI?</summary>
+                    <div class="sv-a">
+                        <p>Often not, and that&rsquo;s fine. Plenty of the most useful automation is ordinary software doing something reliably. Where a language model genuinely helps &mdash; reading messy free text, classifying enquiries &mdash; we&rsquo;ll use one, and we&rsquo;ll say why.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+    </article>
+
+    <nav class="sv-pager" aria-label="More services">
+        <a href="/digital-products/">
+            <span class="sv-pager-dir">&larr; Previous</span>
+            <strong>Digital products</strong>
+        </a>
+        <a href="/ai-agents/">
+            <span class="sv-pager-dir">Next &rarr;</span>
+            <strong>AI agents</strong>
+        </a>
+    </nav>
+
+    <section class="sv-close">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Next</p>
+            <h2>Not sure this is the one you need?</h2>
+            <p class="sv-deck">Describe the problem rather than the solution and we&rsquo;ll tell you which one fits, or that none of them do. That answer is free and it&rsquo;s often the useful one.</p>
+            <div class="sv-close-actions">
+                <a href="/contact/" class="btn btn-primary">
+                    <span>Start a conversation</span>
+                    <div class="btn-glow"></div>
+                </a>
+                <a href="/services/" class="sv-ghost">All services</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -437,10 +324,11 @@
                     <div class="link-group">
                         <h4>Services</h4>
                         <ul>
-                            <li><a href="/ai-agents/">AI Agent Development</a></li>
-                            <li><a href="/digital-products/">Digital Products</a></li>
+                            <li><a href="/web-development/">Web Development</a></li>
+                            <li><a href="/seo/">SEO</a></li>
+                            <li><a href="/ai-agents/">AI Agents</a></li>
                             <li><a href="/automation/">Automation</a></li>
-                            <li><a href="/machine-learning/">ML Solutions</a></li>
+                            <li><a href="/services/">All services</a></li>
                         </ul>
                     </div>
 
@@ -452,6 +340,13 @@
                             <li><a href="/clients/">Clients</a></li>
                             <li><a href="/blog/">Blog</a></li>
                             <li><a href="/contact/">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="link-group">
+                        <h4>Businesses</h4>
+                        <ul>
+                            <li><a href="/driving-schools/">Driving Schools</a></li>
                         </ul>
                     </div>
 
@@ -478,8 +373,44 @@
         </div>
     </footer>
 
+    <!-- Contact Popup -->
+    <div id="contact-widget" class="chat-widget">
+        <button class="chat-toggle" id="chat-toggle" aria-label="Contact us" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+        <div class="chat-popup" id="chat-popup">
+            <div class="chat-popup-header">
+                <h4>Get in touch</h4>
+                <button class="chat-close" id="chat-close" aria-label="Close">&times;</button>
+            </div>
+            <p class="chat-popup-subtitle">Choose how you'd like to reach us</p>
+            <div class="chat-popup-actions">
+                <a class="chat-popup-btn" href="mailto:contact@weboctals.co.uk?subject=Project%20Enquiry">
+                    <span class="chat-popup-btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </span>
+                    <span>Email us</span>
+                </a>
+                <a class="chat-popup-btn chat-popup-btn-whatsapp"
+                   href="https://wa.me/447442410345?text=Hi%2C%20I%27d%20like%20to%20talk%20about%20a%20project"
+                   target="_blank" rel="noopener">
+                    <span class="chat-popup-btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </span>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="/assets/js/main.js"></script>
     <script defer src="/assets/js/cookie-consent.js"></script>
 </body>

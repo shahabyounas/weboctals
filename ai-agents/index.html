@@ -3,11 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI agent development from an in-house UK team: virtual assistants with natural language understanding, autonomous decision-making, and multi-platform integration, built into the platforms your customers already use.">
+    <meta name="description" content="AI agents for UK businesses that handle repetitive enquiries and hand over cleanly to a person — built to survive real users, not to demo well.">
+    <meta name="author" content="WebOctals">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weboctals.com/ai-agents/">
+    <meta property="og:title" content="AI Agent Development | WebOctals">
+    <meta property="og:description" content="AI agents for UK businesses that handle repetitive enquiries and hand over cleanly to a person — built to survive real users, not to demo well.">
+    <meta property="og:image" content="https://weboctals.com/assets/images/client_driving_spot.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://weboctals.com/ai-agents/">
+    <meta property="twitter:title" content="AI Agent Development | WebOctals">
+    <meta property="twitter:description" content="AI agents for UK businesses that handle repetitive enquiries and hand over cleanly to a person — built to survive real users, not to demo well.">
+    <meta property="twitter:image" content="https://weboctals.com/assets/images/client_driving_spot.jpeg">
+
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://weboctals.com/ai-agents/">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8afc96">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+
     <!-- Performance Optimization: Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,10 +44,28 @@
     </noscript>
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <title>AI Agents - Intelligent Virtual Assistants | WebOctals</title>
+    <link rel="stylesheet" href="/assets/css/services.css">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[
+        {"@type":"BreadcrumbList","itemListElement":[
+            {"@type":"ListItem","position":1,"name":"Home","item":"https://weboctals.com/"},
+            {"@type":"ListItem","position":2,"name":"Services","item":"https://weboctals.com/services/"},
+            {"@type":"ListItem","position":3,"name":"AI agents","item":"https://weboctals.com/ai-agents/"}
+        ]},
+        {"@type":"Service","serviceType":"AI agents","name":"AI agents","provider":{"@type":"Organization","name":"WebOctals","url":"https://weboctals.com/"},"areaServed":{"@type":"Country","name":"United Kingdom"},"description":"AI agents for UK businesses that handle repetitive enquiries and hand over cleanly to a person — built to survive real users, not to demo well."},
+        {"@type":"FAQPage","mainEntity":[
+            {"@type":"Question","name":"Will it make things up?","acceptedAnswer":{"@type":"Answer","text":"Any language model can. The mitigations are scope and grounding: keep the job narrow, answer from your real content rather than the model’s general knowledge, and make refusal-plus-handover the default when it isn’t confident. We build all three in and we’re honest that it reduces the risk rather than eliminating it."}},
+            {"@type":"Question","name":"Should it pretend to be a person?","acceptedAnswer":{"@type":"Answer","text":"No. Beyond the ethics, it backfires — people work it out, and discovering they were misled costs you more trust than the agent ever saved you."}},
+            {"@type":"Question","name":"Do I need this, or do I need automation?","acceptedAnswer":{"@type":"Answer","text":"If the task is well-defined and the input is structured, you want automation and it’ll be cheaper and more reliable. Agents earn their place when the input is messy human language."}}
+        ]}
+    ]}
+    </script>
+
+    <title>AI Agent Development | WebOctals</title>
 </head>
-<body>
-    <div id="particles-js"></div>
+<body class="sv-page">
+    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
@@ -32,9 +75,7 @@
                 </a>
             </div>
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="/" class="nav-link">Home</a>
-                </li>
+                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                 <li class="nav-item nav-item-dropdown">
                     <a href="/services/" class="nav-link active">
                         Services
@@ -75,21 +116,11 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a href="/projects/" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/clients/" class="nav-link">Clients</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/about/" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/blog/" class="nav-link">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/contact/" class="nav-link">Contact</a>
-                </li>
+                <li class="nav-item"><a href="/projects/" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="/clients/" class="nav-link">Clients</a></li>
+                <li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="/contact/" class="nav-link">Contact</a></li>
             </ul>
             <a href="/contact/" class="btn btn-primary nav-cta">
                 <span>Start a project</span>
@@ -101,132 +132,178 @@
             </div>
         </div>
     </nav>
+    <main>
+    <article>
+    <header class="sv-hero">
+        <div class="sv-shell">
+            <nav class="sv-crumb" aria-label="Breadcrumb">
+                <a href="/">Home</a><span>/</span><a href="/services/">Services</a><span>/</span>AI agents
+            </nav>
+            <span class="sv-chip">The hard end</span>
+            <h1 class="sv-h1">AI agents</h1>
+            <p class="sv-deck">Agents that do a defined job and know when to stop. The interesting part isn&rsquo;t what they can answer &mdash; it&rsquo;s how cleanly they hand over when they can&rsquo;t.</p>
+            <div class="sv-hero-actions">
+                <a href="/contact/" class="btn btn-primary">
+                    <span>Talk to us about this</span>
+                    <div class="btn-glow"></div>
+                </a>
+                <a href="#fit" class="sv-ghost">Is it right for you?</a>
+            </div>
+        </div>
+    </header>
 
-    <section class="service-detail-hero">
-        <div class="container">
-            <div class="service-hero-content">
-                <div class="service-breadcrumb">
-                    <a href="/">Home</a><span>/</span><a href="/services/">Services</a><span>/</span><span>AI Agents</span>
-                </div>
-                <div class="service-hero-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
-                    </svg>
-                </div>
-                <h1>AI Agents</h1>
-                <p class="service-hero-tagline">Intelligent Virtual Assistants That Work 24/7</p>
-                <p class="service-hero-description">Agents that understand what a customer is actually asking, hold context across the conversation, and hand off to a person the moment a query needs one &mdash; built into the platforms your customers already use.</p>
-                <div class="service-hero-cta">
-                    <a href="/contact/" class="btn btn-primary"><span>Build Your AI Agent</span><div class="btn-glow"></div></a>
-                    <a href="/contact/" class="btn btn-outline-white">See Demo</a>
-                </div>
-                <div class="service-stats">
-                    <div class="stat"><div class="stat-number">24/7</div><div class="stat-label">Availability</div></div>
-                    <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Built In-House</div></div>
-                    <div class="stat"><div class="stat-number">9</div><div class="stat-label">Projects Shipped</div></div>
-                </div>
+    <section class="sv-section" style="padding-top:0;">
+        <div class="sv-shell">
+            <div class="sv-prose">
+                <p>A lot of AI agent work is a demo that never survives contact with real users. It answers the easy questions impressively and the hard ones confidently and wrongly, which is worse than not answering at all &mdash; particularly for a business where a wrong answer about price, availability or eligibility costs you a customer.</p>
+                <p>We&rsquo;re interested in the version that earns its place: an agent scoped to a specific, repetitive job, with a clear boundary and a clean handover to a person the moment it&rsquo;s outside that boundary. That&rsquo;s less impressive in a demo and considerably more useful on a Tuesday.</p>
             </div>
         </div>
     </section>
 
-    <section class="service-features-section">
-        <div class="container">
-            <div class="section-header-center">
-                <h2>AI Agent Capabilities</h2>
-                <p>Advanced features powered by cutting-edge AI technology</p>
-            </div>
-            <div class="features-grid-large">
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4A2,2 0 0,0 20,2M6,9H18V11H6M14,14H6V12H14M18,8H6V6H18"/></svg></div>
-                    <h3>Natural Language Processing</h3>
-                    <p>Understand customer intent, sentiment, and context through advanced NLP models that comprehend human language naturally.</p>
-                    <ul class="feature-list">
-                        <li>Intent recognition</li>
-                        <li>Sentiment analysis</li>
-                        <li>Multi-language support</li>
-                        <li>Context awareness</li>
+    <hr class="sv-lane">
+
+    <section class="sv-section" id="fit">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Fit</p>
+            <h2 class="sv-h2">When this is the right job &mdash; and when it isn&rsquo;t</h2>
+            <p class="sv-deck">We&rsquo;d rather lose a project at this stage than sell you one you don&rsquo;t need. The right-hand column is the honest half.</p>
+
+            <div class="sv-fit">
+                <div class="sv-fit-col sv-fit-col--yes">
+                    <span class="sv-fit-label">Worth doing if</span>
+                    <ul class="sv-fit-list">
+                        <li>You answer the same handful of questions dozens of times a week</li>
+                        <li>Enquiries arrive out of hours and go cold before anyone can reply</li>
+                        <li>Someone spends their morning triaging messages that could be sorted before they reach them</li>
+                        <li>You have a body of documentation that people would use if it were easier to search</li>
                     </ul>
                 </div>
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,10.5A1.5,1.5 0 0,1 13.5,12A1.5,1.5 0 0,1 12,13.5A1.5,1.5 0 0,1 10.5,12A1.5,1.5 0 0,1 12,10.5Z"/></svg></div>
-                    <h3>Autonomous Decision Making</h3>
-                    <p>AI agents that can make intelligent decisions, route requests, and take actions without human intervention.</p>
-                    <ul class="feature-list">
-                        <li>Smart routing logic</li>
-                        <li>Automated responses</li>
-                        <li>Task prioritization</li>
-                        <li>Escalation handling</li>
-                    </ul>
-                </div>
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4,6H2V20A2,2 0 0,0 4,22H18V20H4V6M20,2H8A2,2 0 0,0 6,4V16A2,2 0 0,0 8,18H20A2,2 0 0,0 22,16V4A2,2 0 0,0 20,2M20,16H8V4H20V16Z"/></svg></div>
-                    <h3>Multi-Platform Integration</h3>
-                    <p>Deploy across web, mobile, messaging apps, and voice assistants with unified conversation management.</p>
-                    <ul class="feature-list">
-                        <li>Website chat widgets</li>
-                        <li>WhatsApp & SMS integration</li>
-                        <li>Slack & Teams bots</li>
-                        <li>Voice assistants</li>
-                    </ul>
-                </div>
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12C4,14.21 4.89,16.21 6.34,17.66L17.66,6.34C16.21,4.89 14.21,4 12,4M12,20A8,8 0 0,0 20,12C20,9.79 19.11,7.79 17.66,6.34L6.34,17.66C7.79,19.11 9.79,20 12,20Z"/></svg></div>
-                    <h3>Continuous Learning</h3>
-                    <p>AI agents that improve over time by learning from interactions, feedback, and new data.</p>
-                    <ul class="feature-list">
-                        <li>Conversation analytics</li>
-                        <li>Performance optimization</li>
-                        <li>Feedback loop integration</li>
-                        <li>Model fine-tuning</li>
+                <div class="sv-fit-col sv-fit-col--no">
+                    <span class="sv-fit-label">Probably not if</span>
+                    <ul class="sv-fit-list">
+                        <li>Your enquiry volume is low. A person replying quickly beats an agent, and always will</li>
+                        <li>The questions people ask are genuinely varied and high-stakes. Scope it down or don&rsquo;t build it</li>
+                        <li>You want it to sound human and never admit it&rsquo;s a machine. We won&rsquo;t build that</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="service-benefits-section">
-        <div class="container">
-            <div class="benefits-layout">
-                <div class="benefits-content">
-                    <h2>Benefits of AI Agents</h2>
-                    <p class="benefits-intro">Transform customer service and operations with intelligent automation.</p>
-                    <div class="benefits-list-detailed">
-                        <div class="benefit-item"><div class="benefit-icon">✓</div><div class="benefit-text"><h4>Reduce Support Costs</h4><p>One agent handles the repetitive conversations, so your team spends time on the ones that need a person</p></div></div>
-                        <div class="benefit-item"><div class="benefit-icon">✓</div><div class="benefit-text"><h4>Instant Response Times</h4><p>Zero wait times for customers seeking assistance</p></div></div>
-                        <div class="benefit-item"><div class="benefit-icon">✓</div><div class="benefit-text"><h4>Scale Without Hiring</h4><p>Grow your operations without expanding headcount</p></div></div>
-                        <div class="benefit-item"><div class="benefit-icon">✓</div><div class="benefit-text"><h4>Consistent Quality</h4><p>Ensure every interaction meets your standards</p></div></div>
-                        <div class="benefit-item"><div class="benefit-icon">✓</div><div class="benefit-text"><h4>Multilingual Support</h4><p>Serve global customers in their native language</p></div></div>
-                        <div class="benefit-item"><div class="benefit-icon">✓</div><div class="benefit-text"><h4>Data-Driven Insights</h4><p>Understand customer needs through conversation analytics</p></div></div>
+    <section class="sv-section sv-section--recessed">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Scope</p>
+            <h2 class="sv-h2">What&rsquo;s included</h2>
+            <div class="sv-included">
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">01</span>
+                    <h3 class="sv-h3">A defined boundary</h3>
+                    <p>What it handles, what it refuses, and what it escalates &mdash; agreed before anything is built, because this is where these projects fail.</p>
+                </div>
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">02</span>
+                    <h3 class="sv-h3">Clean handover</h3>
+                    <p>When it&rsquo;s out of scope it says so and passes the conversation to a person with the context attached, rather than guessing.</p>
+                </div>
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">03</span>
+                    <h3 class="sv-h3">Grounded answers</h3>
+                    <p>Responses drawn from your actual content and data, so it isn&rsquo;t inventing prices, availability or policies.</p>
+                </div>
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">04</span>
+                    <h3 class="sv-h3">Something you can watch</h3>
+                    <p>Logs of what it was asked and what it said, so you can see where it&rsquo;s helping and where it needs narrowing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sv-section">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Related work</p>
+            <h2 class="sv-h2">Where this shows up in the portfolio</h2>
+            <div class="sv-work">
+                <a class="sv-work-card" href="/clients/colindale-driving-school/">
+                    <img src="/assets/images/client_colindale_driving.jpeg" alt="The Colindale Driving School website, built by WebOctals" loading="lazy" width="1402" height="1122">
+                    <div class="sv-work-body">
+                        <span class="sv-work-meta">Driving school &middot; North London</span>
+                        <h3>Colindale Driving School</h3>
+                        <p>Lesson types, pricing and instructor detail on the first screen, with a structured enquiry form.</p>
                     </div>
-                </div>
-                <div class="benefits-visual">
-                    <div class="benefits-card">
-                        <h3>Implementation Process</h3>
-                        <div class="process-steps">
-                            <div class="process-step"><div class="step-number">1</div><div class="step-content"><h4>Discovery</h4><p>Analyze use cases and conversation flows</p></div></div>
-                            <div class="process-step"><div class="step-number">2</div><div class="step-content"><h4>Training</h4><p>Train AI models on your data and scenarios</p></div></div>
-                            <div class="process-step"><div class="step-number">3</div><div class="step-content"><h4>Integration</h4><p>Deploy across your preferred platforms</p></div></div>
-                            <div class="process-step"><div class="step-number">4</div><div class="step-content"><h4>Optimization</h4><p>Monitor, analyze, and continuously improve</p></div></div>
-                        </div>
+                </a>
+                <a class="sv-work-card" href="/clients/wazer-taxis/">
+                    <img src="/assets/images/client_go_wazer.jpeg" alt="The Wazer Taxis website, built by WebOctals" loading="lazy" width="1402" height="1122">
+                    <div class="sv-work-body">
+                        <span class="sv-work-meta">Taxi &amp; transport &middot; Southampton</span>
+                        <h3>Wazer Taxis</h3>
+                        <p>Booking and phone contact on every page, structured around local search.</p>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <section class="service-cta-section">
-        <div class="container">
-            <div class="cta-box-service">
-                <h2>Ready to Deploy Your AI Agent?</h2>
-                <p>Transform your customer service with intelligent automation. Schedule a demo to see AI agents in action.</p>
-                <div class="cta-buttons">
-                    <a href="/contact/" class="btn btn-primary"><span>Schedule Demo</span><div class="btn-glow"></div></a>
-                    <a href="/contact/" class="btn btn-outline-white">Contact Sales</a>
-                </div>
+    <hr class="sv-lane">
+
+    <section class="sv-section">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Questions</p>
+            <h2 class="sv-h2">Straight answers</h2>
+            <div class="sv-faq">
+                <details class="sv-q">
+                    <summary>Will it make things up?</summary>
+                    <div class="sv-a">
+                        <p>Any language model can. The mitigations are scope and grounding: keep the job narrow, answer from your real content rather than the model&rsquo;s general knowledge, and make refusal-plus-handover the default when it isn&rsquo;t confident. We build all three in and we&rsquo;re honest that it reduces the risk rather than eliminating it.</p>
+                    </div>
+                </details>
+                <details class="sv-q">
+                    <summary>Should it pretend to be a person?</summary>
+                    <div class="sv-a">
+                        <p>No. Beyond the ethics, it backfires &mdash; people work it out, and discovering they were misled costs you more trust than the agent ever saved you.</p>
+                    </div>
+                </details>
+                <details class="sv-q">
+                    <summary>Do I need this, or do I need automation?</summary>
+                    <div class="sv-a">
+                        <p>If the task is well-defined and the input is structured, you want <a href="/automation/">automation</a> and it&rsquo;ll be cheaper and more reliable. Agents earn their place when the input is messy human language.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+    </article>
+
+    <nav class="sv-pager" aria-label="More services">
+        <a href="/automation/">
+            <span class="sv-pager-dir">&larr; Previous</span>
+            <strong>Automation</strong>
+        </a>
+        <a href="/product-development/">
+            <span class="sv-pager-dir">Next &rarr;</span>
+            <strong>Product development</strong>
+        </a>
+    </nav>
+
+    <section class="sv-close">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Next</p>
+            <h2>Not sure this is the one you need?</h2>
+            <p class="sv-deck">Describe the problem rather than the solution and we&rsquo;ll tell you which one fits, or that none of them do. That answer is free and it&rsquo;s often the useful one.</p>
+            <div class="sv-close-actions">
+                <a href="/contact/" class="btn btn-primary">
+                    <span>Start a conversation</span>
+                    <div class="btn-glow"></div>
+                </a>
+                <a href="/services/" class="sv-ghost">All services</a>
             </div>
         </div>
     </section>
 
+    </main>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -254,10 +331,11 @@
                     <div class="link-group">
                         <h4>Services</h4>
                         <ul>
-                            <li><a href="/ai-agents/">AI Agent Development</a></li>
-                            <li><a href="/digital-products/">Digital Products</a></li>
+                            <li><a href="/web-development/">Web Development</a></li>
+                            <li><a href="/seo/">SEO</a></li>
+                            <li><a href="/ai-agents/">AI Agents</a></li>
                             <li><a href="/automation/">Automation</a></li>
-                            <li><a href="/machine-learning/">ML Solutions</a></li>
+                            <li><a href="/services/">All services</a></li>
                         </ul>
                     </div>
 
@@ -269,6 +347,13 @@
                             <li><a href="/clients/">Clients</a></li>
                             <li><a href="/blog/">Blog</a></li>
                             <li><a href="/contact/">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="link-group">
+                        <h4>Businesses</h4>
+                        <ul>
+                            <li><a href="/driving-schools/">Driving Schools</a></li>
                         </ul>
                     </div>
 
@@ -295,7 +380,44 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Contact Popup -->
+    <div id="contact-widget" class="chat-widget">
+        <button class="chat-toggle" id="chat-toggle" aria-label="Contact us" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+        <div class="chat-popup" id="chat-popup">
+            <div class="chat-popup-header">
+                <h4>Get in touch</h4>
+                <button class="chat-close" id="chat-close" aria-label="Close">&times;</button>
+            </div>
+            <p class="chat-popup-subtitle">Choose how you'd like to reach us</p>
+            <div class="chat-popup-actions">
+                <a class="chat-popup-btn" href="mailto:contact@weboctals.co.uk?subject=Project%20Enquiry">
+                    <span class="chat-popup-btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </span>
+                    <span>Email us</span>
+                </a>
+                <a class="chat-popup-btn chat-popup-btn-whatsapp"
+                   href="https://wa.me/447442410345?text=Hi%2C%20I%27d%20like%20to%20talk%20about%20a%20project"
+                   target="_blank" rel="noopener">
+                    <span class="chat-popup-btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </span>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="/assets/js/main.js"></script>
     <script defer src="/assets/js/cookie-consent.js"></script>
 </body>
