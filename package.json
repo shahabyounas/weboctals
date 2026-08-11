@@ -14,7 +14,7 @@
     "serve": "serve dist -p 3000",
     "clean": "rm -rf dist .parcel-cache",
     "prebuild": "npm run clean",
-    "copy:static": "cp robots.txt sitemap.xml llms.txt dist/",
+    "copy:static": "cp robots.txt sitemap.xml llms.txt dist/ && node scripts/copy-absolute-assets.js",
     "postbuild": "npm run copy:static && echo '✅ Build complete! Files in dist/ folder ready for deployment'",
     "test:build": "npm run build:all && npm run serve",
     "analyze": "parcel build index.html --reporter @parcel/reporter-bundle-analyzer"
