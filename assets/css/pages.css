@@ -9,197 +9,9 @@
    site reads as one system.
    ========================================================================== */
 
-.pg-page {
-    --pg-ground: #0d2724;
-    --pg-recess: #08201d;
-    --pg-raise: #11302c;
-    --pg-mint: #8afc96;
-    --pg-marker: #e9ff60;
-    --pg-ink: #c9f9d7;
-    --pg-dim: rgb(201 249 215 / 0.66);
-    --pg-faint: rgb(201 249 215 / 0.40);
-    --pg-line: rgb(201 249 215 / 0.14);
-    --pg-line-strong: rgb(201 249 215 / 0.28);
-
-    --pg-display: var(--font-heading);
-    --pg-body: var(--font-body);
-    --pg-data: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
-
-    --pg-measure: 68ch;
-    --pg-gutter: clamp(20px, 5vw, 40px);
-}
-
 /* --------------------------------------------------------------------------
    Primitives
    -------------------------------------------------------------------------- */
-
-.pg-shell {
-    width: min(1180px, 100% - (var(--pg-gutter) * 2));
-    margin-inline: auto;
-}
-
-.pg-shell--narrow {
-    width: min(820px, 100% - (var(--pg-gutter) * 2));
-}
-
-.pg-page .pg-section {
-    padding: clamp(56px, 8vw, 104px) 0;
-}
-
-.pg-page .pg-section--recessed {
-    background: var(--pg-recess);
-}
-
-.pg-lane {
-    border: 0;
-    height: 2px;
-    margin: 0;
-    background-image: linear-gradient(
-        to right,
-        var(--pg-line-strong) 0 28px,
-        transparent 28px 52px
-    );
-    background-size: 52px 2px;
-}
-
-.pg-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--pg-data);
-    font-size: 0.74rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--pg-marker);
-    margin: 0 0 var(--space-lg);
-}
-
-.pg-eyebrow::before {
-    content: '';
-    width: 26px;
-    height: 2px;
-    background: var(--pg-marker);
-}
-
-.pg-crumb {
-    font-family: var(--pg-data);
-    font-size: 0.78rem;
-    letter-spacing: 0.06em;
-    color: var(--pg-faint);
-    margin-bottom: var(--space-xl);
-}
-
-.pg-page .pg-crumb a {
-    color: var(--pg-faint);
-    text-decoration: none;
-}
-
-.pg-page .pg-crumb a:hover {
-    color: var(--pg-mint);
-}
-
-.pg-crumb span {
-    margin: 0 8px;
-}
-
-.pg-hero {
-    padding: clamp(112px, 14vw, 165px) 0 clamp(40px, 5vw, 64px);
-}
-
-.pg-page h1.pg-h1 {
-    font-family: var(--pg-display);
-    font-size: clamp(2.3rem, 5vw, 4rem);
-    line-height: 1.01;
-    letter-spacing: -0.02em;
-    color: var(--pg-ink);
-    margin: 0 0 var(--space-lg);
-    max-width: 19ch;
-}
-
-.pg-h1-tail {
-    display: block;
-    color: var(--pg-mint);
-}
-
-.pg-page h2.pg-h2 {
-    font-family: var(--pg-display);
-    font-size: clamp(1.8rem, 3.6vw, 2.7rem);
-    line-height: 1.06;
-    letter-spacing: -0.01em;
-    color: var(--pg-ink);
-    margin: 0 0 var(--space-md);
-    max-width: 22ch;
-}
-
-.pg-page h3.pg-h3 {
-    font-family: var(--pg-body);
-    font-size: 1.12rem;
-    font-weight: 700;
-    line-height: 1.3;
-    color: var(--pg-ink);
-    margin: 0 0 10px;
-}
-
-.pg-deck {
-    font-size: clamp(1.02rem, 1.6vw, 1.2rem);
-    line-height: 1.68;
-    color: var(--pg-dim);
-    max-width: 62ch;
-    margin: 0 0 var(--space-xl);
-}
-
-.pg-page .pg-deck strong {
-    color: var(--pg-ink);
-    font-weight: 600;
-}
-
-.pg-page .pg-deck a,
-.pg-page .pg-prose a {
-    color: var(--pg-mint);
-    text-underline-offset: 3px;
-}
-
-.pg-prose p {
-    font-size: 1.01rem;
-    line-height: 1.78;
-    color: var(--pg-dim);
-    max-width: var(--pg-measure);
-    margin: 0 0 var(--space-md);
-}
-
-.pg-prose p:last-child {
-    margin-bottom: 0;
-}
-
-.pg-page .pg-prose strong {
-    color: var(--pg-ink);
-    font-weight: 600;
-}
-
-.pg-page .pg-ghost {
-    font-family: var(--pg-data);
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--pg-ink);
-    text-decoration: none;
-    padding: 15px 24px;
-    border: 1px solid var(--pg-line-strong);
-    border-radius: var(--radius-pill);
-    transition: border-color var(--transition-fast), color var(--transition-fast);
-}
-
-.pg-page .pg-ghost:hover {
-    border-color: var(--pg-mint);
-    color: var(--pg-mint);
-}
-
-.pg-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-md);
-    align-items: center;
-}
 
 /* --------------------------------------------------------------------------
    Numbered blocks (about: commitments)
@@ -214,14 +26,14 @@
 
 .pg-item {
     padding-top: var(--space-md);
-    border-top: 2px solid var(--pg-line-strong);
+    border-top: 2px solid var(--wo-line-strong);
 }
 
 .pg-item-n {
-    font-family: var(--pg-data);
+    font-family: var(--wo-data);
     font-size: 0.7rem;
     letter-spacing: 0.16em;
-    color: var(--pg-marker);
+    color: var(--wo-marker);
     display: block;
     margin-bottom: var(--space-sm);
 }
@@ -229,7 +41,7 @@
 .pg-item p {
     font-size: 0.95rem;
     line-height: 1.68;
-    color: var(--pg-dim);
+    color: var(--wo-dim);
     margin: 0;
 }
 
@@ -245,7 +57,7 @@
 }
 
 .pg-stance p {
-    color: var(--pg-dim);
+    color: var(--wo-dim);
     line-height: 1.78;
     font-size: 1.05rem;
     margin: 0 auto var(--space-md);
@@ -269,23 +81,23 @@
     padding: 0;
     display: grid;
     gap: 1px;
-    background: var(--pg-line);
-    border: 1px solid var(--pg-line);
+    background: var(--wo-line);
+    border: 1px solid var(--wo-line);
     border-radius: var(--radius-md);
     overflow: hidden;
 }
 
 .pg-method {
-    background: var(--pg-ground);
+    background: var(--wo-ground);
     padding: clamp(18px, 2.4vw, 24px);
 }
 
 .pg-method dt {
-    font-family: var(--pg-data);
+    font-family: var(--wo-data);
     font-size: 0.68rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--pg-faint);
+    color: var(--wo-faint);
     margin-bottom: 8px;
 }
 
@@ -293,11 +105,11 @@
     margin: 0;
     font-size: 1.02rem;
     line-height: 1.5;
-    color: var(--pg-ink);
+    color: var(--wo-ink);
 }
 
 .pg-page .pg-method dd a {
-    color: var(--pg-mint);
+    color: var(--wo-mint);
     text-decoration: none;
 }
 
@@ -308,13 +120,13 @@
 .pg-method dd small {
     display: block;
     font-size: 0.85rem;
-    color: var(--pg-dim);
+    color: var(--wo-dim);
     margin-top: 6px;
 }
 
 .pg-form-card {
-    background: var(--pg-raise);
-    border: 1px solid var(--pg-line);
+    background: var(--wo-raise);
+    border: 1px solid var(--wo-line);
     border-radius: var(--radius-md);
     padding: clamp(24px, 3.4vw, 40px);
 }
@@ -325,22 +137,22 @@
 
 .pg-page .pg-form-card label {
     display: block;
-    font-family: var(--pg-data);
+    font-family: var(--wo-data);
     font-size: 0.7rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--pg-faint);
+    color: var(--wo-faint);
     margin-bottom: 8px;
 }
 
 .pg-page .pg-form-card .input {
     width: 100%;
-    background: var(--pg-recess);
-    border: 1px solid var(--pg-line-strong);
+    background: var(--wo-recess);
+    border: 1px solid var(--wo-line-strong);
     border-radius: var(--radius-sm);
     padding: 14px 16px;
-    color: var(--pg-ink);
-    font-family: var(--pg-body);
+    color: var(--wo-ink);
+    font-family: var(--wo-body);
     font-size: 0.98rem;
 }
 
@@ -361,12 +173,12 @@
 .pg-form-note {
     font-size: 0.82rem;
     line-height: 1.6;
-    color: var(--pg-faint);
+    color: var(--wo-faint);
     margin: var(--space-md) 0 0;
 }
 
 .pg-page .pg-form-note a {
-    color: var(--pg-mint);
+    color: var(--wo-mint);
 }
 
 /* --------------------------------------------------------------------------
@@ -375,7 +187,7 @@
 
 .pg-posts {
     margin-top: var(--space-lg);
-    border-top: 1px solid var(--pg-line);
+    border-top: 1px solid var(--wo-line);
 }
 
 .pg-page .pg-post {
@@ -383,7 +195,7 @@
     grid-template-columns: minmax(0, 200px) minmax(0, 1fr);
     gap: clamp(20px, 4vw, 44px);
     padding: clamp(24px, 3.4vw, 36px) 0;
-    border-bottom: 1px solid var(--pg-line);
+    border-bottom: 1px solid var(--wo-line);
     text-decoration: none;
     transition: background var(--transition-fast);
 }
@@ -393,24 +205,24 @@
 }
 
 .pg-post-meta {
-    font-family: var(--pg-data);
+    font-family: var(--wo-data);
     font-size: 0.7rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--pg-marker);
+    color: var(--wo-marker);
     line-height: 1.8;
 }
 
 .pg-post-meta span {
     display: block;
-    color: var(--pg-faint);
+    color: var(--wo-faint);
 }
 
 .pg-page .pg-post-body h2 {
-    font-family: var(--pg-display);
+    font-family: var(--wo-display);
     font-size: clamp(1.25rem, 2.4vw, 1.7rem);
     line-height: 1.14;
-    color: var(--pg-ink);
+    color: var(--wo-ink);
     margin: 0 0 10px;
     max-width: 34ch;
 }
@@ -418,17 +230,17 @@
 .pg-post-body p {
     font-size: 0.97rem;
     line-height: 1.68;
-    color: var(--pg-dim);
+    color: var(--wo-dim);
     margin: 0 0 var(--space-md);
     max-width: 62ch;
 }
 
 .pg-post-go {
-    font-family: var(--pg-data);
+    font-family: var(--wo-data);
     font-size: 0.72rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--pg-mint);
+    color: var(--wo-mint);
 }
 
 /* --------------------------------------------------------------------------
@@ -440,29 +252,29 @@
 }
 
 .pg-legal-date {
-    font-family: var(--pg-data);
+    font-family: var(--wo-data);
     font-size: 0.74rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--pg-faint);
+    color: var(--wo-faint);
     padding-bottom: var(--space-lg);
-    border-bottom: 1px solid var(--pg-line);
+    border-bottom: 1px solid var(--wo-line);
     margin-bottom: var(--space-xl);
 }
 
 .pg-page .pg-legal h2 {
-    font-family: var(--pg-display);
+    font-family: var(--wo-display);
     font-size: clamp(1.35rem, 2.6vw, 1.8rem);
     line-height: 1.14;
-    color: var(--pg-ink);
+    color: var(--wo-ink);
     margin: var(--space-2xl) 0 var(--space-md);
 }
 
 .pg-page .pg-legal h3 {
-    font-family: var(--pg-body);
+    font-family: var(--wo-body);
     font-size: 1.05rem;
     font-weight: 700;
-    color: var(--pg-ink);
+    color: var(--wo-ink);
     margin: var(--space-xl) 0 var(--space-sm);
 }
 
@@ -470,7 +282,7 @@
 .pg-legal li {
     font-size: 0.99rem;
     line-height: 1.78;
-    color: var(--pg-dim);
+    color: var(--wo-dim);
 }
 
 .pg-legal p {
@@ -488,113 +300,21 @@
 }
 
 .pg-page .pg-legal a {
-    color: var(--pg-mint);
+    color: var(--wo-mint);
     text-underline-offset: 3px;
 }
 
 .pg-page .pg-legal strong {
-    color: var(--pg-ink);
+    color: var(--wo-ink);
 }
 
 /* --------------------------------------------------------------------------
    FAQ
    -------------------------------------------------------------------------- */
 
-.pg-faq {
-    max-width: 860px;
-    margin-top: var(--space-2xl);
-    border-top: 1px solid var(--pg-line);
-}
-
-.pg-page .pg-q {
-    border-bottom: 1px solid var(--pg-line);
-}
-
-.pg-page .pg-q > summary {
-    list-style: none;
-    cursor: pointer;
-    padding: var(--space-lg) 44px var(--space-lg) 0;
-    position: relative;
-    font-family: var(--pg-body);
-    font-size: clamp(1rem, 1.7vw, 1.15rem);
-    font-weight: 600;
-    line-height: 1.4;
-    color: var(--pg-ink);
-}
-
-.pg-page .pg-q > summary::-webkit-details-marker {
-    display: none;
-}
-
-.pg-page .pg-q > summary::after {
-    content: '';
-    position: absolute;
-    right: 6px;
-    top: 50%;
-    width: 13px;
-    height: 2px;
-    background: var(--pg-mint);
-    transform: translateY(-50%);
-}
-
-.pg-page .pg-q > summary::before {
-    content: '';
-    position: absolute;
-    right: 11.5px;
-    top: 50%;
-    width: 2px;
-    height: 13px;
-    background: var(--pg-mint);
-    transform: translateY(-50%);
-    transition: opacity var(--transition-fast);
-}
-
-.pg-page .pg-q[open] > summary::before {
-    opacity: 0;
-}
-
-.pg-a {
-    padding: 0 0 var(--space-lg);
-}
-
-.pg-a p {
-    font-size: 0.97rem;
-    line-height: 1.75;
-    color: var(--pg-dim);
-    max-width: var(--pg-measure);
-    margin: 0 0 var(--space-md);
-}
-
-.pg-a p:last-child {
-    margin-bottom: 0;
-}
-
 /* --------------------------------------------------------------------------
    Close
    -------------------------------------------------------------------------- */
-
-.pg-close {
-    padding: clamp(56px, 8vw, 104px) 0;
-    background: var(--pg-recess);
-    border-top: 1px solid var(--pg-line);
-}
-
-.pg-page .pg-close h2 {
-    font-family: var(--pg-display);
-    font-size: clamp(1.9rem, 4.4vw, 3.1rem);
-    line-height: 1.05;
-    color: var(--pg-ink);
-    margin: 0 0 var(--space-lg);
-    max-width: 18ch;
-}
-
-.pg-close-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-md);
-    align-items: center;
-    margin-top: var(--space-xl);
-}
 
 /* --------------------------------------------------------------------------
    Responsive
@@ -644,47 +364,26 @@
    restyled onto this system's tokens.
    -------------------------------------------------------------------------- */
 
-.pg-page .legal-hero {
-    padding: clamp(112px, 14vw, 165px) 0 clamp(24px, 3vw, 40px);
-    background: none;
-}
-
-.pg-page .legal-hero h1 {
-    font-family: var(--pg-display);
-    font-size: clamp(2.2rem, 4.6vw, 3.6rem);
-    line-height: 1.02;
-    letter-spacing: -0.02em;
-    color: var(--pg-ink);
-    margin: 0 0 var(--space-md);
-}
-
-.pg-page .legal-hero p {
-    font-size: clamp(1rem, 1.5vw, 1.14rem);
-    line-height: 1.68;
-    color: var(--pg-dim);
-    max-width: 62ch;
-}
-
 .pg-page .legal-page {
     padding: 0 0 clamp(56px, 8vw, 104px);
     background: none;
 }
 
 .pg-page .legal-effective-date {
-    font-family: var(--pg-data);
+    font-family: var(--wo-data);
     font-size: 0.74rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--pg-faint);
+    color: var(--wo-faint);
     padding-bottom: var(--space-lg);
-    border-bottom: 1px solid var(--pg-line);
+    border-bottom: 1px solid var(--wo-line);
     margin-bottom: var(--space-xl);
 }
 
 .pg-page .legal-summary {
-    background: var(--pg-raise);
-    border: 1px solid var(--pg-line);
-    border-left: 2px solid var(--pg-marker);
+    background: var(--wo-raise);
+    border: 1px solid var(--wo-line);
+    border-left: 2px solid var(--wo-marker);
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
     padding: clamp(20px, 2.8vw, 30px);
     margin-bottom: var(--space-2xl);
@@ -692,17 +391,17 @@
 }
 
 .pg-page .legal-summary h2 {
-    font-family: var(--pg-body);
+    font-family: var(--wo-body);
     font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--pg-marker);
+    color: var(--wo-marker);
     margin: 0 0 var(--space-md);
 }
 
 .pg-page .legal-content-toc {
-    border: 1px solid var(--pg-line);
+    border: 1px solid var(--wo-line);
     border-radius: var(--radius-md);
     padding: clamp(20px, 2.8vw, 28px);
     margin-bottom: var(--space-2xl);
@@ -710,12 +409,12 @@
 }
 
 .pg-page .legal-content-toc h2 {
-    font-family: var(--pg-body);
+    font-family: var(--wo-body);
     font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--pg-faint);
+    color: var(--wo-faint);
     margin: 0 0 var(--space-md);
 }
 
@@ -735,20 +434,20 @@
 }
 
 .pg-page .legal-content h2 {
-    font-family: var(--pg-display);
+    font-family: var(--wo-display);
     font-size: clamp(1.35rem, 2.6vw, 1.85rem);
     line-height: 1.14;
     letter-spacing: -0.01em;
-    color: var(--pg-ink);
+    color: var(--wo-ink);
     margin: var(--space-2xl) 0 var(--space-md);
     scroll-margin-top: 100px;
 }
 
 .pg-page .legal-content h3 {
-    font-family: var(--pg-body);
+    font-family: var(--wo-body);
     font-size: 1.05rem;
     font-weight: 700;
-    color: var(--pg-ink);
+    color: var(--wo-ink);
     margin: var(--space-xl) 0 var(--space-sm);
 }
 
@@ -758,7 +457,7 @@
 .pg-page .legal-summary li {
     font-size: 0.99rem;
     line-height: 1.78;
-    color: var(--pg-dim);
+    color: var(--wo-dim);
 }
 
 .pg-page .legal-content p,
@@ -781,13 +480,13 @@
 .pg-page .legal-content a,
 .pg-page .legal-summary a,
 .pg-page .legal-content-toc a {
-    color: var(--pg-mint);
+    color: var(--wo-mint);
     text-underline-offset: 3px;
 }
 
 .pg-page .legal-content strong,
 .pg-page .legal-summary strong {
-    color: var(--pg-ink);
+    color: var(--wo-ink);
 }
 
 .pg-page .legal-content table {
@@ -801,12 +500,12 @@
 .pg-page .legal-content td {
     text-align: left;
     padding: 12px 14px;
-    border-bottom: 1px solid var(--pg-line);
-    color: var(--pg-dim);
+    border-bottom: 1px solid var(--wo-line);
+    color: var(--wo-dim);
 }
 
 .pg-page .legal-content th {
-    color: var(--pg-ink);
+    color: var(--wo-ink);
     font-weight: 600;
 }
 
@@ -828,17 +527,17 @@
 }
 
 .pg-page .article-header h1 {
-    font-family: var(--pg-display);
+    font-family: var(--wo-display);
     font-size: clamp(2rem, 4.4vw, 3.2rem);
     line-height: 1.06;
     letter-spacing: -0.02em;
-    color: var(--pg-ink);
+    color: var(--wo-ink);
 }
 
 .pg-page .article-subtitle {
     font-size: clamp(1rem, 1.5vw, 1.16rem);
     line-height: 1.68;
-    color: var(--pg-dim);
+    color: var(--wo-dim);
     max-width: 62ch;
 }
 
@@ -846,38 +545,38 @@
 .pg-page .read-time,
 .pg-page .breadcrumb,
 .pg-page .breadcrumb li {
-    font-family: var(--pg-data);
+    font-family: var(--wo-data);
     font-size: 0.74rem;
     letter-spacing: 0.08em;
-    color: var(--pg-faint);
+    color: var(--wo-faint);
 }
 
 .pg-page .breadcrumb a,
 .pg-page .article-meta a {
-    color: var(--pg-faint);
+    color: var(--wo-faint);
 }
 
 .pg-page .breadcrumb a:hover {
-    color: var(--pg-mint);
+    color: var(--wo-mint);
 }
 
 .pg-page .article-body h2,
 .pg-page .article-text h2 {
-    font-family: var(--pg-display);
+    font-family: var(--wo-display);
     font-size: clamp(1.4rem, 2.8vw, 2rem);
     line-height: 1.14;
     letter-spacing: -0.01em;
-    color: var(--pg-ink);
+    color: var(--wo-ink);
     margin: var(--space-2xl) 0 var(--space-md);
     scroll-margin-top: 100px;
 }
 
 .pg-page .article-body h3,
 .pg-page .article-text h3 {
-    font-family: var(--pg-body);
+    font-family: var(--wo-body);
     font-size: 1.12rem;
     font-weight: 700;
-    color: var(--pg-ink);
+    color: var(--wo-ink);
     margin: var(--space-xl) 0 var(--space-sm);
 }
 
@@ -887,37 +586,37 @@
 .pg-page .article-text li {
     font-size: 1.01rem;
     line-height: 1.8;
-    color: var(--pg-dim);
+    color: var(--wo-dim);
 }
 
 .pg-page .article-body a,
 .pg-page .article-text a {
-    color: var(--pg-mint);
+    color: var(--wo-mint);
     text-underline-offset: 3px;
 }
 
 .pg-page .article-body strong,
 .pg-page .article-text strong {
-    color: var(--pg-ink);
+    color: var(--wo-ink);
 }
 
 .pg-page .article-body blockquote {
-    border-left: 2px solid var(--pg-marker);
-    background: var(--pg-raise);
+    border-left: 2px solid var(--wo-marker);
+    background: var(--wo-raise);
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     padding: var(--space-lg);
     margin: var(--space-xl) 0;
-    color: var(--pg-dim);
+    color: var(--wo-dim);
 }
 
 .pg-page .article-tags .tag,
 .pg-page .tag {
-    font-family: var(--pg-data);
+    font-family: var(--wo-data);
     font-size: 0.68rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    border: 1px solid var(--pg-line-strong);
-    color: var(--pg-dim);
+    border: 1px solid var(--wo-line-strong);
+    color: var(--wo-dim);
     background: none;
     border-radius: var(--radius-pill);
     padding: 6px 12px;
@@ -925,34 +624,34 @@
 
 .pg-page .article-sidebar,
 .pg-page .sidebar-widget {
-    background: var(--pg-raise);
-    border: 1px solid var(--pg-line);
+    background: var(--wo-raise);
+    border: 1px solid var(--wo-line);
     border-radius: var(--radius-md);
-    color: var(--pg-dim);
+    color: var(--wo-dim);
 }
 
 .pg-page .sidebar-widget h3,
 .pg-page .sidebar-widget h4 {
-    font-family: var(--pg-body);
+    font-family: var(--wo-body);
     font-weight: 700;
-    color: var(--pg-ink);
+    color: var(--wo-ink);
 }
 
 .pg-page .sidebar-widget a {
-    color: var(--pg-mint);
+    color: var(--wo-mint);
 }
 
 .pg-page .newsletter-signup {
-    background: var(--pg-recess);
-    border-top: 1px solid var(--pg-line);
+    background: var(--wo-recess);
+    border-top: 1px solid var(--wo-line);
 }
 
 .pg-page .newsletter-signup h2,
 .pg-page .newsletter-text h2 {
-    font-family: var(--pg-display);
-    color: var(--pg-ink);
+    font-family: var(--wo-display);
+    color: var(--wo-ink);
 }
 
 .pg-page .newsletter-signup p {
-    color: var(--pg-dim);
+    color: var(--wo-dim);
 }

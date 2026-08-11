@@ -43,11 +43,12 @@
     </noscript>
 
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/system.css">
     <link rel="stylesheet" href="/assets/css/pages.css">
 
     <title>Terms &amp; Conditions | WebOctals</title>
 </head>
-<body class="pg-page">
+<body class="wo-page pg-page">
     <!-- Particle Background -->
     <div id="particles-js"></div>
 
@@ -132,25 +133,19 @@
     </nav>
 
     <!-- Hero -->
-    <section class="page-hero page-hero-feature legal-hero">
-        <div class="hero-aurora" aria-hidden="true">
-            <span class="hero-aurora-blob hero-aurora-blob-1"></span>
-            <span class="hero-aurora-blob hero-aurora-blob-2"></span>
-            <span class="hero-aurora-blob hero-aurora-blob-3"></span>
-            <span class="hero-aurora-blob hero-aurora-blob-4"></span>
+    <header class="wo-hero legal-hero">
+        <div class="wo-shell">
+            <nav class="wo-crumb" aria-label="Breadcrumb">
+                <a href="/">Home</a><span>/</span>Terms
+            </nav>
+            <p class="wo-eyebrow">Legal</p>
+            <h1 class="wo-h1">Terms &amp; Conditions</h1>
+            <p class="wo-deck">The rules for using this website, kept short and readable. Actual project work is covered by a separate, individually agreed contract.</p>
         </div>
-        <canvas class="hero-canvas" aria-hidden="true"></canvas>
-        <div class="container">
-            <div class="page-hero-content">
-                <span class="hero-eyebrow">Legal</span>
-                <h1>Terms &amp; Conditions</h1>
-                <p class="page-hero-lede">The rules for using this website, kept short and readable. Actual project work is covered by a separate, individually agreed contract.</p>
-            </div>
-        </div>
-    </section>
+    </header>
 
     <section class="legal-page">
-        <div class="container">
+        <div class="wo-shell">
             <p class="legal-effective-date">Effective date: 10 August 2026</p>
 
             <div class="legal-summary">
@@ -350,8 +345,6 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="/assets/js/main.js"></script>
-    <script defer src="/assets/js/hero-animation.js"></script>
-    <script defer src="/assets/js/reveal.js"></script>
     <script defer src="/assets/js/cookie-consent.js"></script>
 </body>
 </html>
