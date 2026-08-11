@@ -62,8 +62,6 @@ const WebOctalsAnalytics = {
             event_label: formName,
             form_name: formName,
             form_destination: formData.destination || 'Unknown',
-            service_selected: formData.service || 'Not specified',
-            budget_range: formData.budget || 'Not specified',
             value: 1
         });
         console.log('📝 Form Submission Tracked:', formName);
@@ -299,13 +297,12 @@ const WebOctalsAnalytics = {
     },
 
     // Track consultation request
-    trackConsultationRequest: function(serviceType, budget) {
+    trackConsultationRequest: function(serviceType) {
         gtag('event', 'generate_lead', {
             event_category: 'Lead Generation',
             event_label: 'Consultation Request',
             lead_type: 'Consultation',
             service_type: serviceType,
-            budget_range: budget,
             value: 10
         });
         console.log('🎯 Consultation Request Tracked:', serviceType);
@@ -323,11 +320,9 @@ document.addEventListener('submit', function(e) {
     const formName = form.id || form.className || 'Unnamed Form';
     
     const formData = {
-        destination: form.action || 'Unknown',
-        service: form.querySelector('[name="service"]')?.value || 'Not specified',
-        budget: form.querySelector('[name="budget"]')?.value || 'Not specified'
+        destination: form.action || 'Unknown'
     };
-    
+
     WebOctalsAnalytics.trackFormSubmission(formName, formData);
 });
 

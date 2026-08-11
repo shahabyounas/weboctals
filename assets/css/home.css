@@ -6,8 +6,9 @@
    Design note: the signature element is "the wall" — the actual client sites
    drifting slowly beside the headline. The proof and the decoration are the
    same object, which is the only way an agency hero earns the space it takes.
-   Vertical columns on desktop, a single horizontal band on mobile. Both stop
-   dead for prefers-reduced-motion and pause on hover.
+   Two horizontal shelves running opposite ways at every width, Netflix-style:
+   hovering the wall dims it and lifts the card under the cursor. Both rows
+   stop dead for prefers-reduced-motion and pause on hover.
 
    Shares its colour and type vocabulary with driving-schools.css and work.css
    so the whole site reads as one system.
@@ -47,7 +48,7 @@
     font-weight: 600;
 }
 
-/* Trades named in the portfolio — proof in one line, no logos we don't own */
+/* How we work, in one line — the client names live in the work section */
 .hm-trades {
     font-family: var(--wo-data);
     font-size: 0.76rem;
@@ -55,7 +56,7 @@
     letter-spacing: 0.04em;
     color: var(--wo-faint);
     margin: 0;
-    max-width: 46ch;
+    max-width: 74ch;
 }
 
 .hm-trades b {
@@ -65,59 +66,72 @@
 
 /* --- Signature: the wall ------------------------------------------------ */
 
+/* Two shelves running opposite ways, Netflix-style. The vertical padding is
+   what the hover lift grows into — the row is clipped, so without it the
+   scaled card would be shaved off top and bottom. */
 .hm-wall {
     position: relative;
-    height: clamp(420px, 56vw, 620px);
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    /* fade the band out at both ends so it reads as a window, not a widget */
-    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
-    mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
-}
-
-.hm-wall-col {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
+    padding: 12px 0;
+    overflow: hidden;
+    /* fade the band out at both ends so it reads as a window, not a widget */
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+}
+
+.hm-wall-row {
+    display: flex;
+    width: max-content;
+    gap: 16px;
     will-change: transform;
-    animation: hm-drift-up 46s linear infinite;
+    animation: hm-drift-left 56s linear infinite;
 }
 
-.hm-wall-col:nth-child(2) {
-    animation-name: hm-drift-down;
-    animation-duration: 54s;
+.hm-wall-row:nth-child(2) {
+    animation-name: hm-drift-right;
+    animation-duration: 68s;
 }
 
-.hm-wall-col:nth-child(3) {
-    animation-duration: 62s;
-}
-
-.hm-wall:hover .hm-wall-col,
-.hm-wall:focus-within .hm-wall-col {
+.hm-wall:hover .hm-wall-row,
+.hm-wall:focus-within .hm-wall-row {
     animation-play-state: paused;
 }
 
-.hm-wall-col img {
+.hm-wall-row img {
     display: block;
-    width: 100%;
+    flex: 0 0 auto;
+    width: clamp(196px, 21vw, 268px);
     height: auto;
     aspect-ratio: 5 / 4;
     object-fit: cover;
     border-radius: var(--radius-sm);
     border: 1px solid var(--wo-line);
+    transition: transform 0.35s cubic-bezier(0.22, 0.8, 0.3, 1),
+                border-color 0.35s ease,
+                opacity 0.35s ease;
 }
 
-/* Each column holds its list twice, so -50% lands exactly on a seam. */
-@keyframes hm-drift-up {
-    from { transform: translateY(0); }
-    to   { transform: translateY(-50%); }
+.hm-wall:hover img {
+    opacity: 0.55;
 }
 
-@keyframes hm-drift-down {
-    from { transform: translateY(-50%); }
-    to   { transform: translateY(0); }
+.hm-wall-row img:hover {
+    transform: scale(1.06);
+    border-color: var(--wo-marker);
+    opacity: 1;
+}
+
+/* Each row holds its set twice, so -50% lands exactly on a seam. */
+@keyframes hm-drift-left {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+@keyframes hm-drift-right {
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0); }
 }
 
 /* --- Load-in ------------------------------------------------------------ */
@@ -496,39 +510,29 @@
         grid-template-columns: 1fr;
     }
 
-    /* The wall turns on its side: one horizontal band under the headline. */
+    /* Both shelves stay, edge to edge under the headline. */
     .hm-wall {
-        height: auto;
-        grid-template-columns: 1fr;
-        gap: 0;
-        -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-        mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-    }
-
-    .hm-wall-col {
-        flex-direction: row;
         gap: 12px;
-        animation-name: hm-drift-left;
-        animation-duration: 48s;
+        -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+        mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
     }
 
-    .hm-wall-col:nth-child(2),
-    .hm-wall-col:nth-child(3) {
-        display: none;
+    .hm-wall-row {
+        gap: 12px;
     }
 
-    .hm-wall-col img {
-        width: 220px;
-        flex: 0 0 auto;
+    .hm-wall-row img {
+        width: 210px;
     }
 
     .hm-services {
         grid-template-columns: 1fr;
     }
+}
 
-    @keyframes hm-drift-left {
-        from { transform: translateX(0); }
-        to   { transform: translateX(-50%); }
+@media (max-width: 560px) {
+    .hm-wall-row img {
+        width: 168px;
     }
 }
 
@@ -537,8 +541,12 @@
    -------------------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
-    .hm-page .hm-wall-col {
+    .hm-page .hm-wall-row {
         animation: none;
+    }
+
+    .hm-page .hm-wall-row img {
+        transition: none;
     }
 
     .hm-page .hm-rise {

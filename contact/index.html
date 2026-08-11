@@ -56,11 +56,11 @@
         {"@type":"ContactPage","url":"https://weboctals.com/contact/","name":"Contact WebOctals","description":"Contact WebOctals: email contact@weboctals.co.uk or call +44 7442 410345. UK-based engineers, reply within one working day.","about":{"@type":"Organization","name":"WebOctals","url":"https://weboctals.com/","email":"contact@weboctals.co.uk","telephone":"+44 7442 410345","areaServed":{"@type":"Country","name":"United Kingdom"},"contactPoint":[{"@type":"ContactPoint","contactType":"customer service","email":"contact@weboctals.co.uk","telephone":"+44-7442-410345","areaServed":"GB","availableLanguage":["English"]}]}},
         {"@type":"FAQPage","mainEntity":[
             {"@type":"Question","name":"How quickly will I hear back?","acceptedAnswer":{"@type":"Answer","text":"One of our engineers replies within one working day. If it’s urgent, WhatsApp or phone will always be faster than a form."}},
-            {"@type":"Question","name":"What does a project cost?","acceptedAnswer":{"@type":"Answer","text":"There’s no fixed price list, because a single-location business and a multi-town operation aren’t the same job. We scope what you need, quote a fixed figure in pounds, and you see that number before any work begins. If your budget is tight, say so in the first message. It’s better to scope down deliberately than to discover the mismatch three emails in."}},
-            {"@type":"Question","name":"How long does a build take?","acceptedAnswer":{"@type":"Answer","text":"A typical small business website is two to four weeks depending on scope. Agents, automation and custom product work are quoted case by case, and you get a timeline before anything starts. Search visibility runs on a separate and slower clock — new pages have to be crawled and indexed first, and nobody can put a date on that."}},
-            {"@type":"Question","name":"Do you work with small businesses?","acceptedAnswer":{"@type":"Answer","text":"Almost entirely. Most of what we build is for small UK businesses — driving schools, takeaways, barbers, taxi firms, trade suppliers. Scope and pricing flex to fit, including phased builds that start with the essentials and add more later."}},
+            {"@type":"Question","name":"How do you decide what to build?","acceptedAnswer":{"@type":"Answer","text":"We start from the outcome you need: the booking taken, the order placed, the afternoon of admin saved. Every feature is measured against that outcome, and the ones that do not serve it do not get built. A single-location business and a multi-town operation need different things, so the scope is written for yours and you see it before any work begins. If the job needs to be smaller, say so in the first message. It is better to scope down deliberately than to discover the mismatch three emails in."}},
+            {"@type":"Question","name":"How long does a build take?","acceptedAnswer":{"@type":"Answer","text":"A typical small business website is two to four weeks depending on scope. Agents, automation and custom product work are scoped case by case, and you get a timeline before anything starts. Search visibility runs on a separate and slower clock — new pages have to be crawled and indexed first, and nobody can put a date on that."}},
+            {"@type":"Question","name":"Do you work with small businesses?","acceptedAnswer":{"@type":"Answer","text":"Almost entirely. Most of what we build is for small UK businesses — driving schools, takeaways, barbers, taxi firms, trade suppliers. Scope flexes to fit, including phased builds that start with the piece that earns its keep first and add more once it has."}},
             {"@type":"Question","name":"What if I’m not sure what I need?","acceptedAnswer":{"@type":"Answer","text":"That’s a normal first message. Describe what’s actually going wrong rather than the solution you think you need, and we’ll tell you which of our services fits — including telling you that none of them do, if that’s the honest answer."}},
-            {"@type":"Question","name":"Where are you based, and does it matter?","acceptedAnswer":{"@type":"Answer","text":"We’re UK-based and work remotely, so being near us has never been part of how a project runs. Pricing is quoted in pounds."}}
+            {"@type":"Question","name":"Where are you based, and does it matter?","acceptedAnswer":{"@type":"Answer","text":"We’re UK-based and work remotely, so being near us has never been part of how a project runs. What matters is whether we understand the job your business needs doing."}}
         ]}
     ]}
     </script>
@@ -143,7 +143,7 @@
             </nav>
             <p class="wo-eyebrow">Get in touch</p>
             <h1 class="wo-h1">Tell us what you&rsquo;re <span class="wo-h1-tail">trying to build</span></h1>
-            <p class="wo-deck">Describe the problem rather than the solution and you&rsquo;ll get a straight answer on scope, timeline and cost &mdash; including &ldquo;you don&rsquo;t need us for this&rdquo; where that&rsquo;s true. One of our engineers replies within one working day.</p>
+            <p class="wo-deck">Describe the problem rather than the solution and you&rsquo;ll get a straight answer on what would actually fix it, what we&rsquo;d build and how long it takes &mdash; including &ldquo;you don&rsquo;t need us for this&rdquo; where that&rsquo;s true. One of our engineers replies within one working day.</p>
         </div>
     </header>
 
@@ -173,13 +173,18 @@
                         <div class="pg-method">
                             <dt>Based</dt>
                             <dd>United Kingdom
-                                <small>Remote-first. Projects quoted in pounds.</small></dd>
+                                <small>Remote-first. Working with businesses wherever they are.</small></dd>
                         </div>
                     </dl>
                 </div>
 
                 <div class="pg-form-card">
                     <h2 class="wo-h3" style="font-size:1.3rem;margin-bottom:var(--space-lg);">Send a few details</h2>
+                    <!-- The form submits via JS. Without it nothing would happen and the enquiry
+                         would be lost silently, so offer the direct routes instead. -->
+                    <noscript>
+                        <p class="pg-form-note">This form needs JavaScript to send. With it turned off, email <a href="mailto:contact@weboctals.co.uk">contact@weboctals.co.uk</a> or call <a href="tel:+447442410345">+44 7442 410345</a> &mdash; both reach the same people, and you&rsquo;ll get a reply within one working day.</p>
+                    </noscript>
                     <form class="contact-form-modern" action="#" method="POST">
                         <div class="field">
                             <label for="ct-name">Full name</label>
@@ -222,23 +227,23 @@
                     </div>
                 </details>
                 <details class="wo-q">
-                    <summary>What does a project cost?</summary>
+                    <summary>How do you decide what to build?</summary>
                     <div class="wo-a">
-                        <p>There&rsquo;s no fixed price list, because a single-location business and a multi-town operation aren&rsquo;t the same job. We scope what you need, quote a fixed figure in pounds, and you see that number before any work begins.</p>
-                        <p>If your budget is tight, say so in the first message. It&rsquo;s better to scope down deliberately than to discover the mismatch three emails in.</p>
+                        <p>We start from the outcome you need &mdash; the booking taken, the order placed, the afternoon of admin saved. Every feature is measured against that outcome, and the ones that don&rsquo;t serve it don&rsquo;t get built. A single-location business and a multi-town operation need different things, so the scope is written for yours and you see it before any work begins.</p>
+                        <p>If the job needs to be smaller, say so in the first message. It&rsquo;s better to scope down deliberately than to discover the mismatch three emails in.</p>
                     </div>
                 </details>
                 <details class="wo-q">
                     <summary>How long does a build take?</summary>
                     <div class="wo-a">
-                        <p>A typical small business website is two to four weeks depending on scope. Agents, automation and custom product work are quoted case by case, and you get a timeline before anything starts.</p>
+                        <p>A typical small business website is two to four weeks depending on scope. Agents, automation and custom product work are scoped case by case, and you get a timeline before anything starts.</p>
                         <p>Search visibility runs on a separate and slower clock &mdash; new pages have to be crawled and indexed first, and nobody can put a date on that.</p>
                     </div>
                 </details>
                 <details class="wo-q">
                     <summary>Do you work with small businesses?</summary>
                     <div class="wo-a">
-                        <p>Almost entirely. Most of what we build is for small UK businesses &mdash; driving schools, takeaways, barbers, taxi firms, trade suppliers. Scope and pricing flex to fit, including phased builds that start with the essentials and add more later.</p>
+                        <p>Almost entirely. Most of what we build is for small UK businesses &mdash; driving schools, takeaways, barbers, taxi firms, trade suppliers. Scope flexes to fit, including phased builds that start with the piece that earns its keep first and add more once it has.</p>
                     </div>
                 </details>
                 <details class="wo-q">
@@ -250,7 +255,7 @@
                 <details class="wo-q">
                     <summary>Where are you based, and does it matter?</summary>
                     <div class="wo-a">
-                        <p>We&rsquo;re UK-based and work remotely, so being near us has never been part of how a project runs. Pricing is quoted in pounds.</p>
+                        <p>We&rsquo;re UK-based and work remotely, so being near us has never been part of how a project runs. What matters is whether we understand the job your business needs doing.</p>
                     </div>
                 </details>
             </div>
