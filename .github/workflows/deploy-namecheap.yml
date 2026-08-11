@@ -1,0 +1,74 @@
+# Builds the site and publishes dist/ to Namecheap shared hosting over FTPS.
+#
+# Namecheap's deploy shell has no usable Node toolchain, so the build cannot run
+# on the server. It used to run locally with dist/ committed to git (see the
+# now-removed .cpanel.yml); this workflow moves that build to CI so the repo
+# stays free of build output.
+#
+# Required repository secrets (Settings -> Secrets and variables -> Actions):
+#   FTP_SERVER    ftp.weboctals.com  (host only, no ftp:// scheme)
+#   FTP_USERNAME  the cPanel FTP account username
+#   FTP_PASSWORD  that account's password
+#
+# Optional repository variable:
+#   FTP_SERVER_DIR  path to the web root as the FTP account sees it.
+#                   Defaults to public_html/, correct for the main cPanel
+#                   account. A dedicated FTP account scoped to public_html
+#                   already lands there, so set this to ./ in that case.
+name: Deploy to Namecheap
+
+on:
+  push:
+    branches: ['main']
+  workflow_dispatch:
+
+# One deploy at a time. An FTP sync interrupted midway leaves the document root
+# in a mixed state, so queued runs wait rather than overlap.
+concurrency:
+  group: 'namecheap-ftp'
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # npm ci needs a lockfile and package-lock.json is gitignored here.
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build with Parcel
+        run: npm run build:all
+
+      # Fails the deploy rather than uploading an empty tree, which would
+      # otherwise read as "every file was deleted" on the next sync.
+      - name: Verify build output
+        run: test -f dist/index.html && test -f dist/sitemap.xml
+
+      - name: Publish to Namecheap
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./dist/
+          server-dir: ${{ vars.FTP_SERVER_DIR || 'public_html/' }}
+          # The action keeps a manifest of what it uploaded and removes only
+          # files from that manifest, so Parcel's stale hashed bundles are
+          # cleaned up while cPanel-owned files (.htaccess, .well-known/,
+          # cgi-bin/) are never touched. These excludes keep repo noise out of
+          # the manifest in the first place.
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.DS_Store
