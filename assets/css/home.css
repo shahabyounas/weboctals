@@ -1,0 +1,778 @@
+/* ==========================================================================
+   Home — page-scoped styles
+   --------------------------------------------------------------------------
+   Namespaced `hm-`, scoped under `.hm-page`, loaded after styles.css.
+
+   Design note: the signature element is "the wall" — the actual client sites
+   drifting slowly beside the headline. The proof and the decoration are the
+   same object, which is the only way an agency hero earns the space it takes.
+   Vertical columns on desktop, a single horizontal band on mobile. Both stop
+   dead for prefers-reduced-motion and pause on hover.
+
+   Shares its colour and type vocabulary with driving-schools.css and work.css
+   so the whole site reads as one system.
+   ========================================================================== */
+
+.hm-page {
+    --hm-ground: #0d2724;
+    --hm-recess: #08201d;
+    --hm-raise: #11302c;
+    --hm-mint: #8afc96;
+    --hm-marker: #e9ff60;
+    --hm-ink: #c9f9d7;
+    --hm-dim: rgb(201 249 215 / 0.66);
+    --hm-faint: rgb(201 249 215 / 0.40);
+    --hm-line: rgb(201 249 215 / 0.14);
+    --hm-line-strong: rgb(201 249 215 / 0.28);
+
+    --hm-display: var(--font-heading);
+    --hm-body: var(--font-body);
+    --hm-data: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+    --hm-gutter: clamp(20px, 5vw, 40px);
+}
+
+/* --------------------------------------------------------------------------
+   Primitives
+   -------------------------------------------------------------------------- */
+
+.hm-shell {
+    width: min(1220px, 100% - (var(--hm-gutter) * 2));
+    margin-inline: auto;
+}
+
+.hm-page .hm-section {
+    padding: clamp(60px, 8vw, 112px) 0;
+}
+
+.hm-page .hm-section--recessed {
+    background: var(--hm-recess);
+}
+
+.hm-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--hm-data);
+    font-size: 0.74rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--hm-marker);
+    margin: 0 0 var(--space-lg);
+}
+
+.hm-eyebrow::before {
+    content: '';
+    width: 26px;
+    height: 2px;
+    background: var(--hm-marker);
+}
+
+.hm-page h2.hm-h2 {
+    font-family: var(--hm-display);
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--hm-ink);
+    margin: 0 0 var(--space-md);
+    max-width: 20ch;
+}
+
+.hm-deck {
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    line-height: 1.7;
+    color: var(--hm-dim);
+    max-width: 64ch;
+    margin: 0 0 var(--space-xl);
+}
+
+.hm-page .hm-deck strong {
+    color: var(--hm-ink);
+    font-weight: 600;
+}
+
+.hm-page .hm-deck a,
+.hm-page .hm-prose a {
+    color: var(--hm-mint);
+    text-underline-offset: 3px;
+}
+
+.hm-lane {
+    border: 0;
+    height: 2px;
+    margin: 0;
+    background-image: linear-gradient(
+        to right,
+        var(--hm-line-strong) 0 28px,
+        transparent 28px 52px
+    );
+    background-size: 52px 2px;
+}
+
+.hm-page .hm-ghost {
+    font-family: var(--hm-data);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--hm-ink);
+    text-decoration: none;
+    padding: 15px 24px;
+    border: 1px solid var(--hm-line-strong);
+    border-radius: var(--radius-pill);
+    transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.hm-page .hm-ghost:hover {
+    border-color: var(--hm-mint);
+    color: var(--hm-mint);
+}
+
+/* --------------------------------------------------------------------------
+   Hero
+   -------------------------------------------------------------------------- */
+
+.hm-hero {
+    position: relative;
+    padding: clamp(112px, 13vw, 150px) 0 clamp(48px, 6vw, 80px);
+    overflow: hidden;
+}
+
+.hm-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(32px, 5vw, 64px);
+    align-items: center;
+}
+
+.hm-page h1.hm-h1 {
+    font-family: var(--hm-display);
+    font-size: clamp(2.3rem, 4.4vw, 3.7rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--hm-ink);
+    margin: 0 0 var(--space-lg);
+    max-width: 20ch;
+}
+
+.hm-h1-tail {
+    display: block;
+    color: var(--hm-mint);
+}
+
+.hm-hero-deck {
+    font-size: clamp(1.04rem, 1.6vw, 1.26rem);
+    line-height: 1.62;
+    color: var(--hm-dim);
+    max-width: 54ch;
+    margin: 0 0 var(--space-lg);
+}
+
+.hm-page .hm-hero-deck strong {
+    color: var(--hm-ink);
+    font-weight: 600;
+}
+
+.hm-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    align-items: center;
+    margin-bottom: var(--space-xl);
+}
+
+/* Trades named in the portfolio — proof in one line, no logos we don't own */
+.hm-trades {
+    font-family: var(--hm-data);
+    font-size: 0.76rem;
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+    color: var(--hm-faint);
+    margin: 0;
+    max-width: 46ch;
+}
+
+.hm-trades b {
+    color: var(--hm-marker);
+    font-weight: 400;
+}
+
+/* --- Signature: the wall ------------------------------------------------ */
+
+.hm-wall {
+    position: relative;
+    height: clamp(420px, 56vw, 620px);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    /* fade the band out at both ends so it reads as a window, not a widget */
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+}
+
+.hm-wall-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    will-change: transform;
+    animation: hm-drift-up 46s linear infinite;
+}
+
+.hm-wall-col:nth-child(2) {
+    animation-name: hm-drift-down;
+    animation-duration: 54s;
+}
+
+.hm-wall-col:nth-child(3) {
+    animation-duration: 62s;
+}
+
+.hm-wall:hover .hm-wall-col,
+.hm-wall:focus-within .hm-wall-col {
+    animation-play-state: paused;
+}
+
+.hm-wall-col img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--hm-line);
+}
+
+/* Each column holds its list twice, so -50% lands exactly on a seam. */
+@keyframes hm-drift-up {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-50%); }
+}
+
+@keyframes hm-drift-down {
+    from { transform: translateY(-50%); }
+    to   { transform: translateY(0); }
+}
+
+/* --- Load-in ------------------------------------------------------------ */
+
+.hm-rise {
+    animation: hm-rise 0.7s cubic-bezier(0.22, 0.8, 0.3, 1) both;
+}
+
+.hm-rise-1 { animation-delay: 0.05s; }
+.hm-rise-2 { animation-delay: 0.14s; }
+.hm-rise-3 { animation-delay: 0.23s; }
+.hm-rise-4 { animation-delay: 0.32s; }
+.hm-rise-5 { animation-delay: 0.41s; }
+
+@keyframes hm-rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: none; }
+}
+
+/* --------------------------------------------------------------------------
+   Facts bar — checkable numbers, not badges
+   -------------------------------------------------------------------------- */
+
+.hm-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1px;
+    background: var(--hm-line);
+    border-block: 1px solid var(--hm-line);
+}
+
+.hm-fact {
+    background: var(--hm-ground);
+    padding: clamp(22px, 3vw, 32px) clamp(18px, 2.5vw, 28px);
+}
+
+.hm-fact dt {
+    font-family: var(--hm-data);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--hm-faint);
+    margin-bottom: 10px;
+}
+
+.hm-fact dd {
+    margin: 0;
+    font-family: var(--hm-display);
+    font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+    line-height: 1.05;
+    color: var(--hm-ink);
+}
+
+.hm-fact dd small {
+    display: block;
+    font-family: var(--hm-body);
+    font-size: 0.86rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--hm-dim);
+    margin-top: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   Services
+   -------------------------------------------------------------------------- */
+
+/* Explicitly 3-up: six items on an auto-fit grid land 4+2 and leave two
+   dead cells at desktop widths. */
+.hm-services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--hm-line);
+    border: 1px solid var(--hm-line);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-top: var(--space-2xl);
+}
+
+.hm-page .hm-service {
+    background: var(--hm-ground);
+    padding: clamp(24px, 3vw, 34px);
+    text-decoration: none;
+    display: block;
+    transition: background var(--transition-fast);
+}
+
+.hm-page .hm-service:hover {
+    background: var(--hm-raise);
+}
+
+.hm-service-icon {
+    width: 34px;
+    height: 34px;
+    color: var(--hm-mint);
+    margin-bottom: var(--space-md);
+}
+
+.hm-service-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.hm-page .hm-service h3 {
+    font-family: var(--hm-body);
+    font-size: 1.14rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--hm-ink);
+    margin: 0 0 10px;
+}
+
+.hm-service p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--hm-dim);
+    margin: 0 0 var(--space-md);
+}
+
+.hm-service-go {
+    font-family: var(--hm-data);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--hm-mint);
+}
+
+/* --------------------------------------------------------------------------
+   Work strip
+   -------------------------------------------------------------------------- */
+
+.hm-work {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(20px, 2.6vw, 28px);
+    margin-top: var(--space-2xl);
+}
+
+.hm-page .hm-work-card {
+    display: block;
+    text-decoration: none;
+    background: var(--hm-raise);
+    border: 1px solid var(--hm-line);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: border-color var(--transition-normal), transform var(--transition-normal);
+}
+
+.hm-page .hm-work-card:hover {
+    border-color: var(--hm-mint);
+    transform: translateY(-3px);
+}
+
+.hm-work-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    border-bottom: 1px solid var(--hm-line);
+}
+
+.hm-work-body {
+    padding: clamp(18px, 2.4vw, 24px);
+}
+
+.hm-work-meta {
+    font-family: var(--hm-data);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--hm-marker);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.hm-page .hm-work-body h3 {
+    font-family: var(--hm-display);
+    font-size: 1.28rem;
+    line-height: 1.12;
+    color: var(--hm-ink);
+    margin: 0 0 10px;
+}
+
+.hm-work-body p {
+    font-size: 0.93rem;
+    line-height: 1.6;
+    color: var(--hm-dim);
+    margin: 0;
+}
+
+.hm-more {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+}
+
+/* --------------------------------------------------------------------------
+   Commitments
+   -------------------------------------------------------------------------- */
+
+.hm-commit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(24px, 3.4vw, 44px);
+    margin-top: var(--space-2xl);
+}
+
+.hm-commit-item {
+    padding-top: var(--space-md);
+    border-top: 2px solid var(--hm-line-strong);
+}
+
+.hm-commit-n {
+    font-family: var(--hm-data);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    color: var(--hm-marker);
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+.hm-page .hm-commit-item h3 {
+    font-family: var(--hm-body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--hm-ink);
+    margin: 0 0 10px;
+}
+
+.hm-commit-item p {
+    font-size: 0.95rem;
+    line-height: 1.68;
+    color: var(--hm-dim);
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Straight talk
+   -------------------------------------------------------------------------- */
+
+.hm-straight {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: clamp(20px, 2.6vw, 28px);
+    margin-top: var(--space-2xl);
+}
+
+.hm-straight-item {
+    background: var(--hm-ground);
+    border: 1px solid var(--hm-line);
+    border-left: 2px solid var(--hm-marker);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: clamp(20px, 2.6vw, 28px);
+}
+
+.hm-page .hm-straight-item h3 {
+    font-family: var(--hm-body);
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--hm-ink);
+    margin: 0 0 10px;
+}
+
+.hm-straight-item p {
+    font-size: 0.94rem;
+    line-height: 1.68;
+    color: var(--hm-dim);
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   FAQ — native details/summary
+   -------------------------------------------------------------------------- */
+
+.hm-faq {
+    margin-top: var(--space-2xl);
+    border-top: 1px solid var(--hm-line);
+}
+
+.hm-page .hm-q {
+    border-bottom: 1px solid var(--hm-line);
+}
+
+.hm-page .hm-q > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: var(--space-lg) 44px var(--space-lg) 0;
+    position: relative;
+    font-family: var(--hm-body);
+    font-size: clamp(1rem, 1.7vw, 1.15rem);
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--hm-ink);
+}
+
+.hm-page .hm-q > summary::-webkit-details-marker {
+    display: none;
+}
+
+.hm-page .hm-q > summary::after {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    width: 13px;
+    height: 2px;
+    background: var(--hm-mint);
+    transform: translateY(-50%);
+}
+
+.hm-page .hm-q > summary::before {
+    content: '';
+    position: absolute;
+    right: 11.5px;
+    top: 50%;
+    width: 2px;
+    height: 13px;
+    background: var(--hm-mint);
+    transform: translateY(-50%);
+    transition: opacity var(--transition-fast);
+}
+
+.hm-page .hm-q[open] > summary::before {
+    opacity: 0;
+}
+
+.hm-a {
+    padding: 0 0 var(--space-lg);
+}
+
+.hm-a p {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: var(--hm-dim);
+    max-width: 68ch;
+    margin: 0 0 var(--space-md);
+}
+
+.hm-a p:last-child {
+    margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Closing form
+   -------------------------------------------------------------------------- */
+
+.hm-close {
+    padding: clamp(60px, 8vw, 112px) 0;
+    background: var(--hm-recess);
+    border-top: 1px solid var(--hm-line);
+}
+
+.hm-close-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(32px, 5vw, 64px);
+    align-items: start;
+}
+
+.hm-page .hm-close h2 {
+    font-family: var(--hm-display);
+    font-size: clamp(2rem, 4.6vw, 3.2rem);
+    line-height: 1.04;
+    color: var(--hm-ink);
+    margin: 0 0 var(--space-lg);
+    max-width: 15ch;
+}
+
+.hm-contact-list {
+    list-style: none;
+    margin: var(--space-xl) 0 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+    font-family: var(--hm-data);
+    font-size: 0.85rem;
+}
+
+.hm-page .hm-contact-list a {
+    color: var(--hm-mint);
+    text-decoration: none;
+}
+
+.hm-page .hm-contact-list a:hover {
+    text-decoration: underline;
+}
+
+.hm-form-card {
+    background: var(--hm-ground);
+    border: 1px solid var(--hm-line);
+    border-radius: var(--radius-md);
+    padding: clamp(24px, 3.4vw, 38px);
+}
+
+.hm-page .hm-form-card .field {
+    margin-bottom: var(--space-md);
+}
+
+.hm-page .hm-form-card label {
+    display: block;
+    font-family: var(--hm-data);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--hm-faint);
+    margin-bottom: 8px;
+}
+
+.hm-page .hm-form-card .input {
+    width: 100%;
+    background: var(--hm-recess);
+    border: 1px solid var(--hm-line-strong);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    color: var(--hm-ink);
+    font-family: var(--hm-body);
+    font-size: 0.98rem;
+}
+
+.hm-page .hm-form-card .input::placeholder {
+    color: rgb(201 249 215 / 0.32);
+}
+
+.hm-page .hm-form-card .input:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+}
+
+.hm-page .hm-form-card textarea.input {
+    min-height: 118px;
+    resize: vertical;
+}
+
+.hm-form-note {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--hm-faint);
+    margin: var(--space-md) 0 0;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1040px) {
+    .hm-services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .hm-hero-grid,
+    .hm-close-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* The wall turns on its side: one horizontal band under the headline. */
+    .hm-wall {
+        height: auto;
+        grid-template-columns: 1fr;
+        gap: 0;
+        -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+        mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    }
+
+    .hm-wall-col {
+        flex-direction: row;
+        gap: 12px;
+        animation-name: hm-drift-left;
+        animation-duration: 48s;
+    }
+
+    .hm-wall-col:nth-child(2),
+    .hm-wall-col:nth-child(3) {
+        display: none;
+    }
+
+    .hm-wall-col img {
+        width: 220px;
+        flex: 0 0 auto;
+    }
+
+    .hm-services {
+        grid-template-columns: 1fr;
+    }
+
+    @keyframes hm-drift-left {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .hm-page .hm-wall-col {
+        animation: none;
+    }
+
+    .hm-page .hm-rise {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .hm-page .hm-work-card,
+    .hm-page .hm-service {
+        transition: none;
+    }
+}
+
+.hm-page a:focus-visible,
+.hm-page button:focus-visible,
+.hm-page summary:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+    border-radius: var(--radius-sm);
+}

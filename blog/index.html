@@ -3,152 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WebOctals AI Blog - Latest insights, trends, and developments in artificial intelligence, machine learning, and digital product development. Expert analysis and tutorials from AI specialists.">
-    <meta name="keywords" content="AI blog, artificial intelligence insights, machine learning tutorials, AI trends, digital product development, WebOctals articles">
+    <meta name="description" content="Writing from WebOctals on AI, automation and building websites for small UK businesses &mdash; what genuinely helps and what is just decoration.">
     <meta name="author" content="WebOctals">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://weboctals.com/blog/">
-    <meta property="og:title" content="WebOctals AI Blog - Artificial Intelligence Insights & Trends">
-    <meta property="og:description" content="Discover the latest in AI and machine learning from WebOctals experts. In-depth articles, tutorials, and insights on artificial intelligence development.">
-    <meta property="og:image" content="https://weboctals.com/assets/images/blog-og-image.jpg">
+    <meta property="og:title" content="Blog &mdash; AI, Automation &amp; Small Business Websites | WebOctals">
+    <meta property="og:description" content="Writing from WebOctals on AI, automation and building websites for small UK businesses &mdash; what genuinely helps and what is just decoration.">
+    <meta property="og:image" content="https://weboctals.com/assets/images/client_driving_spot.jpeg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://weboctals.com/blog/">
-    <meta property="twitter:title" content="WebOctals AI Blog - Artificial Intelligence Insights & Trends">
-    <meta property="twitter:description" content="Discover the latest in AI and machine learning from WebOctals experts. In-depth articles, tutorials, and insights on artificial intelligence development.">
-    <meta property="twitter:image" content="https://weboctals.com/assets/images/blog-twitter-image.jpg">
+    <meta property="twitter:title" content="Blog &mdash; AI, Automation &amp; Small Business Websites | WebOctals">
+    <meta property="twitter:description" content="Writing from WebOctals on AI, automation and building websites for small UK businesses &mdash; what genuinely helps and what is just decoration.">
+    <meta property="twitter:image" content="https://weboctals.com/assets/images/client_driving_spot.jpeg">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://weboctals.com/blog/">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8afc96">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
-    
-    <!-- Breadcrumb Schema -->
+
+    <!-- Performance Optimization: Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Performance Optimization: Async Font Loading -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@300;400;500;600;700;800&display=swap">
+    </noscript>
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/pages.css">
+
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://weboctals.com"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Blog",
-                "item": "https://weboctals.com/blog/"
-            }
-        ]
-    }
+    {"@context":"https://schema.org","@graph":[
+        {"@type":"BreadcrumbList","itemListElement":[
+            {"@type":"ListItem","position":1,"name":"Home","item":"https://weboctals.com/"},
+            {"@type":"ListItem","position":2,"name":"Blog","item":"https://weboctals.com/blog/"}
+        ]},
+        {"@type":"CollectionPage","name":"WebOctals blog","description":"Writing on AI, automation and building for small UK businesses.","url":"https://weboctals.com/blog/","mainEntity":{"@type":"ItemList","itemListElement":[
+            {"@type":"ListItem","position":1,"url":"https://weboctals.com/blog/driving-school-online-booking-platform-case-study/","name":"How a Custom Online Booking Platform Helped Colindale Driving School Book More Learners"},
+            {"@type":"ListItem","position":2,"url":"https://weboctals.com/blog/website-redesign-signs/","name":"Time for a Website Redesign? Here's 3 Signs It's a Yes"},
+            {"@type":"ListItem","position":3,"url":"https://weboctals.com/blog/harnessing-ai-in-seo-game-changer-for-digital-agencies/","name":"Harnessing Artificial Intelligence in SEO: What It Actually Changes for Digital Agencies"},
+            {"@type":"ListItem","position":4,"url":"https://weboctals.com/blog/we-live-in-an-ai-first-world/","name":"We Live in an AI-First World: How AI Is Reshaping Life, Work, and Opportunity"},
+            {"@type":"ListItem","position":5,"url":"https://weboctals.com/blog/ai-agents-future-business-automation/","name":"The Future of Business Automation: How AI Agents Are Transforming Industries"}
+        ]}}
+    ]}
     </script>
 
-    <!-- Blog Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Blog",
-        "name": "WebOctals AI Blog",
-        "description": "Expert insights and tutorials on artificial intelligence, machine learning, and digital product development",
-        "url": "https://weboctals.com/blog/",
-        "publisher": {
-            "@type": "Organization",
-            "name": "WebOctals",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://weboctals.com/assets/images/logo.png"
-            }
-        },
-        "blogPost": [
-            {
-                "@type": "BlogPosting",
-                "headline": "How a Custom Online Booking Platform Helped Colindale Driving School Book More Learners",
-                "url": "https://weboctals.com/blog/driving-school-online-booking-platform-case-study/",
-                "datePublished": "2026-08-03",
-                "author": {
-                    "@type": "Organization",
-                    "name": "WebOctals"
-                }
-            },
-            {
-                "@type": "BlogPosting",
-                "headline": "Time for a Website Redesign? Here's 3 Signs It's a Yes",
-                "url": "https://weboctals.com/blog/website-redesign-signs/",
-                "datePublished": "2025-10-28",
-                "author": {
-                    "@type": "Organization",
-                    "name": "WebOctals"
-                }
-            },
-            {
-                "@type": "BlogPosting",
-                "headline": "Harnessing Artificial Intelligence in SEO: What It Actually Changes for Digital Agencies",
-                "url": "https://weboctals.com/blog/harnessing-ai-in-seo-game-changer-for-digital-agencies/",
-                "datePublished": "2025-10-11",
-                "author": {
-                    "@type": "Organization",
-                    "name": "WebOctals"
-                }
-            },
-            {
-                "@type": "BlogPosting",
-                "headline": "The Future of Business Automation: How AI Agents Are Transforming Industries",
-                "url": "https://weboctals.com/blog/ai-agents-future-business-automation/",
-                "datePublished": "2024-12-15",
-                "author": {
-                    "@type": "Organization",
-                    "name": "WebOctals"
-                }
-            },
-            {
-                "@type": "BlogPosting",
-                "headline": "We Live in an AI-First World: How AI Is Reshaping Life, Work, and Opportunity",
-                "url": "https://weboctals.com/blog/we-live-in-an-ai-first-world/",
-                "datePublished": "2025-10-10",
-                "author": {
-                    "@type": "Organization",
-                    "name": "WebOctals"
-                }
-            },
-            {
-                "@type": "BlogPosting",
-                "headline": "Building Intelligent Digital Products: A Complete Guide",
-                "url": "https://weboctals.com/blog/harnessing-ai-in-seo-game-changer-for-digital-agencies/",
-                "datePublished": "2024-11-20",
-                "author": {
-                    "@type": "Organization",
-                    "name": "WebOctals"
-                }
-            },
-            {
-                "@type": "BlogPosting",
-                "headline": "Mastering Conversational AI: NLP Techniques for Better User Interactions",
-                "url": "https://weboctals.com/blog/harnessing-ai-in-seo-game-changer-for-digital-agencies/",
-                "datePublished": "2024-10-25",
-                "author": {
-                    "@type": "Organization",
-                    "name": "WebOctals"
-                }
-            }
-        ]
-    }
-    </script>
-    
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="stylesheet" href="/blog/blog-styles.css">
-    <title>WebOctals AI Blog - Artificial Intelligence Insights & Expert Analysis</title>
+    <title>Blog &mdash; AI, Automation &amp; Small Business Websites | WebOctals</title>
 </head>
-<body>
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
-    
+<body class="pg-page">
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -159,9 +75,7 @@
                 </a>
             </div>
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="/" class="nav-link">Home</a>
-                </li>
+                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                 <li class="nav-item nav-item-dropdown">
                     <a href="/services/" class="nav-link">
                         Services
@@ -202,21 +116,11 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a href="/projects/" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/clients/" class="nav-link">Clients</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/about/" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/blog/" class="nav-link active">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/contact/" class="nav-link">Contact</a>
-                </li>
+                <li class="nav-item"><a href="/projects/" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="/clients/" class="nav-link">Clients</a></li>
+                <li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/blog/" class="nav-link active">Blog</a></li>
+                <li class="nav-item"><a href="/contact/" class="nav-link">Contact</a></li>
             </ul>
             <a href="/contact/" class="btn btn-primary nav-cta">
                 <span>Start a project</span>
@@ -228,217 +132,81 @@
             </div>
         </div>
     </nav>
-
-    <!-- Blog Header -->
-    <section class="blog-header">
-        <div class="blog-header-image">
-            <img src="/assets/images/blog-header-pic.jpg" alt="" aria-hidden="true">
-            <div class="blog-header-overlay"></div>
-            <div class="blog-header-gradient"></div>
+    <main>
+    <header class="pg-hero">
+        <div class="pg-shell">
+            <nav class="pg-crumb" aria-label="Breadcrumb">
+                <a href="/">Home</a><span>/</span>Blog
+            </nav>
+            <p class="pg-eyebrow">Writing</p>
+            <h1 class="pg-h1">Notes from <span class="pg-h1-tail">the build</span></h1>
+            <p class="pg-deck">Occasional writing on AI, automation and building for small businesses &mdash; published when there&rsquo;s something worth saying rather than to a schedule. Where a post makes a claim, it says where the claim comes from.</p>
         </div>
-        <div class="container blog-header-content">
-            <span class="hero-eyebrow">The WebOctals Journal</span>
-            <h1>Notes from building AI that ships</h1>
-            <p>Practical write-ups on AI agents, automation, and the engineering decisions behind the products we build &mdash; written by the people doing the work.</p>
-        </div>
-    </section>
+    </header>
 
-    <!-- Recent Articles -->
-    <section class="recent-articles">
-        <div class="container">
-            <div class="section-header">
-                <h2>Latest Articles</h2>
-                <p>Stay updated with the newest insights from our AI experts</p>
-            </div>
-            
-            <div class="articles-grid">
-                <article class="article-card">
-                    <div class="article-image">
-                        <div class="image-placeholder">
-                            <span>CASE STUDY</span>
-                        </div>
-                        <div class="article-category">Case Study</div>
+    <section class="pg-section" style="padding-top:0;">
+        <div class="pg-shell">
+            <div class="pg-posts">
+                <a class="pg-post" href="/blog/driving-school-online-booking-platform-case-study/">
+                    <div class="pg-post-meta">3 August 2026<span>9 min read</span></div>
+                    <div class="pg-post-body">
+                        <h2>How a Custom Online Booking Platform Helped Colindale Driving School Book More Learners</h2>
+                        <p>How WebOctals built Colindale Driving School a custom online booking platform that turns local searches into booked lessons, plus a practical growth playbook for driving schools and independent instructors.</p>
+                        <span class="pg-post-go">Read it &rarr;</span>
                     </div>
-
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <time datetime="2026-08-03">August 3, 2026</time>
-                            <span class="read-time">9 min read</span>
-                        </div>
-
-                        <h3><a href="/blog/driving-school-online-booking-platform-case-study/">How a Custom Online Booking Platform Helped Colindale Driving School Book More Learners</a></h3>
-
-                        <p class="article-excerpt">
-                            A case study on the custom booking platform we built for Colindale Driving School, and a practical growth playbook for driving schools and independent instructors looking to convert more local searches into booked lessons.
-                        </p>
-
-                        <div class="article-tags">
-                            <span class="tag">Driving School Marketing</span>
-                            <span class="tag">Booking Platform</span>
-                            <span class="tag">Local SEO</span>
-                            <span class="tag">Case Study</span>
-                        </div>
-
-                        <a href="/blog/driving-school-online-booking-platform-case-study/" class="article-link">Read More</a>
+                </a>
+                <a class="pg-post" href="/blog/website-redesign-signs/">
+                    <div class="pg-post-meta">28 October 2025<span>7 min read</span></div>
+                    <div class="pg-post-body">
+                        <h2>Time for a Website Redesign? Here's 3 Signs It's a Yes</h2>
+                        <p>Three practical signs it's time to redesign your website, and where AI genuinely earns a place in the rebuild versus where it's just decoration.</p>
+                        <span class="pg-post-go">Read it &rarr;</span>
                     </div>
-                </article>
-
-                <article class="article-card">
-                    <div class="article-image">
-                        <div class="image-placeholder">
-                            <span>DESIGN</span>
-                        </div>
-                        <div class="article-category">Website Design</div>
+                </a>
+                <a class="pg-post" href="/blog/harnessing-ai-in-seo-game-changer-for-digital-agencies/">
+                    <div class="pg-post-meta">11 October 2025<span>6 min read</span></div>
+                    <div class="pg-post-body">
+                        <h2>Harnessing Artificial Intelligence in SEO: What It Actually Changes for Digital Agencies</h2>
+                        <p>How AI is changing SEO workflows for digital agencies: content research, technical audits, and personalization, and where it genuinely helps versus where it doesn't.</p>
+                        <span class="pg-post-go">Read it &rarr;</span>
                     </div>
-
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <time datetime="2025-10-28">October 28, 2025</time>
-                            <span class="read-time">7 min read</span>
-                        </div>
-
-                        <h3><a href="/blog/website-redesign-signs/">Time for a Website Redesign? Here's 3 Signs It's a Yes</a></h3>
-
-                        <p class="article-excerpt">
-                            As we head into 2026, discover the key indicators that signal it's time for an AI-powered website redesign. Learn how modern websites are leveraging artificial intelligence to drive better conversions and user engagement.
-                        </p>
-
-                        <div class="article-tags">
-                            <span class="tag">Website Design</span>
-                            <span class="tag">AI Development</span>
-                            <span class="tag">Digital Transformation</span>
-                            <span class="tag">UX Design</span>
-                        </div>
-
-                        <a href="/blog/website-redesign-signs/" class="article-link">Read More</a>
+                </a>
+                <a class="pg-post" href="/blog/we-live-in-an-ai-first-world/">
+                    <div class="pg-post-meta">10 October 2025<span>7 min read</span></div>
+                    <div class="pg-post-body">
+                        <h2>We Live in an AI-First World: How AI Is Reshaping Life, Work, and Opportunity</h2>
+                        <p>We live in an AI-first world. Explore how AI is reshaping creativity, communication, companionship, education, healthcare, business automation, and access & equity—and what it means for people and organizations.</p>
+                        <span class="pg-post-go">Read it &rarr;</span>
                     </div>
-                </article>
-
-                <article class="article-card">
-                    <div class="article-image">
-                        <div class="image-placeholder">
-                            <span>SEO-AI</span>
-                        </div>
-                        <div class="article-category">SEO & AI</div>
+                </a>
+                <a class="pg-post" href="/blog/ai-agents-future-business-automation/">
+                    <div class="pg-post-meta">15 December 2024<span>8 min read</span></div>
+                    <div class="pg-post-body">
+                        <h2>The Future of Business Automation: How AI Agents Are Transforming Industries</h2>
+                        <p>How AI agents are changing business automation across industries: the underlying technologies, where they genuinely help, and what to weigh before implementing one.</p>
+                        <span class="pg-post-go">Read it &rarr;</span>
                     </div>
-
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <time datetime="2025-10-11">October 11, 2025</time>
-                            <span class="read-time">6 min read</span>
-                        </div>
-
-                        <h3><a href="/blog/harnessing-ai-in-seo-game-changer-for-digital-agencies/">Harnessing Artificial Intelligence in SEO: What It Actually Changes for Digital Agencies</a></h3>
-
-                        <p class="article-excerpt">
-                            A practical look at where AI genuinely speeds up agency SEO work &mdash; research, audits, first drafts &mdash;
-                            and where the risk actually sits.
-                        </p>
-
-                        <div class="article-tags">
-                            <span class="tag">AI in SEO</span>
-                            <span class="tag">Digital Agencies</span>
-                            <span class="tag">SEO Automation</span>
-                            <span class="tag">Content Creation</span>
-                        </div>
-
-                        <a href="/blog/harnessing-ai-in-seo-game-changer-for-digital-agencies/" class="article-link">Read More</a>
-                    </div>
-                </article>
-
-                <article class="article-card">
-                    <div class="article-image">
-                        <div class="image-placeholder">
-                            <span>AI-FIRST</span>
-                        </div>
-                        <div class="article-category">AI Trends</div>
-                    </div>
-
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <time datetime="2025-10-10">October 10, 2025</time>
-                            <span class="read-time">7 min read</span>
-                        </div>
-
-                        <h3><a href="/blog/we-live-in-an-ai-first-world/">We Live in an AI-First World: How AI Is Reshaping Life, Work, and Opportunity</a></h3>
-
-                        <p class="article-excerpt">
-                            AI has moved from novelty to necessity. Discover how artificial intelligence now underpins how we create, communicate, learn, heal, build businesses, and expand access in our AI-first reality.
-                        </p>
-
-                        <div class="article-tags">
-                            <span class="tag">AI Trends</span>
-                            <span class="tag">Digital Transformation</span>
-                            <span class="tag">Future of Work</span>
-                            <span class="tag">Innovation</span>
-                        </div>
-
-                        <a href="/blog/we-live-in-an-ai-first-world/" class="article-link">Read More</a>
-                    </div>
-                </article>
-                
-                <article class="article-card">
-                    <div class="article-image">
-                        <div class="image-placeholder">
-                            <span>AI</span>
-                        </div>
-                        <div class="article-category">AI Trends</div>
-                    </div>
-
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <time datetime="2024-12-15">December 15, 2024</time>
-                            <span class="read-time">8 min read</span>
-                        </div>
-
-                        <h3><a href="/blog/ai-agents-future-business-automation/">The Future of Business Automation: How AI Agents Are Transforming Industries</a></h3>
-
-                        <p class="article-excerpt">
-                            Explore how intelligent AI agents are revolutionizing business processes across various industries, 
-                            from customer service to complex decision-making and what it means for the future of work.
-                        </p>
-
-                        <div class="article-tags">
-                            <span class="tag">AI Agents</span>
-                            <span class="tag">Business Automation</span>
-                            <span class="tag">Industry 4.0</span>
-                            <span class="tag">Future of Work</span>
-                        </div>
-
-                        <a href="/blog/ai-agents-future-business-automation/" class="article-link">Read More</a>
-                    </div>
-                </article>
-
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Signup -->
-    <section class="newsletter-signup">
-        <div class="container">
-            <div class="newsletter-content">
-                <div class="newsletter-text">
-                    <h2>Stay Ahead in AI</h2>
-                    <p>Get the latest AI insights, trends, and exclusive content delivered to your inbox weekly.</p>
-                </div>
-                
-                <form class="newsletter-form" action="#" method="POST"
-                      toolname="subscribe_to_newsletter"
-                      tooldescription="Subscribe an email address to the WebOctals AI newsletter for weekly AI insights, trends, and exclusive content."
-                      toolautosubmit>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Enter your email address" required
-                               toolparamdescription="Email address to subscribe to the WebOctals newsletter">
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </div>
-                    <p class="privacy-note">
-                        By subscribing, you agree to our <a href="/privacy">Privacy Policy</a>. 
-                        We respect your privacy and never spam.
-                    </p>
-                </form>
+    <section class="pg-close">
+        <div class="pg-shell">
+            <p class="pg-eyebrow">Next</p>
+            <h2>Would rather see the work than read about it?</h2>
+            <p class="pg-deck">Every project we take on is written up &mdash; the brief, the build and where it landed.</p>
+            <div class="pg-close-actions">
+                <a href="/clients/" class="btn btn-primary">
+                    <span>Read the case studies</span>
+                    <div class="btn-glow"></div>
+                </a>
+                <a href="/contact/" class="pg-ghost">Start a project</a>
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -468,10 +236,11 @@
                     <div class="link-group">
                         <h4>Services</h4>
                         <ul>
-                            <li><a href="/ai-agents/">AI Agent Development</a></li>
-                            <li><a href="/digital-products/">Digital Products</a></li>
+                            <li><a href="/web-development/">Web Development</a></li>
+                            <li><a href="/seo/">SEO</a></li>
+                            <li><a href="/ai-agents/">AI Agents</a></li>
                             <li><a href="/automation/">Automation</a></li>
-                            <li><a href="/machine-learning/">ML Solutions</a></li>
+                            <li><a href="/services/">All services</a></li>
                         </ul>
                     </div>
 
@@ -483,6 +252,13 @@
                             <li><a href="/clients/">Clients</a></li>
                             <li><a href="/blog/">Blog</a></li>
                             <li><a href="/contact/">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="link-group">
+                        <h4>Businesses</h4>
+                        <ul>
+                            <li><a href="/driving-schools/">Driving Schools</a></li>
                         </ul>
                     </div>
 
@@ -509,13 +285,82 @@
         </div>
     </footer>
 
+    <!-- Contact Popup -->
+    <div id="contact-widget" class="chat-widget">
+        <button class="chat-toggle" id="chat-toggle" aria-label="Contact us" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+        <div class="chat-popup" id="chat-popup">
+            <div class="chat-popup-header">
+                <h4>Get in touch</h4>
+                <button class="chat-close" id="chat-close" aria-label="Close">&times;</button>
+            </div>
+            <p class="chat-popup-subtitle">Choose how you'd like to reach us</p>
+            <div class="chat-popup-actions">
+                <a class="chat-popup-btn" href="mailto:contact@weboctals.co.uk?subject=Project%20Enquiry">
+                    <span class="chat-popup-btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </span>
+                    <span>Email us</span>
+                </a>
+                <a class="chat-popup-btn chat-popup-btn-whatsapp"
+                   href="https://wa.me/447442410345?text=Hi%2C%20I%27d%20like%20to%20talk%20about%20a%20project"
+                   target="_blank" rel="noopener">
+                    <span class="chat-popup-btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </span>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Popup -->
+    <div id="contact-widget" class="chat-widget">
+        <button class="chat-toggle" id="chat-toggle" aria-label="Contact us" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+        <div class="chat-popup" id="chat-popup">
+            <div class="chat-popup-header">
+                <h4>Get in touch</h4>
+                <button class="chat-close" id="chat-close" aria-label="Close">&times;</button>
+            </div>
+            <p class="chat-popup-subtitle">Choose how you'd like to reach us</p>
+            <div class="chat-popup-actions">
+                <a class="chat-popup-btn" href="mailto:contact@weboctals.co.uk?subject=Project%20Enquiry">
+                    <span class="chat-popup-btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </span>
+                    <span>Email us</span>
+                </a>
+                <a class="chat-popup-btn chat-popup-btn-whatsapp"
+                   href="https://wa.me/447442410345?text=Hi%2C%20I%27d%20like%20to%20talk%20about%20a%20project"
+                   target="_blank" rel="noopener">
+                    <span class="chat-popup-btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </span>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="/assets/js/gtm.js"></script>
-    <script src="/assets/js/contact-form-handler.js"></script>
     <script src="/assets/js/main.js"></script>
-    <script defer src="/assets/js/hero-animation.js"></script>
-    <script defer src="/assets/js/reveal.js"></script>
     <script defer src="/assets/js/cookie-consent.js"></script>
 </body>
 </html>

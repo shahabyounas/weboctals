@@ -3,26 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Custom product development from an in-house UK team: full-stack applications, API integration, database design, and testing, built around the workflow your business actually has.">
-    <meta name="keywords" content="product development, custom software, API integration, database design, software engineering, WebOctals">
+    <meta name="description" content="Custom software for UK teams who have outgrown off-the-shelf tools — scoped against an outcome, quoted as a fixed figure before work starts.">
     <meta name="author" content="WebOctals">
     <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph -->
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://weboctals.com/product-development/">
-    <meta property="og:title" content="Product Development Services - Custom Solutions | WebOctals">
-    <meta property="og:description" content="Custom digital products built by an in-house team, scoped around how your business actually works.">
+    <meta property="og:title" content="Custom Product Development | WebOctals">
+    <meta property="og:description" content="Custom software for UK teams who have outgrown off-the-shelf tools — scoped against an outcome, quoted as a fixed figure before work starts.">
+    <meta property="og:image" content="https://weboctals.com/assets/images/client_driving_spot.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://weboctals.com/product-development/">
+    <meta property="twitter:title" content="Custom Product Development | WebOctals">
+    <meta property="twitter:description" content="Custom software for UK teams who have outgrown off-the-shelf tools — scoped against an outcome, quoted as a fixed figure before work starts.">
+    <meta property="twitter:image" content="https://weboctals.com/assets/images/client_driving_spot.jpeg">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://weboctals.com/product-development/">
-    
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8afc96">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
-    
-    <!-- Stylesheets -->
+
     <!-- Performance Optimization: Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,29 +44,26 @@
     </noscript>
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    
-    <!-- Schema.org -->
+    <link rel="stylesheet" href="/assets/css/services.css">
+
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Product Development Services",
-        "provider": {
-            "@type": "Organization",
-            "name": "WebOctals"
-        },
-        "description": "Custom product development services including software engineering, API integration, database design, and quality assurance.",
-        "serviceType": "Software Development",
-        "areaServed": "Worldwide"
-    }
+    {"@context":"https://schema.org","@graph":[
+        {"@type":"BreadcrumbList","itemListElement":[
+            {"@type":"ListItem","position":1,"name":"Home","item":"https://weboctals.com/"},
+            {"@type":"ListItem","position":2,"name":"Services","item":"https://weboctals.com/services/"},
+            {"@type":"ListItem","position":3,"name":"Product development","item":"https://weboctals.com/product-development/"}
+        ]},
+        {"@type":"Service","serviceType":"Product development","name":"Product development","provider":{"@type":"Organization","name":"WebOctals","url":"https://weboctals.com/"},"areaServed":{"@type":"Country","name":"United Kingdom"},"description":"Custom software for UK teams who have outgrown off-the-shelf tools — scoped against an outcome, quoted as a fixed figure before work starts."},
+        {"@type":"FAQPage","mainEntity":[
+            {"@type":"Question","name":"How do you price this?","acceptedAnswer":{"@type":"Answer","text":"We scope it and quote a fixed figure in pounds before any work begins. There’s no price list, because a two-week tool and a six-month system aren’t the same job."}},
+            {"@type":"Question","name":"Who owns the code?","acceptedAnswer":{"@type":"Answer","text":"You do. Nothing is outsourced and there’s no arrangement where you need us in order to keep using what we built."}}
+        ]}
+    ]}
     </script>
 
-    <title>Product Development Services - Custom Solutions | WebOctals</title>
+    <title>Custom Product Development | WebOctals</title>
 </head>
-<body>
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
-    
+<body class="sv-page">
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -67,9 +74,7 @@
                 </a>
             </div>
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="/" class="nav-link">Home</a>
-                </li>
+                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                 <li class="nav-item nav-item-dropdown">
                     <a href="/services/" class="nav-link active">
                         Services
@@ -110,21 +115,11 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a href="/projects/" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/clients/" class="nav-link">Clients</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/about/" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/blog/" class="nav-link">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/contact/" class="nav-link">Contact</a>
-                </li>
+                <li class="nav-item"><a href="/projects/" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="/clients/" class="nav-link">Clients</a></li>
+                <li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="/contact/" class="nav-link">Contact</a></li>
             </ul>
             <a href="/contact/" class="btn btn-primary nav-cta">
                 <span>Start a project</span>
@@ -136,245 +131,170 @@
             </div>
         </div>
     </nav>
+    <main>
+    <article>
+    <header class="sv-hero">
+        <div class="sv-shell">
+            <nav class="sv-crumb" aria-label="Breadcrumb">
+                <a href="/">Home</a><span>/</span><a href="/services/">Services</a><span>/</span>Product development
+            </nav>
+            <span class="sv-chip">The hard end</span>
+            <h1 class="sv-h1">Product development</h1>
+            <p class="sv-deck">For the point where the spreadsheet has become load-bearing and the SaaS subscription is being worked around rather than used.</p>
+            <div class="sv-hero-actions">
+                <a href="/contact/" class="btn btn-primary">
+                    <span>Talk to us about this</span>
+                    <div class="btn-glow"></div>
+                </a>
+                <a href="#fit" class="sv-ghost">Is it right for you?</a>
+            </div>
+        </div>
+    </header>
 
-    <!-- Service Hero -->
-    <section class="service-detail-hero">
-        <div class="container">
-            <div class="service-hero-content">
-                <div class="service-breadcrumb">
-                    <a href="/">Home</a>
-                    <span>/</span>
-                    <a href="/services/">Services</a>
-                    <span>/</span>
-                    <span>Product Development</span>
-                </div>
-                
-                <div class="service-hero-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M22,9 L22,7 C22,5.9 21.1,5 20,5 L4,5 C2.9,5 2,5.9 2,7 L2,9 C3.1,9 4,9.9 4,11 C4,12.1 3.1,13 2,13 L2,15 C2,16.1 2.9,17 4,17 L20,17 C21.1,17 22,16.1 22,15 L22,13 C20.9,13 20,12.1 20,11 C20,9.9 20.9,9 22,9 Z"/>
-                    </svg>
-                </div>
-                
-                <h1>Product Development</h1>
-                <p class="service-hero-tagline">Software Built Around How You Actually Work</p>
-                <p class="service-hero-description">From concept to launch, we build custom digital products scoped against a specific business problem &mdash; not a generic template's assumptions about what your workflow should look like.</p>
-                
-                <div class="service-hero-cta">
-                    <a href="/contact/" class="btn btn-primary">
-                        <span>Start Your Project</span>
-                        <div class="btn-glow"></div>
-                    </a>
-                    <a href="/contact/" class="btn btn-outline-white">Schedule Consultation</a>
-                </div>
-                
-                <div class="service-stats">
-                    <div class="stat">
-                        <div class="stat-number">9</div>
-                        <div class="stat-label">Projects Shipped</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Built In-House</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">3-6</div>
-                        <div class="stat-label">Months to MVP</div>
-                    </div>
-                </div>
+    <section class="sv-section" style="padding-top:0;">
+        <div class="sv-shell">
+            <div class="sv-prose">
+                <p>There&rsquo;s a stage most growing businesses hit where the tools stop fitting. The spreadsheet that ran everything has become something nobody dares touch. The software you pay for monthly does most of the job and the rest happens in email. Everyone has a workaround and nobody has written them down.</p>
+                <p>That&rsquo;s the point where building something is worth considering &mdash; not before. When we do build, we start from the outcome rather than the feature list: the number that has to move, whether that&rsquo;s hours saved, errors avoided or orders processed. Features that don&rsquo;t serve it get cut before you pay for them.</p>
             </div>
         </div>
     </section>
 
-    <!-- Service Features -->
-    <section class="service-features-section">
-        <div class="container">
-            <div class="section-header-center">
-                <h2>Comprehensive Product Development Services</h2>
-                <p>End-to-end development solutions from planning to deployment</p>
-            </div>
-            
-            <div class="features-grid-large">
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
-                        </svg>
-                    </div>
-                    <h3>Custom Software Development</h3>
-                    <p>Build bespoke software solutions tailored to your unique business requirements. We use modern frameworks and best practices to create robust, maintainable applications.</p>
-                    <ul class="feature-list">
-                        <li>Full-stack web applications</li>
-                        <li>Progressive web apps (PWA)</li>
-                        <li>Single-page applications (SPA)</li>
-                        <li>Microservices architecture</li>
-                        <li>Cloud-native applications</li>
+    <hr class="sv-lane">
+
+    <section class="sv-section" id="fit">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Fit</p>
+            <h2 class="sv-h2">When this is the right job &mdash; and when it isn&rsquo;t</h2>
+            <p class="sv-deck">We&rsquo;d rather lose a project at this stage than sell you one you don&rsquo;t need. The right-hand column is the honest half.</p>
+
+            <div class="sv-fit">
+                <div class="sv-fit-col sv-fit-col--yes">
+                    <span class="sv-fit-label">Worth doing if</span>
+                    <ul class="sv-fit-list">
+                        <li>A spreadsheet has quietly become critical infrastructure and nobody wants to be the one who breaks it</li>
+                        <li>You&rsquo;re paying for software you&rsquo;ve outgrown and working around it daily</li>
+                        <li>The way you work is genuinely different from your competitors, and generic tools flatten that advantage</li>
+                        <li>You&rsquo;ve got the process right and now the constraint is the tooling</li>
                     </ul>
                 </div>
-
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8.5,18L3.5,12L8.5,6L9.91,7.41L6.83,10.5H10.5V4.5H12.5V10.5H16.17L13.09,7.41L14.5,6L19.5,12L14.5,18L13.09,16.59L16.17,13.5H12.5V19.5H10.5V13.5H6.83L9.91,16.59L8.5,18Z"/>
-                        </svg>
-                    </div>
-                    <h3>API Development & Integration</h3>
-                    <p>Seamlessly connect your systems with RESTful APIs, GraphQL endpoints, and third-party integrations. Enable data flow across platforms with secure, scalable API solutions.</p>
-                    <ul class="feature-list">
-                        <li>RESTful API development</li>
-                        <li>GraphQL implementation</li>
-                        <li>Third-party API integration</li>
-                        <li>API documentation & testing</li>
-                        <li>Webhook implementation</li>
-                        <li>Authentication & security</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12,3C7.58,3 4,4.79 4,7C4,9.21 7.58,11 12,11C16.42,11 20,9.21 20,7C20,4.79 16.42,3 12,3M4,9V12C4,14.21 7.58,16 12,16C16.42,16 20,14.21 20,12V9C20,11.21 16.42,13 12,13C7.58,13 4,11.21 4,9M4,14V17C4,19.21 7.58,21 12,21C16.42,21 20,19.21 20,17V14C20,16.21 16.42,18 12,18C7.58,18 4,16.21 4,14Z"/>
-                        </svg>
-                    </div>
-                    <h3>Database Design & Optimization</h3>
-                    <p>Design efficient, scalable database architectures that grow with your business. From SQL to NoSQL, we optimize for performance, security, and reliability.</p>
-                    <ul class="feature-list">
-                        <li>Database schema design</li>
-                        <li>SQL & NoSQL databases</li>
-                        <li>Query optimization</li>
-                        <li>Data migration strategies</li>
-                        <li>Backup & recovery planning</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card-detailed">
-                    <div class="feature-icon-large">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
-                        </svg>
-                    </div>
-                    <h3>Quality Assurance & Testing</h3>
-                    <p>Ensure your product is bug-free and performs flawlessly with comprehensive testing. We implement automated testing pipelines and manual QA processes.</p>
-                    <ul class="feature-list">
-                        <li>Unit & integration testing</li>
-                        <li>End-to-end testing</li>
-                        <li>Performance testing</li>
-                        <li>Security audits</li>
-                        <li>CI/CD implementation</li>
+                <div class="sv-fit-col sv-fit-col--no">
+                    <span class="sv-fit-label">Probably not if</span>
+                    <ul class="sv-fit-list">
+                        <li>An off-the-shelf product would do it. Building your own version of something that already exists is an expensive way to get a worse result</li>
+                        <li>The process isn&rsquo;t settled. Build it once you know what it is</li>
+                        <li>Nobody internally has time to be involved. These projects need someone on your side who knows how the work really happens</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="service-benefits-section">
-        <div class="container">
-            <div class="benefits-layout">
-                <div class="benefits-content">
-                    <h2>Why Choose Our Product Development Services?</h2>
-                    <p class="benefits-intro">We scope against the outcome that matters to your business, build it in-house, and stay on after launch.</p>
-                    
-                    <div class="benefits-list-detailed">
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✓</div>
-                            <div class="benefit-text">
-                                <h4>You Talk to the People Building It</h4>
-                                <p>No account layer relaying messages &mdash; the engineer writing your code is in the conversation</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✓</div>
-                            <div class="benefit-text">
-                                <h4>Agile Development Methodology</h4>
-                                <p>Flexible, iterative approach with regular updates and feedback loops</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✓</div>
-                            <div class="benefit-text">
-                                <h4>Scalable Architecture</h4>
-                                <p>Build products that grow with your business without technical limitations</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✓</div>
-                            <div class="benefit-text">
-                                <h4>Security-First Approach</h4>
-                                <p>Industry-standard security practices and compliance built in from day one</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✓</div>
-                            <div class="benefit-text">
-                                <h4>Post-Launch Support</h4>
-                                <p>Ongoing maintenance, updates, and feature enhancements</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">✓</div>
-                            <div class="benefit-text">
-                                <h4>Transparent Communication</h4>
-                                <p>Regular sprint reviews, demos, and direct access to the development team</p>
-                            </div>
-                        </div>
-                    </div>
+    <section class="sv-section sv-section--recessed">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Scope</p>
+            <h2 class="sv-h2">What&rsquo;s included</h2>
+            <div class="sv-included">
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">01</span>
+                    <h3 class="sv-h3">Scoped against an outcome</h3>
+                    <p>We start with the number that has to move. If a feature doesn&rsquo;t serve it, we&rsquo;ll say so before it&rsquo;s built.</p>
                 </div>
-                
-                <div class="benefits-visual">
-                    <div class="benefits-card">
-                        <h3>Our Development Process</h3>
-                        <div class="process-steps">
-                            <div class="process-step">
-                                <div class="step-number">1</div>
-                                <div class="step-content">
-                                    <h4>Discovery & Planning</h4>
-                                    <p>Requirements gathering, technical feasibility, and roadmap creation</p>
-                                </div>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">2</div>
-                                <div class="step-content">
-                                    <h4>Design & Prototyping</h4>
-                                    <p>UX/UI design, wireframes, and interactive prototypes</p>
-                                </div>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">3</div>
-                                <div class="step-content">
-                                    <h4>Development & Testing</h4>
-                                    <p>Agile sprints with continuous testing and integration</p>
-                                </div>
-                            </div>
-                            <div class="process-step">
-                                <div class="step-number">4</div>
-                                <div class="step-content">
-                                    <h4>Launch & Support</h4>
-                                    <p>Deployment, monitoring, and ongoing optimization</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">02</span>
+                    <h3 class="sv-h3">A fixed figure</h3>
+                    <p>Quoted in pounds before work starts, not an open hourly meter.</p>
+                </div>
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">03</span>
+                    <h3 class="sv-h3">Boring where boring is correct</h3>
+                    <p>We keep the stack unremarkable wherever novelty would only add risk. The interesting part should be your business logic, not our infrastructure choices.</p>
+                </div>
+                <div class="sv-inc-item">
+                    <span class="sv-inc-n">04</span>
+                    <h3 class="sv-h3">We stay after launch</h3>
+                    <p>Monitoring, iteration and support once it&rsquo;s live. A product that shipped and then quietly broke is worse than none.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="service-cta-section">
-        <div class="container">
-            <div class="cta-box-service">
-                <h2>Ready to Build Your Product?</h2>
-                <p>Tell us the problem you're trying to solve. We'll scope it with you and give you a detailed proposal &mdash; no obligation.</p>
-                <div class="cta-buttons">
-                    <a href="/contact/" class="btn btn-primary">
-                        <span>Start Your Project</span>
-                        <div class="btn-glow"></div>
-                    </a>
-                    <a href="/contact/" class="btn btn-outline-white">Schedule Consultation</a>
-                </div>
+    <section class="sv-section">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Related work</p>
+            <h2 class="sv-h2">Where this shows up in the portfolio</h2>
+            <div class="sv-work">
+                <a class="sv-work-card" href="/clients/fishermans-chips/">
+                    <img src="/assets/images/client_fisher_chips.jpeg" alt="The Fisherman’s Chips website, built by WebOctals" loading="lazy" width="1402" height="1122">
+                    <div class="sv-work-body">
+                        <span class="sv-work-meta">Fish &amp; chip shop &middot; Bedford</span>
+                        <h3>Fisherman&rsquo;s Chips</h3>
+                        <p>A menu-first site with online ordering, built for speed during service.</p>
+                    </div>
+                </a>
+                <a class="sv-work-card" href="/clients/quick-fit-shelving/">
+                    <img src="/assets/images/quick_fit_move.jpeg" alt="The Quick Fit Shelving website, built by WebOctals" loading="lazy" width="1402" height="1122">
+                    <div class="sv-work-body">
+                        <span class="sv-work-meta">Trade services &middot; West Midlands</span>
+                        <h3>Quick Fit Shelving</h3>
+                        <p>Services, coverage and contact front and centre for buyers who decide fast.</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
+
+    <hr class="sv-lane">
+
+    <section class="sv-section">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Questions</p>
+            <h2 class="sv-h2">Straight answers</h2>
+            <div class="sv-faq">
+                <details class="sv-q">
+                    <summary>How do you price this?</summary>
+                    <div class="sv-a">
+                        <p>We scope it and quote a fixed figure in pounds before any work begins. There&rsquo;s no price list, because a two-week tool and a six-month system aren&rsquo;t the same job.</p>
+                    </div>
+                </details>
+                <details class="sv-q">
+                    <summary>Who owns the code?</summary>
+                    <div class="sv-a">
+                        <p>You do. Nothing is outsourced and there&rsquo;s no arrangement where you need us in order to keep using what we built.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+    </article>
+
+    <nav class="sv-pager" aria-label="More services">
+        <a href="/ai-agents/">
+            <span class="sv-pager-dir">&larr; Previous</span>
+            <strong>AI agents</strong>
+        </a>
+        <a href="/machine-learning/">
+            <span class="sv-pager-dir">Next &rarr;</span>
+            <strong>Machine learning</strong>
+        </a>
+    </nav>
+
+    <section class="sv-close">
+        <div class="sv-shell">
+            <p class="sv-eyebrow">Next</p>
+            <h2>Not sure this is the one you need?</h2>
+            <p class="sv-deck">Describe the problem rather than the solution and we&rsquo;ll tell you which one fits, or that none of them do. That answer is free and it&rsquo;s often the useful one.</p>
+            <div class="sv-close-actions">
+                <a href="/contact/" class="btn btn-primary">
+                    <span>Start a conversation</span>
+                    <div class="btn-glow"></div>
+                </a>
+                <a href="/services/" class="sv-ghost">All services</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -404,10 +324,11 @@
                     <div class="link-group">
                         <h4>Services</h4>
                         <ul>
-                            <li><a href="/ai-agents/">AI Agent Development</a></li>
-                            <li><a href="/digital-products/">Digital Products</a></li>
+                            <li><a href="/web-development/">Web Development</a></li>
+                            <li><a href="/seo/">SEO</a></li>
+                            <li><a href="/ai-agents/">AI Agents</a></li>
                             <li><a href="/automation/">Automation</a></li>
-                            <li><a href="/machine-learning/">ML Solutions</a></li>
+                            <li><a href="/services/">All services</a></li>
                         </ul>
                     </div>
 
@@ -419,6 +340,13 @@
                             <li><a href="/clients/">Clients</a></li>
                             <li><a href="/blog/">Blog</a></li>
                             <li><a href="/contact/">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="link-group">
+                        <h4>Businesses</h4>
+                        <ul>
+                            <li><a href="/driving-schools/">Driving Schools</a></li>
                         </ul>
                     </div>
 
@@ -445,8 +373,44 @@
         </div>
     </footer>
 
+    <!-- Contact Popup -->
+    <div id="contact-widget" class="chat-widget">
+        <button class="chat-toggle" id="chat-toggle" aria-label="Contact us" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+        </button>
+        <div class="chat-popup" id="chat-popup">
+            <div class="chat-popup-header">
+                <h4>Get in touch</h4>
+                <button class="chat-close" id="chat-close" aria-label="Close">&times;</button>
+            </div>
+            <p class="chat-popup-subtitle">Choose how you'd like to reach us</p>
+            <div class="chat-popup-actions">
+                <a class="chat-popup-btn" href="mailto:contact@weboctals.co.uk?subject=Project%20Enquiry">
+                    <span class="chat-popup-btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </span>
+                    <span>Email us</span>
+                </a>
+                <a class="chat-popup-btn chat-popup-btn-whatsapp"
+                   href="https://wa.me/447442410345?text=Hi%2C%20I%27d%20like%20to%20talk%20about%20a%20project"
+                   target="_blank" rel="noopener">
+                    <span class="chat-popup-btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </span>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="/assets/js/main.js"></script>
     <script defer src="/assets/js/cookie-consent.js"></script>
 </body>

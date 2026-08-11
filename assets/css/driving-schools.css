@@ -1,0 +1,1059 @@
+/* ==========================================================================
+   Driving schools landing page — page-scoped styles
+   --------------------------------------------------------------------------
+   Everything here is namespaced `ds-` and scoped under `.ds-page` so it can
+   never leak into the shared stylesheet's territory. Loaded after styles.css.
+
+   Design note: the organising metaphor is an instructor's week — a grid of
+   hour slots. Time labels are set in mono with tabular figures, dividers are
+   dashed lane lines, and the brand's marker yellow is reserved exclusively
+   for "hours you could be teaching". Mint means booked; yellow means gap.
+   ========================================================================== */
+
+.ds-page {
+    /* Palette — brand tokens, re-pointed for this page's vocabulary */
+    --ds-ground: #0d2724;
+    --ds-recess: #08201d;
+    --ds-raise: #11302c;
+    --ds-mint: #8afc96;
+    --ds-marker: #e9ff60;
+    --ds-ink: #c9f9d7;
+    --ds-dim: rgb(201 249 215 / 0.66);
+    --ds-faint: rgb(201 249 215 / 0.40);
+    --ds-line: rgb(201 249 215 / 0.14);
+    --ds-line-strong: rgb(201 249 215 / 0.28);
+
+    /* Type roles: Caprasimo displays, Figtree reads, mono carries data */
+    --ds-display: var(--font-heading);
+    --ds-body: var(--font-body);
+    --ds-data: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+    --ds-measure: 68ch;
+    --ds-gutter: clamp(20px, 5vw, 40px);
+}
+
+/* --------------------------------------------------------------------------
+   Shared primitives
+   -------------------------------------------------------------------------- */
+
+.ds-page .ds-section {
+    padding: clamp(64px, 9vw, 120px) 0;
+    position: relative;
+}
+
+.ds-page .ds-section--recessed {
+    background: var(--ds-recess);
+}
+
+.ds-shell {
+    width: min(1180px, 100% - (var(--ds-gutter) * 2));
+    margin-inline: auto;
+}
+
+.ds-shell--narrow {
+    width: min(820px, 100% - (var(--ds-gutter) * 2));
+}
+
+/* The lane line — this page's divider. Dashed, like a road marking. */
+.ds-lane {
+    border: 0;
+    height: 2px;
+    margin: 0;
+    background-image: linear-gradient(
+        to right,
+        var(--ds-line-strong) 0 28px,
+        transparent 28px 52px
+    );
+    background-size: 52px 2px;
+}
+
+.ds-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--ds-data);
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ds-marker);
+    margin: 0 0 var(--space-lg);
+}
+
+.ds-eyebrow::before {
+    content: '';
+    width: 26px;
+    height: 2px;
+    background: var(--ds-marker);
+}
+
+.ds-page h2.ds-h2 {
+    font-family: var(--ds-display);
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    line-height: 1.06;
+    letter-spacing: -0.01em;
+    color: var(--ds-ink);
+    margin: 0 0 var(--space-md);
+    max-width: 20ch;
+}
+
+.ds-page h3.ds-h3 {
+    font-family: var(--ds-body);
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--ds-ink);
+    margin: 0 0 var(--space-sm);
+}
+
+.ds-deck {
+    font-size: clamp(1.02rem, 1.5vw, 1.15rem);
+    line-height: 1.7;
+    color: var(--ds-dim);
+    max-width: var(--ds-measure);
+    margin: 0 0 var(--space-xl);
+}
+
+.ds-page .ds-deck strong {
+    color: var(--ds-ink);
+    font-weight: 600;
+}
+
+.ds-prose p {
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: var(--ds-dim);
+    max-width: var(--ds-measure);
+    margin: 0 0 var(--space-md);
+}
+
+.ds-page .ds-prose strong {
+    color: var(--ds-ink);
+    font-weight: 600;
+}
+
+.ds-page .ds-prose a,
+.ds-page .ds-card a {
+    color: var(--ds-mint);
+    text-underline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   Hero
+   -------------------------------------------------------------------------- */
+
+.ds-hero {
+    padding: clamp(120px, 16vw, 190px) 0 clamp(56px, 7vw, 88px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Faint hour-grid wash behind the hero — the week, before you can read it */
+.ds-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(to right, rgb(201 249 215 / 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgb(201 249 215 / 0.05) 1px, transparent 1px);
+    background-size: 78px 52px;
+    mask-image: radial-gradient(120% 90% at 50% 0%, #000 20%, transparent 78%);
+    pointer-events: none;
+}
+
+.ds-hero > * {
+    position: relative;
+}
+
+.ds-crumb {
+    font-family: var(--ds-data);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    color: var(--ds-faint);
+    margin-bottom: var(--space-xl);
+}
+
+.ds-page .ds-crumb a {
+    color: var(--ds-faint);
+    text-decoration: none;
+}
+
+.ds-page .ds-crumb a:hover {
+    color: var(--ds-mint);
+}
+
+.ds-crumb span {
+    margin: 0 8px;
+}
+
+.ds-page h1.ds-h1 {
+    font-family: var(--ds-display);
+    font-size: clamp(2.6rem, 7.4vw, 5.4rem);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    color: var(--ds-ink);
+    margin: 0 0 var(--space-lg);
+    max-width: 15ch;
+}
+
+.ds-h1-tail {
+    display: block;
+    color: var(--ds-mint);
+}
+
+.ds-hero-deck {
+    font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+    line-height: 1.6;
+    color: var(--ds-dim);
+    max-width: 60ch;
+    margin: 0 0 var(--space-xl);
+}
+
+.ds-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    align-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   Signature: the week grid
+   -------------------------------------------------------------------------- */
+
+.ds-week {
+    margin-top: clamp(48px, 7vw, 80px);
+    background: var(--ds-recess);
+    border: 1px solid var(--ds-line);
+    border-radius: var(--radius-md);
+    padding: clamp(20px, 3.5vw, 36px);
+}
+
+.ds-week-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: var(--space-lg);
+}
+
+.ds-week-title {
+    font-family: var(--ds-data);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ds-faint);
+    margin: 0;
+}
+
+.ds-week-title b {
+    display: block;
+    font-family: var(--ds-body);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ds-ink);
+    margin-top: 6px;
+}
+
+/* Segmented control: Now / With daytime filled */
+.ds-toggle {
+    display: inline-flex;
+    padding: 4px;
+    gap: 4px;
+    background: var(--ds-ground);
+    border: 1px solid var(--ds-line);
+    border-radius: var(--radius-pill);
+}
+
+.ds-toggle button {
+    font-family: var(--ds-data);
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ds-dim);
+    background: transparent;
+    border: 0;
+    border-radius: var(--radius-pill);
+    padding: 9px 16px;
+    cursor: pointer;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.ds-toggle button:hover {
+    color: var(--ds-ink);
+}
+
+.ds-toggle button[aria-pressed='true'] {
+    background: var(--ds-mint);
+    color: #06201c;
+    font-weight: 700;
+}
+
+/* Two-column body: the diary on the left, what it's worth on the right */
+.ds-week-body {
+    display: grid;
+    grid-template-columns: minmax(0, auto) minmax(230px, 1fr);
+    gap: clamp(24px, 4vw, 56px);
+    align-items: start;
+}
+
+/* Grid proper */
+.ds-grid-scroll {
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.ds-grid {
+    display: grid;
+    grid-template-columns: auto repeat(6, minmax(38px, 66px));
+    grid-template-rows: auto;
+    grid-auto-rows: clamp(21px, 2.3vw, 30px);
+    gap: 5px;
+    justify-content: start;
+    min-width: 300px;
+}
+
+.ds-grid-day,
+.ds-grid-hour {
+    font-family: var(--ds-data);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--ds-faint);
+    font-variant-numeric: tabular-nums;
+    display: flex;
+    align-items: center;
+}
+
+.ds-grid-day {
+    justify-content: center;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+}
+
+.ds-grid-hour {
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+
+.ds-slot {
+    border-radius: 5px;
+    border: 1px dashed var(--ds-line-strong);
+    background: transparent;
+    transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+.ds-slot[data-state='booked'] {
+    background: var(--ds-mint);
+    border-color: var(--ds-mint);
+    border-style: solid;
+}
+
+.ds-slot[data-state='added'] {
+    background: var(--ds-marker);
+    border-color: var(--ds-marker);
+    border-style: solid;
+}
+
+/* Readout beside the grid */
+.ds-readout {
+    display: grid;
+    gap: var(--space-lg);
+    margin: 0;
+}
+
+.ds-figure {
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--ds-line);
+}
+
+.ds-figure:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.ds-figure dt {
+    font-family: var(--ds-data);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ds-faint);
+    margin-bottom: 8px;
+}
+
+.ds-figure dd {
+    font-family: var(--ds-data);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    color: var(--ds-ink);
+    margin: 0;
+    line-height: 1;
+}
+
+.ds-figure--accent dd {
+    color: var(--ds-marker);
+}
+
+.ds-key {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md) var(--space-lg);
+    margin-top: var(--space-lg);
+    font-family: var(--ds-data);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--ds-faint);
+}
+
+.ds-key span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ds-key i {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    border: 1px dashed var(--ds-line-strong);
+}
+
+.ds-key i[data-k='booked'] {
+    background: var(--ds-mint);
+    border: 0;
+}
+
+.ds-key i[data-k='added'] {
+    background: var(--ds-marker);
+    border: 0;
+}
+
+/* Rate input — every £ on this page derives from a number the reader sets */
+.ds-rate {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: var(--space-lg);
+    font-size: 0.9rem;
+    color: var(--ds-dim);
+}
+
+.ds-rate label {
+    font-family: var(--ds-data);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ds-faint);
+}
+
+.ds-rate-field {
+    display: inline-flex;
+    align-items: center;
+    background: var(--ds-ground);
+    border: 1px solid var(--ds-line-strong);
+    border-radius: var(--radius-pill);
+    padding: 0 6px 0 14px;
+    font-family: var(--ds-data);
+    color: var(--ds-ink);
+}
+
+.ds-rate-field input {
+    width: 62px;
+    background: transparent;
+    border: 0;
+    color: var(--ds-ink);
+    font-family: var(--ds-data);
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+    padding: 10px 4px;
+}
+
+.ds-rate-field input:focus-visible {
+    outline: none;
+}
+
+.ds-rate-field:focus-within {
+    box-shadow: var(--focus-ring);
+}
+
+.ds-note {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--ds-faint);
+    margin: var(--space-md) 0 0;
+    max-width: 62ch;
+}
+
+/* --------------------------------------------------------------------------
+   Thesis band
+   -------------------------------------------------------------------------- */
+
+.ds-thesis {
+    padding: clamp(56px, 8vw, 96px) 0;
+    background: var(--ds-recess);
+    border-block: 1px solid var(--ds-line);
+}
+
+.ds-thesis p {
+    font-family: var(--ds-display);
+    font-size: clamp(1.7rem, 4.4vw, 3.1rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--ds-ink);
+    margin: 0 0 var(--space-lg);
+    max-width: 22ch;
+}
+
+.ds-thesis p em {
+    font-style: normal;
+    color: var(--ds-marker);
+}
+
+.ds-thesis-sub {
+    font-family: var(--ds-body) !important;
+    font-size: 1.02rem !important;
+    line-height: 1.75 !important;
+    letter-spacing: 0 !important;
+    color: var(--ds-dim) !important;
+    max-width: var(--ds-measure) !important;
+    margin-bottom: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   Levers — three columns
+   -------------------------------------------------------------------------- */
+
+.ds-levers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1px;
+    background: var(--ds-line);
+    border: 1px solid var(--ds-line);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-top: var(--space-2xl);
+}
+
+.ds-lever {
+    background: var(--ds-ground);
+    padding: clamp(24px, 3vw, 34px);
+}
+
+.ds-lever-key {
+    font-family: var(--ds-data);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ds-marker);
+    display: block;
+    margin-bottom: var(--space-md);
+}
+
+.ds-lever p {
+    font-size: 0.97rem;
+    line-height: 1.7;
+    color: var(--ds-dim);
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Stages — the pupil journey. Order carries meaning here, so it's numbered.
+   -------------------------------------------------------------------------- */
+
+.ds-stage {
+    display: grid;
+    grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+    gap: clamp(24px, 5vw, 64px);
+    padding: clamp(36px, 5vw, 56px) 0;
+    border-top: 1px solid var(--ds-line);
+}
+
+.ds-stage:first-of-type {
+    border-top: 0;
+}
+
+.ds-stage-mark {
+    position: sticky;
+    top: 110px;
+    align-self: start;
+}
+
+.ds-stage-num {
+    font-family: var(--ds-data);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: var(--ds-faint);
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+.ds-page .ds-stage-mark h3 {
+    font-family: var(--ds-display);
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    line-height: 1.05;
+    color: var(--ds-mint);
+    margin: 0 0 var(--space-sm);
+}
+
+.ds-stage-mark p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--ds-faint);
+    margin: 0;
+}
+
+.ds-stage-body > p:first-child {
+    font-size: 1.08rem;
+    line-height: 1.7;
+    color: var(--ds-ink);
+    margin: 0 0 var(--space-lg);
+    max-width: var(--ds-measure);
+}
+
+.ds-points {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-md);
+}
+
+.ds-points li {
+    padding-left: 26px;
+    position: relative;
+    font-size: 0.97rem;
+    line-height: 1.7;
+    color: var(--ds-dim);
+    max-width: var(--ds-measure);
+}
+
+.ds-points li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 12px;
+    height: 2px;
+    background: var(--ds-marker);
+}
+
+.ds-page .ds-points strong {
+    color: var(--ds-ink);
+    font-weight: 600;
+}
+
+/* Pull-out inside a stage */
+.ds-pull {
+    margin: var(--space-lg) 0 0;
+    padding: var(--space-lg);
+    background: var(--ds-raise);
+    border-left: 2px solid var(--ds-marker);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.ds-pull p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--ds-dim);
+}
+
+.ds-page .ds-pull strong {
+    color: var(--ds-ink);
+}
+
+/* --------------------------------------------------------------------------
+   Scope table — what's a website job and what isn't
+   -------------------------------------------------------------------------- */
+
+.ds-split {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-2xl);
+}
+
+.ds-card {
+    background: var(--ds-raise);
+    border: 1px solid var(--ds-line);
+    border-radius: var(--radius-md);
+    padding: clamp(24px, 3vw, 34px);
+}
+
+.ds-card-label {
+    font-family: var(--ds-data);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: var(--space-md);
+}
+
+.ds-card--ours .ds-card-label {
+    color: var(--ds-mint);
+}
+
+.ds-card--yours .ds-card-label {
+    color: var(--ds-faint);
+}
+
+.ds-checks {
+    list-style: none;
+    margin: var(--space-md) 0 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.ds-checks li {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 12px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--ds-dim);
+}
+
+.ds-checks li::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    margin-top: 0.5em;
+    background: var(--ds-mint);
+}
+
+.ds-card--yours .ds-checks li::before {
+    background: transparent;
+    border: 1px dashed var(--ds-line-strong);
+    width: 10px;
+    height: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   Work — the two builds
+   -------------------------------------------------------------------------- */
+
+.ds-work {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-2xl);
+}
+
+.ds-page .ds-work-item {
+    display: block;
+    text-decoration: none;
+    background: var(--ds-raise);
+    border: 1px solid var(--ds-line);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: border-color var(--transition-normal), transform var(--transition-normal);
+}
+
+.ds-page .ds-work-item:hover {
+    border-color: var(--ds-mint);
+    transform: translateY(-3px);
+}
+
+.ds-work-shot {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    border-bottom: 1px solid var(--ds-line);
+}
+
+.ds-work-body {
+    padding: clamp(20px, 3vw, 28px);
+}
+
+.ds-work-meta {
+    font-family: var(--ds-data);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ds-marker);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.ds-page .ds-work-body h3 {
+    font-family: var(--ds-display);
+    font-size: 1.4rem;
+    line-height: 1.1;
+    color: var(--ds-ink);
+    margin: 0 0 var(--space-sm);
+}
+
+.ds-work-body p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--ds-dim);
+    margin: 0 0 var(--space-md);
+}
+
+.ds-work-more {
+    font-family: var(--ds-data);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ds-mint);
+}
+
+/* --------------------------------------------------------------------------
+   Timeline table
+   -------------------------------------------------------------------------- */
+
+.ds-table-scroll {
+    overflow-x: auto;
+    margin-top: var(--space-2xl);
+    border: 1px solid var(--ds-line);
+    border-radius: var(--radius-md);
+}
+
+.ds-page table.ds-table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.ds-page .ds-table th,
+.ds-page .ds-table td {
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--ds-line);
+    vertical-align: top;
+}
+
+.ds-page .ds-table thead th {
+    font-family: var(--ds-data);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ds-faint);
+    font-weight: 400;
+    background: var(--ds-recess);
+}
+
+.ds-page .ds-table tbody th {
+    font-family: var(--ds-data);
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--ds-marker);
+    font-weight: 400;
+    white-space: nowrap;
+    width: 1%;
+}
+
+.ds-page .ds-table td {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--ds-dim);
+}
+
+.ds-page .ds-table tbody tr:last-child th,
+.ds-page .ds-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   FAQ — native details/summary, no JS
+   -------------------------------------------------------------------------- */
+
+.ds-faq {
+    margin-top: var(--space-2xl);
+    border-top: 1px solid var(--ds-line);
+}
+
+.ds-page .ds-q {
+    border-bottom: 1px solid var(--ds-line);
+}
+
+.ds-page .ds-q > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: var(--space-lg) 44px var(--space-lg) 0;
+    position: relative;
+    font-family: var(--ds-body);
+    font-size: clamp(1.02rem, 1.8vw, 1.18rem);
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--ds-ink);
+}
+
+.ds-page .ds-q > summary::-webkit-details-marker {
+    display: none;
+}
+
+.ds-page .ds-q > summary::after {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    width: 13px;
+    height: 2px;
+    background: var(--ds-mint);
+    transform: translateY(-50%);
+}
+
+.ds-page .ds-q > summary::before {
+    content: '';
+    position: absolute;
+    right: 11.5px;
+    top: 50%;
+    width: 2px;
+    height: 13px;
+    background: var(--ds-mint);
+    transform: translateY(-50%);
+    transition: opacity var(--transition-fast);
+}
+
+.ds-page .ds-q[open] > summary::before {
+    opacity: 0;
+}
+
+.ds-page .ds-q > summary:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+    border-radius: 6px;
+}
+
+.ds-a {
+    padding: 0 0 var(--space-lg);
+}
+
+.ds-a p {
+    font-size: 0.98rem;
+    line-height: 1.75;
+    color: var(--ds-dim);
+    max-width: var(--ds-measure);
+    margin: 0 0 var(--space-md);
+}
+
+.ds-a p:last-child {
+    margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Closing call to action
+   -------------------------------------------------------------------------- */
+
+.ds-close {
+    padding: clamp(64px, 9vw, 120px) 0;
+    background: var(--ds-recess);
+    border-top: 1px solid var(--ds-line);
+}
+
+.ds-page .ds-close h2 {
+    font-family: var(--ds-display);
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.04;
+    color: var(--ds-ink);
+    margin: 0 0 var(--space-lg);
+    max-width: 16ch;
+}
+
+.ds-close-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    align-items: center;
+    margin-top: var(--space-xl);
+}
+
+.ds-page .ds-ghost {
+    font-family: var(--ds-data);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ds-ink);
+    text-decoration: none;
+    padding: 15px 24px;
+    border: 1px solid var(--ds-line-strong);
+    border-radius: var(--radius-pill);
+    transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.ds-page .ds-ghost:hover {
+    border-color: var(--ds-mint);
+    color: var(--ds-mint);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 860px) {
+    .ds-stage {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .ds-stage-mark {
+        position: static;
+    }
+
+    .ds-week-head {
+        align-items: flex-start;
+    }
+
+    .ds-week-body {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .ds-grid {
+        grid-template-columns: auto repeat(6, minmax(34px, 1fr));
+        grid-auto-rows: minmax(20px, 5.2vw);
+    }
+
+    .ds-readout {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: var(--space-md) var(--space-lg);
+    }
+
+    .ds-figure {
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+}
+
+@media (max-width: 560px) {
+    .ds-grid {
+        gap: 4px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .ds-page .ds-slot,
+    .ds-page .ds-work-item {
+        transition: none;
+    }
+}
+
+.ds-page a:focus-visible,
+.ds-page button:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+    border-radius: var(--radius-pill);
+}
+
+.ds-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
