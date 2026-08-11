@@ -455,6 +455,14 @@
     margin-bottom: 40px;
 }
 
+/* Shown only when scripting is off — the subscribe form posts via JS, so without it
+   the direct email route has to be visible instead. */
+.newsletter-note {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+}
+
 .newsletter-form .form-group {
     display: flex;
     gap: 15px;
