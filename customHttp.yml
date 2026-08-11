@@ -1,0 +1,47 @@
+# AWS Amplify custom response headers.
+#
+# This belongs in customHttp.yml at the project root, NOT in amplify.yml — AWS
+# deprecated the customHeaders key in the buildspec and recommends migrating
+# out of it. Headers defined here are ignored if the Amplify console has its
+# own custom-header set; console values win.
+#
+# Amplify's default is `public, max-age=0, s-maxage=31536000`: CloudFront caches
+# for a year and is invalidated on deploy, while browsers revalidate every load.
+# That is correct for HTML but wasteful for Parcel's fingerprinted assets, whose
+# filenames change whenever their contents do — those can be cached outright.
+
+customHeaders:
+  # Fingerprinted build output (app.a1b2c3d4.js). The hash changes with the
+  # contents, so a browser never needs to revalidate these.
+  - pattern: '/*.*.@(js|css|jpg|jpeg|png|svg|webp|avif|ico|woff|woff2)'
+    headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=31536000, immutable'
+
+  # Unhashed originals kept for absolute URLs — the og:image share card and the
+  # JSON-LD publisher logo. A day is cheap but still lets a replaced share card
+  # propagate without a manual invalidation.
+  - pattern: '/assets/**'
+    headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=86400'
+
+  # Crawler-facing files: short, so sitemap changes are picked up quickly.
+  - pattern: '/*.@(xml|txt)'
+    headers:
+      - key: 'Cache-Control'
+        value: 'public, max-age=3600'
+
+  # Baseline security headers on every response. Deliberately no
+  # Content-Security-Policy: the pages carry inline critical CSS and inline
+  # JSON-LD, so a policy would need nonces or hashes wired through the build.
+  - pattern: '**/*'
+    headers:
+      - key: 'X-Content-Type-Options'
+        value: 'nosniff'
+      - key: 'Referrer-Policy'
+        value: 'strict-origin-when-cross-origin'
+      - key: 'Strict-Transport-Security'
+        value: 'max-age=31536000; includeSubDomains'
+      - key: 'Permissions-Policy'
+        value: 'geolocation=(), microphone=(), camera=()'
