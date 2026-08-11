@@ -18,7 +18,7 @@ Your site automatically builds and deploys to GitHub Pages whenever you push to 
 2. **GitHub Actions runs automatically:**
    - ✅ Checks out code
    - ✅ Installs Node.js 18
-   - ✅ Installs dependencies (`npm ci`)
+   - ✅ Installs dependencies (`npm install` — `npm ci` needs a lockfile, and `package-lock.json` is gitignored here)
    - ✅ Builds with Parcel (`npm run build:all`)
    - ✅ Deploys `dist/` folder to GitHub Pages
 
