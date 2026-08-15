@@ -10,13 +10,20 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Contact Popup
+// Wires every .chat-widget on the page rather than looking the parts up by id.
+// Some pages have shipped with the widget markup included twice; getElementById
+// only ever returns the first copy, so the listeners landed on the hidden one
+// while the later duplicate painted on top and swallowed every click.
 function initializeContactPopup() {
-    const widget = document.getElementById('contact-widget');
-    const chatToggle = document.getElementById('chat-toggle');
-    const chatPopup = document.getElementById('chat-popup');
-    const chatClose = document.getElementById('chat-close');
+    document.querySelectorAll('.chat-widget').forEach(bindContactPopup);
+}
 
-    if (!widget || !chatToggle || !chatPopup || !chatClose) return;
+function bindContactPopup(widget) {
+    const chatToggle = widget.querySelector('.chat-toggle');
+    const chatPopup = widget.querySelector('.chat-popup');
+    const chatClose = widget.querySelector('.chat-close');
+
+    if (!chatToggle || !chatPopup || !chatClose) return;
 
     function openPopup() {
         chatPopup.classList.add('active');
