@@ -3245,8 +3245,10 @@ body {
     line-height: 1.6;
 }
 
+/* Same inverted-scale trap as the Reject button: accent-300 is a 46%-lightness
+   green that sits too close to the dark banner to read as a link. */
 .cookie-banner-text a {
-    color: var(--color-accent-300);
+    color: var(--color-accent-700);
     text-decoration: underline;
 }
 
@@ -3261,14 +3263,26 @@ body {
     font-size: 0.9rem;
 }
 
+/* This neutral scale runs dark -> light (100 is the DARKEST at 22% lightness,
+   900 the lightest), which is the reverse of the usual convention. Reject used
+   --color-neutral-100 as its label colour and rendered near-black on the dark
+   banner - 1.23:1, effectively invisible. Use the banner's own text colour. */
 .cookie-banner-actions .btn-outline {
-    border-color: var(--color-neutral-500);
-    color: var(--color-neutral-100);
+    border: 1.5px solid var(--color-neutral-500);
+    background: transparent;
+    color: var(--color-text);
 }
 
-.cookie-banner-actions .btn-outline:hover {
-    border-color: var(--color-neutral-100);
-    color: var(--color-neutral-100);
+.cookie-banner-actions .btn-outline:hover,
+.cookie-banner-actions .btn-outline:focus-visible {
+    border-color: var(--color-neutral-700);
+    color: var(--color-neutral-900);
+    background: rgba(201, 249, 215, 0.08);
+}
+
+.cookie-banner-actions .btn:focus-visible {
+    outline: 2px solid var(--color-accent-700);
+    outline-offset: 2px;
 }
 
 @media (max-width: 600px) {
@@ -3277,12 +3291,31 @@ body {
         align-items: stretch;
         left: var(--space-sm);
         right: var(--space-sm);
-        bottom: var(--space-sm);
+        /* Clear the iOS home indicator / Android gesture bar. */
+        bottom: max(var(--space-sm), env(safe-area-inset-bottom));
         padding: var(--space-md);
+        gap: var(--space-md);
+        border-radius: var(--radius-sm);
     }
 
+    /* The base rule's `flex: 1 1 260px` sets a flex-BASIS, which is a width
+       while the banner is a row. Once it stacks, that 260px becomes a height
+       floor and inflated the banner to over half the viewport. */
+    .cookie-banner-text {
+        flex: 0 0 auto;
+        font-size: 0.875rem;
+    }
+
+    /* Two equal full-width targets, rather than two fixed-width buttons
+       fighting over a ~272px content box. */
     .cookie-banner-actions {
-        justify-content: flex-end;
+        gap: var(--space-sm);
+    }
+
+    .cookie-banner-actions .btn {
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 12px 16px;
     }
 }
 
@@ -3292,6 +3325,18 @@ body {
     bottom: 20px;
     right: 20px;
     z-index: 1000;
+}
+
+/* While the cookie banner is up it spans the full width at the bottom of the
+   screen, directly over the contact widget. Lift the widget clear of it; the
+   height is published by cookie-consent.js and is 0 when no banner is showing.
+   Must stay after the base rule above - a media query adds no specificity, so
+   source order is what decides this. */
+@media (max-width: 800px) {
+    .chat-widget {
+        bottom: calc(20px + var(--cookie-banner-height, 0px));
+        transition: bottom 0.3s ease;
+    }
 }
 
 .chat-toggle {
@@ -3556,16 +3601,33 @@ body {
         padding: 40px 0;
         backdrop-filter: blur(20px);
         border-top: 1px solid rgba(148, 244, 175, 0.1);
+        /* The menu is fixed, so it does not scroll with the page. With the
+           services panel expanded it runs past the bottom of a short screen
+           and those items become unreachable - let the menu itself scroll.
+           dvh accounts for the mobile browser's collapsing toolbar. */
+        max-height: calc(100vh - 80px);
+        max-height: calc(100dvh - 80px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
     }
 
     .nav-menu.active {
         left: 0;
     }
 
-    /* Mobile Dropdown Menu */
-    .nav-item-dropdown .dropdown-menu {
+    /* Mobile Dropdown Menu
+       The desktop rules centre the panel under its trigger with
+       translateX(-50%). Those selectors carry :hover, so they out-specify a
+       plain `.nav-item-dropdown .dropdown-menu` override - and on touch the
+       :hover state sticks after a tap. The result was the accordion panel
+       dragged 93px left of centre, and clipped off-screen at 320px. Neutralise
+       the translate on the same selectors so specificity can't reintroduce it. */
+    .nav-item-dropdown .dropdown-menu,
+    .nav-item-dropdown:hover .dropdown-menu,
+    .dropdown-menu:hover {
         position: static;
         transform: none;
+        left: auto;
         opacity: 1;
         visibility: visible;
         pointer-events: all;
@@ -3579,6 +3641,20 @@ body {
         box-shadow: none;
     }
 
+    /* .nav-menu centres its children, so the <li> shrank to the width of the
+       "Services" label and the panel inherited that 185px. Let the row span the
+       menu, then centre the panel within it at a readable width. */
+    .nav-item-dropdown {
+        align-self: stretch;
+        width: 100%;
+    }
+
+    .nav-item-dropdown .dropdown-menu {
+        width: min(100% - 32px, 360px);
+        margin-inline: auto;
+        border-radius: 12px;
+    }
+
     .nav-item-dropdown.mobile-active .dropdown-menu {
         max-height: 600px;
         padding: 12px;
@@ -3589,6 +3665,23 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    /* Match the centred alignment of the rest of the mobile menu. */
+    .nav-item-dropdown .dropdown-item,
+    .nav-item-dropdown .dropdown-item-featured {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-item-dropdown .dropdown-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-item-dropdown .dropdown-link {
+        text-align: center;
     }
 
     .dropdown-item {

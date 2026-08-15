@@ -29,8 +29,32 @@
         document.dispatchEvent(new CustomEvent('wo:cookie-consent', { detail: { consent: value } }));
     }
 
+    // The banner is fixed to the bottom of the screen, where it sits on top of
+    // the contact widget on narrow viewports. Publishing its height lets the
+    // stylesheet lift the widget clear of it instead of guessing a constant.
+    function publishBannerHeight(px) {
+        document.documentElement.style.setProperty('--cookie-banner-height', px + 'px');
+    }
+
+    function trackBannerHeight(banner) {
+        publishBannerHeight(banner.offsetHeight);
+        if (typeof ResizeObserver === 'function') {
+            var ro = new ResizeObserver(function () {
+                if (banner.isConnected) publishBannerHeight(banner.offsetHeight);
+            });
+            ro.observe(banner);
+            return ro;
+        }
+        return null;
+    }
+
     function hideBanner(banner) {
         banner.classList.remove('cookie-banner-visible');
+        publishBannerHeight(0);
+        if (banner._woResizeObserver) {
+            banner._woResizeObserver.disconnect();
+            banner._woResizeObserver = null;
+        }
         setTimeout(function () {
             banner.remove();
         }, 300);
@@ -53,6 +77,7 @@
             '</div>';
 
         document.body.appendChild(banner);
+        banner._woResizeObserver = trackBannerHeight(banner);
         requestAnimationFrame(function () {
             banner.classList.add('cookie-banner-visible');
         });
