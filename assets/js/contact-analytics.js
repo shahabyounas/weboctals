@@ -76,9 +76,14 @@
             });
         });
 
-        document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+        // The phone number links straight into WhatsApp rather than dialling,
+        // so track it as WhatsApp. tel: is kept in case one is added back.
+        document.querySelectorAll('a[href^="tel:"], a[href*="wa.me/"]').forEach(function (link) {
             link.addEventListener('click', function () {
-                woTrack('contact_click', { contact_method: 'Phone', link_url: link.href });
+                woTrack('contact_click', {
+                    contact_method: link.href.indexOf('tel:') === 0 ? 'Phone' : 'WhatsApp',
+                    link_url: link.href
+                });
             });
         });
 
