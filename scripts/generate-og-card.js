@@ -77,7 +77,7 @@ const html = `<!doctype html>
     padding-top: 30px; border-top: 1px solid ${LINE};
     font-size: 25px; color: ${DIM};
   }
-  /* Domain and email carry the readable ink; the "UK studio" qualifier stays
+  /* Domain and email carry the readable ink; the "Leeds studio" qualifier stays
      dimmed so both contact routes stand out at thumbnail size. */
   .foot .domain, .foot .email { font-weight: 600; color: ${INK}; }
 </style>
@@ -92,7 +92,7 @@ const html = `<!doctype html>
   </div>
   <div class="foot">
     <span class="domain">weboctals.com</span>
-    <span>UK studio &middot; <span class="email">contact@weboctals.co.uk</span></span>
+    <span>Leeds studio &middot; <span class="email">contact@weboctals.co.uk</span></span>
   </div>
 </body>
 </html>`;

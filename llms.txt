@@ -1,6 +1,6 @@
 # WebOctals
 
-> WebOctals is a UK studio building websites, AI agents and automation for small businesses. We work mostly with local trades and service businesses — driving schools, takeaways, barbers, taxi firms, trade suppliers — and with teams who have outgrown off-the-shelf software.
+> WebOctals is a Leeds-based studio building websites, AI agents and automation for small businesses across the UK. We work mostly with local trades and service businesses — driving schools, takeaways, barbers, taxi firms, trade suppliers — and with teams who have outgrown off-the-shelf software.
 
 Websites are priced by page count: £1,000 up to five pages, £1,500 up to ten, £2,000+ for twenty or more. Work that isn't measured in pages — AI agents, automation, machine learning, changes to an existing site — is quoted at £50 per hour. All of it is negotiable and fixed in writing before work starts. You speak directly to the engineer building it; the whole build stays in-house.
 
@@ -29,15 +29,13 @@ Websites are priced by page count: £1,000 up to five pages, £1,500 up to ten, 
 
 ## Areas
 
-WebOctals works remotely across the UK from England — there is no office in any of the cities below and the pages say so.
+WebOctals is based in Leeds, West Yorkshire, and works remotely across the UK. It is a service-area business: no shopfront, and no street address published. There is no office in any of the other cities below and each page says so.
 
-Manchester and Leeds are the two areas we are actively growing into.
-
-- [Manchester](https://weboctals.com/web-development/manchester/): Greater Manchester's ten boroughs, served remotely. No local client yet.
-- [Leeds](https://weboctals.com/web-development/leeds/): Leeds district and West Yorkshire, served remotely. No local client yet.
-- [London](https://weboctals.com/web-development/london/): Colindale Driving School and A.R Worldwide (Harrow) are London-area builds.
-- [Birmingham](https://weboctals.com/web-development/birmingham/): Lumenlux, Quick Fit Shelving (Wednesbury) and Ariana Kitchens are West Midlands builds.
-- [Edinburgh](https://weboctals.com/web-development/edinburgh/): Served remotely across Scotland; no local client yet.
+- [Leeds](https://weboctals.com/web-development/leeds/): Home city. Covers the whole Leeds district — Otley, Wetherby, Morley, Pudsey, Horsforth, Guiseley, Garforth, Rothwell, Yeadon — and the rest of West Yorkshire. No Leeds client yet; the page says so.
+- [Manchester](https://weboctals.com/web-development/manchester/): All ten Greater Manchester boroughs — Manchester, Salford, Trafford, Stockport, Bolton, Bury, Rochdale, Oldham, Tameside, Wigan. Served remotely from Leeds. No local client yet.
+- [Birmingham](https://weboctals.com/web-development/birmingham/): Birmingham, the Black Country (Sandwell, Dudley, Walsall, Wolverhampton), Solihull and Coventry. Lumenlux, Quick Fit Shelving (Wednesbury) and Ariana Kitchens are West Midlands builds.
+- [London](https://weboctals.com/web-development/london/): All 32 boroughs and the City. Colindale Driving School (NW9, Barnet) and A.R Worldwide (Harrow) are London builds.
+- [Edinburgh](https://weboctals.com/web-development/edinburgh/): City of Edinburgh plus Midlothian, East Lothian, West Lothian and Fife. Served remotely; no Scottish client yet.
 
 ## Work
 

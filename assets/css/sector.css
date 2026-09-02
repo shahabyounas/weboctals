@@ -237,3 +237,103 @@
     color: var(--wo-faint);
     max-width: 62ch;
 }
+
+/* --------------------------------------------------------------------------
+   Coverage zones — an area page has to show the whole area, and the whole
+   area is never one flat list. Each zone carries its own heading and note
+   (a postcode range, a council name) because that boundary is usually the
+   thing the reader came to check.
+   -------------------------------------------------------------------------- */
+
+.sc-zones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+    gap: 1px;
+    margin-top: var(--space-2xl);
+    background: var(--wo-line);
+    border: 1px solid var(--wo-line);
+}
+
+.sc-zone {
+    padding: var(--space-lg);
+    background: var(--wo-ground);
+}
+
+.sc-page .sc-zone h3 {
+    font-family: var(--wo-display);
+    font-size: 1.02rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--wo-ink);
+    margin: 0;
+}
+
+.sc-zone-note {
+    display: block;
+    margin-top: 6px;
+    font-family: var(--wo-data);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--wo-marker);
+}
+
+.sc-zone p {
+    margin: var(--space-md) 0 0;
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: var(--wo-dim);
+}
+
+/* --------------------------------------------------------------------------
+   Boundary notes — the numbered points explaining why an area's postcodes,
+   councils and search behaviour don't line up. Ordered, because each one
+   builds on the last.
+   -------------------------------------------------------------------------- */
+
+.sc-notes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
+    gap: clamp(20px, 2.8vw, 34px);
+    margin-top: var(--space-2xl);
+}
+
+.sc-note {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.sc-note-n {
+    font-family: var(--wo-data);
+    font-variant-numeric: tabular-nums;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--wo-marker);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--wo-line-strong);
+}
+
+.sc-page .sc-note h3 {
+    font-family: var(--wo-display);
+    font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+    line-height: 1.25;
+    color: var(--wo-ink);
+    margin: var(--space-sm) 0 0;
+}
+
+.sc-note p {
+    font-size: 0.95rem;
+    line-height: 1.72;
+    color: var(--wo-dim);
+    margin: 0;
+}
+
+.sc-note code {
+    font-family: var(--wo-data);
+    font-size: 0.9em;
+    color: var(--wo-mint);
+    background: none;
+    padding: 0;
+}
