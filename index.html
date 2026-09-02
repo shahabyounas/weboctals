@@ -64,7 +64,7 @@
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
     {"@context":"https://schema.org","@graph":[
-        {"@type":"Organization","@id":"https://weboctals.com/#org","name":"WebOctals","url":"https://weboctals.com/","foundingDate":"2024","email":"contact@weboctals.co.uk","telephone":"+44 7442 410345","description":"UK studio building websites, AI agents and automation for small businesses.","areaServed":{"@type":"Country","name":"United Kingdom"},"sameAs":["https://www.linkedin.com/company/weboctals/","https://github.com/shahabyounas/"]},
+        {"@type":["Organization","ProfessionalService"],"@id":"https://weboctals.com/#org","name":"WebOctals","url":"https://weboctals.com/","foundingDate":"2024","email":"contact@weboctals.co.uk","telephone":"+44 7442 410345","description":"UK studio building websites, AI agents and automation for small businesses.","address":{"@type":"PostalAddress","addressRegion":"England","addressCountry":"GB"},"areaServed":[{"@type":"Country","name":"United Kingdom"},{"@type":"City","name":"London"},{"@type":"City","name":"Manchester"},{"@type":"City","name":"Birmingham"},{"@type":"City","name":"Leeds"},{"@type":"City","name":"Edinburgh"}],"priceRange":"£1,000–£2,000+","currenciesAccepted":"GBP","knowsAbout":["Web development","AI agents","Business process automation","Machine learning","Search engine optimisation","Booking and ordering systems"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Website design and development"},"priceSpecification":{"@type":"PriceSpecification","minPrice":"1000","priceCurrency":"GBP"},"url":"https://weboctals.com/pricing/"},{"@type":"Offer","itemOffered":{"@type":"Service","name":"AI agents, automation and custom software"},"priceSpecification":{"@type":"UnitPriceSpecification","price":"50","priceCurrency":"GBP","unitCode":"HUR"},"url":"https://weboctals.com/pricing/"}],"sameAs":["https://www.linkedin.com/company/weboctals/","https://github.com/shahabyounas/"]},
         {"@type":"WebSite","@id":"https://weboctals.com/#site","url":"https://weboctals.com/","name":"WebOctals","publisher":{"@id":"https://weboctals.com/#org"}},
         {"@type":"FAQPage","mainEntity":[
             {"@type":"Question","name":"What kind of businesses does WebOctals work with?","acceptedAnswer":{"@type":"Answer","text":"Mostly small UK businesses outside the tech world: driving schools, takeaways, barbers, taxi firms, trade suppliers, a currency exchange and a lighting studio. We also build AI agents and automation for teams who have outgrown off-the-shelf tools."}},
@@ -132,6 +132,7 @@
                     </div>
                 </li>
                 <li class="nav-item"><a href="/clients/" class="nav-link">Clients</a></li>
+                <li class="nav-item"><a href="/pricing/" class="nav-link">Pricing</a></li>
                 <li class="nav-item"><a href="/about/" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a href="/contact/" class="nav-link">Contact</a></li>
@@ -541,6 +542,7 @@
                             <li><a href="/ai-agents/">AI Agents</a></li>
                             <li><a href="/automation/">Automation</a></li>
                             <li><a href="/services/">All services</a></li>
+                            <li><a href="/pricing/">Pricing</a></li>
                         </ul>
                     </div>
 
@@ -558,6 +560,21 @@
                         <h4>Businesses</h4>
                         <ul>
                             <li><a href="/driving-schools/">Driving Schools</a></li>
+                            <li><a href="/takeaways/">Takeaways</a></li>
+                            <li><a href="/barbers/">Barbers &amp; Salons</a></li>
+                            <li><a href="/taxi-firms/">Taxi Firms</a></li>
+                            <li><a href="/trade-suppliers/">Trade Suppliers</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="link-group">
+                        <h4>Areas</h4>
+                        <ul>
+                            <li><a href="/web-development/manchester/">Manchester</a></li>
+                            <li><a href="/web-development/leeds/">Leeds</a></li>
+                            <li><a href="/web-development/london/">London</a></li>
+                            <li><a href="/web-development/birmingham/">Birmingham</a></li>
+                            <li><a href="/web-development/edinburgh/">Edinburgh</a></li>
                         </ul>
                     </div>
 

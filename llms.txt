@@ -1,26 +1,55 @@
 # WebOctals
 
-> WebOctals is a UK-based AI-powered digital product studio. We design and build AI agents, custom digital products, intelligent automation, and machine learning solutions for businesses, backed by full-stack web development and SEO expertise.
+> WebOctals is a UK studio building websites, AI agents and automation for small businesses. We work mostly with local trades and service businesses — driving schools, takeaways, barbers, taxi firms, trade suppliers — and with teams who have outgrown off-the-shelf software.
 
-WebOctals helps businesses adopt AI practically: automating operational workflows, building AI agents that handle real tasks, developing production digital products, and optimizing web presence for both traditional search and AI answer engines. Typical engagements start with a free, no-obligation consultation via the contact form or a direct call.
+Websites are priced by page count: £1,000 up to five pages, £1,500 up to ten, £2,000+ for twenty or more. Work that isn't measured in pages — AI agents, automation, machine learning, changes to an existing site — is quoted at £50 per hour. All of it is negotiable and fixed in writing before work starts. You speak directly to the engineer building it; the whole build stays in-house.
+
+## Pricing
+
+- [Pricing](https://weboctals.com/pricing/): Published rates, what counts as a page, and what moves a quote up or down.
 
 ## Services
 
-- [Services overview](https://weboctals.com/services.html): Full list of AI and digital product services offered.
-- [AI Agents](https://weboctals.com/ai-agents.html): Custom AI agents that automate business tasks and workflows.
-- [Digital Product Development](https://weboctals.com/digital-products.html): End-to-end design and build of digital products.
-- [Automation](https://weboctals.com/automation.html): Intelligent process automation for operations and customer workflows.
-- [Machine Learning](https://weboctals.com/machine-learning.html): ML models and data-driven features for existing products.
-- [Web Development](https://weboctals.com/web-development.html): Custom websites and web applications.
-- [Product Development](https://weboctals.com/product-development.html): Product strategy and build from idea to launch.
-- [SEO](https://weboctals.com/seo.html): Search and AI-visibility optimization, including [on-page SEO](https://weboctals.com/on-page-seo.html) and [technical SEO](https://weboctals.com/technical-seo.html).
+- [Services overview](https://weboctals.com/services/): Every service, grouped by how deep into a business it goes.
+- [Web Development](https://weboctals.com/web-development/): Custom and platform-built websites for UK businesses.
+- [Digital Products](https://weboctals.com/digital-products/): Booking flows, ordering systems and customer portals.
+- [AI Agents](https://weboctals.com/ai-agents/): Agents that handle repetitive enquiries and hand over cleanly to a person.
+- [Automation](https://weboctals.com/automation/): Pipelines that remove repetitive manual work and connect systems that were never designed to talk.
+- [Machine Learning](https://weboctals.com/machine-learning/): Custom models where there is a real pattern worth catching.
+- [Product Development](https://weboctals.com/product-development/): Custom software for teams who have outgrown off-the-shelf tools.
+- [SEO](https://weboctals.com/seo/): On-page and technical SEO. No ranking guarantees, on principle.
+
+## Trades we build for
+
+- [Driving schools](https://weboctals.com/driving-schools/): Filling weekday gaps and being found in every town a school teaches in.
+- [Takeaways](https://weboctals.com/takeaways/): Menu-first sites with online ordering, without commission on every ticket.
+- [Barbers and salons](https://weboctals.com/barbers/): Services and pricing answered immediately, on a phone.
+- [Taxi firms](https://weboctals.com/taxi-firms/): Booking and phone contact throughout, structured for local search.
+- [Trade suppliers](https://weboctals.com/trade-suppliers/): Capability, coverage and a quote route, answered without scrolling.
+
+## Areas
+
+WebOctals works remotely across the UK from England — there is no office in any of the cities below and the pages say so.
+
+Manchester and Leeds are the two areas we are actively growing into.
+
+- [Manchester](https://weboctals.com/web-development/manchester/): Greater Manchester's ten boroughs, served remotely. No local client yet.
+- [Leeds](https://weboctals.com/web-development/leeds/): Leeds district and West Yorkshire, served remotely. No local client yet.
+- [London](https://weboctals.com/web-development/london/): Colindale Driving School and A.R Worldwide (Harrow) are London-area builds.
+- [Birmingham](https://weboctals.com/web-development/birmingham/): Lumenlux, Quick Fit Shelving (Wednesbury) and Ariana Kitchens are West Midlands builds.
+- [Edinburgh](https://weboctals.com/web-development/edinburgh/): Served remotely across Scotland; no local client yet.
+
+## Work
+
+- [Client case studies](https://weboctals.com/clients/): The brief, the build and where it landed, for each project.
 
 ## Company
 
-- [About WebOctals](https://weboctals.com/about.html): Who we are and how we work.
-- [Contact](https://weboctals.com/contact.html): Reach the team by email, phone, or the contact form.
-- [Blog](https://weboctals.com/blog/): Articles on AI, automation, SEO, and digital product strategy.
+- [About WebOctals](https://weboctals.com/about/): Who we are and how we work.
+- [Contact](https://weboctals.com/contact/): contact@weboctals.co.uk, +44 7442 410345, or the form.
+- [Blog](https://weboctals.com/blog/): Writing on AI, automation and building websites for small UK businesses.
 
-## Tools for agents
+## Notes
 
-- The homepage contact form (`submit_contact_request`) and blog newsletter forms (`subscribe_to_newsletter`) are exposed as WebMCP tools via declarative `toolname`/`tooldescription` annotations, so a supporting agent can fill and submit them directly on behalf of a visitor.
+- Google Search does not read this file; it is here for other agents and assistants that do.
+- The homepage contact form (`submit_contact_request`) and blog newsletter forms (`subscribe_to_newsletter`) are exposed as WebMCP tools via declarative `toolname`/`tooldescription` annotations, so a supporting agent can fill and submit them on behalf of a visitor.
