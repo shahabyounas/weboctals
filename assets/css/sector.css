@@ -1,0 +1,239 @@
+/* ==========================================================================
+   Sector pages — shared page sheet
+   --------------------------------------------------------------------------
+   One sheet for every trade landing page (/takeaways/, /barbers/, /taxi-firms/,
+   /trade-suppliers/). Loaded after styles.css, system.css and services.css, so
+   these pages reuse .sv-included, .sv-work and .wo-faq and this file carries
+   only what those don't cover. Colours come from the --wo-* tokens.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   The jobs — what the site has to do in this trade.
+   Numbered because they are ordered by what happens first for the customer,
+   not because a list looked better with numbers on it.
+   -------------------------------------------------------------------------- */
+
+.sc-jobs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
+    gap: clamp(20px, 2.8vw, 34px);
+    margin-top: var(--space-2xl);
+}
+
+.sc-job {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.sc-job-n {
+    font-family: var(--wo-data);
+    font-variant-numeric: tabular-nums;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--wo-marker);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--wo-line-strong);
+}
+
+.sc-page .sc-job h3 {
+    font-family: var(--wo-display);
+    font-size: clamp(1.1rem, 1.9vw, 1.3rem);
+    line-height: 1.2;
+    color: var(--wo-ink);
+    margin: var(--space-sm) 0 0;
+}
+
+.sc-job p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--wo-dim);
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   The moment — one pulled-out sentence per page, the search that matters
+   in this trade. Set in the data face because it is a quoted query.
+   -------------------------------------------------------------------------- */
+
+.sc-moment {
+    margin: var(--space-2xl) 0 0;
+    padding: clamp(22px, 3.4vw, 34px) clamp(22px, 3.4vw, 38px);
+    background: var(--wo-raise);
+    border-left: 3px solid var(--wo-mint);
+}
+
+.sc-moment p {
+    margin: 0;
+    font-size: clamp(1.05rem, 2.1vw, 1.3rem);
+    line-height: 1.55;
+    color: var(--wo-ink);
+    max-width: 60ch;
+}
+
+.sc-moment .sc-query {
+    font-family: var(--wo-data);
+    font-size: 0.88em;
+    color: var(--wo-mint);
+    white-space: nowrap;
+}
+
+.sc-moment cite {
+    display: block;
+    margin-top: var(--space-md);
+    font-style: normal;
+    font-family: var(--wo-data);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--wo-faint);
+}
+
+/* --------------------------------------------------------------------------
+   Price strip — the pricing page, summarised, so a sector page never sends
+   someone off to find the number somewhere else.
+   -------------------------------------------------------------------------- */
+
+.sc-price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(18px, 3vw, 40px);
+    margin-top: var(--space-2xl);
+    padding: clamp(20px, 3vw, 30px) clamp(20px, 3vw, 34px);
+    border: 1px solid var(--wo-line);
+    border-top: 3px solid var(--wo-marker);
+    background: var(--wo-raise);
+}
+
+.sc-price-figures {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(18px, 3vw, 36px);
+}
+
+.sc-price-figure {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sc-price-figure b {
+    font-family: var(--wo-data);
+    font-variant-numeric: tabular-nums;
+    font-size: clamp(1.4rem, 3.2vw, 1.9rem);
+    line-height: 1;
+    font-weight: 400;
+    color: var(--wo-mint);
+}
+
+.sc-price-figure span {
+    font-family: var(--wo-data);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--wo-faint);
+}
+
+.sc-price-note {
+    flex: 1 1 260px;
+    font-size: 0.94rem;
+    line-height: 1.68;
+    color: var(--wo-dim);
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Sector index strip — sits at the foot of every sector page so each one
+   links to the others. Internal linking, doing an honest job.
+   -------------------------------------------------------------------------- */
+
+.sc-siblings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1px;
+    margin-top: var(--space-2xl);
+    background: var(--wo-line);
+    border: 1px solid var(--wo-line);
+}
+
+.sc-page .sc-sibling {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: var(--space-lg);
+    background: var(--wo-ground);
+    text-decoration: none;
+    transition: background 0.18s ease;
+}
+
+.sc-page .sc-sibling:hover,
+.sc-page .sc-sibling:focus-visible {
+    background: var(--wo-raise);
+}
+
+.sc-page .sc-sibling strong {
+    font-family: var(--wo-display);
+    font-size: 1.02rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--wo-ink);
+}
+
+.sc-page .sc-sibling span {
+    font-size: 0.87rem;
+    line-height: 1.5;
+    color: var(--wo-dim);
+}
+
+.sc-page .sc-sibling[aria-current="page"] {
+    background: var(--wo-recess);
+}
+
+.sc-page .sc-sibling[aria-current="page"] strong {
+    color: var(--wo-marker);
+}
+
+/* A trade with one case study shouldn't stretch that card across the row —
+   hold it at the width it would have had in a three-up grid. */
+.sc-page .sv-work-card:only-child {
+    max-width: 460px;
+}
+
+/* --------------------------------------------------------------------------
+   Catchment — the places inside a city region, shown as the list they are.
+   Used on the area pages where "the city" is really a dozen separate markets.
+   -------------------------------------------------------------------------- */
+
+.sc-places {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: var(--space-lg) 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sc-places li {
+    font-family: var(--wo-data);
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+    color: var(--wo-ink);
+    padding: 6px 12px;
+    border: 1px solid var(--wo-line-strong);
+    background: var(--wo-raise);
+}
+
+.sc-places li[data-anchor] {
+    border-color: var(--wo-mint);
+    color: var(--wo-mint);
+}
+
+.sc-places-note {
+    margin: var(--space-lg) 0 0;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--wo-faint);
+    max-width: 62ch;
+}
