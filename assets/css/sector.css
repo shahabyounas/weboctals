@@ -337,3 +337,82 @@
     background: none;
     padding: 0;
 }
+
+/* --------------------------------------------------------------------------
+   Answer panel — the top of an area page, written so it stands on its own.
+   A reader who gets no further than this should still know what we build,
+   what it costs, how long it takes and how to start; the same reason it
+   reads cleanly when a search result or an assistant quotes it out of page.
+   -------------------------------------------------------------------------- */
+
+.sc-answer {
+    margin-top: var(--space-2xl);
+    padding: clamp(24px, 3.6vw, 40px);
+    border: 1px solid var(--wo-line);
+    border-top: 3px solid var(--wo-mint);
+    background: var(--wo-raise);
+}
+
+.sc-answer > p {
+    margin: 0;
+    font-size: clamp(1rem, 1.9vw, 1.14rem);
+    line-height: 1.7;
+    color: var(--wo-ink);
+    max-width: 68ch;
+}
+
+.sc-answer dl {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: clamp(16px, 2.4vw, 28px);
+    margin: var(--space-xl) 0 0;
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--wo-line);
+}
+
+.sc-answer dt {
+    font-family: var(--wo-data);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--wo-faint);
+}
+
+.sc-answer dd {
+    margin: 8px 0 0;
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: var(--wo-ink);
+}
+
+.sc-answer dd a {
+    color: var(--wo-mint);
+}
+
+/* The one-line takeaway under a section, where a pulled-out quote would be
+   too loud for what is really just a clarification. */
+.sc-aside {
+    margin: var(--space-xl) 0 0;
+    padding-left: var(--space-lg);
+    border-left: 2px solid var(--wo-line-strong);
+    font-size: 0.95rem;
+    line-height: 1.72;
+    color: var(--wo-dim);
+    max-width: 66ch;
+}
+
+/* Four items read better as a 2x2 than as a row of three and an orphan, and
+   the paragraphs in these two grids are long enough to want the extra width.
+   The line length is held back separately so the wider column doesn't produce
+   85-character lines. */
+@media (min-width: 900px) {
+    .sc-notes--quad,
+    .sc-jobs--quad {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sc-notes--quad .sc-note p,
+    .sc-jobs--quad .sc-job p {
+        max-width: 56ch;
+    }
+}
